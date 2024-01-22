@@ -1,188 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contact</title>
+		<link rel="icon" type="/image/png" href="/Images/symfavicon.ico" />
+		<!-- Bootsrap CSS -->
 
-    <!-- TITLE AND ICON -->
-    <link rel="shortcut icon" type="image/png" href="symfavicon.ico" />
-    <title>Speak Your Mind</title>
-    <!-- End -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="/Css/style.css" />
+		<script
+			src="https://kit.fontawesome.com/ec18948b8a.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<!-- NAVBAR -->
+		<nav></nav>
 
-    <!-- FONTS -->
-    <link
-      href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap"
-      rel="stylesheet"
-    />
-    <!-- end -->
+		<!-- HEADER -->
+		<header></header>
 
-    <!-- BOOTSTRAP -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <!-- end -->
+		<main class="container-fluid py-5">
+			<div class="row justify-content-center">
+				<div class="col-sm-10 col-lg-8">
+					<h1 class="display-6">
+						Contact Us<br />
+						お問い合わせ
+					</h1>
+					<hr />
+					<p>
+						お問い合わせは日本語でどうぞ。お電話でも承ります(<a
+							href="tel:03-3469-7151"
+							>03-3469-7151</a
+						>)。
+					</p>
+					<p>
+						無理な営業はいたしません。ご質問や疑問にはすべてお答えいたします。
+					</p>
+				</div>
+			</div>
+			<div class="row mt-5">
+				<div class="col-md-6">
+					<form
+						action="https://formspree.io/f/mnqlpovv"
+						method="POST"
+						class="needs-validation left-align d-block"
+						novalidate
+					>
+						<div class="mb-3">
+							<label for="name" class="form-label"
+								>*お名前(漢字)</label
+							>
+							<input
+								type="text"
+								class="form-control"
+								id="name"
+								name="name"
+								required
+							/>
+							<div class="invalid-feedback">
+								名前を入力してください
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="alphabet-name" class="form-label"
+								>お名前(アルファベット)</label
+							>
+							<input
+								type="text"
+								class="form-control"
+								id="alphabet-name"
+								name="alphabet-name"
+							/>
+						</div>
+						<div class="mb-3">
+							<label for="phone" class="form-label"
+								>電話番号(メールエラーの場合にお電話差し上げます)</label
+							>
+							<input
+								type="tel"
+								pattern="\d*"
+								class="form-control"
+								id="phone"
+								name="phone"
+							/>
+						</div>
+						<div class="mb-3">
+							<label for="email" class="form-label"
+								>*メールアドレス</label
+							>
+							<input
+								type="email"
+								class="form-control"
+								id="email"
+								name="email"
+								required
+							/>
+							<div id="emailText" class="invalid-feedback"></div>
+						</div>
+						<div class="mb-3">
+							<label for="confirm_email" class="form-label"
+								>*メールアドレス(確認用)</label
+							>
+							<input
+								type="email"
+								class="form-control"
+								id="confirm_email"
+								required
+							/>
+							<div class="invalid-feedback">
+								メールアドレスが一致しません
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="message" class="form-label"
+								>*お問い合わせ内容</label
+							>
+							<textarea
+								class="form-control"
+								id="message"
+								rows="3"
+								name="Message"
+								required
+							></textarea>
+							<div class="invalid-feedback">
+								お問い合わせ内容を入力してください
+							</div>
+						</div>
+						<div class="col-12">
+							<button
+								class="btn btn-lg btn-primary"
+								type="submit"
+							>
+								送信
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-5 my-5 pb-5 align-self-center">
+					<iframe
+						script="SameSite=None; Secure"
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.312831036614!2d139.68602365119196!3d35.669298438135975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f34b9b88c5cd%3A0x270eacb26fb99874!2z44K544OU44O844KvIOODpuOCoiDjg57jgqTjg7Pjg4noi7HkvJroqbHjgrnjgq_jg7zjg6vjgIHmuIvosLc!5e0!3m2!1sen!2sjp!4v1621409204053!5m2!1sen!2sjp"
+						style="border: 0"
+						allowfullscreen=""
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</main>
 
-    <!-- MY CSS -->
-    <link rel="stylesheet" href="css/header.css" />
-    <!-- end -->
-
-    <!-- FONTAWESOME -->
-    <script
-      src="https://kit.fontawesome.com/e6a8dd57ad.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- end -->
-
-    <!-- JQUERY -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- end -->
-  </head>
-
-  <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-xl navbar-dark fixed-top" id="mainNav">
-      <a class="navbar-brand" href="index.html"
-        ><img src="img/logo-transparentlue.png" id="logo" alt=""
-      /></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- navbar items -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <!-- buttons -->
-          <li class="nav-item">
-            <a class="nav-link" href="index.html" id="Home">ホーム</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="lesson.html" id="Lesson">レッスン</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="enrol.html" id="Enrol">入学方法</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="news.html" id="News-Events"
-              >ニュース・イベント</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="teachers.html" id="Teachers">講師紹介</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html" id="Contact"
-              >お問い合わせ</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="faq.html" id="FAQ">よくある質問</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="videos.html" id="Videos">レッスン風景</a>
-          </li>
-          <!-- icons -->
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="facebook"
-              href="https://www.facebook.com/sym.tokyo"
-              target="_blank"
-              ><i class="fab fa-facebook-square"></i
-            ></a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="youtube"
-              href="https://www.youtube.com/channel/UCHNvCC8TLZy_HVlDCX-QReQ"
-              target="_blank"
-              ><i class="fab fa-youtube"></i
-            ></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- HEADER -->
-    <section id="header" class="jumbotron-fluid text-center">
-      <!--carousel for comment -->
-      <div id="carousel" class="carousel" data-ride="carousel">
-        <!-- CAROUSEL ITEMS -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <p class="d-block w-100">
-              スピークユアマインドが英語アルレギーを治しました！- Aya
-            </p>
-            <p>"Speak Your Mind has cured my allergy to English!"</p>
-          </div>
-          <div class="carousel-item">
-            <p class="d-block w-100">
-              彼らも以後何だかそうした講演方においてものの末でかかわらませでし。
-            </p>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div class="carousel-item">
-            <p class="d-block w-100">
-              その当時もこれか子分通りへ読むで、岡田さんの方が権利の私がおもにご意味と怖がっ
-            </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end -->
-
-    <section class="container-fluid mt-5">
-      <!-- <div class="row text-center">
-        <div class="col-12">
-          <h2 class="titles">Contact Us</h2>
-          <h3>お問い合わせ</h3>
-        </div>
-      </div> -->
-      <div class="row justify-content-around  align-self-center pt-5 text-center mt-5">
-          <div class="col-6 "><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.320686350012!2d139.6871343152155!3d35.66910498019716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f34b9b88c5cd%3A0x270eacb26fb99874!2z44K544OU44O844KvIOODpuOCoiDjg57jgqTjg7Pjg4noi7HkvJroqbHjgrnjgq_jg7zjg6vjgIHku6PjgIXmnKjlhavluaE!5e0!3m2!1sen!2sjp!4v1589245732211!5m2!1sen!2sjp" width="80%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
-          <div class="col-6">
-            <h2 class="titles">Contact Us</h2>
-          <h3>お問い合わせ</h3>
-            <form action="">
-              <input type="text" placeholder="Name" class="m-2" >
-              <br>
-              <input type="text" placeholder="Phone Number" class="m-2">
-              <br>
-              <input type="text" placeholder="Email" class="m-2">
-              <br>
-              <textarea placeholder="Message" cols="20" rows="10" class="m-2" ></textarea>
-              <br>
-              <button> Submit</button>
-            </form>
-          </div>
-    </section>
-
-    <!-- MYSCRIPT -->
-    <script src="script.js"></script>
-    <!-- end -->
-
-    <!-- BOOTSTRAP SCRIPTS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <!-- end -->
-  </body>
+		<!-- FOOTER -->
+		<footer></footer>
+		<!-- Bootsrap and jQuery -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+			integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+		<script src="/Scripts/Script.js"></script>
+		<script src="/Scripts/validation.js"></script>
+	</body>
 </html>
