@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Eikthyr",
+    "biome": "Meadows",
+    "icon": "\ud83e\udd8c",
+    "summon": "Place 2 Deer Trophies on the altar in the Meadows",
+    "tip": "Bring a shield. Block his charge and lightning attacks.",
+    "power": "Reduces running & jumping stamina cost by 60%",
+    "drop": "Hard Antler",
+    "unlocks": [
+      "Antler Pickaxe \u2014 your first pickaxe, lets you mine ore and stone",
+      "Mining copper, tin, and stone for the first time",
+      "Entire Black Forest tier of gear and crafting"
+    ],
+    "defeated": false
+  },
+  {
+    "id": 2,
+    "name": "The Elder",
+    "biome": "Black Forest",
+    "icon": "\ud83c\udf3f",
+    "summon": "Burn 3 Ancient Seeds on the altar in the Black Forest",
+    "tip": "Use fire arrows. Stay mobile and use the stone pillars as cover.",
+    "power": "Increases wood chopping speed",
+    "drop": "Swamp Key",
+    "unlocks": [
+      "Swamp Key \u2014 unlocks Sunken Crypts to farm Iron",
+      "Iron age gear, weapons, and armor",
+      "Cauldron-tier 2 recipes (Sausages, Turnip Stew, etc.)"
+    ],
+    "defeated": false
+  },
+  {
+    "id": 3,
+    "name": "Bonemass",
+    "biome": "Swamp",
+    "icon": "\ud83d\udc80",
+    "summon": "Place 10 Withered Bones on the altar in the Swamp",
+    "tip": "Blunt weapons only. Bring Poison Resist Mead \u2014 non-negotiable.",
+    "power": "Temporarily resists all physical damage",
+    "drop": "Wishbone",
+    "unlocks": [
+      "Wishbone \u2014 detects buried Silver deposits in the Mountains",
+      "Silver mining and the entire Mountain tier",
+      "Wolf armor, Frostner, Drake helmet"
+    ],
+    "defeated": false
+  },
+  {
+    "id": 4,
+    "name": "Moder",
+    "biome": "Mountain",
+    "icon": "\ud83d\udc09",
+    "summon": "Place 3 Dragon Eggs on the altar in the Mountains",
+    "tip": "Frost Resist Mead is mandatory. Use fire arrows against her.",
+    "power": "Always grants tailwind while sailing",
+    "drop": "Dragon Tear",
+    "unlocks": [
+      "Artisan Table \u2014 required to build the Spinning Wheel and Windmill",
+      "Spinning Wheel turns Flax into Linen Thread (Padded armor)",
+      "Windmill turns Barley into Barley Flour (Plains-tier food)",
+      "Blast Furnace for smelting Black Metal"
+    ],
+    "defeated": false
+  },
+  {
+    "id": 5,
+    "name": "Yagluth",
+    "biome": "Plains",
+    "icon": "\ud83d\udd25",
+    "summon": "Place 5 Fuling Totems on the altar in the Plains",
+    "tip": "Keep your distance. Dodge the beam attacks. Elemental resist mead helps.",
+    "power": "Temporarily resist fire, frost and lightning damage",
+    "drop": "Torn Spirit",
+    "unlocks": [
+      "Haldor sells Chicken Eggs after this (1500 coins) \u2014 enables chicken foods",
+      "Gate to Mistlands tier of progression",
+      "Black Forge via Black Cores (Mistlands dungeons)"
+    ],
+    "defeated": false
+  },
+  {
+    "id": 6,
+    "name": "The Queen",
+    "biome": "Mistlands",
+    "icon": "\ud83d\udd77\ufe0f",
+    "summon": "Use Sealbreaker (5 fragments from Infested Mines) at the Mistlands altar",
+    "tip": "Full Carapace or Eitr-weave gear required. Bring lots of healing and eitr meads.",
+    "power": "Activates a magical barrier that absorbs damage",
+    "drop": "Majestic Carapace",
+    "unlocks": [
+      "Unlocks the Ashlands biome for safe exploration",
+      "Flametal ore and the Forge of Ancients",
+      "Endgame tier weapons and armor"
+    ],
+    "defeated": false
+  },
+  {
+    "id": 7,
+    "name": "Fader",
+    "biome": "Ashlands",
+    "icon": "\ud83c\udf0b",
+    "summon": "Find the Fader altar deep in the Ashlands fortress",
+    "tip": "Full Flametal gear mandatory. Watch for ground fissures and ranged fire attacks.",
+    "power": "Temporarily resist fire damage",
+    "drop": "Fader Relic",
+    "unlocks": [
+      "Currently the final boss \u2014 signals completion of the Ashlands",
+      "Deep North biome teased as next major content update"
+    ],
+    "defeated": false
+  }
+]

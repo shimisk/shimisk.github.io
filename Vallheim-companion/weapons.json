@@ -1,0 +1,1039 @@
+{
+  "categories": [
+    {
+      "id": "swords",
+      "label": "Swords",
+      "emoji": "\u2694\ufe0f",
+      "desc": "Fast blades for close quarters",
+      "types": [
+        "OneHandedWeapon"
+      ],
+      "match_keywords": [
+        "sword",
+        "mistwalker",
+        "nidhogg"
+      ],
+      "exclude": [
+        "cheat"
+      ]
+    },
+    {
+      "id": "axes",
+      "label": "Axes",
+      "emoji": "\ud83e\ude93",
+      "desc": "Powerful chopping weapons",
+      "types": [
+        "OneHandedWeapon"
+      ],
+      "match_keywords": [
+        "axe"
+      ],
+      "exclude": [
+        "pickaxe",
+        "battleaxe"
+      ]
+    },
+    {
+      "id": "maces",
+      "label": "Maces",
+      "emoji": "\ud83d\udd28",
+      "desc": "Blunt force \u2014 great vs undead",
+      "types": [
+        "OneHandedWeapon"
+      ],
+      "match_keywords": [
+        "mace",
+        "frostner",
+        "porcupine",
+        "demolisher"
+      ]
+    },
+    {
+      "id": "knives",
+      "label": "Knives",
+      "emoji": "\ud83d\udd2a",
+      "desc": "Quick stabs with high bleed chance",
+      "types": [
+        "OneHandedWeapon"
+      ],
+      "match_keywords": [
+        "knife",
+        "razor",
+        "skoll"
+      ]
+    },
+    {
+      "id": "spears",
+      "label": "Spears",
+      "emoji": "\ud83c\udfaf",
+      "desc": "Long reach, can be thrown",
+      "types": [
+        "OneHandedWeapon"
+      ],
+      "match_keywords": [
+        "spear",
+        "harpoon"
+      ]
+    },
+    {
+      "id": "atgeirs",
+      "label": "Atgeirs",
+      "emoji": "\ud83e\ude83",
+      "desc": "Polearms with devastating AOE spin",
+      "types": [
+        "TwoHandedWeapon"
+      ],
+      "match_keywords": [
+        "atgeir",
+        "himminafl"
+      ]
+    },
+    {
+      "id": "sledges",
+      "label": "Sledges",
+      "emoji": "\ud83d\udca5",
+      "desc": "Massive AOE hammers, slow but brutal",
+      "types": [
+        "TwoHandedWeapon"
+      ],
+      "match_keywords": [
+        "sledge",
+        "stagbreaker"
+      ]
+    },
+    {
+      "id": "battleaxes",
+      "label": "Battleaxes",
+      "emoji": "\u26a1",
+      "desc": "Two-handed axes, brutal damage",
+      "types": [
+        "TwoHandedWeapon"
+      ],
+      "match_keywords": [
+        "battleaxe"
+      ]
+    },
+    {
+      "id": "bows",
+      "label": "Bows",
+      "emoji": "\ud83c\udff9",
+      "desc": "Ranged precision \u2014 keep your distance",
+      "types": [
+        "Bow"
+      ],
+      "match_keywords": [
+        "bow",
+        "fang",
+        "spinesnap",
+        "ash fang"
+      ],
+      "exclude": [
+        "arbalest",
+        "ripper"
+      ]
+    },
+    {
+      "id": "crossbows",
+      "label": "Crossbows",
+      "emoji": "\ud83c\udfaf",
+      "desc": "Slow but hits incredibly hard",
+      "types": [
+        "Bow"
+      ],
+      "match_keywords": [
+        "arbalest",
+        "ripper"
+      ]
+    },
+    {
+      "id": "magic",
+      "label": "Magic Staves",
+      "emoji": "\ud83d\udd2e",
+      "desc": "Eitr-powered spells \u2014 mage builds",
+      "types": [
+        "MagicWeapon"
+      ],
+      "match_keywords": []
+    },
+    {
+      "id": "shields",
+      "label": "Shields",
+      "emoji": "\ud83d\udee1",
+      "desc": "Parry and block \u2014 bucklers and round",
+      "types": [
+        "Shield"
+      ],
+      "match_keywords": [],
+      "exclude": [
+        "tower"
+      ]
+    },
+    {
+      "id": "towershields",
+      "label": "Tower Shields",
+      "emoji": "\ud83c\udff0",
+      "desc": "Maximum block power, zero parry",
+      "types": [
+        "Shield"
+      ],
+      "match_keywords": [
+        "tower"
+      ]
+    },
+    {
+      "id": "ammo",
+      "label": "Ammo",
+      "emoji": "\ud83e\ude83",
+      "desc": "Arrows and bolts for ranged builds",
+      "types": [
+        "Ammo"
+      ],
+      "match_keywords": [],
+      "exclude": [
+        "bait"
+      ]
+    },
+    {
+      "id": "other",
+      "label": "Other",
+      "emoji": "\u2699\ufe0f",
+      "desc": "Clubs, fist weapons, throwables",
+      "types": [
+        "Throwable",
+        "OneHandedWeapon"
+      ],
+      "match_keywords": [
+        "club",
+        "flesh rippers",
+        "scythe",
+        "jotun bane"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "ArrowBronze",
+      "name": "Bronzehead Arrow",
+      "type": "Ammo",
+      "desc": "Sharper than flint. A sleek messenger of death.",
+      "biome": "Black Forest",
+      "recipe": "8 Wood + 1 Bronze + 2 Feathers \u2192 Forge (x20)"
+    },
+    {
+      "id": "ArrowCarapace",
+      "name": "Carapace Arrow",
+      "type": "Ammo",
+      "desc": "Heavy and pointy, this one's gonna hurt.",
+      "biome": "Mistlands",
+      "recipe": "8 Wood + 2 Carapace + 2 Feathers \u2192 Black Forge (x20)"
+    },
+    {
+      "id": "ArrowCharred",
+      "name": "Charred Arrow",
+      "type": "Ammo",
+      "desc": "This arrow has been whittled into shape from a charred femur.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "ArrowFire",
+      "name": "Fire Arrow",
+      "type": "Ammo",
+      "desc": "This arrow burns whatever it pierces.",
+      "biome": "Black Forest",
+      "recipe": "8 Wood + 8 Resin + 2 Feathers \u2192 Workbench (x20)"
+    },
+    {
+      "id": "ArrowFlint",
+      "name": "Flinthead Arrow",
+      "type": "Ammo",
+      "desc": "A hide-breaker with a head of flint.",
+      "biome": "Meadows",
+      "recipe": "8 Wood + 2 Flint + 2 Feathers \u2192 Workbench (x20)"
+    },
+    {
+      "id": "ArrowFrost",
+      "name": "Frost Arrow",
+      "type": "Ammo",
+      "desc": "A shard of piercing ice.",
+      "biome": "Mountain",
+      "recipe": "8 Wood + 4 Obsidian + 2 Feathers + 1 Freeze Gland \u2192 Workbench (x20)"
+    },
+    {
+      "id": "ArrowIron",
+      "name": "Ironhead Arrow",
+      "type": "Ammo",
+      "desc": "Capped with iron and flighted with dark feathers.",
+      "biome": "Swamp",
+      "recipe": "8 Wood + 1 Iron + 2 Feathers \u2192 Forge (x20)"
+    },
+    {
+      "id": "ArrowNeedle",
+      "name": "Needle Arrow",
+      "type": "Ammo",
+      "desc": "The final stitch.",
+      "biome": "Plains",
+      "recipe": "4 Needle + 2 Feathers \u2192 Workbench (x20)"
+    },
+    {
+      "id": "ArrowObsidian",
+      "name": "Obsidian Arrow",
+      "type": "Ammo",
+      "desc": "A sliver of darkness.",
+      "biome": "Mountain",
+      "recipe": "8 Wood + 4 Obsidian + 2 Feathers \u2192 Workbench (x20)"
+    },
+    {
+      "id": "ArrowPoison",
+      "name": "Poison Arrow",
+      "type": "Ammo",
+      "desc": "A bitter sting from afar.",
+      "biome": "Swamp",
+      "recipe": "8 Wood + 5 Obsidian + 2 Feathers + 2 Ooze \u2192 Workbench (x20)"
+    },
+    {
+      "id": "ArrowSilver",
+      "name": "Silver Arrow",
+      "type": "Ammo",
+      "desc": "A needle to calm restless spirits.",
+      "biome": "Mountain",
+      "recipe": "8 Wood + 1 Silver + 2 Feathers \u2192 Forge (x20)"
+    },
+    {
+      "id": "ArrowWood",
+      "name": "Wood Arrow",
+      "type": "Ammo",
+      "desc": "An arrow of sharpened wood.",
+      "biome": "Meadows",
+      "recipe": "8 Wood \u2192 Workbench (x20)"
+    },
+    {
+      "id": "AtgeirBlackmetal",
+      "name": "Black Metal Atgeir",
+      "type": "TwoHandedWeapon",
+      "desc": "A vicious hewing-axe of almost unbreakable black metal.",
+      "biome": "Plains",
+      "recipe": "10 Fine Wood + 30 Black Metal + 5 Linen Thread \u2192 Forge"
+    },
+    {
+      "id": "AtgeirBronze",
+      "name": "Bronze Atgeir",
+      "type": "TwoHandedWeapon",
+      "desc": "A true warrior's tool.",
+      "biome": "Black Forest",
+      "recipe": "10 Wood + 8 Bronze + 2 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "AtgeirHimminAfl",
+      "name": "Himminafl",
+      "type": "TwoHandedWeapon",
+      "desc": "It might not be a hammer, but Thor himself would still approve of this weapon.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 12 Carapace + 5 Refined Eitr \u2192 Black Forge"
+    },
+    {
+      "id": "AtgeirIron",
+      "name": "Iron Atgeir",
+      "type": "TwoHandedWeapon",
+      "desc": "Blood-drinker, skull-cracker, death-bringer.",
+      "biome": "Swamp",
+      "recipe": "10 Wood + 30 Iron + 2 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "AxeBlackMetal",
+      "name": "Black Metal Axe",
+      "type": "OneHandedWeapon",
+      "desc": "A perfectly-balanced axe forged from dark metal with an emerald sheen.",
+      "biome": "Plains",
+      "recipe": "6 Fine Wood + 20 Black Metal + 5 Linen Thread \u2192 Forge"
+    },
+    {
+      "id": "AxeBronze",
+      "name": "Bronze Axe",
+      "type": "OneHandedWeapon",
+      "desc": "A bright and burnished blade, curved like a smile.",
+      "biome": "Black Forest",
+      "recipe": "4 Wood + 8 Bronze + 2 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "AxeFlint",
+      "name": "Flint Axe",
+      "type": "OneHandedWeapon",
+      "desc": "Sharper than stone.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "AxeIron",
+      "name": "Iron Axe",
+      "type": "OneHandedWeapon",
+      "desc": "Sharp and strong, a woodcutter's friend.",
+      "biome": "Swamp",
+      "recipe": "4 Wood + 20 Iron + 2 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "AxeJotunBane",
+      "name": "Jotun Bane",
+      "type": "OneHandedWeapon",
+      "desc": "Not even the giants of old could weather the poisonous bite of this weapon.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 15 Carapace + 5 Jotun Puffs \u2192 Black Forge"
+    },
+    {
+      "id": "AxeStone",
+      "name": "Stone Axe",
+      "type": "OneHandedWeapon",
+      "desc": "A crude axe for tree-felling.",
+      "biome": "Meadows",
+      "recipe": "5 Wood + 4 Stone \u2192 Workbench"
+    },
+    {
+      "id": "Battleaxe",
+      "name": "Battleaxe",
+      "type": "TwoHandedWeapon",
+      "desc": "Skull-splitter, a warrior's joy.",
+      "biome": "Swamp",
+      "recipe": "30 Ancient Bark + 35 Iron + 4 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "BattleaxeBlackmetal",
+      "name": "Black Metal Battleaxe",
+      "type": "TwoHandedWeapon",
+      "desc": "Green shall be the last thing your foes see before you cleave them in half.",
+      "biome": "Plains",
+      "recipe": "10 Fine Wood + 40 Black Metal + 4 Linen Thread \u2192 Forge"
+    },
+    {
+      "id": "BattleaxeCrystal",
+      "name": "Crystal Battleaxe",
+      "type": "TwoHandedWeapon",
+      "desc": "It's see-through and tears through.",
+      "biome": "Mountain",
+      "recipe": "40 Crystal + 2 Ancient Bark + 10 Iron \u2192 Forge"
+    },
+    {
+      "id": "BoltBlackmetal",
+      "name": "Black Metal Bolt",
+      "type": "Ammo",
+      "desc": "A sleek bolt of dark metal.",
+      "biome": "Plains",
+      "recipe": "8 Ashwood + 1 Black Metal + 2 Feathers \u2192 Forge (x20)"
+    },
+    {
+      "id": "BoltBone",
+      "name": "Bone Bolt",
+      "type": "Ammo",
+      "desc": "A crude bolt of yellowed bone.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "BoltCarapace",
+      "name": "Carapace Bolt",
+      "type": "Ammo",
+      "desc": "A heavy and solid bolt.",
+      "biome": "Mistlands",
+      "recipe": "8 Wood + 2 Carapace + 2 Feathers \u2192 Black Forge (x20)"
+    },
+    {
+      "id": "BoltIron",
+      "name": "Iron Bolt",
+      "type": "Ammo",
+      "desc": "A sturdy iron missile.",
+      "biome": "Swamp",
+      "recipe": "8 Wood + 1 Iron + 2 Feathers \u2192 Forge (x20)"
+    },
+    {
+      "id": "BombBile",
+      "name": "Bile Bomb",
+      "type": "Throwable",
+      "desc": "Handle with care.",
+      "biome": "Mistlands",
+      "recipe": "4 Bilebag + 2 Yggdrasil Wood + 3 Refined Eitr \u2192 Cauldron"
+    },
+    {
+      "id": "BombOoze",
+      "name": "Ooze Bomb",
+      "type": "Throwable",
+      "desc": "The stench is unbearable...",
+      "biome": "Swamp",
+      "recipe": "5 Leather Scraps + 10 Ooze + 3 Resin \u2192 Workbench"
+    },
+    {
+      "id": "BombSmoke",
+      "name": "Smoke Bomb",
+      "type": "Throwable",
+      "desc": "Everyone knows you can't breathe in the smoke.",
+      "biome": "Plains",
+      "recipe": "4 Greydwarf Eye + 8 Coal + 4 Leather Scraps \u2192 Workbench"
+    },
+    {
+      "id": "BombLava",
+      "name": "Basalt Bomb",
+      "type": "Throwable",
+      "desc": "With enough heat, it solidifies upon explosion.",
+      "biome": "Ashlands",
+      "recipe": "Grausten + Molten Core \u2192 Forge of Ancients"
+    },
+    {
+      "id": "Bow",
+      "name": "Crude Bow",
+      "type": "Bow",
+      "desc": "A crude but functional bow.",
+      "biome": "Meadows",
+      "recipe": "10 Wood + 8 Leather Scraps \u2192 Workbench"
+    },
+    {
+      "id": "BowAshlands",
+      "name": "Ash Fang",
+      "type": "Bow",
+      "desc": "Risen again from the ashes, this bow holds unyielding strength.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "BowDraugrFang",
+      "name": "Draugr Fang",
+      "type": "Bow",
+      "desc": "Dark wood strung with glistening sinew. A vicious thing.",
+      "biome": "Mountain",
+      "recipe": "10 Ancient Bark + 20 Silver + 2 Deer Hide + 10 Guck \u2192 Forge"
+    },
+    {
+      "id": "BowFineWood",
+      "name": "Finewood Bow",
+      "type": "Bow",
+      "desc": "A simple bow of strong and supple wood.",
+      "biome": "Black Forest",
+      "recipe": "10 Fine Wood + 10 Corewood + 2 Deer Hide \u2192 Forge"
+    },
+    {
+      "id": "BowHuntsman",
+      "name": "Huntsman Bow",
+      "type": "Bow",
+      "desc": "Finely worked and strung. A huntsman's joy.",
+      "biome": "Swamp",
+      "recipe": "10 Fine Wood + 20 Iron + 10 Feathers + 2 Deer Hide \u2192 Forge"
+    },
+    {
+      "id": "BowSpineSnap",
+      "name": "Spinesnap",
+      "type": "Bow",
+      "desc": "Using this bow is backbreaking work but so worth it.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 8 Carapace + 2 Root \u2192 Black Forge"
+    },
+    {
+      "id": "Club",
+      "name": "Club",
+      "type": "OneHandedWeapon",
+      "desc": "A crude but useful weapon.",
+      "biome": "Meadows",
+      "recipe": "6 Wood \u2192 Workbench"
+    },
+    {
+      "id": "CrossbowArbalest",
+      "name": "Arbalest",
+      "type": "Bow",
+      "desc": "A slow but powerful weapon.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 20 Black Metal + 10 Root + 5 Linen Thread \u2192 Black Forge"
+    },
+    {
+      "id": "CrossbowRipper",
+      "name": "Ripper",
+      "type": "Bow",
+      "desc": "Rips your foes apart, simple as that.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "FishingBait",
+      "name": "Fishing Bait",
+      "type": "Ammo",
+      "desc": "Common dvergr fishing bait.",
+      "biome": "Meadows",
+      "recipe": "Buy from Haldor (10 coins per bait)"
+    },
+    {
+      "id": "FishingRod",
+      "name": "Fishing Rod",
+      "type": "TwoHandedWeapon",
+      "desc": "Standard issue dvergr fishing rod.",
+      "biome": "Meadows",
+      "recipe": "Buy from Haldor (350 coins)"
+    },
+    {
+      "id": "FistFenrirClaw",
+      "name": "Flesh Rippers",
+      "type": "TwoHandedWeapon",
+      "desc": "If claws work for wolves, why not for a viking?",
+      "biome": "Mountain",
+      "recipe": "6 Fenris Hair + 3 Wolf Fang + 1 Wolf Trophy \u2192 Forge"
+    },
+    {
+      "id": "KnifeBlackMetal",
+      "name": "Black Metal Knife",
+      "type": "OneHandedWeapon",
+      "desc": "A darkling blade. Strong and sharp.",
+      "biome": "Plains",
+      "recipe": "4 Fine Wood + 10 Black Metal + 5 Linen Thread \u2192 Forge"
+    },
+    {
+      "id": "KnifeButcher",
+      "name": "Butcher Knife",
+      "type": "OneHandedWeapon",
+      "desc": "A butcher's knife designed specifically for slaughtering tamed animals.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "KnifeChitin",
+      "name": "Abyssal Razor",
+      "type": "OneHandedWeapon",
+      "desc": "A knife from the deep.",
+      "biome": "Ocean",
+      "recipe": "8 Fine Wood + 30 Chitin + 3 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "KnifeCopper",
+      "name": "Copper Knife",
+      "type": "OneHandedWeapon",
+      "desc": "A glittering copper knife.",
+      "biome": "Black Forest",
+      "recipe": "2 Wood + 4 Copper \u2192 Forge"
+    },
+    {
+      "id": "KnifeFlint",
+      "name": "Flint Knife",
+      "type": "OneHandedWeapon",
+      "desc": "Sharpened flint. A reliable tool.",
+      "biome": "Meadows",
+      "recipe": "4 Wood + 6 Flint \u2192 Workbench"
+    },
+    {
+      "id": "KnifeSilver",
+      "name": "Silver Knife",
+      "type": "OneHandedWeapon",
+      "desc": "A savage piece of pain.",
+      "biome": "Mountain",
+      "recipe": "2 Wood + 17 Silver + 3 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "KnifeSkollAndHati",
+      "name": "Skoll and Hati",
+      "type": "TwoHandedWeapon",
+      "desc": "Stab once for those who've betrayed you, and twice for those you hate.",
+      "biome": "Plains",
+      "recipe": "4 Fine Wood + 15 Black Metal + 3 Linen Thread \u2192 Forge"
+    },
+    {
+      "id": "MaceBronze",
+      "name": "Bronze Mace",
+      "type": "OneHandedWeapon",
+      "desc": "A headache on a stick.",
+      "biome": "Black Forest",
+      "recipe": "4 Wood + 8 Bronze + 3 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "MaceEldner",
+      "name": "Flametal Mace",
+      "type": "OneHandedWeapon",
+      "desc": "Dense yet spiked flametal, perfect for bashing enemy faces in.",
+      "biome": "Ashlands",
+      "recipe": "5 Ashwood + 30 Flametal + 2 Molten Core \u2192 Forge of Ancients"
+    },
+    {
+      "id": "MaceIron",
+      "name": "Iron Mace",
+      "type": "OneHandedWeapon",
+      "desc": "A fist-sized lump of iron on a wooden shaft.",
+      "biome": "Swamp",
+      "recipe": "4 Wood + 20 Iron + 3 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "MaceNeedle",
+      "name": "Porcupine",
+      "type": "OneHandedWeapon",
+      "desc": "A deadly weapon, bristling with fiendish spikes.",
+      "biome": "Plains",
+      "recipe": "3 Wood + 10 Needle + 5 Linen Thread \u2192 Forge"
+    },
+    {
+      "id": "MaceSilver",
+      "name": "Frostner",
+      "type": "OneHandedWeapon",
+      "desc": "The dead fear silver. Remind them why.",
+      "biome": "Mountain",
+      "recipe": "3 Wood + 30 Silver + 5 Leather Scraps + 3 Ancient Bark \u2192 Forge"
+    },
+    {
+      "id": "PickaxeAntler",
+      "name": "Antler Pickaxe",
+      "type": "TwoHandedWeapon",
+      "desc": "This tool is hard enough to crack even the most stubborn rocks.",
+      "biome": "Meadows",
+      "recipe": "10 Corewood + 1 Hard Antler \u2192 Workbench"
+    },
+    {
+      "id": "PickaxeBlackMetal",
+      "name": "Black Metal Pickaxe",
+      "type": "TwoHandedWeapon",
+      "desc": "A good strong pick of glistening dark metal.",
+      "biome": "Plains",
+      "recipe": "10 Yggdrasil Wood + 20 Black Metal \u2192 Forge"
+    },
+    {
+      "id": "PickaxeBronze",
+      "name": "Bronze Pickaxe",
+      "type": "TwoHandedWeapon",
+      "desc": "A good bronze pick. Can break very hard rocks.",
+      "biome": "Black Forest",
+      "recipe": "10 Wood + 3 Bronze \u2192 Forge"
+    },
+    {
+      "id": "PickaxeIron",
+      "name": "Iron Pickaxe",
+      "type": "TwoHandedWeapon",
+      "desc": "A sturdy tool of hardened iron.",
+      "biome": "Swamp",
+      "recipe": "10 Wood + 20 Iron \u2192 Forge"
+    },
+    {
+      "id": "PickaxeStone",
+      "name": "Stone Pickaxe",
+      "type": "TwoHandedWeapon",
+      "desc": "A rock-breaker made of stone.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Scythe",
+      "name": "Scythe",
+      "type": "TwoHandedWeapon",
+      "desc": "The right tool makes the task at hand so much easier.",
+      "biome": "Ashlands",
+      "recipe": "8 Ashwood + 20 Flametal + 3 Molten Core \u2192 Forge of Ancients"
+    },
+    {
+      "id": "ShieldBanded",
+      "name": "Banded Shield",
+      "type": "Shield",
+      "desc": "Banded with hoops of iron, a true warrior's companion.",
+      "biome": "Swamp",
+      "recipe": "8 Iron + 4 Fine Wood \u2192 Forge"
+    },
+    {
+      "id": "ShieldBlackmetal",
+      "name": "Black Metal Shield",
+      "type": "Shield",
+      "desc": "Fashioned from the strongest metal, able to turn even the deadliest blades.",
+      "biome": "Plains",
+      "recipe": "2 Fine Wood + 8 Black Metal + 3 Linen Thread \u2192 Forge"
+    },
+    {
+      "id": "ShieldBlackmetalTower",
+      "name": "Black Metal Tower Shield",
+      "type": "Shield",
+      "desc": "A tower shield of gleaming dark metal.",
+      "biome": "Plains",
+      "recipe": "10 Fine Wood + 8 Black Metal + 3 Linen Thread \u2192 Forge"
+    },
+    {
+      "id": "ShieldBoneTower",
+      "name": "Bone Tower Shield",
+      "type": "Shield",
+      "desc": "The bones of dead warriors make for good protection.",
+      "biome": "Swamp",
+      "recipe": "10 Iron + 4 Bone Fragments \u2192 Forge"
+    },
+    {
+      "id": "ShieldBronzeBuckler",
+      "name": "Bronze Buckler",
+      "type": "Shield",
+      "desc": "A shield of burnished bronze, good to turn a blade or two.",
+      "biome": "Black Forest",
+      "recipe": "8 Bronze + 4 Wood \u2192 Forge"
+    },
+    {
+      "id": "ShieldIronBuckler",
+      "name": "Iron Buckler",
+      "type": "Shield",
+      "desc": "Its lightness and curved center makes it excellent for deflecting attacks.",
+      "biome": "Swamp",
+      "recipe": "8 Iron + 4 Wood \u2192 Forge"
+    },
+    {
+      "id": "ShieldIronSquare",
+      "name": "Iron Shield",
+      "type": "Shield",
+      "desc": "An iron sword-breaker, tile of the battle-wall.",
+      "biome": "Swamp",
+      "recipe": "10 Iron + 4 Fine Wood \u2192 Forge"
+    },
+    {
+      "id": "ShieldIronTower",
+      "name": "Iron Tower Shield",
+      "type": "Shield",
+      "desc": "A tall shield of strong iron.",
+      "biome": "Swamp",
+      "recipe": "20 Iron + 4 Fine Wood \u2192 Forge"
+    },
+    {
+      "id": "ShieldSerpentscale",
+      "name": "Serpent Scale Shield",
+      "type": "Shield",
+      "desc": "A sturdy shield of overlapping scales.",
+      "biome": "Ocean",
+      "recipe": "4 Fine Wood + 8 Iron + 6 Serpent Scale \u2192 Forge"
+    },
+    {
+      "id": "ShieldSilver",
+      "name": "Silver Shield",
+      "type": "Shield",
+      "desc": "A shield of radiant silver.",
+      "biome": "Mountain",
+      "recipe": "2 Fine Wood + 8 Iron + 10 Silver + 5 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "ShieldWood",
+      "name": "Wood Shield",
+      "type": "Shield",
+      "desc": "A simple wooden shield.",
+      "biome": "Meadows",
+      "recipe": "10 Wood \u2192 Workbench"
+    },
+    {
+      "id": "ShieldWoodTower",
+      "name": "Wood Tower Shield",
+      "type": "Shield",
+      "desc": "A rough but heavy wooden shield.",
+      "biome": "Meadows",
+      "recipe": "10 Wood + 6 Leather Scraps \u2192 Workbench"
+    },
+    {
+      "id": "SledgeDemolisher",
+      "name": "Demolisher",
+      "type": "TwoHandedWeapon",
+      "desc": "This mighty sledge yearns to wreak havoc.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 20 Black Marble + 5 Black Core \u2192 Black Forge"
+    },
+    {
+      "id": "SledgeIron",
+      "name": "Iron Sledge",
+      "type": "TwoHandedWeapon",
+      "desc": "A mighty hammer, worthy of a champion.",
+      "biome": "Swamp",
+      "recipe": "10 Ancient Bark + 30 Iron + 4 Ymir Flesh \u2192 Forge"
+    },
+    {
+      "id": "SledgeStagbreaker",
+      "name": "Stagbreaker",
+      "type": "TwoHandedWeapon",
+      "desc": "A weapon worthy of the Gods!",
+      "biome": "Meadows",
+      "recipe": "20 Corewood + 5 Deer Hide + 2 Hard Antler \u2192 Workbench"
+    },
+    {
+      "id": "SpearBronze",
+      "name": "Bronze Spear",
+      "type": "OneHandedWeapon",
+      "desc": "A spear of sturdy bronze.",
+      "biome": "Black Forest",
+      "recipe": "3 Wood + 8 Bronze + 2 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "SpearCarapace",
+      "name": "Carapace Spear",
+      "type": "OneHandedWeapon",
+      "desc": "A spear that means business.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 8 Carapace + 5 Refined Eitr \u2192 Black Forge"
+    },
+    {
+      "id": "SpearChitin",
+      "name": "Abyssal Harpoon",
+      "type": "OneHandedWeapon",
+      "desc": "A spear for the high seas.",
+      "biome": "Ocean",
+      "recipe": "8 Fine Wood + 30 Chitin + 3 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "SpearEldner",
+      "name": "Flametal Spear",
+      "type": "OneHandedWeapon",
+      "desc": "A spear of ancient and powerful metal.",
+      "biome": "Ashlands",
+      "recipe": "5 Ashwood + 30 Flametal + 2 Molten Core \u2192 Forge of Ancients"
+    },
+    {
+      "id": "SpearFlint",
+      "name": "Flint Spear",
+      "type": "OneHandedWeapon",
+      "desc": "A short-bladed spear of flint. Useful in a pinch.",
+      "biome": "Meadows",
+      "recipe": "10 Wood + 6 Flint \u2192 Workbench"
+    },
+    {
+      "id": "SpearWolfFang",
+      "name": "Wolffang Spear",
+      "type": "OneHandedWeapon",
+      "desc": "The fangs of the wolf are recreated in sharp, glittering metal.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "SpearWood",
+      "name": "Wooden Spear",
+      "type": "OneHandedWeapon",
+      "desc": "A primitive but practical weapon.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "SwordBlackmetal",
+      "name": "Black Metal Sword",
+      "type": "OneHandedWeapon",
+      "desc": "A blade of brutal dark metal. To the victor goes the spoils.",
+      "biome": "Plains",
+      "recipe": "2 Fine Wood + 20 Black Metal + 5 Linen Thread \u2192 Forge"
+    },
+    {
+      "id": "SwordBronze",
+      "name": "Bronze Sword",
+      "type": "OneHandedWeapon",
+      "desc": "Blood-drinker. A thirsty friend.",
+      "biome": "Black Forest",
+      "recipe": "2 Wood + 8 Bronze + 2 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "SwordCheat",
+      "name": "Cheat sword",
+      "type": "OneHandedWeapon",
+      "desc": "For cheaters only.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "SwordIron",
+      "name": "Iron Sword",
+      "type": "OneHandedWeapon",
+      "desc": "A long, leaf-bladed sword.",
+      "biome": "Swamp",
+      "recipe": "2 Wood + 20 Iron + 3 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "SwordMistwalker",
+      "name": "Mistwalker",
+      "type": "OneHandedWeapon",
+      "desc": "A blade that cuts through the mists of Niflheim.",
+      "biome": "Mistlands",
+      "recipe": "3 Yggdrasil Wood + 15 Refined Eitr + 2 Blue Mushroom \u2192 Black Forge"
+    },
+    {
+      "id": "SwordNiedhogg",
+      "name": "Nidhogg",
+      "type": "OneHandedWeapon",
+      "desc": "The great serpent gnaws at the roots of Yggdrasil. So too shall this blade gnaw at your enemies.",
+      "biome": "Ashlands",
+      "recipe": "10 Flametal + 2 Morgen Sinew + 4 Charred Bone \u2192 Forge of Ancients"
+    },
+    {
+      "id": "SwordSilver",
+      "name": "Silver Sword",
+      "type": "OneHandedWeapon",
+      "desc": "The dead fear silver. Remind them why.",
+      "biome": "Mountain",
+      "recipe": "2 Wood + 40 Silver + 3 Leather Scraps \u2192 Forge"
+    },
+    {
+      "id": "StaffFireball",
+      "name": "Staff of Embers",
+      "type": "MagicWeapon",
+      "desc": "Launches fireballs that deal AoE fire damage. The go-to offensive staff for mages.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 20 Surtling Core + 5 Refined Eitr \u2192 Black Forge"
+    },
+    {
+      "id": "StaffIceShard",
+      "name": "Staff of Frost",
+      "type": "MagicWeapon",
+      "desc": "Fires a burst of ice shards in a spread pattern. Excellent for crowd control.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 5 Refined Eitr + 5 Obsidian \u2192 Black Forge"
+    },
+    {
+      "id": "StaffLightning",
+      "name": "Staff of the Wild",
+      "type": "MagicWeapon",
+      "desc": "Summons roots from the ground to trap and damage enemies. Deadly for keeping distance.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 10 Refined Eitr + 5 Jotun Puffs \u2192 Black Forge"
+    },
+    {
+      "id": "StaffShield",
+      "name": "Staff of Protection",
+      "type": "MagicWeapon",
+      "desc": "Creates a magical barrier that blocks all incoming damage for a short duration.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 10 Refined Eitr + 4 Carapace \u2192 Black Forge"
+    },
+    {
+      "id": "StaffSkeleton",
+      "name": "Staff of Skeletons",
+      "type": "MagicWeapon",
+      "desc": "Raises skeleton warriors to fight by your side. Can have up to 3 active at once.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 5 Refined Eitr + 10 Bone Fragments \u2192 Black Forge"
+    },
+    {
+      "id": "StaffGreenRoots",
+      "name": "Staff of Green Roots",
+      "type": "MagicWeapon",
+      "desc": "Grows thorned roots beneath enemies, dealing nature damage and slowing movement.",
+      "biome": "Mistlands",
+      "recipe": "10 Yggdrasil Wood + 8 Refined Eitr + 4 Mandible \u2192 Black Forge"
+    },
+    {
+      "id": "StaffFlametal",
+      "name": "Staff of Shadows",
+      "type": "MagicWeapon",
+      "desc": "An Ashlands staff channeling dark flame energy. Massive damage at the cost of heavy eitr usage.",
+      "biome": "Ashlands",
+      "recipe": "10 Ashwood + 20 Flametal + 5 Molten Core \u2192 Forge of Ancients"
+    },
+    {
+      "id": "ShieldCarapace",
+      "name": "Carapace Shield",
+      "type": "Shield",
+      "desc": "The almost unbreakable carapace of your enemies makes an excellent shield.",
+      "biome": "Mistlands",
+      "recipe": "10 Carapace + 5 Refined Eitr + 4 Yggdrasil Wood \u2192 Black Forge"
+    },
+    {
+      "id": "ShieldCarapaceBuckler",
+      "name": "Carapace Buckler",
+      "type": "Shield",
+      "desc": "The skull of a seeker is solid but not heavy, making it perfect for a small agile shield.",
+      "biome": "Mistlands",
+      "recipe": "6 Carapace + 3 Refined Eitr + 2 Yggdrasil Wood \u2192 Black Forge"
+    },
+    {
+      "id": "ShieldFlametal",
+      "name": "Flametal Shield",
+      "type": "Shield",
+      "desc": "The shield is and always will be a viking's most important weapon.",
+      "biome": "Ashlands",
+      "recipe": "20 Flametal + 5 Molten Core + 4 Ashwood \u2192 Forge of Ancients"
+    },
+    {
+      "id": "ShieldFlametalTower",
+      "name": "Flametal Tower Shield",
+      "type": "Shield",
+      "desc": "The best defence is a great defence.",
+      "biome": "Ashlands",
+      "recipe": "25 Flametal + 5 Molten Core + 6 Ashwood \u2192 Forge of Ancients"
+    }
+  ]
+}

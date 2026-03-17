@@ -1,0 +1,1252 @@
+{
+  "items": [
+    {
+      "id": "Acorn",
+      "name": "Acorns",
+      "type": "Material",
+      "desc": "Plant them to grow an oak tree.",
+      "biome": "Meadows",
+      "recipe": "Chop Oak trees (Fine Wood axe needed)"
+    },
+    {
+      "id": "Amber",
+      "name": "Amber",
+      "type": "Material",
+      "desc": "Valuable",
+      "biome": "Black Forest",
+      "recipe": "Loot dungeon chests"
+    },
+    {
+      "id": "AmberPearl",
+      "name": "Amber Pearl",
+      "type": "Material",
+      "desc": "Valuable",
+      "biome": "Black Forest",
+      "recipe": "Loot dungeon chests"
+    },
+    {
+      "id": "AncientSeed",
+      "name": "Ancient Seed",
+      "type": "Misc",
+      "desc": "Held against your ear, you hear tiny whisperings within...",
+      "biome": "Black Forest",
+      "recipe": "Kill Elder / destroy Greydwarf nests"
+    },
+    {
+      "id": "AskBladder",
+      "name": "Asksvin Bladder",
+      "type": "Material",
+      "desc": "An acidic smell still lingers. Prominently.",
+      "biome": "Ashlands",
+      "recipe": "Kill Asksvin"
+    },
+    {
+      "id": "AskHide",
+      "name": "Asksvin Hide",
+      "type": "Material",
+      "desc": "This sturdy leather is thick, and still warm to the touch.",
+      "biome": "Ashlands",
+      "recipe": "Kill Asksvin"
+    },
+    {
+      "id": "Barley",
+      "name": "Barley",
+      "type": "Material",
+      "desc": "A bundle of barley.",
+      "biome": "Plains",
+      "recipe": "Grow in Plains / loot Fuling villages"
+    },
+    {
+      "id": "BarleyFlour",
+      "name": "Barley Flour",
+      "type": "Material",
+      "desc": "Great for baking bread.",
+      "biome": "Plains",
+      "recipe": "Barley \u2192 Windmill"
+    },
+    {
+      "id": "BeltStrength",
+      "name": "Megingjord",
+      "type": "Utility",
+      "desc": "Gives the wearer superhuman strength.",
+      "biome": "Black Forest",
+      "recipe": "Buy from Haldor (950 coins)"
+    },
+    {
+      "id": "Bilebag",
+      "name": "Bilebag",
+      "type": "Material",
+      "desc": "Caustic bile drawn from the corpse of a gjall.",
+      "biome": "Mistlands",
+      "recipe": "Kill Gjall"
+    },
+    {
+      "id": "BjornHide",
+      "name": "Bear Hide",
+      "type": "Material",
+      "desc": "A thick and furry hide, coarse yet incredibly soft.",
+      "biome": "Mountain",
+      "recipe": "Kill Fenring"
+    },
+    {
+      "id": "BjornMeat",
+      "name": "Bear Meat",
+      "type": "Material",
+      "desc": "This fatty meat was once meant to sustain a body through hibernation.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "BlackCore",
+      "name": "Black Core",
+      "type": "Material",
+      "desc": "Filled to the brim with ancient power.",
+      "biome": "Mistlands",
+      "recipe": "Loot Mistlands dungeons"
+    },
+    {
+      "id": "BlackMarble",
+      "name": "Black Marble",
+      "type": "Material",
+      "desc": "A block of solid stone, seamed with shifting colors.",
+      "biome": "Mistlands",
+      "recipe": "Mine in Mistlands dungeons"
+    },
+    {
+      "id": "BlackMetal",
+      "name": "Black Metal",
+      "type": "Material",
+      "desc": "A heavy bar of dark metal.",
+      "biome": "Plains",
+      "recipe": "BlackMetalScrap x1 \u2192 Blast Furnace"
+    },
+    {
+      "id": "BlackMetalScrap",
+      "name": "Black Metal Scrap",
+      "type": "Material",
+      "desc": "A twisted hunk of dark metal.",
+      "biome": "Plains",
+      "recipe": "Kill Fulings"
+    },
+    {
+      "id": "Blackwood",
+      "name": "Ashwood",
+      "type": "Material",
+      "desc": "Wood hardened by fire and ash.",
+      "biome": "Ashlands",
+      "recipe": "Chop Ashwood trees"
+    },
+    {
+      "id": "Bloodbag",
+      "name": "Bloodbag",
+      "type": "Material",
+      "desc": "The contents of a leech. Ick!",
+      "biome": "Swamp",
+      "recipe": "Kill Leeches"
+    },
+    {
+      "id": "BoneFragments",
+      "name": "Bone Fragments",
+      "type": "Material",
+      "desc": "A pile of shattered bones.",
+      "biome": "Meadows",
+      "recipe": "Kill Skeletons"
+    },
+    {
+      "id": "Bronze",
+      "name": "Bronze",
+      "type": "Material",
+      "desc": "A strong alloy of copper and tin.",
+      "biome": "Black Forest",
+      "recipe": "2 Copper + 1 Tin \u2192 Forge"
+    },
+    {
+      "id": "BronzeNails",
+      "name": "Bronze Nails",
+      "type": "Material",
+      "desc": "Used in construction of ships and furniture.",
+      "biome": "Black Forest",
+      "recipe": "1 Bronze \u2192 Forge (x20)"
+    },
+    {
+      "id": "BronzeScrap",
+      "name": "Scrap Bronze",
+      "type": "Material",
+      "desc": "It's old and oxidized but can be smelted and used again.",
+      "biome": "Black Forest",
+      "recipe": "Loot chests"
+    },
+    {
+      "id": "Carapace",
+      "name": "Carapace",
+      "type": "Material",
+      "desc": "A plate of chitinous armour.",
+      "biome": "Mistlands",
+      "recipe": "Kill Seekers"
+    },
+    {
+      "id": "CarrotSeeds",
+      "name": "Carrot Seeds",
+      "type": "Material",
+      "desc": "Plant these if you like carrots...",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "CelestialFeather",
+      "name": "Celestial Feather",
+      "type": "Material",
+      "desc": "The only remnant of the fallen valkyrie's former self.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "CeramicPlate",
+      "name": "Ceramic Plate",
+      "type": "Material",
+      "desc": "No matter how hot this gets, the other side remains strangely cool.",
+      "biome": "Ashlands",
+      "recipe": "Loot Ashlands dungeons"
+    },
+    {
+      "id": "Chain",
+      "name": "Chain",
+      "type": "Material",
+      "desc": "A link of iron chain.",
+      "biome": "Swamp",
+      "recipe": "Loot Sunken Crypts"
+    },
+    {
+      "id": "CharcoalResin",
+      "name": "Charcoal Resin",
+      "type": "Material",
+      "desc": "The resin from a tree that was set ablaze a long time ago.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "CharredBone",
+      "name": "Charred Bone",
+      "type": "Material",
+      "desc": "Followed by the distinct smell of burnt meat.",
+      "biome": "Ashlands",
+      "recipe": "Kill Charred enemies"
+    },
+    {
+      "id": "CharredCogwheel",
+      "name": "Charred Cogwheel",
+      "type": "Material",
+      "desc": "This could be used for some clever machinery...",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Charredskull",
+      "name": "Charred Skull",
+      "type": "Material",
+      "desc": "The blackened skull of a long-dead warrior.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Chitin",
+      "name": "Chitin",
+      "type": "Material",
+      "desc": "A shard of crustacean shell.",
+      "biome": "Ocean",
+      "recipe": "Mine Kraken barnacles (stand on Kraken)"
+    },
+    {
+      "id": "Coal",
+      "name": "Coal",
+      "type": "Material",
+      "desc": "A lump of coal.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Coins",
+      "name": "Coins",
+      "type": "Material",
+      "desc": "Valuable currency.",
+      "biome": "Black Forest",
+      "recipe": "Kill enemies / trade with Haldor"
+    },
+    {
+      "id": "Copper",
+      "name": "Copper",
+      "type": "Material",
+      "desc": "A bar of pure copper ready to be worked.",
+      "biome": "Black Forest",
+      "recipe": "CopperOre x2 \u2192 Smelter"
+    },
+    {
+      "id": "CopperOre",
+      "name": "Copper Ore",
+      "type": "Material",
+      "desc": "Unrefined copper. Needs to be refined in a smelter.",
+      "biome": "Black Forest",
+      "recipe": "Mine Copper deposits"
+    },
+    {
+      "id": "Crystal",
+      "name": "Crystal",
+      "type": "Material",
+      "desc": "A shard of crystal from deep within the earth.",
+      "biome": "Mountain",
+      "recipe": "Kill Stone Golems"
+    },
+    {
+      "id": "CryptKey",
+      "name": "Swamp Key",
+      "type": "Misc",
+      "desc": "Partly covered in caked mud, it smells foetid.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Dandelion",
+      "name": "Dandelion",
+      "type": "Material",
+      "desc": "Some call it a weed, but it's pretty nonetheless.",
+      "biome": "Meadows",
+      "recipe": "Forage in Meadows"
+    },
+    {
+      "id": "DeerHide",
+      "name": "Deer Hide",
+      "type": "Material",
+      "desc": "A cleaned hide from a deer.",
+      "biome": "Meadows",
+      "recipe": "Hunt Deer"
+    },
+    {
+      "id": "DeerMeat",
+      "name": "Deer Meat",
+      "type": "Material",
+      "desc": "Raw deer meat.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Demister",
+      "name": "Wisplight",
+      "type": "Utility",
+      "desc": "A bound wisp to guide you through the thickest of mists.",
+      "biome": "Mistlands",
+      "recipe": "Craft from Wisps at Wisp Fountain"
+    },
+    {
+      "id": "DragonEgg",
+      "name": "Dragon Egg",
+      "type": "Misc",
+      "desc": "Far heavier than it looks, with a faint humming sound from within.",
+      "biome": "Mountain",
+      "recipe": "Steal from Drake nests (very heavy!)"
+    },
+    {
+      "id": "DragonTear",
+      "name": "Dragon Tear",
+      "type": "Misc",
+      "desc": "The last frozen tear of a dragon, pulsating with mysterious energy.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Ectoplasm",
+      "name": "Ectoplasm",
+      "type": "Material",
+      "desc": "A restless essence of a once living thing...",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Eitr",
+      "name": "Refined Eitr",
+      "type": "Material",
+      "desc": "This is the stuff of life, the poison that consumes itself.",
+      "biome": "Mistlands",
+      "recipe": "Sap + Soft Tissue \u2192 Eitr Refinery"
+    },
+    {
+      "id": "ElderBark",
+      "name": "Ancient Bark",
+      "type": "Material",
+      "desc": "An ancient and sturdy material.",
+      "biome": "Swamp",
+      "recipe": "Chop Ancient trees in Swamp"
+    },
+    {
+      "id": "Entrails",
+      "name": "Entrails",
+      "type": "Material",
+      "desc": "A slimy length of something's insides.",
+      "biome": "Swamp",
+      "recipe": "Kill Draugr"
+    },
+    {
+      "id": "FaderDrop",
+      "name": "Fader Relic",
+      "type": "Material",
+      "desc": "The mystical power will be revealed another day.",
+      "biome": "Ashlands",
+      "recipe": "Defeat Fader"
+    },
+    {
+      "id": "Feathers",
+      "name": "Feathers",
+      "type": "Material",
+      "desc": "A small pile of feathers.",
+      "biome": "Meadows",
+      "recipe": "Shoot birds with bow"
+    },
+    {
+      "id": "FineWood",
+      "name": "Finewood",
+      "type": "Material",
+      "desc": "High quality wood for fine carpentry.",
+      "biome": "Black Forest",
+      "recipe": "Chop Birch/Oak (needs Bronze Axe)"
+    },
+    {
+      "id": "FirCone",
+      "name": "Fir Cone",
+      "type": "Material",
+      "desc": "Plant it to grow a fir tree.",
+      "biome": "Black Forest",
+      "recipe": "Chop Fir trees"
+    },
+    {
+      "id": "FishRaw",
+      "name": "Raw Fish",
+      "type": "Material",
+      "desc": "A good catch.",
+      "biome": "Ocean",
+      "recipe": "Fishing Rod + Bait"
+    },
+    {
+      "id": "Flametal",
+      "name": "Ancient Metal",
+      "type": "Material",
+      "desc": "A withered metal from ancient times.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "FlametalNew",
+      "name": "Flametal",
+      "type": "Material",
+      "desc": "According to legend, this metal was used by the gods themselves.",
+      "biome": "Ashlands",
+      "recipe": "FlametalOre \u2192 Blast Furnace"
+    },
+    {
+      "id": "FlametalOreNew",
+      "name": "Flametal Ore",
+      "type": "Material",
+      "desc": "Warm to the touch with glowing veins of strange metal.",
+      "biome": "Ashlands",
+      "recipe": "Mine Flametal ore in Ashlands"
+    },
+    {
+      "id": "Flax",
+      "name": "Flax",
+      "type": "Material",
+      "desc": "Unspun fibers from a flax plant.",
+      "biome": "Plains",
+      "recipe": "Grow in Plains / loot Fuling villages"
+    },
+    {
+      "id": "Flint",
+      "name": "Flint",
+      "type": "Material",
+      "desc": "Can be shaped into sharp blades.",
+      "biome": "Meadows",
+      "recipe": "Found near rivers & lakes"
+    },
+    {
+      "id": "FreezeGland",
+      "name": "Freeze Gland",
+      "type": "Material",
+      "desc": "This mysterious organ keeps a perfect temperature.",
+      "biome": "Mountain",
+      "recipe": "Kill Drakes"
+    },
+    {
+      "id": "GemstoneBlue",
+      "name": "Iolite",
+      "type": "Material",
+      "desc": "Light is reflected sharply off of this gem.",
+      "biome": "Mistlands",
+      "recipe": "Loot Dvergr chests"
+    },
+    {
+      "id": "GemstoneGreen",
+      "name": "Jade",
+      "type": "Material",
+      "desc": "This gem pulses with energy, almost as if it were a living thing.",
+      "biome": "Mistlands",
+      "recipe": "Loot Dvergr chests"
+    },
+    {
+      "id": "GemstoneRed",
+      "name": "Bloodstone",
+      "type": "Material",
+      "desc": "You wonder how many deals have been made to appease this gem.",
+      "biome": "Mistlands",
+      "recipe": "Loot Dvergr chests"
+    },
+    {
+      "id": "GiantBloodSack",
+      "name": "Blood Clot",
+      "type": "Material",
+      "desc": "Be careful not to puncture this while you carry it...",
+      "biome": "Mistlands",
+      "recipe": "Kill Gjall"
+    },
+    {
+      "id": "GoblinTotem",
+      "name": "Fuling Totem",
+      "type": "Misc",
+      "desc": "Channels the ancient power of Yagluth.",
+      "biome": "Plains",
+      "recipe": "Kill Fuling Shamans"
+    },
+    {
+      "id": "Grausten",
+      "name": "Grausten",
+      "type": "Material",
+      "desc": "Porous yet sturdy.",
+      "biome": "Ashlands",
+      "recipe": "Mine in Ashlands"
+    },
+    {
+      "id": "GreydwarfEye",
+      "name": "Greydwarf Eye",
+      "type": "Material",
+      "desc": "The milky eyeball of a Greydwarf.",
+      "biome": "Black Forest",
+      "recipe": "Kill Greydwarfs"
+    },
+    {
+      "id": "Guck",
+      "name": "Guck",
+      "type": "Material",
+      "desc": "It smells like fermented fish.",
+      "biome": "Swamp",
+      "recipe": "Harvest glowing Guck sacs from swamp trees"
+    },
+    {
+      "id": "HardAntler",
+      "name": "Hard Antler",
+      "type": "Material",
+      "desc": "A piece of very hard antlers.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Iron",
+      "name": "Iron",
+      "type": "Material",
+      "desc": "A bar of pure iron ready to be worked.",
+      "biome": "Swamp",
+      "recipe": "IronScrap x1 \u2192 Smelter"
+    },
+    {
+      "id": "IronNails",
+      "name": "Iron Nails",
+      "type": "Material",
+      "desc": "Needed for advanced construction projects.",
+      "biome": "Swamp",
+      "recipe": "1 Iron \u2192 Forge (x20)"
+    },
+    {
+      "id": "IronOre",
+      "name": "Iron Ore",
+      "type": "Material",
+      "desc": "Unrefined iron. Needs to be refined in a smelter.",
+      "biome": "Swamp",
+      "recipe": "Mine Iron deposits"
+    },
+    {
+      "id": "IronScrap",
+      "name": "Scrap Iron",
+      "type": "Material",
+      "desc": "It's old and rusty but can be smelted and used again.",
+      "biome": "Swamp",
+      "recipe": "Muddy Scrap Piles in Sunken Crypts"
+    },
+    {
+      "id": "JuteBlue",
+      "name": "Blue Jute",
+      "type": "Material",
+      "desc": "Made from natural fibers and dvergr hair.",
+      "biome": "Mistlands",
+      "recipe": "Loot Dvergr camps"
+    },
+    {
+      "id": "JuteRed",
+      "name": "Red Jute",
+      "type": "Material",
+      "desc": "A sturdy, rough fabric.",
+      "biome": "Mistlands",
+      "recipe": "Loot Dvergr camps"
+    },
+    {
+      "id": "LeatherScraps",
+      "name": "Leather Scraps",
+      "type": "Material",
+      "desc": "A small pile of leather scraps.",
+      "biome": "Meadows",
+      "recipe": "Kill Boars"
+    },
+    {
+      "id": "LinenThread",
+      "name": "Linen Thread",
+      "type": "Material",
+      "desc": "A fine linen thread made out of a strong flax filament.",
+      "biome": "Plains",
+      "recipe": "Flax \u2192 Spinning Wheel"
+    },
+    {
+      "id": "LoxMeat",
+      "name": "Lox Meat",
+      "type": "Material",
+      "desc": "A raw slab of marbled meat.",
+      "biome": "Plains",
+      "recipe": "Kill Lox"
+    },
+    {
+      "id": "LoxPelt",
+      "name": "Lox Pelt",
+      "type": "Material",
+      "desc": "A heavy pelt of thick, musty fur.",
+      "biome": "Plains",
+      "recipe": "Kill Lox"
+    },
+    {
+      "id": "Mandible",
+      "name": "Mandible",
+      "type": "Material",
+      "desc": "The hand of man could hardly design a more perfect weapon.",
+      "biome": "Mistlands",
+      "recipe": "Kill Seeker Brutes"
+    },
+    {
+      "id": "MeadBaseFrostResist",
+      "name": "Mead Base: Frost Resistance",
+      "type": "Material",
+      "desc": "Needs to be fermented.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "MeadBaseHealthMajor",
+      "name": "Mead Base: Major Healing",
+      "type": "Material",
+      "desc": "Needs to be fermented.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "MeadBaseHealthMedium",
+      "name": "Mead Base: Medium Healing",
+      "type": "Material",
+      "desc": "Needs to be fermented.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "MeadBaseHealthMinor",
+      "name": "Mead Base: Minor Healing",
+      "type": "Material",
+      "desc": "Needs to be fermented.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "MeadBasePoisonResist",
+      "name": "Mead Base: Poison Resistance",
+      "type": "Material",
+      "desc": "Needs to be fermented.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "MeadBaseStaminaMedium",
+      "name": "Mead Base: Medium Stamina",
+      "type": "Material",
+      "desc": "Needs to be fermented.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "MeadBaseStaminaMinor",
+      "name": "Mead Base: Minor Stamina",
+      "type": "Material",
+      "desc": "Needs to be fermented.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "MechanicalSpring",
+      "name": "Mechanical Spring",
+      "type": "Material",
+      "desc": "A mysterious contraption built by the Dvergr.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "MoltenCore",
+      "name": "Molten Core",
+      "type": "Material",
+      "desc": "Potent energy swirls within, ready to be unleashed.",
+      "biome": "Ashlands",
+      "recipe": "Loot Ashlands fortresses"
+    },
+    {
+      "id": "MorgenHeart",
+      "name": "Morgen Heart",
+      "type": "Material",
+      "desc": "It's hard to believe it has ever beaten.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "MorgenSinew",
+      "name": "Morgen Sinew",
+      "type": "Material",
+      "desc": "Chewy.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Needle",
+      "name": "Needle",
+      "type": "Material",
+      "desc": "The pointy end of a Deathsquito.",
+      "biome": "Plains",
+      "recipe": "Kill Deathsquitos"
+    },
+    {
+      "id": "NeckTail",
+      "name": "Neck Tail",
+      "type": "Material",
+      "desc": "Inedible when raw, but quite a tasty snack if cooked.",
+      "biome": "Meadows",
+      "recipe": "Kill Necks"
+    },
+    {
+      "id": "Obsidian",
+      "name": "Obsidian",
+      "type": "Material",
+      "desc": "Dark volcanic glass.",
+      "biome": "Mountain",
+      "recipe": "Mine Obsidian deposits on mountain peaks"
+    },
+    {
+      "id": "OnionSeeds",
+      "name": "Onion Seeds",
+      "type": "Material",
+      "desc": "Plant to grow a healthy onion.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Ooze",
+      "name": "Ooze",
+      "type": "Material",
+      "desc": "Rotten and putrid-smelling.",
+      "biome": "Swamp",
+      "recipe": "Kill Blobs / Oozers"
+    },
+    {
+      "id": "PowderedDragonEgg",
+      "name": "Powdered Dragon Eggshells",
+      "type": "Material",
+      "desc": "Dragon egg ground to a fine, glittering dust.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "ProustitePowder",
+      "name": "Proustite Powder",
+      "type": "Material",
+      "desc": "This unstable powder packs great potential.",
+      "biome": "Ashlands",
+      "recipe": "Loot Ashlands chests"
+    },
+    {
+      "id": "QueenBee",
+      "name": "Queen Bee",
+      "type": "Material",
+      "desc": "The queen of the bees!",
+      "biome": "Meadows",
+      "recipe": "Destroy Bee Hives in trees"
+    },
+    {
+      "id": "QueenDrop",
+      "name": "Majestic Carapace",
+      "type": "Material",
+      "desc": "Her majesty's carapace is harder than anything you've encountered.",
+      "biome": "Mistlands",
+      "recipe": "Defeat The Queen"
+    },
+    {
+      "id": "RawMeat",
+      "name": "Boar Meat",
+      "type": "Material",
+      "desc": "Raw boar meat.",
+      "biome": "Meadows",
+      "recipe": "Kill Boars"
+    },
+    {
+      "id": "Resin",
+      "name": "Resin",
+      "type": "Material",
+      "desc": "Sticky tree resin which burns slow and steady.",
+      "biome": "Meadows",
+      "recipe": "Chop trees / kill Greydwarfs"
+    },
+    {
+      "id": "Root",
+      "name": "Root",
+      "type": "Material",
+      "desc": "An old root from an ancient tree stump. Flexible and durable.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "RoundLog",
+      "name": "Corewood",
+      "type": "Material",
+      "desc": "Perfect for building log cabins.",
+      "biome": "Black Forest",
+      "recipe": "Chop Pine trees"
+    },
+    {
+      "id": "Ruby",
+      "name": "Ruby",
+      "type": "Material",
+      "desc": "Valuable gemstone.",
+      "biome": "Black Forest",
+      "recipe": "Loot dungeon chests"
+    },
+    {
+      "id": "SaddleLox",
+      "name": "Lox Saddle",
+      "type": "Misc",
+      "desc": "Use on a lox to be able to ride it.",
+      "biome": "Plains",
+      "recipe": "10 Linen Thread + 20 Black Metal + 15 Lox Pelt \u2192 Workbench"
+    },
+    {
+      "id": "Sap",
+      "name": "Sap",
+      "type": "Material",
+      "desc": "Sacred blood from the Great Tree.",
+      "biome": "Mistlands",
+      "recipe": "Sap Extractor on Yggdrasil roots"
+    },
+    {
+      "id": "ScaleHide",
+      "name": "Scale Hide",
+      "type": "Material",
+      "desc": "A pelt of glittering scales.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "SerpentMeat",
+      "name": "Serpent Meat",
+      "type": "Material",
+      "desc": "A slice of sea serpent. Smells fishy.",
+      "biome": "Ocean",
+      "recipe": "Kill Sea Serpents"
+    },
+    {
+      "id": "SerpentScale",
+      "name": "Serpent Scale",
+      "type": "Material",
+      "desc": "The shiny metal-like scale from a sea serpent.",
+      "biome": "Ocean",
+      "recipe": "Kill Sea Serpents"
+    },
+    {
+      "id": "SharpeningStone",
+      "name": "Sharpening Stone",
+      "type": "Material",
+      "desc": "A whetstone wheel ready to spin.",
+      "biome": "Black Forest",
+      "recipe": "5 Stone \u2192 Workbench"
+    },
+    {
+      "id": "Silver",
+      "name": "Silver",
+      "type": "Material",
+      "desc": "A bar of pure silver ready to be worked.",
+      "biome": "Mountain",
+      "recipe": "Mine underground (use Wishbone to locate)"
+    },
+    {
+      "id": "SilverNecklace",
+      "name": "Silver Necklace",
+      "type": "Material",
+      "desc": "Valuable jewelry.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "SilverOre",
+      "name": "Silver Ore",
+      "type": "Material",
+      "desc": "Unrefined silver. Needs to be refined in a smelter.",
+      "biome": "Mountain",
+      "recipe": "Mine Silver veins underground"
+    },
+    {
+      "id": "Stone",
+      "name": "Stone",
+      "type": "Material",
+      "desc": "A lump of stone.",
+      "biome": "Meadows",
+      "recipe": "Pick up from ground"
+    },
+    {
+      "id": "SurtlingCore",
+      "name": "Surtling Core",
+      "type": "Material",
+      "desc": "The burning heart of a surtling.",
+      "biome": "Swamp",
+      "recipe": "Kill Surtlings / loot Burial Chambers"
+    },
+    {
+      "id": "Tar",
+      "name": "Tar",
+      "type": "Material",
+      "desc": "A thick, sticky substance.",
+      "biome": "Plains",
+      "recipe": "Harvest Tar pits (watch for Growths)"
+    },
+    {
+      "id": "Thistle",
+      "name": "Thistle",
+      "type": "Material",
+      "desc": "A sharp and spiny plant, used in cooking and brewing.",
+      "biome": "Black Forest",
+      "recipe": "Forage in Black Forest (glows blue at night)"
+    },
+    {
+      "id": "Tin",
+      "name": "Tin",
+      "type": "Material",
+      "desc": "A bar of pure tin ready to be worked.",
+      "biome": "Black Forest",
+      "recipe": "TinOre x2 \u2192 Smelter"
+    },
+    {
+      "id": "TinOre",
+      "name": "Tin Ore",
+      "type": "Material",
+      "desc": "Unrefined tin. Needs to be refined in a smelter.",
+      "biome": "Black Forest",
+      "recipe": "Mine Tin deposits near water"
+    },
+    {
+      "id": "TrophyBoar",
+      "name": "Boar Trophy",
+      "type": "Trophy",
+      "desc": "The skull of a boar.",
+      "biome": "Meadows",
+      "recipe": "Kill Boars"
+    },
+    {
+      "id": "TrophyDeer",
+      "name": "Deer Trophy",
+      "type": "Trophy",
+      "desc": "The head of a deer.",
+      "biome": "Meadows",
+      "recipe": "Kill Deer"
+    },
+    {
+      "id": "TrophyDraugr",
+      "name": "Draugr Trophy",
+      "type": "Trophy",
+      "desc": "The head of a draugr.",
+      "biome": "Swamp",
+      "recipe": "Kill Draugr"
+    },
+    {
+      "id": "TrophyDraugrElite",
+      "name": "Draugr Elite Trophy",
+      "type": "Trophy",
+      "desc": "The severed head of an elite draugr.",
+      "biome": "Swamp",
+      "recipe": "Kill Elite Draugr"
+    },
+    {
+      "id": "TrophyEikthyr",
+      "name": "Eikthyr Trophy",
+      "type": "Trophy",
+      "desc": "The magnificent antlered head of Eikthyr.",
+      "biome": "Meadows",
+      "recipe": "Defeat Eikthyr"
+    },
+    {
+      "id": "TrophyElderBranch",
+      "name": "The Elder Trophy",
+      "type": "Trophy",
+      "desc": "A large, heavy branch. It seems to pulse with a dark energy.",
+      "biome": "Black Forest",
+      "recipe": "Defeat The Elder"
+    },
+    {
+      "id": "TrophyForestTroll",
+      "name": "Troll Trophy",
+      "type": "Trophy",
+      "desc": "A big, ugly head.",
+      "biome": "Black Forest",
+      "recipe": "Kill Trolls"
+    },
+    {
+      "id": "TrophyFrostTroll",
+      "name": "Frost Troll Trophy",
+      "type": "Trophy",
+      "desc": "The frozen head of a frost troll.",
+      "biome": "Mountain",
+      "recipe": "Kill Frost Trolls"
+    },
+    {
+      "id": "TrophyGoblin",
+      "name": "Fuling Trophy",
+      "type": "Trophy",
+      "desc": "The shrunken head of a fuling.",
+      "biome": "Plains",
+      "recipe": "Kill Fulings"
+    },
+    {
+      "id": "TrophyGoblinBrute",
+      "name": "Fuling Berserker Trophy",
+      "type": "Trophy",
+      "desc": "The massive head of a fuling berserker.",
+      "biome": "Plains",
+      "recipe": "Kill Fuling Berserkers"
+    },
+    {
+      "id": "TrophyGoblinKing",
+      "name": "Yagluth Trophy",
+      "type": "Trophy",
+      "desc": "The skull of Yagluth. It still pulses with dark energy.",
+      "biome": "Plains",
+      "recipe": "Defeat Yagluth"
+    },
+    {
+      "id": "TrophyGreydwarf",
+      "name": "Greydwarf Trophy",
+      "type": "Trophy",
+      "desc": "The mossy head of a greydwarf.",
+      "biome": "Black Forest",
+      "recipe": "Kill Greydwarfs"
+    },
+    {
+      "id": "TrophyHatchling",
+      "name": "Drake Trophy",
+      "type": "Trophy",
+      "desc": "The winged head of a drake.",
+      "biome": "Mountain",
+      "recipe": "Kill Drakes"
+    },
+    {
+      "id": "TrophyLeech",
+      "name": "Leech Trophy",
+      "type": "Trophy",
+      "desc": "The eyeless head of a leech.",
+      "biome": "Swamp",
+      "recipe": "Kill Leeches"
+    },
+    {
+      "id": "TrophyNeck",
+      "name": "Neck Trophy",
+      "type": "Trophy",
+      "desc": "The horned head of a neck.",
+      "biome": "Meadows",
+      "recipe": "Kill Necks"
+    },
+    {
+      "id": "TrophySkeletonHildir",
+      "name": "Skeleton Trophy",
+      "type": "Trophy",
+      "desc": "A smiling skull.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "TrophySkeleton",
+      "name": "Skeleton Trophy",
+      "type": "Trophy",
+      "desc": "A smiling skull.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "TrophySerpent",
+      "name": "Serpent Trophy",
+      "type": "Trophy",
+      "desc": "The long head of a sea serpent.",
+      "biome": "Ocean",
+      "recipe": "Kill Sea Serpents"
+    },
+    {
+      "id": "TrophySGolem",
+      "name": "Stone Golem Trophy",
+      "type": "Trophy",
+      "desc": "The craggy face of a stone golem.",
+      "biome": "Mountain",
+      "recipe": "Kill Stone Golems"
+    },
+    {
+      "id": "TrophySkeleton",
+      "name": "Skeleton Trophy",
+      "type": "Trophy",
+      "desc": "A smiling skull.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "TrophyWolf",
+      "name": "Wolf Trophy",
+      "type": "Trophy",
+      "desc": "The proud head of a wolf.",
+      "biome": "Mountain",
+      "recipe": "Kill Wolves"
+    },
+    {
+      "id": "TrollHide",
+      "name": "Troll Hide",
+      "type": "Material",
+      "desc": "Tough and durable troll skin.",
+      "biome": "Black Forest",
+      "recipe": "Kill Trolls"
+    },
+    {
+      "id": "TurnipSeeds",
+      "name": "Turnip Seeds",
+      "type": "Material",
+      "desc": "Plant them to grow turnips.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "VineberryCluster",
+      "name": "Vineberry Cluster",
+      "type": "Material",
+      "desc": "A cluster of intensely flavored berries.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "VolcanicRock",
+      "name": "Volcanic Rock",
+      "type": "Material",
+      "desc": "Hot to the touch. Be careful!",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Wishbone",
+      "name": "Wishbone",
+      "type": "Utility",
+      "desc": "Seeks out hidden treasures buried in the earth.",
+      "biome": "Swamp",
+      "recipe": "Defeat Bonemass"
+    },
+    {
+      "id": "WishbonePirate",
+      "name": "Pirate Wishbone",
+      "type": "Utility",
+      "desc": "Seeks out buried treasure.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "WitheredBone",
+      "name": "Withered Bone",
+      "type": "Material",
+      "desc": "An old bone, dry and brittle.",
+      "biome": "Swamp",
+      "recipe": "Loot Sunken Crypts"
+    },
+    {
+      "id": "Wolf",
+      "name": "Wolf",
+      "type": "Material",
+      "desc": "Not an item. A wolf.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "WolfFang",
+      "name": "Wolf Fang",
+      "type": "Material",
+      "desc": "A sharp fang from a wolf.",
+      "biome": "Mountain",
+      "recipe": "Kill Wolves"
+    },
+    {
+      "id": "WolfMeat",
+      "name": "Wolf Meat",
+      "type": "Material",
+      "desc": "Raw meat from a wolf.",
+      "biome": "Mountain",
+      "recipe": "Kill Wolves"
+    },
+    {
+      "id": "WolfPelt",
+      "name": "Wolf Pelt",
+      "type": "Material",
+      "desc": "A thick wolf pelt.",
+      "biome": "Mountain",
+      "recipe": "Kill Wolves"
+    },
+    {
+      "id": "Wood",
+      "name": "Wood",
+      "type": "Material",
+      "desc": "A piece of wood.",
+      "biome": "Meadows",
+      "recipe": "Chop any tree"
+    },
+    {
+      "id": "YagluthDrop",
+      "name": "Torn Spirit",
+      "type": "Misc",
+      "desc": "The shattered remnant of Yagluth's power.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "YggdrasilWood",
+      "name": "Yggdrasil Wood",
+      "type": "Material",
+      "desc": "Wood from the world tree itself. Sacred and powerful.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "YmirRemains",
+      "name": "Ymir Flesh",
+      "type": "Material",
+      "desc": "Flesh of the primal giant, Ymir.",
+      "biome": "Unknown",
+      "recipe": null
+    },
+    {
+      "id": "Thunderstone",
+      "name": "Thunderstone",
+      "type": "Material",
+      "desc": "Crackles with contained lightning. Handle with care.",
+      "biome": "Unknown",
+      "recipe": null
+    }
+  ]
+}

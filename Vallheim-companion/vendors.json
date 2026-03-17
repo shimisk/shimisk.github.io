@@ -1,0 +1,391 @@
+[
+  {
+    "id": "haldor",
+    "name": "Haldor",
+    "title": "Vendor of Fine Goods",
+    "icon": "\ud83c\udf92",
+    "color": "#8a6a3a",
+    "biome": "Black Forest",
+    "mapIcon": "Bag icon on map",
+    "location": "Black Forest, within 1500m of world center. Look for the bag icon on the map.",
+    "tip": "Build a portal next to him immediately. His camp has a runic dome \u2014 no enemies can enter. His Lox is called Halstein.",
+    "sells": [
+      {
+        "name": "Fishing Rod",
+        "price": 350,
+        "desc": "Required to catch fish. Essential purchase early game.",
+        "use": "Fishing",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Fishing Bait (x50)",
+        "price": 10,
+        "desc": "Common bait for rivers and lakes. Buy stacks of these regularly.",
+        "use": "Fishing",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Dverger Circlet",
+        "price": 620,
+        "desc": "A helmet acting as a permanent hands-free light source. Essential for caves and crypts.",
+        "use": "Light source / Helmet",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Megingjord",
+        "price": 950,
+        "desc": "Belt that increases carry weight by 150. The only way to increase inventory capacity.",
+        "use": "Carry weight +150",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Yule Hat",
+        "price": 100,
+        "desc": "A festive red cap. Pure cosmetic \u2014 no armor value.",
+        "use": "Cosmetic",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Barber Kit",
+        "price": 345,
+        "desc": "Lets you change your character's hair and beard style at any time.",
+        "use": "Character customization",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Ymir Flesh",
+        "price": 120,
+        "desc": "Rare crafting material only available here. Needed for Frostner and Iron Sledge.",
+        "use": "Crafting \u2014 Frostner, Iron Sledge",
+        "unlockRequirement": "defeat_elder",
+        "unlockTip": "Defeat The Elder (Black Forest boss) to unlock"
+      },
+      {
+        "name": "Thunder Stone",
+        "price": 50,
+        "desc": "Needed to build the Obliterator, which destroys unwanted items and returns coal.",
+        "use": "Crafting \u2014 Obliterator",
+        "unlockRequirement": "defeat_elder",
+        "unlockTip": "Defeat The Elder (Black Forest boss) to unlock"
+      },
+      {
+        "name": "Barrel Hoops",
+        "price": 100,
+        "desc": "Metal rings needed to build Barrels for storing liquids.",
+        "use": "Building \u2014 Barrels",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Chicken Egg",
+        "price": 1500,
+        "desc": "Place near a fire for 30 min to hatch a hen. Two hens will keep producing eggs. Required for chicken-based foods.",
+        "use": "Food farming / Cooking",
+        "unlockRequirement": "defeat_yagluth",
+        "unlockTip": "Defeat Yagluth (Plains boss) to unlock"
+      }
+    ],
+    "buys": [
+      {
+        "name": "Amber",
+        "price": 5
+      },
+      {
+        "name": "Amber Pearl",
+        "price": 10
+      },
+      {
+        "name": "Ruby",
+        "price": 20
+      },
+      {
+        "name": "Silver Necklace",
+        "price": 30
+      }
+    ]
+  },
+  {
+    "id": "hildir",
+    "name": "Hildir",
+    "title": "Haldor's Sister \u2014 Clothing Merchant",
+    "icon": "\ud83d\udc57",
+    "color": "#9a4a6a",
+    "biome": "Meadows",
+    "mapIcon": "T-shirt icon on map",
+    "location": "Meadows, 3000\u20135100m from world center. Harder to find than Haldor \u2014 expect to sail.",
+    "tip": "Most items are cosmetic but the Harvest set gives real bonuses. Complete her quests by returning 3 stolen chests \u2014 they can't be teleported, you must carry them by boat.",
+    "sells": [
+      {
+        "name": "Iron Cooking Station",
+        "price": 500,
+        "desc": "A better cooking station than the standard one. Holds more slots and handles more advanced recipes.",
+        "use": "Cooking station upgrade",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Wrist Fireworks (Sparklers)",
+        "price": 50,
+        "desc": "Cosmetic sparkler item for celebrations.",
+        "use": "Cosmetic",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Simple Dress / Tunic (3 colors)",
+        "price": 300,
+        "desc": "Basic clothing \u2014 brown, blue, yellow. 1 armor. +0 stats.",
+        "use": "Cosmetic",
+        "unlockRequirement": "return_brass_chest",
+        "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
+      },
+      {
+        "name": "Harvest Tunic / Harvest Dress",
+        "price": 550,
+        "desc": "Farming outfit. -20% stamina use while farming. +25 Farming skill. Real gameplay value!",
+        "use": "-20% farm stamina, +25 Farming skill",
+        "unlockRequirement": "return_brass_chest",
+        "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
+      },
+      {
+        "name": "Straw Hat",
+        "price": 300,
+        "desc": "Part of the Harvest set. Pairs with Harvest Tunic/Dress for the farming bonuses.",
+        "use": "Part of Harvest set",
+        "unlockRequirement": "return_brass_chest",
+        "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
+      },
+      {
+        "name": "Tied Headscarf (yellow)",
+        "price": 300,
+        "desc": "Cosmetic headscarf. 1 armor.",
+        "use": "Cosmetic",
+        "unlockRequirement": "return_brass_chest",
+        "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
+      },
+      {
+        "name": "Shawl Dress / Cape Tunic (3 colors)",
+        "price": 500,
+        "desc": "Mid-tier clothing with shawl or cape. 1 armor. Brown, blue, yellow.",
+        "use": "Cosmetic",
+        "unlockRequirement": "return_silver_chest",
+        "unlockTip": "Return Hildir's Silver Chest \u2014 defeat Geirrhafa in the Howling Caverns (Mountain)"
+      },
+      {
+        "name": "Twisted Headscarf (green), Extravagant Cap (green), Tied Headscarf (yellow)",
+        "price": 300,
+        "desc": "Cosmetic headwear \u2014 3 styles.",
+        "use": "Cosmetic",
+        "unlockRequirement": "return_silver_chest",
+        "unlockTip": "Return Hildir's Silver Chest \u2014 defeat Geirrhafa in the Howling Caverns (Mountain)"
+      },
+      {
+        "name": "Beaded Dress / Beaded Tunic (3 colors)",
+        "price": 700,
+        "desc": "Fancy clothing with bead accessories. 1 armor. Brown, blue, yellow.",
+        "use": "Cosmetic",
+        "unlockRequirement": "return_bronze_chest",
+        "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
+      },
+      {
+        "name": "Twisted Headscarf (red), Fur Cap (grey), Extravagant Cap (orange)",
+        "price": 300,
+        "desc": "Cosmetic headwear \u2014 3 more styles.",
+        "use": "Cosmetic",
+        "unlockRequirement": "return_bronze_chest",
+        "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
+      },
+      {
+        "name": "Basic Fireworks",
+        "price": 300,
+        "desc": "Fireworks rocket for celebrations. Pure cosmetic.",
+        "use": "Cosmetic",
+        "unlockRequirement": "return_bronze_chest",
+        "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
+      }
+    ],
+    "buys": [
+      {
+        "name": "Amber",
+        "price": 5
+      },
+      {
+        "name": "Amber Pearl",
+        "price": 10
+      },
+      {
+        "name": "Ruby",
+        "price": 20
+      },
+      {
+        "name": "Silver Necklace",
+        "price": 30
+      }
+    ]
+  },
+  {
+    "id": "bogwitch",
+    "name": "Bog Witch",
+    "title": "Greydwarf Trader \u2014 Magical Ingredients",
+    "icon": "\ud83e\uddd9",
+    "color": "#4a7a4a",
+    "biome": "Swamp",
+    "mapIcon": "Cauldron icon on map",
+    "location": "Swamp, 3000\u20138000m from world center. The hardest vendor to find \u2014 build a portal immediately.",
+    "tip": "A friendly Greydwarf in a clean hut. She sells rare ingredients required for Feast recipes and special meads. Her Kvastur pet keeps the hut clean.",
+    "sells": [
+      {
+        "name": "Serving Tray (Feaster)",
+        "price": 500,
+        "desc": "Required to set up a Feast table. Feasts give powerful shared buffs to all nearby players.",
+        "use": "Crafting \u2014 Feast station",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Ivy Seeds (x3)",
+        "price": 65,
+        "desc": "Plant with cultivator to grow decorative ivy for building.",
+        "use": "Building / Decoration",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Candle Wick",
+        "price": 50,
+        "desc": "Used to craft various candles for building decoration.",
+        "use": "Building / Crafting",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Corked Vial",
+        "price": 150,
+        "desc": "Used to craft Blob Bombs (poison, frost, lava, tar variants). Handle with care.",
+        "use": "Crafting \u2014 Blob Bombs",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Scythe Handle",
+        "price": 300,
+        "desc": "Required to craft the Scythe weapon at a forge.",
+        "use": "Crafting \u2014 Scythe",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Love Potion (x5)",
+        "price": 110,
+        "desc": "Increases troll spawn rate and chance of starred trolls. Great for farming troll hide.",
+        "use": "Mead \u2014 Troll spawner",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Mead Base: Berserkir",
+        "price": 500,
+        "desc": "Ferment to make Berserkir Mead \u2014 a powerful rage-inducing combat buff.",
+        "use": "Mead \u2014 Combat buff",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Mead Base: Ratatosk",
+        "price": 300,
+        "desc": "Ferment for a speed-boosting mead named after the squirrel on Yggdrasil.",
+        "use": "Mead \u2014 Speed buff",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Mead Base: Animal Whispers",
+        "price": 400,
+        "desc": "Ferment for a taming mead \u2014 makes taming animals significantly easier.",
+        "use": "Mead \u2014 Taming buff",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Mead Base: Lightfoot",
+        "price": 350,
+        "desc": "Ferment for reduced footstep noise. Useful for sneaking past or around enemies.",
+        "use": "Mead \u2014 Stealth buff",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Mead Base: Anti-Sting",
+        "price": 300,
+        "desc": "Ferment for bug repellent mead \u2014 reduces damage from Deathsquitos and Seekers.",
+        "use": "Mead \u2014 Plains/Mistlands resist",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Mead Base: Troll Endurance",
+        "price": 400,
+        "desc": "Ferment for a carry weight boost. Situational alternative to Megingjord.",
+        "use": "Mead \u2014 Carry weight",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Mead Base: Vananidir",
+        "price": 350,
+        "desc": "Ferment for swimming speed and stamina boost.",
+        "use": "Mead \u2014 Swimming buff",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Pungent Pebbles (x5)",
+        "price": 150,
+        "desc": "Smelly ingredient used in Fiery Svinstew and Ashlands-tier food recipes.",
+        "use": "Cooking \u2014 Ashlands recipes",
+        "unlockRequirement": "defeat_moder",
+        "unlockTip": "Defeat Moder (Mountain boss) to unlock"
+      },
+      {
+        "name": "Fragrant Bundle (x5)",
+        "price": 140,
+        "desc": "Aromatic plants used in high-tier food. Also reduces bug/insect enemy aggro.",
+        "use": "Cooking + bug repellent",
+        "unlockRequirement": "defeat_moder",
+        "unlockTip": "Defeat Moder (Mountain boss) to unlock"
+      },
+      {
+        "name": "Herbs of the Hidden Hills",
+        "price": 180,
+        "desc": "Rare herbs for Mistlands and Ashlands tier cooking recipes.",
+        "use": "Cooking \u2014 late-game recipes",
+        "unlockRequirement": "defeat_queen",
+        "unlockTip": "Defeat The Queen (Mistlands boss) to unlock"
+      }
+    ],
+    "buys": [
+      {
+        "name": "Amber",
+        "price": 5
+      },
+      {
+        "name": "Amber Pearl",
+        "price": 10
+      },
+      {
+        "name": "Ruby",
+        "price": 20
+      },
+      {
+        "name": "Silver Necklace",
+        "price": 30
+      }
+    ]
+  }
+]

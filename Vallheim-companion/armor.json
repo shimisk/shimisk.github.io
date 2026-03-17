@@ -1,0 +1,389 @@
+{
+  "sets": [
+    {
+      "id": "rags",
+      "name": "Rag Set",
+      "biome": "Meadows",
+      "tier": 0,
+      "style": "warrior",
+      "icon": "\ud83e\udea2",
+      "color": "#7a6a4a",
+      "desc": "Barely covers you, but it's better than nothing. Your first day in Valheim.",
+      "bonus": "No set bonus \u2014 just dignity.",
+      "playstyle": "Any",
+      "pieces": [
+        {
+          "name": "Rag Tunic",
+          "type": "Chest",
+          "recipe": "5 Leather Scraps \u2192 Workbench"
+        },
+        {
+          "name": "Rag Trousers",
+          "type": "Legs",
+          "recipe": "5 Leather Scraps \u2192 Workbench"
+        }
+      ],
+      "totalMats": "10 Leather Scraps"
+    },
+    {
+      "id": "leather",
+      "name": "Leather Set",
+      "biome": "Meadows",
+      "tier": 1,
+      "style": "warrior",
+      "icon": "\ud83e\udd8c",
+      "color": "#8a7a4a",
+      "desc": "Your first real armor. Hunt deer, craft this, stop dying so fast.",
+      "bonus": "No set bonus.",
+      "playstyle": "Any",
+      "pieces": [
+        {
+          "name": "Leather Helmet",
+          "type": "Helmet",
+          "recipe": "2 Deer Hide + 2 Bone Fragments \u2192 Workbench"
+        },
+        {
+          "name": "Leather Tunic",
+          "type": "Chest",
+          "recipe": "6 Deer Hide \u2192 Workbench"
+        },
+        {
+          "name": "Leather Trousers",
+          "type": "Legs",
+          "recipe": "6 Deer Hide \u2192 Workbench"
+        }
+      ],
+      "totalMats": "14 Deer Hide, 2 Bone Fragments"
+    },
+    {
+      "id": "troll",
+      "name": "Troll Set",
+      "biome": "Black Forest",
+      "tier": 2,
+      "style": "rogue",
+      "icon": "\ud83d\udd35",
+      "color": "#4a7c7a",
+      "desc": "Kill trolls in the Black Forest. Shockingly good \u2014 sneak bonus makes it a ranger's dream.",
+      "bonus": "+25% Sneak \u2014 essential for bow users and stealth builds.",
+      "playstyle": "Ranger / Rogue",
+      "pieces": [
+        {
+          "name": "Troll Leather Hood",
+          "type": "Helmet",
+          "recipe": "5 Troll Hide + 3 Bone Fragments \u2192 Workbench"
+        },
+        {
+          "name": "Troll Leather Tunic",
+          "type": "Chest",
+          "recipe": "5 Troll Hide \u2192 Workbench"
+        },
+        {
+          "name": "Troll Leather Trousers",
+          "type": "Legs",
+          "recipe": "5 Troll Hide \u2192 Workbench"
+        }
+      ],
+      "totalMats": "15 Troll Hide, 3 Bone Fragments"
+    },
+    {
+      "id": "bronze",
+      "name": "Bronze Set",
+      "biome": "Black Forest",
+      "tier": 2,
+      "style": "warrior",
+      "icon": "\ud83e\udd49",
+      "color": "#8a6a3a",
+      "desc": "First metal armor. Heavier than troll but more raw protection for melee fighters.",
+      "bonus": "No set bonus.",
+      "playstyle": "Warrior",
+      "pieces": [
+        {
+          "name": "Bronze Helmet",
+          "type": "Helmet",
+          "recipe": "5 Bronze + 2 Deer Hide \u2192 Forge"
+        },
+        {
+          "name": "Bronze Plate Tunic",
+          "type": "Chest",
+          "recipe": "5 Bronze + 2 Deer Hide \u2192 Forge"
+        },
+        {
+          "name": "Bronze Plate Leggings",
+          "type": "Legs",
+          "recipe": "5 Bronze + 2 Deer Hide \u2192 Forge"
+        }
+      ],
+      "totalMats": "15 Bronze, 6 Deer Hide"
+    },
+    {
+      "id": "iron",
+      "name": "Iron Set",
+      "biome": "Swamp",
+      "tier": 3,
+      "style": "warrior",
+      "icon": "\u2699\ufe0f",
+      "color": "#6a7a6a",
+      "desc": "The workhorse set. Farm iron from sunken crypts, survive the swamp, wear this into the mountain.",
+      "bonus": "No set bonus.",
+      "playstyle": "Warrior",
+      "pieces": [
+        {
+          "name": "Iron Helmet",
+          "type": "Helmet",
+          "recipe": "20 Iron + 2 Deer Hide \u2192 Forge"
+        },
+        {
+          "name": "Iron Scale Mail",
+          "type": "Chest",
+          "recipe": "20 Iron + 2 Deer Hide \u2192 Forge"
+        },
+        {
+          "name": "Iron Greaves",
+          "type": "Legs",
+          "recipe": "20 Iron + 2 Deer Hide \u2192 Forge"
+        }
+      ],
+      "totalMats": "60 Iron, 6 Deer Hide"
+    },
+    {
+      "id": "root",
+      "name": "Root Set",
+      "biome": "Swamp",
+      "tier": 3,
+      "style": "rogue",
+      "icon": "\ud83c\udf3f",
+      "color": "#4a6a4a",
+      "desc": "Bow users only. Woven from ancient roots, it grants a massive ranged damage bonus.",
+      "bonus": "+15% Ranged damage \u2014 must-have for bow builds throughout mid-game.",
+      "playstyle": "Ranger",
+      "pieces": [
+        {
+          "name": "Root Mask",
+          "type": "Helmet",
+          "recipe": "10 Root + 4 Ancient Bark \u2192 Forge"
+        },
+        {
+          "name": "Root Harnesk",
+          "type": "Chest",
+          "recipe": "10 Root + 6 Ancient Bark \u2192 Forge"
+        },
+        {
+          "name": "Root Leggings",
+          "type": "Legs",
+          "recipe": "10 Root + 6 Ancient Bark \u2192 Forge"
+        }
+      ],
+      "totalMats": "30 Root, 16 Ancient Bark"
+    },
+    {
+      "id": "wolf",
+      "name": "Wolf Set",
+      "biome": "Mountain",
+      "tier": 4,
+      "style": "warrior",
+      "icon": "\ud83d\udc3a",
+      "color": "#a8c4d4",
+      "desc": "Built-in frost resistance \u2014 the only way to survive the mountain without chugging potions.",
+      "bonus": "Frost resistance built-in. No potion needed while wearing the full set.",
+      "playstyle": "Warrior",
+      "pieces": [
+        {
+          "name": "Drake Helmet",
+          "type": "Helmet",
+          "recipe": "20 Silver + 2 Wolf Pelt + 2 Drake Trophy \u2192 Forge"
+        },
+        {
+          "name": "Wolf Hide Chestpiece",
+          "type": "Chest",
+          "recipe": "20 Silver + 5 Wolf Pelt + 1 Chain \u2192 Forge"
+        },
+        {
+          "name": "Wolf Hide Trousers",
+          "type": "Legs",
+          "recipe": "20 Silver + 5 Wolf Pelt + 4 Wolf Fang \u2192 Forge"
+        }
+      ],
+      "totalMats": "60 Silver, 12 Wolf Pelt, 4 Wolf Fang, 2 Drake Trophy, 1 Chain"
+    },
+    {
+      "id": "fenris",
+      "name": "Fenris Set",
+      "biome": "Mountain",
+      "tier": 4,
+      "style": "berserker",
+      "icon": "\ud83d\udc3e",
+      "color": "#c4944a",
+      "desc": "Secret berserker set found in Frost Caves. High movement speed and fire damage bonus.",
+      "bonus": "+10% Movement speed. +5 Fire damage on unarmed hits. Rewards aggressive combat.",
+      "playstyle": "Berserker / Fist",
+      "pieces": [
+        {
+          "name": "Fenris Hood",
+          "type": "Helmet",
+          "recipe": "6 Fenris Hair + 1 Wolf Trophy \u2192 Forge"
+        },
+        {
+          "name": "Fenris Coat",
+          "type": "Chest",
+          "recipe": "6 Fenris Hair + 1 Wolf Trophy \u2192 Forge"
+        },
+        {
+          "name": "Fenris Leggings",
+          "type": "Legs",
+          "recipe": "6 Fenris Hair + 1 Wolf Trophy \u2192 Forge"
+        }
+      ],
+      "totalMats": "18 Fenris Hair, 3 Wolf Trophy"
+    },
+    {
+      "id": "padded",
+      "name": "Padded Set",
+      "biome": "Plains",
+      "tier": 5,
+      "style": "warrior",
+      "icon": "\ud83d\udee1",
+      "color": "#d4b87a",
+      "desc": "The strongest non-Mistlands armor. Needs swamp iron to make plains-tier gear.",
+      "bonus": "No set bonus \u2014 just raw, excellent defense.",
+      "playstyle": "Warrior",
+      "pieces": [
+        {
+          "name": "Padded Helmet",
+          "type": "Helmet",
+          "recipe": "10 Iron + 15 Linen Thread \u2192 Forge"
+        },
+        {
+          "name": "Padded Cuirass",
+          "type": "Chest",
+          "recipe": "10 Iron + 20 Linen Thread \u2192 Forge"
+        },
+        {
+          "name": "Padded Greaves",
+          "type": "Legs",
+          "recipe": "10 Iron + 20 Linen Thread \u2192 Forge"
+        }
+      ],
+      "totalMats": "30 Iron, 55 Linen Thread"
+    },
+    {
+      "id": "carapace",
+      "name": "Carapace Set",
+      "biome": "Mistlands",
+      "tier": 6,
+      "style": "warrior",
+      "icon": "\ud83e\udeb2",
+      "color": "#7a6b8a",
+      "desc": "Made from seeker shells. Heavy, tough, built for Mistlands dungeons.",
+      "bonus": "No set bonus.",
+      "playstyle": "Warrior",
+      "pieces": [
+        {
+          "name": "Carapace Helmet",
+          "type": "Helmet",
+          "recipe": "20 Carapace + 10 Refined Eitr \u2192 Black Forge"
+        },
+        {
+          "name": "Carapace Breastplate",
+          "type": "Chest",
+          "recipe": "20 Carapace + 10 Refined Eitr \u2192 Black Forge"
+        },
+        {
+          "name": "Carapace Greaves",
+          "type": "Legs",
+          "recipe": "20 Carapace + 10 Refined Eitr \u2192 Black Forge"
+        }
+      ],
+      "totalMats": "60 Carapace, 30 Refined Eitr"
+    },
+    {
+      "id": "mage",
+      "name": "Eitr-weave Set",
+      "biome": "Mistlands",
+      "tier": 6,
+      "style": "mage",
+      "icon": "\ud83d\udd2e",
+      "color": "#7a6b8a",
+      "desc": "For magic builds only. Boosts eitr regeneration significantly.",
+      "bonus": "+Eitr regeneration. Essential for mage playstyle.",
+      "playstyle": "Mage",
+      "pieces": [
+        {
+          "name": "Eitr-weave Hood",
+          "type": "Helmet",
+          "recipe": "10 Linen Thread + 5 Refined Eitr + 3 Blue Jute \u2192 Black Forge"
+        },
+        {
+          "name": "Eitr-weave Robe",
+          "type": "Chest",
+          "recipe": "20 Linen Thread + 10 Refined Eitr + 5 Blue Jute \u2192 Black Forge"
+        },
+        {
+          "name": "Eitr-weave Trousers",
+          "type": "Legs",
+          "recipe": "20 Linen Thread + 10 Refined Eitr + 5 Blue Jute \u2192 Black Forge"
+        }
+      ],
+      "totalMats": "50 Linen Thread, 25 Refined Eitr, 13 Blue Jute"
+    },
+    {
+      "id": "flametal",
+      "name": "Flametal Set",
+      "biome": "Ashlands",
+      "tier": 7,
+      "style": "warrior",
+      "icon": "\ud83c\udf0b",
+      "color": "#c4604a",
+      "desc": "Endgame warrior armor. Massive defense, fire resistance built in.",
+      "bonus": "Fire resistance built-in. Essential for surviving the Ashlands.",
+      "playstyle": "Warrior",
+      "pieces": [
+        {
+          "name": "Flametal Helmet",
+          "type": "Helmet",
+          "recipe": "25 Flametal + 10 CharredBone \u2192 Forge of Ancients"
+        },
+        {
+          "name": "Flametal Breastplate",
+          "type": "Chest",
+          "recipe": "30 Flametal + 10 CharredBone + 5 Molten Core \u2192 Forge of Ancients"
+        },
+        {
+          "name": "Flametal Greaves",
+          "type": "Legs",
+          "recipe": "30 Flametal + 10 CharredBone + 5 Molten Core \u2192 Forge of Ancients"
+        }
+      ],
+      "totalMats": "85 Flametal, 30 CharredBone, 10 Molten Core"
+    },
+    {
+      "id": "asksvin",
+      "name": "Set of Ask",
+      "biome": "Ashlands",
+      "tier": 7,
+      "style": "rogue",
+      "icon": "\ud83e\udd8e",
+      "color": "#c4604a",
+      "desc": "Lighter Ashlands armor from Asksvin hides. For those who prefer mobility.",
+      "bonus": "Higher movement speed than Flametal set.",
+      "playstyle": "Ranger / Rogue",
+      "pieces": [
+        {
+          "name": "Hood of Ask",
+          "type": "Helmet",
+          "recipe": "15 Flametal + 6 Scale Hide \u2192 Forge of Ancients"
+        },
+        {
+          "name": "Breastplate of Ask",
+          "type": "Chest",
+          "recipe": "20 Flametal + 8 Scale Hide + 5 Ceramic Plate \u2192 Forge of Ancients"
+        },
+        {
+          "name": "Trousers of Ask",
+          "type": "Legs",
+          "recipe": "20 Flametal + 8 Scale Hide + 5 Ceramic Plate \u2192 Forge of Ancients"
+        }
+      ],
+      "totalMats": "55 Flametal, 22 Scale Hide, 10 Ceramic Plate"
+    }
+  ]
+}
