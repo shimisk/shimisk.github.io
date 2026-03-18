@@ -11,84 +11,76 @@
     "tip": "Build a portal next to him immediately. His camp has a runic dome \u2014 no enemies can enter. His Lox is called Halstein.",
     "sells": [
       {
-        "name": "Fishing Rod",
-        "price": 350,
-        "desc": "Required to catch fish. Essential purchase early game.",
-        "use": "Fishing",
+        "name": "Yule hat",
+        "price": 100,
+        "desc": "Cosmetic headpiece",
+        "use": "(Uses the Helmet Slot)",
         "unlockRequirement": null,
         "unlockTip": null
       },
       {
-        "name": "Fishing Bait (x50)",
-        "price": 10,
-        "desc": "Common bait for rivers and lakes. Buy stacks of these regularly.",
-        "use": "Fishing",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Dverger Circlet",
+        "name": "Dverger circlet",
         "price": 620,
-        "desc": "A helmet acting as a permanent hands-free light source. Essential for caves and crypts.",
-        "use": "Light source / Helmet",
+        "desc": "Provides light in front of yourself.",
+        "use": "(Uses the Helmet Slot)",
         "unlockRequirement": null,
         "unlockTip": null
       },
       {
         "name": "Megingjord",
         "price": 950,
-        "desc": "Belt that increases carry weight by 150. The only way to increase inventory capacity.",
-        "use": "Carry weight +150",
+        "desc": "Increases inventory carry weight limit by 150.",
+        "use": "(Uses the Accessory slot)",
         "unlockRequirement": null,
         "unlockTip": null
       },
       {
-        "name": "Yule Hat",
-        "price": 100,
-        "desc": "A festive red cap. Pure cosmetic \u2014 no armor value.",
-        "use": "Cosmetic",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Barber Kit",
-        "price": 345,
-        "desc": "Lets you change your character's hair and beard style at any time.",
-        "use": "Character customization",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Ymir Flesh",
+        "name": "Ymir flesh",
         "price": 120,
-        "desc": "Rare crafting material only available here. Needed for Frostner and Iron Sledge.",
-        "use": "Crafting \u2014 Frostner, Iron Sledge",
+        "desc": "Crafting material needed for high tier equipment.",
+        "use": "",
         "unlockRequirement": "defeat_elder",
-        "unlockTip": "Defeat The Elder (Black Forest boss) to unlock"
+        "unlockTip": "After defeating The Elder"
       },
       {
-        "name": "Thunder Stone",
-        "price": 50,
-        "desc": "Needed to build the Obliterator, which destroys unwanted items and returns coal.",
-        "use": "Crafting \u2014 Obliterator",
-        "unlockRequirement": "defeat_elder",
-        "unlockTip": "Defeat The Elder (Black Forest boss) to unlock"
-      },
-      {
-        "name": "Barrel Hoops",
-        "price": 100,
-        "desc": "Metal rings needed to build Barrels for storing liquids.",
-        "use": "Building \u2014 Barrels",
+        "name": "Fishing rod",
+        "price": 350,
+        "desc": "Allows you to obtain Fish as a food.",
+        "use": "(Uses both hands when equipped)",
         "unlockRequirement": null,
         "unlockTip": null
       },
       {
-        "name": "Chicken Egg",
+        "name": "Fishing bait x20",
+        "price": 10,
+        "desc": "Required for use with the Fishing Rod.",
+        "use": "(Currently not craftable)",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Thunder stone",
+        "price": 50,
+        "desc": "Required to build Obliterator.",
+        "use": "",
+        "unlockRequirement": "defeat_elder",
+        "unlockTip": "After defeating The Elder"
+      },
+      {
+        "name": "Egg",
         "price": 1500,
-        "desc": "Place near a fire for 30 min to hatch a hen. Two hens will keep producing eggs. Required for chicken-based foods.",
-        "use": "Food farming / Cooking",
+        "desc": "Required to obtain Chickens and Hens.",
+        "use": "",
         "unlockRequirement": "defeat_yagluth",
-        "unlockTip": "Defeat Yagluth (Plains boss) to unlock"
+        "unlockTip": "After defeating Yagluth"
+      },
+      {
+        "name": "Barrel hoops x3",
+        "price": 100,
+        "desc": "Required to build Barrels.",
+        "use": "",
+        "unlockRequirement": null,
+        "unlockTip": null
       }
     ],
     "buys": [
@@ -122,92 +114,308 @@
     "tip": "Most items are cosmetic but the Harvest set gives real bonuses. Complete her quests by returning 3 stolen chests \u2014 they can't be teleported, you must carry them by boat.",
     "sells": [
       {
-        "name": "Iron Cooking Station",
-        "price": 500,
-        "desc": "A better cooking station than the standard one. Holds more slots and handles more advanced recipes.",
-        "use": "Cooking station upgrade",
+        "name": "Simple dress natural",
+        "price": 250,
+        "desc": "A simple dress.",
+        "use": "-20% Base Item stamina usage",
         "unlockRequirement": null,
         "unlockTip": null
       },
       {
-        "name": "Wrist Fireworks (Sparklers)",
-        "price": 50,
-        "desc": "Cosmetic sparkler item for celebrations.",
-        "use": "Cosmetic",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Simple Dress / Tunic (3 colors)",
-        "price": 300,
-        "desc": "Basic clothing \u2014 brown, blue, yellow. 1 armor. +0 stats.",
-        "use": "Cosmetic",
+        "name": "Simple dress brown",
+        "price": 350,
+        "desc": "A simple brown dress.",
+        "use": "-20% Base Item stamina usage",
         "unlockRequirement": "return_brass_chest",
         "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
       },
       {
-        "name": "Harvest Tunic / Harvest Dress",
+        "name": "Simple dress blue",
+        "price": 350,
+        "desc": "A simple blue dress.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_brass_chest",
+        "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
+      },
+      {
+        "name": "Simple dress yellow",
+        "price": 350,
+        "desc": "A simple yellow dress.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_brass_chest",
+        "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
+      },
+      {
+        "name": "Simple tunic natural",
+        "price": 250,
+        "desc": "A simple tunic.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Simple tunic blue",
+        "price": 350,
+        "desc": "A simple blue tunic.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_brass_chest",
+        "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
+      },
+      {
+        "name": "Simple tunic red",
+        "price": 350,
+        "desc": "A simple red tunic.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_brass_chest",
+        "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
+      },
+      {
+        "name": "Simple tunic yellow",
+        "price": 350,
+        "desc": "A simple yellow tunic.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_brass_chest",
+        "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
+      },
+      {
+        "name": "Harvest tunic",
         "price": 550,
-        "desc": "Farming outfit. -20% stamina use while farming. +25 Farming skill. Real gameplay value!",
-        "use": "-20% farm stamina, +25 Farming skill",
+        "desc": "When working the fields, it's important to dress accordingly. A shorter tunic lets in a cool breeze.",
+        "use": "+25 Farming skill (set bonus)",
         "unlockRequirement": "return_brass_chest",
         "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
       },
       {
-        "name": "Straw Hat",
+        "name": "Harvest dress",
+        "price": 550,
+        "desc": "When working the fields, it's important to dress accordingly. This long dress keeps your knees covered while you work.",
+        "use": "+25 Farming skill (set bonus)",
+        "unlockRequirement": "return_brass_chest",
+        "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
+      },
+      {
+        "name": "Straw hat",
         "price": 300,
-        "desc": "Part of the Harvest set. Pairs with Harvest Tunic/Dress for the farming bonuses.",
-        "use": "Part of Harvest set",
+        "desc": "The perfect way to avoid sunstroke.",
+        "use": "+25 Farming skill (set bonus)",
         "unlockRequirement": "return_brass_chest",
         "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
       },
       {
-        "name": "Tied Headscarf (yellow)",
-        "price": 300,
-        "desc": "Cosmetic headscarf. 1 armor.",
-        "use": "Cosmetic",
+        "name": "Tied headscarf blue",
+        "price": 200,
+        "desc": "A blue practical headscarf.",
+        "use": "-15% Base Item stamina usage",
         "unlockRequirement": "return_brass_chest",
         "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
       },
       {
-        "name": "Shawl Dress / Cape Tunic (3 colors)",
-        "price": 500,
-        "desc": "Mid-tier clothing with shawl or cape. 1 armor. Brown, blue, yellow.",
-        "use": "Cosmetic",
+        "name": "Fur cap brown",
+        "price": 200,
+        "desc": "A warm fur cap, made from the finest leather.",
+        "use": "-15% Base Item stamina usage",
+        "unlockRequirement": "return_brass_chest",
+        "unlockTip": "Return Hildir's Brass Chest \u2014 defeat Brenna in the Smouldering Tombs (Black Forest)"
+      },
+      {
+        "name": "Shawl dress brown",
+        "price": 450,
+        "desc": "A brown dress accompanied by a warm shawl.",
+        "use": "-20% Base Item stamina usage",
         "unlockRequirement": "return_silver_chest",
         "unlockTip": "Return Hildir's Silver Chest \u2014 defeat Geirrhafa in the Howling Caverns (Mountain)"
       },
       {
-        "name": "Twisted Headscarf (green), Extravagant Cap (green), Tied Headscarf (yellow)",
-        "price": 300,
-        "desc": "Cosmetic headwear \u2014 3 styles.",
-        "use": "Cosmetic",
+        "name": "Shawl dress blue",
+        "price": 450,
+        "desc": "A blue dress accompanied by a warm shawl.",
+        "use": "-20% Base Item stamina usage",
         "unlockRequirement": "return_silver_chest",
         "unlockTip": "Return Hildir's Silver Chest \u2014 defeat Geirrhafa in the Howling Caverns (Mountain)"
       },
       {
-        "name": "Beaded Dress / Beaded Tunic (3 colors)",
-        "price": 700,
-        "desc": "Fancy clothing with bead accessories. 1 armor. Brown, blue, yellow.",
-        "use": "Cosmetic",
+        "name": "Shawl dress yellow",
+        "price": 450,
+        "desc": "A yellow dress accompanied by a warm shawl.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_silver_chest",
+        "unlockTip": "Return Hildir's Silver Chest \u2014 defeat Geirrhafa in the Howling Caverns (Mountain)"
+      },
+      {
+        "name": "Cape tunic blue",
+        "price": 450,
+        "desc": "A blue tunic accompanied by a cape.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_silver_chest",
+        "unlockTip": "Return Hildir's Silver Chest \u2014 defeat Geirrhafa in the Howling Caverns (Mountain)"
+      },
+      {
+        "name": "Cape tunic red",
+        "price": 450,
+        "desc": "A red tunic accompanied by a cape.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_silver_chest",
+        "unlockTip": "Return Hildir's Silver Chest \u2014 defeat Geirrhafa in the Howling Caverns (Mountain)"
+      },
+      {
+        "name": "Cape tunic yellow",
+        "price": 450,
+        "desc": "A yellow tunic accompanied by a cape.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_silver_chest",
+        "unlockTip": "Return Hildir's Silver Chest \u2014 defeat Geirrhafa in the Howling Caverns (Mountain)"
+      },
+      {
+        "name": "Twisted headscarf green",
+        "price": 250,
+        "desc": "A fancy green headscarf.",
+        "use": "-15% Base Item stamina usage",
+        "unlockRequirement": "return_silver_chest",
+        "unlockTip": "Return Hildir's Silver Chest \u2014 defeat Geirrhafa in the Howling Caverns (Mountain)"
+      },
+      {
+        "name": "Extravagant cap green",
+        "price": 250,
+        "desc": "An extravagant green cap.",
+        "use": "-15% Base Item stamina usage",
+        "unlockRequirement": "return_silver_chest",
+        "unlockTip": "Return Hildir's Silver Chest \u2014 defeat Geirrhafa in the Howling Caverns (Mountain)"
+      },
+      {
+        "name": "Tied headscarf yellow",
+        "price": 250,
+        "desc": "A practical yellow headscarf.",
+        "use": "-15% Base Item stamina usage",
+        "unlockRequirement": "return_silver_chest",
+        "unlockTip": "Return Hildir's Silver Chest \u2014 defeat Geirrhafa in the Howling Caverns (Mountain)"
+      },
+      {
+        "name": "Beaded dress brown",
+        "price": 550,
+        "desc": "A brown dress accompanied by beads and silver.",
+        "use": "-20% Base Item stamina usage",
         "unlockRequirement": "return_bronze_chest",
         "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
       },
       {
-        "name": "Twisted Headscarf (red), Fur Cap (grey), Extravagant Cap (orange)",
-        "price": 300,
-        "desc": "Cosmetic headwear \u2014 3 more styles.",
-        "use": "Cosmetic",
+        "name": "Beaded dress blue",
+        "price": 550,
+        "desc": "A blue dress accompanied by beads and bronze.",
+        "use": "-20% Base Item stamina usage",
         "unlockRequirement": "return_bronze_chest",
         "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
       },
       {
-        "name": "Basic Fireworks",
-        "price": 300,
-        "desc": "Fireworks rocket for celebrations. Pure cosmetic.",
-        "use": "Cosmetic",
+        "name": "Beaded dress yellow",
+        "price": 550,
+        "desc": "A yellow dress accompanied by beads and silver.",
+        "use": "-20% Base Item stamina usage",
         "unlockRequirement": "return_bronze_chest",
         "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
+      },
+      {
+        "name": "Beaded tunic blue",
+        "price": 550,
+        "desc": "A blue tunic accompanied by beads and silver.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_bronze_chest",
+        "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
+      },
+      {
+        "name": "Beaded tunic red",
+        "price": 550,
+        "desc": "A red tunic accompanied by beads and bronze.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_bronze_chest",
+        "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
+      },
+      {
+        "name": "Beaded tunic yellow",
+        "price": 550,
+        "desc": "A yellow tunic accompanied by beads and silver.",
+        "use": "-20% Base Item stamina usage",
+        "unlockRequirement": "return_bronze_chest",
+        "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
+      },
+      {
+        "name": "Twisted headscarf red",
+        "price": 300,
+        "desc": "A fancy red headscarf.",
+        "use": "-15% Base Item stamina usage",
+        "unlockRequirement": "return_bronze_chest",
+        "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
+      },
+      {
+        "name": "Fur cap grey",
+        "price": 300,
+        "desc": "A warm fur cap, made from the finest wool.",
+        "use": "-15% Base Item stamina usage",
+        "unlockRequirement": "return_bronze_chest",
+        "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
+      },
+      {
+        "name": "Extravagant cap orange",
+        "price": 300,
+        "desc": "An extravagant orange cap.",
+        "use": "-15% Base Item stamina usage",
+        "unlockRequirement": "return_bronze_chest",
+        "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
+      },
+      {
+        "name": "Basic fireworks",
+        "price": 50,
+        "desc": "This rocket's blasting off again!",
+        "use": "",
+        "unlockRequirement": "return_bronze_chest",
+        "unlockTip": "Return Hildir's Bronze Chest \u2014 defeat Zil in the Sealed Tower (Plains)"
+      },
+      {
+        "name": "Sparkler",
+        "price": 0,
+        "desc": "It's a stick that sparkles. Pretty!",
+        "use": "",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Iron pit",
+        "price": 75,
+        "desc": "An empty vessel waiting to be filled with firewood and kindling",
+        "use": "",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Barber kit",
+        "price": 600,
+        "desc": "A kit fit for the finest of barbers.",
+        "use": "",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Headband",
+        "price": 175,
+        "desc": "It feels a bit...moist.",
+        "use": "",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Simple cap red",
+        "price": 150,
+        "desc": "A simple yet fashionable red cap.",
+        "use": "-15% Base Item stamina usage",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Simple cap purple",
+        "price": 150,
+        "desc": "A simple yet fashionable purple cap.",
+        "use": "-15% Base Item stamina usage",
+        "unlockRequirement": null,
+        "unlockTip": null
       }
     ],
     "buys": [
@@ -241,132 +449,148 @@
     "tip": "A friendly Greydwarf in a clean hut. She sells rare ingredients required for Feast recipes and special meads. Her Kvastur pet keeps the hut clean.",
     "sells": [
       {
-        "name": "Serving Tray (Feaster)",
-        "price": 500,
-        "desc": "Required to set up a Feast table. Feasts give powerful shared buffs to all nearby players.",
-        "use": "Crafting \u2014 Feast station",
+        "name": "Candle wick x50",
+        "price": 100,
+        "desc": "Required for Resin candle.",
+        "use": "",
         "unlockRequirement": null,
         "unlockTip": null
       },
       {
-        "name": "Ivy Seeds (x3)",
-        "price": 65,
-        "desc": "Plant with cultivator to grow decorative ivy for building.",
-        "use": "Building / Decoration",
-        "unlockRequirement": null,
-        "unlockTip": null
+        "name": "Scythe handle",
+        "price": 200,
+        "desc": "Required for Scythe.",
+        "use": "",
+        "unlockRequirement": "defeat_moder",
+        "unlockTip": "After defeating Moder"
       },
       {
-        "name": "Candle Wick",
-        "price": 50,
-        "desc": "Used to craft various candles for building decoration.",
-        "use": "Building / Crafting",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Corked Vial",
-        "price": 150,
-        "desc": "Used to craft Blob Bombs (poison, frost, lava, tar variants). Handle with care.",
-        "use": "Crafting \u2014 Blob Bombs",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Scythe Handle",
-        "price": 300,
-        "desc": "Required to craft the Scythe weapon at a forge.",
-        "use": "Crafting \u2014 Scythe",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Love Potion (x5)",
+        "name": "Love potion x5",
         "price": 110,
-        "desc": "Increases troll spawn rate and chance of starred trolls. Great for farming troll hide.",
-        "use": "Mead \u2014 Troll spawner",
+        "desc": "Increases Troll spawning.",
+        "use": "",
         "unlockRequirement": null,
         "unlockTip": null
       },
       {
-        "name": "Mead Base: Berserkir",
-        "price": 500,
-        "desc": "Ferment to make Berserkir Mead \u2014 a powerful rage-inducing combat buff.",
-        "use": "Mead \u2014 Combat buff",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Mead Base: Ratatosk",
-        "price": 300,
-        "desc": "Ferment for a speed-boosting mead named after the squirrel on Yggdrasil.",
-        "use": "Mead \u2014 Speed buff",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Mead Base: Animal Whispers",
-        "price": 400,
-        "desc": "Ferment for a taming mead \u2014 makes taming animals significantly easier.",
-        "use": "Mead \u2014 Taming buff",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Mead Base: Lightfoot",
-        "price": 350,
-        "desc": "Ferment for reduced footstep noise. Useful for sneaking past or around enemies.",
-        "use": "Mead \u2014 Stealth buff",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Mead Base: Anti-Sting",
-        "price": 300,
-        "desc": "Ferment for bug repellent mead \u2014 reduces damage from Deathsquitos and Seekers.",
-        "use": "Mead \u2014 Plains/Mistlands resist",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Mead Base: Troll Endurance",
-        "price": 400,
-        "desc": "Ferment for a carry weight boost. Situational alternative to Megingjord.",
-        "use": "Mead \u2014 Carry weight",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Mead Base: Vananidir",
-        "price": 350,
-        "desc": "Ferment for swimming speed and stamina boost.",
-        "use": "Mead \u2014 Swimming buff",
-        "unlockRequirement": null,
-        "unlockTip": null
-      },
-      {
-        "name": "Pungent Pebbles (x5)",
-        "price": 150,
-        "desc": "Smelly ingredient used in Fiery Svinstew and Ashlands-tier food recipes.",
-        "use": "Cooking \u2014 Ashlands recipes",
+        "name": "Toadstool",
+        "price": 85,
+        "desc": "Required for Berserkir mead.",
+        "use": "",
         "unlockRequirement": "defeat_moder",
-        "unlockTip": "Defeat Moder (Mountain boss) to unlock"
+        "unlockTip": "After defeating Moder"
       },
       {
-        "name": "Fragrant Bundle (x5)",
+        "name": "Fragrant bundle x5",
         "price": 140,
-        "desc": "Aromatic plants used in high-tier food. Also reduces bug/insect enemy aggro.",
-        "use": "Cooking + bug repellent",
+        "desc": "Required for Anti-sting concoction.",
+        "use": "",
         "unlockRequirement": "defeat_moder",
-        "unlockTip": "Defeat Moder (Mountain boss) to unlock"
+        "unlockTip": "After defeating Moder"
       },
       {
-        "name": "Herbs of the Hidden Hills",
+        "name": "Fresh seaweed x5",
+        "price": 75,
+        "desc": "Required for Draught of Vananidir.",
+        "use": "",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Cured squirrel hamstring x5",
+        "price": 80,
+        "desc": "Required for Tonic of Ratatosk.",
+        "use": "",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Powdered dragon eggshells x5",
+        "price": 120,
+        "desc": "Required for Mead of Troll endurance.",
+        "use": "",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Pungent pebbles x5",
+        "price": 125,
+        "desc": "Required for Brew of animal whispers.",
+        "use": "",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Ivy seeds x3",
+        "price": 65,
+        "desc": "Required to plant Ivy.",
+        "use": "",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Serving tray",
+        "price": 140,
+        "desc": "Required to eat Feast.",
+        "use": "",
+        "unlockRequirement": null,
+        "unlockTip": null
+      },
+      {
+        "name": "Woodland herb blend x5",
+        "price": 120,
+        "desc": "Required for Whole roasted Meadow boar, Black Forest buffet platter and Swamp dweller's delight feasts.",
+        "use": "",
+        "unlockRequirement": "defeat_elder",
+        "unlockTip": "After defeating The Elder"
+      },
+      {
+        "name": "Seafarer's herbs x5",
+        "price": 130,
+        "desc": "Required for Sailor's bounty feast.",
+        "use": "",
+        "unlockRequirement": "kill_serpent",
+        "unlockTip": "After killing a Serpent"
+      },
+      {
+        "name": "Mountain peak pepper powder x5",
+        "price": 140,
+        "desc": "Required for Hearty Mountain logger's stew feast.",
+        "use": "",
+        "unlockRequirement": "defeat_moder",
+        "unlockTip": "After defeating Moder"
+      },
+      {
+        "name": "Grasslands herbalist harvest x5",
+        "price": 160,
+        "desc": "Required for Plains pie picnic feast.",
+        "use": "",
+        "unlockRequirement": "defeat_yagluth",
+        "unlockTip": "After defeating Yagluth"
+      },
+      {
+        "name": "Herbs of the hidden hills x5",
         "price": 180,
-        "desc": "Rare herbs for Mistlands and Ashlands tier cooking recipes.",
-        "use": "Cooking \u2014 late-game recipes",
+        "desc": "Required for Mushrooms galore à la Mistlands feast.",
+        "use": "",
         "unlockRequirement": "defeat_queen",
-        "unlockTip": "Defeat The Queen (Mistlands boss) to unlock"
+        "unlockTip": "After defeating The Queen"
+      },
+      {
+        "name": "Fiery spice powder x5",
+        "price": 200,
+        "desc": "Required for Ashlands gourmet bowl feast.",
+        "use": "",
+        "unlockRequirement": "defeat_fader",
+        "unlockTip": "After defeating Fader"
+      },
+      {
+        "name": "Corked vial x5",
+        "price": 150,
+        "desc": "Required for Blob bombs.",
+        "use": "",
+        "unlockRequirement": "defeat_elder",
+        "unlockTip": "After defeating The Elder"
       }
     ],
     "buys": [

@@ -9,6 +9,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Valheim" />
   <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.json" />
   <title>Valheim Companion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
@@ -1339,9 +1342,9 @@ const _FOOD_DATA = {
     "recipe": "Base → 2 days in Fermenter: 10 Barley + 10 Cloudberries",
     "health": 0,
     "stamina": 0,
-    "duration": 0,
+    "duration": 600,
     "foodCategory": "potion",
-    "special": "Resist fire for 10 min"
+    "special": "Fire resistance"
   }, {
     "id": "BlackSoup",
     "name": "Black Soup",
@@ -1372,7 +1375,7 @@ const _FOOD_DATA = {
     "biome": "Black Forest",
     "recipe": "Forage in Black Forest",
     "health": 8,
-    "stamina": 13,
+    "stamina": 25,
     "duration": 600,
     "foodCategory": "neutral"
   }, {
@@ -1393,10 +1396,10 @@ const _FOOD_DATA = {
     "desc": "An orange treat.",
     "biome": "Black Forest",
     "recipe": null,
-    "health": 15,
-    "stamina": 8,
-    "duration": 600,
-    "foodCategory": "health"
+    "health": 10,
+    "stamina": 32,
+    "duration": 900,
+    "foodCategory": "stamina"
   }, {
     "id": "CarrotSoup",
     "name": "Carrot Soup",
@@ -1404,8 +1407,8 @@ const _FOOD_DATA = {
     "desc": "A warm tasty soup made of mostly carrots.",
     "biome": "Black Forest",
     "recipe": "3 Carrot + 1 Mushroom → Cauldron",
-    "health": 20,
-    "stamina": 40,
+    "health": 15,
+    "stamina": 45,
     "duration": 1500,
     "foodCategory": "stamina"
   }, {
@@ -1416,9 +1419,9 @@ const _FOOD_DATA = {
     "biome": "Plains",
     "recipe": "Forage in Plains",
     "health": 13,
-    "stamina": 16,
-    "duration": 600,
-    "foodCategory": "neutral"
+    "stamina": 40,
+    "duration": 900,
+    "foodCategory": "stamina"
   }, {
     "id": "CookedAsksvinMeat",
     "name": "Cooked Asksvin Tail",
@@ -1481,8 +1484,8 @@ const _FOOD_DATA = {
     "desc": "All that running paid off.",
     "biome": "Meadows",
     "recipe": "Deer Meat → Campfire",
-    "health": 45,
-    "stamina": 15,
+    "health": 35,
+    "stamina": 12,
     "duration": 1200,
     "foodCategory": "health"
   }, {
@@ -1525,8 +1528,8 @@ const _FOOD_DATA = {
     "desc": "An earthly taste.",
     "biome": "Meadows",
     "recipe": "Boar Meat → Campfire",
-    "health": 40,
-    "stamina": 15,
+    "health": 30,
+    "stamina": 10,
     "duration": 1200,
     "foodCategory": "health"
   }, {
@@ -1537,7 +1540,7 @@ const _FOOD_DATA = {
     "biome": "Mountain",
     "recipe": "Wolf Meat → Campfire",
     "health": 45,
-    "stamina": 20,
+    "stamina": 15,
     "duration": 1200,
     "foodCategory": "health"
   }, {
@@ -1548,9 +1551,9 @@ const _FOOD_DATA = {
     "biome": "Mountain",
     "recipe": "1 Cooked Deer Meat + 1 Carrot + 1 Mushroom → Cauldron",
     "health": 45,
-    "stamina": 50,
+    "stamina": 15,
     "duration": 1500,
-    "foodCategory": "neutral"
+    "foodCategory": "health"
   }, {
     "id": "Eyescream",
     "name": "Eyescream",
@@ -1558,8 +1561,8 @@ const _FOOD_DATA = {
     "desc": "Crispy cool and creamy.",
     "biome": "Mountain",
     "recipe": null,
-    "health": 30,
-    "stamina": 70,
+    "health": 21,
+    "stamina": 65,
     "duration": 1500,
     "foodCategory": "stamina"
   }, {
@@ -1680,7 +1683,7 @@ const _FOOD_DATA = {
     "biome": "Swamp",
     "recipe": "Any fish → Food Preparation Table (Iron x5) → Raw Fish → Cooking Station (needs iron to build table)",
     "health": 45,
-    "stamina": 25,
+    "stamina": 15,
     "duration": 1200,
     "foodCategory": "health"
   }, {
@@ -1701,10 +1704,10 @@ const _FOOD_DATA = {
     "desc": "Sweet and tasty.",
     "biome": "Meadows",
     "recipe": "Harvest from Beehive",
-    "health": 20,
-    "stamina": 20,
+    "health": 8,
+    "stamina": 35,
     "duration": 900,
-    "foodCategory": "neutral"
+    "foodCategory": "stamina"
   }, {
     "id": "HoneyGlazedChicken",
     "name": "Honey Glazed Chicken",
@@ -1736,9 +1739,9 @@ const _FOOD_DATA = {
     "recipe": "Base → 2 days in Fermenter: 10 Honey + 4 Thistle + 2 Bloodbag + 1 Greydwarf Eye",
     "health": 0,
     "stamina": 0,
-    "duration": 0,
+    "duration": 600,
     "foodCategory": "potion",
-    "special": "Resist frost for 10 min"
+    "special": "Frost resistance"
   }, {
     "id": "MeadHealthLingering",
     "name": "Lingering Healing Mead",
@@ -1748,9 +1751,9 @@ const _FOOD_DATA = {
     "recipe": "Base → 2 days in Fermenter: 10 Honey + 10 Bloodbag + 1 Dandelion + 4 Barley",
     "health": 0,
     "stamina": 0,
-    "duration": 0,
+    "duration": 300,
     "foodCategory": "potion",
-    "special": "+4 HP/sec for 60s"
+    "special": "+25% health regen"
   }, {
     "id": "MeadHealthMajor",
     "name": "Major Healing Mead",
@@ -1758,11 +1761,11 @@ const _FOOD_DATA = {
     "desc": "Restores health.",
     "biome": "Swamp",
     "recipe": "Base → 2 days in Fermenter: 10 Honey + 10 Bloodbag + 4 Raspberries + 1 Dandelion",
-    "health": 0,
+    "health": 125,
     "stamina": 0,
-    "duration": 0,
+    "duration": 10,
     "foodCategory": "potion",
-    "special": "Heals 150 HP instantly"
+    "special": "Heals 125 HP instantly"
   }, {
     "id": "MeadHealthMedium",
     "name": "Medium Healing Mead",
@@ -1770,9 +1773,9 @@ const _FOOD_DATA = {
     "desc": "Restores health.",
     "biome": "Swamp",
     "recipe": "Base → 2 days in Fermenter: 10 Honey + 4 Bloodbag + 10 Raspberries + 1 Dandelion",
-    "health": 0,
+    "health": 75,
     "stamina": 0,
-    "duration": 0,
+    "duration": 10,
     "foodCategory": "potion",
     "special": "Heals 75 HP instantly"
   }, {
@@ -1782,11 +1785,11 @@ const _FOOD_DATA = {
     "desc": "Restores health.",
     "biome": "Black Forest",
     "recipe": "Base → 2 days in Fermenter: 10 Honey + 5 Blueberries + 10 Raspberries + 1 Mushroom",
-    "health": 0,
+    "health": 50,
     "stamina": 0,
-    "duration": 0,
+    "duration": 10,
     "foodCategory": "potion",
-    "special": "Heals 25 HP instantly"
+    "special": "Heals 50 HP instantly"
   }, {
     "id": "MeadPoisonResist",
     "name": "Poison Resistance Mead",
@@ -1796,9 +1799,9 @@ const _FOOD_DATA = {
     "recipe": "Base → 2 days in Fermenter: 10 Honey + 5 Thistle + 1 Neck Tail + 10 Coal",
     "health": 0,
     "stamina": 0,
-    "duration": 0,
+    "duration": 600,
     "foodCategory": "potion",
-    "special": "Resist poison for 10 min"
+    "special": "Poison resistance"
   }, {
     "id": "MeadStaminaLingering",
     "name": "Lingering Stamina Mead",
@@ -1808,9 +1811,9 @@ const _FOOD_DATA = {
     "recipe": "Base → 2 days in Fermenter: 10 Honey + 10 Cloudberries + 6 Yellow Mushroom + 4 Barley",
     "health": 0,
     "stamina": 0,
-    "duration": 0,
+    "duration": 300,
     "foodCategory": "potion",
-    "special": "+5 stamina/sec for 60s"
+    "special": "+25% stamina regen"
   }, {
     "id": "MeadStaminaMedium",
     "name": "Medium Stamina Mead",
@@ -1819,8 +1822,8 @@ const _FOOD_DATA = {
     "biome": "Black Forest",
     "recipe": "Base → 2 days in Fermenter: 10 Honey + 10 Cloudberries + 10 Yellow Mushroom",
     "health": 0,
-    "stamina": 0,
-    "duration": 0,
+    "stamina": 160,
+    "duration": 2,
     "foodCategory": "potion",
     "special": "Restores 160 stamina instantly"
   }, {
@@ -1831,8 +1834,8 @@ const _FOOD_DATA = {
     "biome": "Black Forest",
     "recipe": "Base → 2 days in Fermenter: 10 Honey + 10 Yellow Mushroom + 10 Raspberries",
     "health": 0,
-    "stamina": 0,
-    "duration": 0,
+    "stamina": 80,
+    "duration": 2,
     "foodCategory": "potion",
     "special": "Restores 80 stamina instantly"
   }, {
@@ -1844,7 +1847,8 @@ const _FOOD_DATA = {
     "recipe": "Base → 2 days in Fermenter: 10 Honey + 5 Jotun Puffs + 1 Blue Mushroom",
     "health": 0,
     "stamina": 0,
-    "duration": 0,
+    "eitr": 125,
+    "duration": 10,
     "foodCategory": "potion",
     "special": "Restores 100 eitr instantly"
   }, {
@@ -1865,8 +1869,8 @@ const _FOOD_DATA = {
     "desc": "Chunks of goodness in a thick gravy.",
     "biome": "Swamp",
     "recipe": "4 Raw Meat + 1 Carrot + 1 Mushroom → Cauldron",
-    "health": 45,
-    "stamina": 30,
+    "health": 40,
+    "stamina": 13,
     "duration": 1500,
     "foodCategory": "health"
   }, {
@@ -1888,9 +1892,9 @@ const _FOOD_DATA = {
     "biome": "Meadows",
     "recipe": "Forage in Meadows/Black Forest",
     "health": 15,
-    "stamina": 8,
-    "duration": 600,
-    "foodCategory": "health"
+    "stamina": 15,
+    "duration": 900,
+    "foodCategory": "neutral"
   }, {
     "id": "MushroomBlue",
     "name": "Blue Mushroom",
@@ -1909,12 +1913,10 @@ const _FOOD_DATA = {
     "desc": "Swollen with magic, these golden orbs bubble from the ground where the Jotun fell.",
     "biome": "Mistlands",
     "recipe": "Forage in Mistlands",
-    "health": 0,
-    "stamina": 0,
+    "health": 25,
+    "stamina": 25,
     "duration": 900,
-    "foodCategory": "neutral",
-    "eitr": 30,
-    "special": "+30 Eitr · 15 min"
+    "foodCategory": "neutral"
   }, {
     "id": "MushroomMagecap",
     "name": "Magecap",
@@ -1922,12 +1924,11 @@ const _FOOD_DATA = {
     "desc": "The delicate blue magecaps crackle with sorcerous vitality.",
     "biome": "Mistlands",
     "recipe": "Forage in Mistlands",
-    "health": 0,
-    "stamina": 0,
+    "health": 25,
+    "stamina": 25,
+    "eitr": 25,
     "duration": 900,
-    "foodCategory": "neutral",
-    "eitr": 40,
-    "special": "+40 Eitr · 15 min"
+    "foodCategory": "neutral"
   }, {
     "id": "MushroomOmelette",
     "name": "Mushroom Omelette",
@@ -1947,7 +1948,7 @@ const _FOOD_DATA = {
     "biome": "Black Forest",
     "recipe": "Forage in dungeon caves",
     "health": 10,
-    "stamina": 18,
+    "stamina": 30,
     "duration": 600,
     "foodCategory": "stamina"
   }, {
@@ -1958,8 +1959,8 @@ const _FOOD_DATA = {
     "biome": "Meadows",
     "recipe": "Neck Tail → Campfire",
     "health": 25,
-    "stamina": 15,
-    "duration": 1000,
+    "stamina": 8,
+    "duration": 1200,
     "foodCategory": "health"
   }, {
     "id": "Onion",
@@ -1968,10 +1969,10 @@ const _FOOD_DATA = {
     "desc": "A crunchy and spicy taste.",
     "biome": "Mountain",
     "recipe": null,
-    "health": 12,
-    "stamina": 10,
-    "duration": 600,
-    "foodCategory": "neutral"
+    "health": 13,
+    "stamina": 40,
+    "duration": 900,
+    "foodCategory": "stamina"
   }, {
     "id": "OnionSoup",
     "name": "Onion Soup",
@@ -1979,10 +1980,10 @@ const _FOOD_DATA = {
     "desc": "Deliciously rich.",
     "biome": "Mountain",
     "recipe": "3 Onion → Cauldron",
-    "health": 50,
-    "stamina": 30,
-    "duration": 1500,
-    "foodCategory": "health"
+    "health": 20,
+    "stamina": 60,
+    "duration": 1200,
+    "foodCategory": "stamina"
   }, {
     "id": "PiquantPie",
     "name": "Piquant Pie",
@@ -1990,9 +1991,9 @@ const _FOOD_DATA = {
     "desc": "The taste is well worth the effort.",
     "biome": "Plains",
     "recipe": "4 Barley Flour + 2 Cloudberries + 2 Raw Meat → Cauldron/Oven",
-    "health": 80,
-    "stamina": 60,
-    "duration": 2000,
+    "health": 105,
+    "stamina": 35,
+    "duration": 1800,
     "foodCategory": "health"
   }, {
     "id": "QueensJam",
@@ -2002,8 +2003,8 @@ const _FOOD_DATA = {
     "biome": "Black Forest",
     "recipe": "8 Raspberries + 8 Blueberries → Cauldron",
     "health": 14,
-    "stamina": 22,
-    "duration": 600,
+    "stamina": 40,
+    "duration": 1200,
     "foodCategory": "stamina"
   }, {
     "id": "Raspberry",
@@ -2013,7 +2014,7 @@ const _FOOD_DATA = {
     "biome": "Meadows",
     "recipe": "Forage in Meadows",
     "health": 7,
-    "stamina": 13,
+    "stamina": 20,
     "duration": 600,
     "foodCategory": "stamina"
   }, {
@@ -2023,9 +2024,9 @@ const _FOOD_DATA = {
     "desc": "This dessert keeps you going all day long.",
     "biome": "Plains",
     "recipe": null,
-    "health": 60,
-    "stamina": 80,
-    "duration": 2000,
+    "health": 34,
+    "stamina": 100,
+    "duration": 1800,
     "foodCategory": "stamina"
   }, {
     "id": "RoyalJelly",
@@ -2045,8 +2046,8 @@ const _FOOD_DATA = {
     "desc": "Links of savory, smoked meat.",
     "biome": "Swamp",
     "recipe": "4 Entrails + 2 Raw Meat + 1 Thistle → Cauldron",
-    "health": 60,
-    "stamina": 40,
+    "health": 55,
+    "stamina": 18,
     "duration": 1800,
     "foodCategory": "health"
   }, {
@@ -2056,10 +2057,11 @@ const _FOOD_DATA = {
     "desc": "A quivering jelly with a taste like gentle electricity.",
     "biome": "Mistlands",
     "recipe": "2 Cooked Seeker Meat + 3 Magecap + 1 Sap → Cauldron",
-    "health": 65,
-    "stamina": 65,
+    "health": 28,
+    "stamina": 14,
+    "eitr": 85,
     "duration": 1800,
-    "foodCategory": "neutral"
+    "foodCategory": "potion"
   }, {
     "id": "SerpentMeatCooked",
     "name": "Cooked Serpent Meat",
@@ -2068,8 +2070,8 @@ const _FOOD_DATA = {
     "biome": "Ocean",
     "recipe": "Serpent Meat → Campfire",
     "health": 70,
-    "stamina": 40,
-    "duration": 1800,
+    "stamina": 23,
+    "duration": 1500,
     "foodCategory": "health"
   }, {
     "id": "SerpentStew",
@@ -2079,8 +2081,8 @@ const _FOOD_DATA = {
     "biome": "Ocean",
     "recipe": "1 Cooked Serpent Meat + 2 Mushroom + 1 Honey → Cauldron",
     "health": 80,
-    "stamina": 40,
-    "duration": 2400,
+    "stamina": 26,
+    "duration": 1800,
     "foodCategory": "health"
   }, {
     "id": "Turnip",
@@ -2100,8 +2102,8 @@ const _FOOD_DATA = {
     "desc": "A hearty and filling stew.",
     "biome": "Swamp",
     "recipe": "3 Turnip + 1 Raw Meat → Cauldron",
-    "health": 25,
-    "stamina": 45,
+    "health": 18,
+    "stamina": 55,
     "duration": 1500,
     "foodCategory": "stamina"
   }, {
@@ -2111,10 +2113,11 @@ const _FOOD_DATA = {
     "desc": "An intensely sweet and slightly sour berry found in the Ashlands.",
     "biome": "Ashlands",
     "recipe": null,
-    "health": 15,
-    "stamina": 25,
-    "duration": 600,
-    "foodCategory": "stamina"
+    "health": 30,
+    "stamina": 30,
+    "eitr": 30,
+    "duration": 900,
+    "foodCategory": "neutral"
   }]
 };
 const _MATERIALS_DATA = {
@@ -3237,75 +3240,68 @@ const _VENDORS_DATA = [{
   "location": "Black Forest, within 1500m of world center. Look for the bag icon on the map.",
   "tip": "Build a portal next to him immediately. His camp has a runic dome — no enemies can enter. His Lox is called Halstein.",
   "sells": [{
-    "name": "Fishing Rod",
-    "price": 350,
-    "desc": "Required to catch fish. Essential purchase early game.",
-    "use": "Fishing",
+    "name": "Yule hat",
+    "price": 100,
+    "desc": "Cosmetic headpiece",
+    "use": "(Uses the Helmet Slot)",
     "unlockRequirement": null,
     "unlockTip": null
   }, {
-    "name": "Fishing Bait (x50)",
-    "price": 10,
-    "desc": "Common bait for rivers and lakes. Buy stacks of these regularly.",
-    "use": "Fishing",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Dverger Circlet",
+    "name": "Dverger circlet",
     "price": 620,
-    "desc": "A helmet acting as a permanent hands-free light source. Essential for caves and crypts.",
-    "use": "Light source / Helmet",
+    "desc": "Provides light in front of yourself.",
+    "use": "(Uses the Helmet Slot)",
     "unlockRequirement": null,
     "unlockTip": null
   }, {
     "name": "Megingjord",
     "price": 950,
-    "desc": "Belt that increases carry weight by 150. The only way to increase inventory capacity.",
-    "use": "Carry weight +150",
+    "desc": "Increases inventory carry weight limit by 150.",
+    "use": "(Uses the Accessory slot)",
     "unlockRequirement": null,
     "unlockTip": null
   }, {
-    "name": "Yule Hat",
-    "price": 100,
-    "desc": "A festive red cap. Pure cosmetic — no armor value.",
-    "use": "Cosmetic",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Barber Kit",
-    "price": 345,
-    "desc": "Lets you change your character's hair and beard style at any time.",
-    "use": "Character customization",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Ymir Flesh",
+    "name": "Ymir flesh",
     "price": 120,
-    "desc": "Rare crafting material only available here. Needed for Frostner and Iron Sledge.",
-    "use": "Crafting — Frostner, Iron Sledge",
+    "desc": "Crafting material needed for high tier equipment.",
+    "use": "",
     "unlockRequirement": "defeat_elder",
-    "unlockTip": "Defeat The Elder (Black Forest boss) to unlock"
+    "unlockTip": "After defeating The Elder"
   }, {
-    "name": "Thunder Stone",
-    "price": 50,
-    "desc": "Needed to build the Obliterator, which destroys unwanted items and returns coal.",
-    "use": "Crafting — Obliterator",
-    "unlockRequirement": "defeat_elder",
-    "unlockTip": "Defeat The Elder (Black Forest boss) to unlock"
-  }, {
-    "name": "Barrel Hoops",
-    "price": 100,
-    "desc": "Metal rings needed to build Barrels for storing liquids.",
-    "use": "Building — Barrels",
+    "name": "Fishing rod",
+    "price": 350,
+    "desc": "Allows you to obtain Fish as a food.",
+    "use": "(Uses both hands when equipped)",
     "unlockRequirement": null,
     "unlockTip": null
   }, {
-    "name": "Chicken Egg",
+    "name": "Fishing bait x20",
+    "price": 10,
+    "desc": "Required for use with the Fishing Rod.",
+    "use": "(Currently not craftable)",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Thunder stone",
+    "price": 50,
+    "desc": "Required to build Obliterator.",
+    "use": "",
+    "unlockRequirement": "defeat_elder",
+    "unlockTip": "After defeating The Elder"
+  }, {
+    "name": "Egg",
     "price": 1500,
-    "desc": "Place near a fire for 30 min to hatch a hen. Two hens will keep producing eggs. Required for chicken-based foods.",
-    "use": "Food farming / Cooking",
+    "desc": "Required to obtain Chickens and Hens.",
+    "use": "",
     "unlockRequirement": "defeat_yagluth",
-    "unlockTip": "Defeat Yagluth (Plains boss) to unlock"
+    "unlockTip": "After defeating Yagluth"
+  }, {
+    "name": "Barrel hoops x3",
+    "price": 100,
+    "desc": "Required to build Barrels.",
+    "use": "",
+    "unlockRequirement": null,
+    "unlockTip": null
   }],
   "buys": [{
     "name": "Amber",
@@ -3331,82 +3327,271 @@ const _VENDORS_DATA = [{
   "location": "Meadows, 3000–5100m from world center. Harder to find than Haldor — expect to sail.",
   "tip": "Most items are cosmetic but the Harvest set gives real bonuses. Complete her quests by returning 3 stolen chests — they can't be teleported, you must carry them by boat.",
   "sells": [{
-    "name": "Iron Cooking Station",
-    "price": 500,
-    "desc": "A better cooking station than the standard one. Holds more slots and handles more advanced recipes.",
-    "use": "Cooking station upgrade",
+    "name": "Simple dress natural",
+    "price": 250,
+    "desc": "A simple dress.",
+    "use": "-20% Base Item stamina usage",
     "unlockRequirement": null,
     "unlockTip": null
   }, {
-    "name": "Wrist Fireworks (Sparklers)",
-    "price": 50,
-    "desc": "Cosmetic sparkler item for celebrations.",
-    "use": "Cosmetic",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Simple Dress / Tunic (3 colors)",
-    "price": 300,
-    "desc": "Basic clothing — brown, blue, yellow. 1 armor. +0 stats.",
-    "use": "Cosmetic",
+    "name": "Simple dress brown",
+    "price": 350,
+    "desc": "A simple brown dress.",
+    "use": "-20% Base Item stamina usage",
     "unlockRequirement": "return_brass_chest",
     "unlockTip": "Return Hildir's Brass Chest — defeat Brenna in the Smouldering Tombs (Black Forest)"
   }, {
-    "name": "Harvest Tunic / Harvest Dress",
+    "name": "Simple dress blue",
+    "price": 350,
+    "desc": "A simple blue dress.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_brass_chest",
+    "unlockTip": "Return Hildir's Brass Chest — defeat Brenna in the Smouldering Tombs (Black Forest)"
+  }, {
+    "name": "Simple dress yellow",
+    "price": 350,
+    "desc": "A simple yellow dress.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_brass_chest",
+    "unlockTip": "Return Hildir's Brass Chest — defeat Brenna in the Smouldering Tombs (Black Forest)"
+  }, {
+    "name": "Simple tunic natural",
+    "price": 250,
+    "desc": "A simple tunic.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Simple tunic blue",
+    "price": 350,
+    "desc": "A simple blue tunic.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_brass_chest",
+    "unlockTip": "Return Hildir's Brass Chest — defeat Brenna in the Smouldering Tombs (Black Forest)"
+  }, {
+    "name": "Simple tunic red",
+    "price": 350,
+    "desc": "A simple red tunic.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_brass_chest",
+    "unlockTip": "Return Hildir's Brass Chest — defeat Brenna in the Smouldering Tombs (Black Forest)"
+  }, {
+    "name": "Simple tunic yellow",
+    "price": 350,
+    "desc": "A simple yellow tunic.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_brass_chest",
+    "unlockTip": "Return Hildir's Brass Chest — defeat Brenna in the Smouldering Tombs (Black Forest)"
+  }, {
+    "name": "Harvest tunic",
     "price": 550,
-    "desc": "Farming outfit. -20% stamina use while farming. +25 Farming skill. Real gameplay value!",
-    "use": "-20% farm stamina, +25 Farming skill",
+    "desc": "When working the fields, it's important to dress accordingly. A shorter tunic lets in a cool breeze.",
+    "use": "+25 Farming skill (set bonus)",
     "unlockRequirement": "return_brass_chest",
     "unlockTip": "Return Hildir's Brass Chest — defeat Brenna in the Smouldering Tombs (Black Forest)"
   }, {
-    "name": "Straw Hat",
+    "name": "Harvest dress",
+    "price": 550,
+    "desc": "When working the fields, it's important to dress accordingly. This long dress keeps your knees covered while you work.",
+    "use": "+25 Farming skill (set bonus)",
+    "unlockRequirement": "return_brass_chest",
+    "unlockTip": "Return Hildir's Brass Chest — defeat Brenna in the Smouldering Tombs (Black Forest)"
+  }, {
+    "name": "Straw hat",
     "price": 300,
-    "desc": "Part of the Harvest set. Pairs with Harvest Tunic/Dress for the farming bonuses.",
-    "use": "Part of Harvest set",
+    "desc": "The perfect way to avoid sunstroke.",
+    "use": "+25 Farming skill (set bonus)",
     "unlockRequirement": "return_brass_chest",
     "unlockTip": "Return Hildir's Brass Chest — defeat Brenna in the Smouldering Tombs (Black Forest)"
   }, {
-    "name": "Tied Headscarf (yellow)",
-    "price": 300,
-    "desc": "Cosmetic headscarf. 1 armor.",
-    "use": "Cosmetic",
+    "name": "Tied headscarf blue",
+    "price": 200,
+    "desc": "A blue practical headscarf.",
+    "use": "-15% Base Item stamina usage",
     "unlockRequirement": "return_brass_chest",
     "unlockTip": "Return Hildir's Brass Chest — defeat Brenna in the Smouldering Tombs (Black Forest)"
   }, {
-    "name": "Shawl Dress / Cape Tunic (3 colors)",
-    "price": 500,
-    "desc": "Mid-tier clothing with shawl or cape. 1 armor. Brown, blue, yellow.",
-    "use": "Cosmetic",
+    "name": "Fur cap brown",
+    "price": 200,
+    "desc": "A warm fur cap, made from the finest leather.",
+    "use": "-15% Base Item stamina usage",
+    "unlockRequirement": "return_brass_chest",
+    "unlockTip": "Return Hildir's Brass Chest — defeat Brenna in the Smouldering Tombs (Black Forest)"
+  }, {
+    "name": "Shawl dress brown",
+    "price": 450,
+    "desc": "A brown dress accompanied by a warm shawl.",
+    "use": "-20% Base Item stamina usage",
     "unlockRequirement": "return_silver_chest",
     "unlockTip": "Return Hildir's Silver Chest — defeat Geirrhafa in the Howling Caverns (Mountain)"
   }, {
-    "name": "Twisted Headscarf (green), Extravagant Cap (green), Tied Headscarf (yellow)",
-    "price": 300,
-    "desc": "Cosmetic headwear — 3 styles.",
-    "use": "Cosmetic",
+    "name": "Shawl dress blue",
+    "price": 450,
+    "desc": "A blue dress accompanied by a warm shawl.",
+    "use": "-20% Base Item stamina usage",
     "unlockRequirement": "return_silver_chest",
     "unlockTip": "Return Hildir's Silver Chest — defeat Geirrhafa in the Howling Caverns (Mountain)"
   }, {
-    "name": "Beaded Dress / Beaded Tunic (3 colors)",
-    "price": 700,
-    "desc": "Fancy clothing with bead accessories. 1 armor. Brown, blue, yellow.",
-    "use": "Cosmetic",
+    "name": "Shawl dress yellow",
+    "price": 450,
+    "desc": "A yellow dress accompanied by a warm shawl.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_silver_chest",
+    "unlockTip": "Return Hildir's Silver Chest — defeat Geirrhafa in the Howling Caverns (Mountain)"
+  }, {
+    "name": "Cape tunic blue",
+    "price": 450,
+    "desc": "A blue tunic accompanied by a cape.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_silver_chest",
+    "unlockTip": "Return Hildir's Silver Chest — defeat Geirrhafa in the Howling Caverns (Mountain)"
+  }, {
+    "name": "Cape tunic red",
+    "price": 450,
+    "desc": "A red tunic accompanied by a cape.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_silver_chest",
+    "unlockTip": "Return Hildir's Silver Chest — defeat Geirrhafa in the Howling Caverns (Mountain)"
+  }, {
+    "name": "Cape tunic yellow",
+    "price": 450,
+    "desc": "A yellow tunic accompanied by a cape.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_silver_chest",
+    "unlockTip": "Return Hildir's Silver Chest — defeat Geirrhafa in the Howling Caverns (Mountain)"
+  }, {
+    "name": "Twisted headscarf green",
+    "price": 250,
+    "desc": "A fancy green headscarf.",
+    "use": "-15% Base Item stamina usage",
+    "unlockRequirement": "return_silver_chest",
+    "unlockTip": "Return Hildir's Silver Chest — defeat Geirrhafa in the Howling Caverns (Mountain)"
+  }, {
+    "name": "Extravagant cap green",
+    "price": 250,
+    "desc": "An extravagant green cap.",
+    "use": "-15% Base Item stamina usage",
+    "unlockRequirement": "return_silver_chest",
+    "unlockTip": "Return Hildir's Silver Chest — defeat Geirrhafa in the Howling Caverns (Mountain)"
+  }, {
+    "name": "Tied headscarf yellow",
+    "price": 250,
+    "desc": "A practical yellow headscarf.",
+    "use": "-15% Base Item stamina usage",
+    "unlockRequirement": "return_silver_chest",
+    "unlockTip": "Return Hildir's Silver Chest — defeat Geirrhafa in the Howling Caverns (Mountain)"
+  }, {
+    "name": "Beaded dress brown",
+    "price": 550,
+    "desc": "A brown dress accompanied by beads and silver.",
+    "use": "-20% Base Item stamina usage",
     "unlockRequirement": "return_bronze_chest",
     "unlockTip": "Return Hildir's Bronze Chest — defeat Zil in the Sealed Tower (Plains)"
   }, {
-    "name": "Twisted Headscarf (red), Fur Cap (grey), Extravagant Cap (orange)",
-    "price": 300,
-    "desc": "Cosmetic headwear — 3 more styles.",
-    "use": "Cosmetic",
+    "name": "Beaded dress blue",
+    "price": 550,
+    "desc": "A blue dress accompanied by beads and bronze.",
+    "use": "-20% Base Item stamina usage",
     "unlockRequirement": "return_bronze_chest",
     "unlockTip": "Return Hildir's Bronze Chest — defeat Zil in the Sealed Tower (Plains)"
   }, {
-    "name": "Basic Fireworks",
-    "price": 300,
-    "desc": "Fireworks rocket for celebrations. Pure cosmetic.",
-    "use": "Cosmetic",
+    "name": "Beaded dress yellow",
+    "price": 550,
+    "desc": "A yellow dress accompanied by beads and silver.",
+    "use": "-20% Base Item stamina usage",
     "unlockRequirement": "return_bronze_chest",
     "unlockTip": "Return Hildir's Bronze Chest — defeat Zil in the Sealed Tower (Plains)"
+  }, {
+    "name": "Beaded tunic blue",
+    "price": 550,
+    "desc": "A blue tunic accompanied by beads and silver.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_bronze_chest",
+    "unlockTip": "Return Hildir's Bronze Chest — defeat Zil in the Sealed Tower (Plains)"
+  }, {
+    "name": "Beaded tunic red",
+    "price": 550,
+    "desc": "A red tunic accompanied by beads and bronze.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_bronze_chest",
+    "unlockTip": "Return Hildir's Bronze Chest — defeat Zil in the Sealed Tower (Plains)"
+  }, {
+    "name": "Beaded tunic yellow",
+    "price": 550,
+    "desc": "A yellow tunic accompanied by beads and silver.",
+    "use": "-20% Base Item stamina usage",
+    "unlockRequirement": "return_bronze_chest",
+    "unlockTip": "Return Hildir's Bronze Chest — defeat Zil in the Sealed Tower (Plains)"
+  }, {
+    "name": "Twisted headscarf red",
+    "price": 300,
+    "desc": "A fancy red headscarf.",
+    "use": "-15% Base Item stamina usage",
+    "unlockRequirement": "return_bronze_chest",
+    "unlockTip": "Return Hildir's Bronze Chest — defeat Zil in the Sealed Tower (Plains)"
+  }, {
+    "name": "Fur cap grey",
+    "price": 300,
+    "desc": "A warm fur cap, made from the finest wool.",
+    "use": "-15% Base Item stamina usage",
+    "unlockRequirement": "return_bronze_chest",
+    "unlockTip": "Return Hildir's Bronze Chest — defeat Zil in the Sealed Tower (Plains)"
+  }, {
+    "name": "Extravagant cap orange",
+    "price": 300,
+    "desc": "An extravagant orange cap.",
+    "use": "-15% Base Item stamina usage",
+    "unlockRequirement": "return_bronze_chest",
+    "unlockTip": "Return Hildir's Bronze Chest — defeat Zil in the Sealed Tower (Plains)"
+  }, {
+    "name": "Basic fireworks",
+    "price": 50,
+    "desc": "This rocket's blasting off again!",
+    "use": "",
+    "unlockRequirement": "return_bronze_chest",
+    "unlockTip": "Return Hildir's Bronze Chest — defeat Zil in the Sealed Tower (Plains)"
+  }, {
+    "name": "Sparkler",
+    "price": 0,
+    "desc": "It's a stick that sparkles. Pretty!",
+    "use": "",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Iron pit",
+    "price": 75,
+    "desc": "An empty vessel waiting to be filled with firewood and kindling",
+    "use": "",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Barber kit",
+    "price": 600,
+    "desc": "A kit fit for the finest of barbers.",
+    "use": "",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Headband",
+    "price": 175,
+    "desc": "It feels a bit...moist.",
+    "use": "",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Simple cap red",
+    "price": 150,
+    "desc": "A simple yet fashionable red cap.",
+    "use": "-15% Base Item stamina usage",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Simple cap purple",
+    "price": 150,
+    "desc": "A simple yet fashionable purple cap.",
+    "use": "-15% Base Item stamina usage",
+    "unlockRequirement": null,
+    "unlockTip": null
   }],
   "buys": [{
     "name": "Amber",
@@ -3432,117 +3617,131 @@ const _VENDORS_DATA = [{
   "location": "Swamp, 3000–8000m from world center. The hardest vendor to find — build a portal immediately.",
   "tip": "A friendly Greydwarf in a clean hut. She sells rare ingredients required for Feast recipes and special meads. Her Kvastur pet keeps the hut clean.",
   "sells": [{
-    "name": "Serving Tray (Feaster)",
-    "price": 500,
-    "desc": "Required to set up a Feast table. Feasts give powerful shared buffs to all nearby players.",
-    "use": "Crafting — Feast station",
+    "name": "Candle wick x50",
+    "price": 100,
+    "desc": "Required for Resin candle.",
+    "use": "",
     "unlockRequirement": null,
     "unlockTip": null
   }, {
-    "name": "Ivy Seeds (x3)",
-    "price": 65,
-    "desc": "Plant with cultivator to grow decorative ivy for building.",
-    "use": "Building / Decoration",
-    "unlockRequirement": null,
-    "unlockTip": null
+    "name": "Scythe handle",
+    "price": 200,
+    "desc": "Required for Scythe.",
+    "use": "",
+    "unlockRequirement": "defeat_moder",
+    "unlockTip": "After defeating Moder"
   }, {
-    "name": "Candle Wick",
-    "price": 50,
-    "desc": "Used to craft various candles for building decoration.",
-    "use": "Building / Crafting",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Corked Vial",
-    "price": 150,
-    "desc": "Used to craft Blob Bombs (poison, frost, lava, tar variants). Handle with care.",
-    "use": "Crafting — Blob Bombs",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Scythe Handle",
-    "price": 300,
-    "desc": "Required to craft the Scythe weapon at a forge.",
-    "use": "Crafting — Scythe",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Love Potion (x5)",
+    "name": "Love potion x5",
     "price": 110,
-    "desc": "Increases troll spawn rate and chance of starred trolls. Great for farming troll hide.",
-    "use": "Mead — Troll spawner",
+    "desc": "Increases Troll spawning.",
+    "use": "",
     "unlockRequirement": null,
     "unlockTip": null
   }, {
-    "name": "Mead Base: Berserkir",
-    "price": 500,
-    "desc": "Ferment to make Berserkir Mead — a powerful rage-inducing combat buff.",
-    "use": "Mead — Combat buff",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Mead Base: Ratatosk",
-    "price": 300,
-    "desc": "Ferment for a speed-boosting mead named after the squirrel on Yggdrasil.",
-    "use": "Mead — Speed buff",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Mead Base: Animal Whispers",
-    "price": 400,
-    "desc": "Ferment for a taming mead — makes taming animals significantly easier.",
-    "use": "Mead — Taming buff",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Mead Base: Lightfoot",
-    "price": 350,
-    "desc": "Ferment for reduced footstep noise. Useful for sneaking past or around enemies.",
-    "use": "Mead — Stealth buff",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Mead Base: Anti-Sting",
-    "price": 300,
-    "desc": "Ferment for bug repellent mead — reduces damage from Deathsquitos and Seekers.",
-    "use": "Mead — Plains/Mistlands resist",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Mead Base: Troll Endurance",
-    "price": 400,
-    "desc": "Ferment for a carry weight boost. Situational alternative to Megingjord.",
-    "use": "Mead — Carry weight",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Mead Base: Vananidir",
-    "price": 350,
-    "desc": "Ferment for swimming speed and stamina boost.",
-    "use": "Mead — Swimming buff",
-    "unlockRequirement": null,
-    "unlockTip": null
-  }, {
-    "name": "Pungent Pebbles (x5)",
-    "price": 150,
-    "desc": "Smelly ingredient used in Fiery Svinstew and Ashlands-tier food recipes.",
-    "use": "Cooking — Ashlands recipes",
+    "name": "Toadstool",
+    "price": 85,
+    "desc": "Required for Berserkir mead.",
+    "use": "",
     "unlockRequirement": "defeat_moder",
-    "unlockTip": "Defeat Moder (Mountain boss) to unlock"
+    "unlockTip": "After defeating Moder"
   }, {
-    "name": "Fragrant Bundle (x5)",
+    "name": "Fragrant bundle x5",
     "price": 140,
-    "desc": "Aromatic plants used in high-tier food. Also reduces bug/insect enemy aggro.",
-    "use": "Cooking + bug repellent",
+    "desc": "Required for Anti-sting concoction.",
+    "use": "",
     "unlockRequirement": "defeat_moder",
-    "unlockTip": "Defeat Moder (Mountain boss) to unlock"
+    "unlockTip": "After defeating Moder"
   }, {
-    "name": "Herbs of the Hidden Hills",
+    "name": "Fresh seaweed x5",
+    "price": 75,
+    "desc": "Required for Draught of Vananidir.",
+    "use": "",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Cured squirrel hamstring x5",
+    "price": 80,
+    "desc": "Required for Tonic of Ratatosk.",
+    "use": "",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Powdered dragon eggshells x5",
+    "price": 120,
+    "desc": "Required for Mead of Troll endurance.",
+    "use": "",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Pungent pebbles x5",
+    "price": 125,
+    "desc": "Required for Brew of animal whispers.",
+    "use": "",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Ivy seeds x3",
+    "price": 65,
+    "desc": "Required to plant Ivy.",
+    "use": "",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Serving tray",
+    "price": 140,
+    "desc": "Required to eat Feast.",
+    "use": "",
+    "unlockRequirement": null,
+    "unlockTip": null
+  }, {
+    "name": "Woodland herb blend x5",
+    "price": 120,
+    "desc": "Required for Whole roasted Meadow boar, Black Forest buffet platter and Swamp dweller's delight feasts.",
+    "use": "",
+    "unlockRequirement": "defeat_elder",
+    "unlockTip": "After defeating The Elder"
+  }, {
+    "name": "Seafarer's herbs x5",
+    "price": 130,
+    "desc": "Required for Sailor's bounty feast.",
+    "use": "",
+    "unlockRequirement": "kill_serpent",
+    "unlockTip": "After killing a Serpent"
+  }, {
+    "name": "Mountain peak pepper powder x5",
+    "price": 140,
+    "desc": "Required for Hearty Mountain logger's stew feast.",
+    "use": "",
+    "unlockRequirement": "defeat_moder",
+    "unlockTip": "After defeating Moder"
+  }, {
+    "name": "Grasslands herbalist harvest x5",
+    "price": 160,
+    "desc": "Required for Plains pie picnic feast.",
+    "use": "",
+    "unlockRequirement": "defeat_yagluth",
+    "unlockTip": "After defeating Yagluth"
+  }, {
+    "name": "Herbs of the hidden hills x5",
     "price": 180,
-    "desc": "Rare herbs for Mistlands and Ashlands tier cooking recipes.",
-    "use": "Cooking — late-game recipes",
+    "desc": "Required for Mushrooms galore à la Mistlands feast.",
+    "use": "",
     "unlockRequirement": "defeat_queen",
-    "unlockTip": "Defeat The Queen (Mistlands boss) to unlock"
+    "unlockTip": "After defeating The Queen"
+  }, {
+    "name": "Fiery spice powder x5",
+    "price": 200,
+    "desc": "Required for Ashlands gourmet bowl feast.",
+    "use": "",
+    "unlockRequirement": "defeat_fader",
+    "unlockTip": "After defeating Fader"
+  }, {
+    "name": "Corked vial x5",
+    "price": 150,
+    "desc": "Required for Blob bombs.",
+    "use": "",
+    "unlockRequirement": "defeat_elder",
+    "unlockTip": "After defeating The Elder"
   }],
   "buys": [{
     "name": "Amber",

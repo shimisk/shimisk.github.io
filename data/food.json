@@ -39,9 +39,9 @@
       "recipe": "Base \u2192 2 days in Fermenter: 10 Barley + 10 Cloudberries",
       "health": 0,
       "stamina": 0,
-      "duration": 0,
+      "duration": 600,
       "foodCategory": "potion",
-      "special": "Resist fire for 10 min"
+      "special": "Fire resistance"
     },
     {
       "id": "BlackSoup",
@@ -75,7 +75,7 @@
       "biome": "Black Forest",
       "recipe": "Forage in Black Forest",
       "health": 8,
-      "stamina": 13,
+      "stamina": 25,
       "duration": 600,
       "foodCategory": "neutral"
     },
@@ -98,10 +98,10 @@
       "desc": "An orange treat.",
       "biome": "Black Forest",
       "recipe": null,
-      "health": 15,
-      "stamina": 8,
-      "duration": 600,
-      "foodCategory": "health"
+      "health": 10,
+      "stamina": 32,
+      "duration": 900,
+      "foodCategory": "stamina"
     },
     {
       "id": "CarrotSoup",
@@ -110,8 +110,8 @@
       "desc": "A warm tasty soup made of mostly carrots.",
       "biome": "Black Forest",
       "recipe": "3 Carrot + 1 Mushroom \u2192 Cauldron",
-      "health": 20,
-      "stamina": 40,
+      "health": 15,
+      "stamina": 45,
       "duration": 1500,
       "foodCategory": "stamina"
     },
@@ -123,9 +123,9 @@
       "biome": "Plains",
       "recipe": "Forage in Plains",
       "health": 13,
-      "stamina": 16,
-      "duration": 600,
-      "foodCategory": "neutral"
+      "stamina": 40,
+      "duration": 900,
+      "foodCategory": "stamina"
     },
     {
       "id": "CookedAsksvinMeat",
@@ -194,8 +194,8 @@
       "desc": "All that running paid off.",
       "biome": "Meadows",
       "recipe": "Deer Meat \u2192 Campfire",
-      "health": 45,
-      "stamina": 15,
+      "health": 35,
+      "stamina": 12,
       "duration": 1200,
       "foodCategory": "health"
     },
@@ -242,8 +242,8 @@
       "desc": "An earthly taste.",
       "biome": "Meadows",
       "recipe": "Boar Meat \u2192 Campfire",
-      "health": 40,
-      "stamina": 15,
+      "health": 30,
+      "stamina": 10,
       "duration": 1200,
       "foodCategory": "health"
     },
@@ -255,7 +255,7 @@
       "biome": "Mountain",
       "recipe": "Wolf Meat \u2192 Campfire",
       "health": 45,
-      "stamina": 20,
+      "stamina": 15,
       "duration": 1200,
       "foodCategory": "health"
     },
@@ -267,9 +267,9 @@
       "biome": "Mountain",
       "recipe": "1 Cooked Deer Meat + 1 Carrot + 1 Mushroom \u2192 Cauldron",
       "health": 45,
-      "stamina": 50,
+      "stamina": 15,
       "duration": 1500,
-      "foodCategory": "neutral"
+      "foodCategory": "health"
     },
     {
       "id": "Eyescream",
@@ -278,8 +278,8 @@
       "desc": "Crispy cool and creamy.",
       "biome": "Mountain",
       "recipe": null,
-      "health": 30,
-      "stamina": 70,
+      "health": 21,
+      "stamina": 65,
       "duration": 1500,
       "foodCategory": "stamina"
     },
@@ -411,7 +411,7 @@
       "biome": "Swamp",
       "recipe": "Any fish \u2192 Food Preparation Table (Iron x5) \u2192 Raw Fish \u2192 Cooking Station (needs iron to build table)",
       "health": 45,
-      "stamina": 25,
+      "stamina": 15,
       "duration": 1200,
       "foodCategory": "health"
     },
@@ -434,10 +434,10 @@
       "desc": "Sweet and tasty.",
       "biome": "Meadows",
       "recipe": "Harvest from Beehive",
-      "health": 20,
-      "stamina": 20,
+      "health": 8,
+      "stamina": 35,
       "duration": 900,
-      "foodCategory": "neutral"
+      "foodCategory": "stamina"
     },
     {
       "id": "HoneyGlazedChicken",
@@ -472,9 +472,9 @@
       "recipe": "Base \u2192 2 days in Fermenter: 10 Honey + 4 Thistle + 2 Bloodbag + 1 Greydwarf Eye",
       "health": 0,
       "stamina": 0,
-      "duration": 0,
+      "duration": 600,
       "foodCategory": "potion",
-      "special": "Resist frost for 10 min"
+      "special": "Frost resistance"
     },
     {
       "id": "MeadHealthLingering",
@@ -485,9 +485,9 @@
       "recipe": "Base \u2192 2 days in Fermenter: 10 Honey + 10 Bloodbag + 1 Dandelion + 4 Barley",
       "health": 0,
       "stamina": 0,
-      "duration": 0,
+      "duration": 300,
       "foodCategory": "potion",
-      "special": "+4 HP/sec for 60s"
+      "special": "+25% health regen"
     },
     {
       "id": "MeadHealthMajor",
@@ -496,11 +496,11 @@
       "desc": "Restores health.",
       "biome": "Swamp",
       "recipe": "Base \u2192 2 days in Fermenter: 10 Honey + 10 Bloodbag + 4 Raspberries + 1 Dandelion",
-      "health": 0,
+      "health": 125,
       "stamina": 0,
-      "duration": 0,
+      "duration": 10,
       "foodCategory": "potion",
-      "special": "Heals 150 HP instantly"
+      "special": "Heals 125 HP instantly"
     },
     {
       "id": "MeadHealthMedium",
@@ -509,9 +509,9 @@
       "desc": "Restores health.",
       "biome": "Swamp",
       "recipe": "Base \u2192 2 days in Fermenter: 10 Honey + 4 Bloodbag + 10 Raspberries + 1 Dandelion",
-      "health": 0,
+      "health": 75,
       "stamina": 0,
-      "duration": 0,
+      "duration": 10,
       "foodCategory": "potion",
       "special": "Heals 75 HP instantly"
     },
@@ -522,11 +522,11 @@
       "desc": "Restores health.",
       "biome": "Black Forest",
       "recipe": "Base \u2192 2 days in Fermenter: 10 Honey + 5 Blueberries + 10 Raspberries + 1 Mushroom",
-      "health": 0,
+      "health": 50,
       "stamina": 0,
-      "duration": 0,
+      "duration": 10,
       "foodCategory": "potion",
-      "special": "Heals 25 HP instantly"
+      "special": "Heals 50 HP instantly"
     },
     {
       "id": "MeadPoisonResist",
@@ -537,9 +537,9 @@
       "recipe": "Base \u2192 2 days in Fermenter: 10 Honey + 5 Thistle + 1 Neck Tail + 10 Coal",
       "health": 0,
       "stamina": 0,
-      "duration": 0,
+      "duration": 600,
       "foodCategory": "potion",
-      "special": "Resist poison for 10 min"
+      "special": "Poison resistance"
     },
     {
       "id": "MeadStaminaLingering",
@@ -550,9 +550,9 @@
       "recipe": "Base \u2192 2 days in Fermenter: 10 Honey + 10 Cloudberries + 6 Yellow Mushroom + 4 Barley",
       "health": 0,
       "stamina": 0,
-      "duration": 0,
+      "duration": 300,
       "foodCategory": "potion",
-      "special": "+5 stamina/sec for 60s"
+      "special": "+25% stamina regen"
     },
     {
       "id": "MeadStaminaMedium",
@@ -562,8 +562,8 @@
       "biome": "Black Forest",
       "recipe": "Base \u2192 2 days in Fermenter: 10 Honey + 10 Cloudberries + 10 Yellow Mushroom",
       "health": 0,
-      "stamina": 0,
-      "duration": 0,
+      "stamina": 160,
+      "duration": 2,
       "foodCategory": "potion",
       "special": "Restores 160 stamina instantly"
     },
@@ -575,8 +575,8 @@
       "biome": "Black Forest",
       "recipe": "Base \u2192 2 days in Fermenter: 10 Honey + 10 Yellow Mushroom + 10 Raspberries",
       "health": 0,
-      "stamina": 0,
-      "duration": 0,
+      "stamina": 80,
+      "duration": 2,
       "foodCategory": "potion",
       "special": "Restores 80 stamina instantly"
     },
@@ -589,7 +589,8 @@
       "recipe": "Base \u2192 2 days in Fermenter: 10 Honey + 5 Jotun Puffs + 1 Blue Mushroom",
       "health": 0,
       "stamina": 0,
-      "duration": 0,
+      "eitr": 125,
+      "duration": 10,
       "foodCategory": "potion",
       "special": "Restores 100 eitr instantly"
     },
@@ -612,8 +613,8 @@
       "desc": "Chunks of goodness in a thick gravy.",
       "biome": "Swamp",
       "recipe": "4 Raw Meat + 1 Carrot + 1 Mushroom \u2192 Cauldron",
-      "health": 45,
-      "stamina": 30,
+      "health": 40,
+      "stamina": 13,
       "duration": 1500,
       "foodCategory": "health"
     },
@@ -637,9 +638,9 @@
       "biome": "Meadows",
       "recipe": "Forage in Meadows/Black Forest",
       "health": 15,
-      "stamina": 8,
-      "duration": 600,
-      "foodCategory": "health"
+      "stamina": 15,
+      "duration": 900,
+      "foodCategory": "neutral"
     },
     {
       "id": "MushroomBlue",
@@ -660,12 +661,10 @@
       "desc": "Swollen with magic, these golden orbs bubble from the ground where the Jotun fell.",
       "biome": "Mistlands",
       "recipe": "Forage in Mistlands",
-      "health": 0,
-      "stamina": 0,
+      "health": 25,
+      "stamina": 25,
       "duration": 900,
-      "foodCategory": "neutral",
-      "eitr": 30,
-      "special": "+30 Eitr \u00b7 15 min"
+      "foodCategory": "neutral"
     },
     {
       "id": "MushroomMagecap",
@@ -674,12 +673,11 @@
       "desc": "The delicate blue magecaps crackle with sorcerous vitality.",
       "biome": "Mistlands",
       "recipe": "Forage in Mistlands",
-      "health": 0,
-      "stamina": 0,
+      "health": 25,
+      "stamina": 25,
+      "eitr": 25,
       "duration": 900,
-      "foodCategory": "neutral",
-      "eitr": 40,
-      "special": "+40 Eitr \u00b7 15 min"
+      "foodCategory": "neutral"
     },
     {
       "id": "MushroomOmelette",
@@ -701,7 +699,7 @@
       "biome": "Black Forest",
       "recipe": "Forage in dungeon caves",
       "health": 10,
-      "stamina": 18,
+      "stamina": 30,
       "duration": 600,
       "foodCategory": "stamina"
     },
@@ -713,8 +711,8 @@
       "biome": "Meadows",
       "recipe": "Neck Tail \u2192 Campfire",
       "health": 25,
-      "stamina": 15,
-      "duration": 1000,
+      "stamina": 8,
+      "duration": 1200,
       "foodCategory": "health"
     },
     {
@@ -724,10 +722,10 @@
       "desc": "A crunchy and spicy taste.",
       "biome": "Mountain",
       "recipe": null,
-      "health": 12,
-      "stamina": 10,
-      "duration": 600,
-      "foodCategory": "neutral"
+      "health": 13,
+      "stamina": 40,
+      "duration": 900,
+      "foodCategory": "stamina"
     },
     {
       "id": "OnionSoup",
@@ -736,10 +734,10 @@
       "desc": "Deliciously rich.",
       "biome": "Mountain",
       "recipe": "3 Onion \u2192 Cauldron",
-      "health": 50,
-      "stamina": 30,
-      "duration": 1500,
-      "foodCategory": "health"
+      "health": 20,
+      "stamina": 60,
+      "duration": 1200,
+      "foodCategory": "stamina"
     },
     {
       "id": "PiquantPie",
@@ -748,9 +746,9 @@
       "desc": "The taste is well worth the effort.",
       "biome": "Plains",
       "recipe": "4 Barley Flour + 2 Cloudberries + 2 Raw Meat \u2192 Cauldron/Oven",
-      "health": 80,
-      "stamina": 60,
-      "duration": 2000,
+      "health": 105,
+      "stamina": 35,
+      "duration": 1800,
       "foodCategory": "health"
     },
     {
@@ -761,8 +759,8 @@
       "biome": "Black Forest",
       "recipe": "8 Raspberries + 8 Blueberries \u2192 Cauldron",
       "health": 14,
-      "stamina": 22,
-      "duration": 600,
+      "stamina": 40,
+      "duration": 1200,
       "foodCategory": "stamina"
     },
     {
@@ -773,7 +771,7 @@
       "biome": "Meadows",
       "recipe": "Forage in Meadows",
       "health": 7,
-      "stamina": 13,
+      "stamina": 20,
       "duration": 600,
       "foodCategory": "stamina"
     },
@@ -784,9 +782,9 @@
       "desc": "This dessert keeps you going all day long.",
       "biome": "Plains",
       "recipe": null,
-      "health": 60,
-      "stamina": 80,
-      "duration": 2000,
+      "health": 34,
+      "stamina": 100,
+      "duration": 1800,
       "foodCategory": "stamina"
     },
     {
@@ -808,8 +806,8 @@
       "desc": "Links of savory, smoked meat.",
       "biome": "Swamp",
       "recipe": "4 Entrails + 2 Raw Meat + 1 Thistle \u2192 Cauldron",
-      "health": 60,
-      "stamina": 40,
+      "health": 55,
+      "stamina": 18,
       "duration": 1800,
       "foodCategory": "health"
     },
@@ -820,10 +818,11 @@
       "desc": "A quivering jelly with a taste like gentle electricity.",
       "biome": "Mistlands",
       "recipe": "2 Cooked Seeker Meat + 3 Magecap + 1 Sap \u2192 Cauldron",
-      "health": 65,
-      "stamina": 65,
+      "health": 28,
+      "stamina": 14,
+      "eitr": 85,
       "duration": 1800,
-      "foodCategory": "neutral"
+      "foodCategory": "potion"
     },
     {
       "id": "SerpentMeatCooked",
@@ -833,8 +832,8 @@
       "biome": "Ocean",
       "recipe": "Serpent Meat \u2192 Campfire",
       "health": 70,
-      "stamina": 40,
-      "duration": 1800,
+      "stamina": 23,
+      "duration": 1500,
       "foodCategory": "health"
     },
     {
@@ -845,8 +844,8 @@
       "biome": "Ocean",
       "recipe": "1 Cooked Serpent Meat + 2 Mushroom + 1 Honey \u2192 Cauldron",
       "health": 80,
-      "stamina": 40,
-      "duration": 2400,
+      "stamina": 26,
+      "duration": 1800,
       "foodCategory": "health"
     },
     {
@@ -868,8 +867,8 @@
       "desc": "A hearty and filling stew.",
       "biome": "Swamp",
       "recipe": "3 Turnip + 1 Raw Meat \u2192 Cauldron",
-      "health": 25,
-      "stamina": 45,
+      "health": 18,
+      "stamina": 55,
       "duration": 1500,
       "foodCategory": "stamina"
     },
@@ -880,10 +879,11 @@
       "desc": "An intensely sweet and slightly sour berry found in the Ashlands.",
       "biome": "Ashlands",
       "recipe": null,
-      "health": 15,
-      "stamina": 25,
-      "duration": 600,
-      "foodCategory": "stamina"
+      "health": 30,
+      "stamina": 30,
+      "eitr": 30,
+      "duration": 900,
+      "foodCategory": "neutral"
     }
   ]
 }
