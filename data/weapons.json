@@ -567,9 +567,9 @@
       "id": "FistFenrirClaw",
       "name": "Flesh Rippers",
       "type": "TwoHandedWeapon",
-      "desc": "If claws work for wolves, why not for a viking?",
+      "desc": "Wolverine-style claw weapons. Every second hit is a combo finisher dealing double damage. x6 backstab multiplier. No speed penalty when drawn. Only fist weapon in the game.",
       "biome": "Mountain",
-      "recipe": "6 Fenris Hair + 3 Wolf Fang + 1 Wolf Trophy \u2192 Forge"
+      "recipe": "10 Fenris Hair + 6 Fenris Claw + 10 Silver \u2192 Forge lv2"
     },
     {
       "id": "KnifeBlackMetal",
@@ -1034,6 +1034,14 @@
       "desc": "The best defence is a great defence.",
       "biome": "Ashlands",
       "recipe": "25 Flametal + 5 Molten Core + 6 Ashwood \u2192 Forge of Ancients"
+    },
+    {
+      "id": "FistBearClaw",
+      "name": "Paws of the Bear",
+      "type": "TwoHandedWeapon",
+      "desc": "Bear claw fist weapons \u2014 highest parry bonus of any weapon in the game. Secondary attack staggers most enemies. Most durable weapon in the game (450 durability at max). Pairs perfectly with the Bear Set.",
+      "biome": "Black Forest",
+      "recipe": "5 Bear Paw + 4 Bear Hide + 1 Bear Trophy \u2192 Workbench"
     }
   ]
 }

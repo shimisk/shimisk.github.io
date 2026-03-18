@@ -86,6 +86,36 @@
       "totalMats": "15 Troll Hide, 3 Bone Fragments"
     },
     {
+      "id": "bear",
+      "name": "Bear Set",
+      "biome": "Black Forest",
+      "tier": 2,
+      "style": "berserker",
+      "icon": "\ud83d\udc3b",
+      "color": "#8a6a3a",
+      "desc": "New in the Call to Arms update. Made from bears in the Black Forest. Between Troll and Bronze in defense \u2014 but the Berserk set bonus makes it a unique aggressive playstyle. Bears flee from torches.",
+      "bonus": "Berserk: +30% health regen \u00b7 +15% stamina regen \u00b7 +10% slash damage \u00b7 +10% chop \u2014 but -25% physical resistance. High risk, high regen.",
+      "playstyle": "Berserker",
+      "pieces": [
+        {
+          "name": "Headdress of the Bear",
+          "type": "Helmet",
+          "recipe": "5 Bear Hide + 1 Bear Trophy \u2192 Workbench"
+        },
+        {
+          "name": "Patterns of the Bear",
+          "type": "Chest",
+          "recipe": "5 Bear Hide + 2 Bear Paw + 4 Blueberries \u2192 Workbench"
+        },
+        {
+          "name": "Loincloth of the Bear",
+          "type": "Legs",
+          "recipe": "5 Bear Hide + 2 Bear Paw \u2192 Workbench"
+        }
+      ],
+      "totalMats": "15 Bear Hide, 4 Bear Paw, 4 Blueberries, 1 Bear Trophy (min 4 bear kills)"
+    },
+    {
       "id": "bronze",
       "name": "Bronze Set",
       "biome": "Black Forest",
@@ -213,27 +243,27 @@
       "style": "berserker",
       "icon": "\ud83d\udc3e",
       "color": "#c4944a",
-      "desc": "Secret berserker set found in Frost Caves. High movement speed and fire damage bonus.",
-      "bonus": "+10% Movement speed. +5 Fire damage on unarmed hits. Rewards aggressive combat.",
+      "desc": "Secret berserker set from Frost Caves in the Mountains. Uses Fenris Hair dropped by Fenrings (the werewolf enemies, not Bears). Highest mobility armor in the game.",
+      "bonus": "+9% movement speed \u00b7 Fire & frost resistance \u00b7 +15 Unarmed skill. Pairs with Flesh Rippers for a full berserker build.",
       "playstyle": "Berserker / Fist",
       "pieces": [
         {
           "name": "Fenris Hood",
           "type": "Helmet",
-          "recipe": "6 Fenris Hair + 1 Wolf Trophy \u2192 Forge"
+          "recipe": "20 Fenris Hair + 2 Wolf Pelt + 1 Cultist Trophy \u2192 Workbench lv2"
         },
         {
           "name": "Fenris Coat",
           "type": "Chest",
-          "recipe": "6 Fenris Hair + 1 Wolf Trophy \u2192 Forge"
+          "recipe": "20 Fenris Hair + 4 Wolf Pelt + 10 Leather Scraps \u2192 Workbench lv2"
         },
         {
           "name": "Fenris Leggings",
           "type": "Legs",
-          "recipe": "6 Fenris Hair + 1 Wolf Trophy \u2192 Forge"
+          "recipe": "20 Fenris Hair + 4 Wolf Pelt + 10 Leather Scraps \u2192 Workbench lv2"
         }
       ],
-      "totalMats": "18 Fenris Hair, 3 Wolf Trophy"
+      "totalMats": "60 Fenris Hair, 10 Wolf Pelt, 20 Leather Scraps, 1 Cultist Trophy"
     },
     {
       "id": "padded",

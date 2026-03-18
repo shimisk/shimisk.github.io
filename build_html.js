@@ -21,14 +21,16 @@ const babel = require('@babel/core');
 // ─── Read source ──────────────────────────────────────────────────────────────
 let jsx = fs.readFileSync('valheim-companion.jsx', 'utf8');
 
-// Remove the React import (we use globals)
-jsx = jsx.replace('import { useState, useMemo, useEffect } from "react";\n', '');
+// Normalize line endings to avoid parse issues on Windows (CRLF)
+jsx = jsx.replace(/\r\n/g, '\n');
 
-// Remove export default
+// Strip EVERYTHING that shouldn't be in the final bundle — do this unconditionally
+jsx = jsx.replace(/^const \{ useState[^\n]+\n\n?/m, '');   // remove existing hooks line
+jsx = jsx.replace(/^import \{[^}]+\} from ['"]react['"];\r?\n/m, ''); // remove import
 jsx = jsx.replace('export default function ValheimApp()', 'function ValheimApp()');
 
-// Prepend hook globals
-jsx = 'const { useState, useMemo, useEffect } = React;\n\n' + jsx;
+// Now add hooks globals once, cleanly at the top
+jsx = 'const { useState, useMemo, useEffect, useRef } = React;\n\n' + jsx;
 
 // Append mount call
 jsx += '\n\nconst _root = ReactDOM.createRoot(document.getElementById("root"));\n_root.render(React.createElement(ValheimApp));\n';
@@ -74,6 +76,6 @@ ${compiledJS}
 </body>
 </html>`;
 
-fs.writeFileSync('index.html', html);
+fs.writeFileSync('index.html', html, 'utf8');
 console.log(`Done! index.html ready — ${(html.length / 1024).toFixed(0)} KB`);
 console.log('Upload index.html to GitHub Pages.');

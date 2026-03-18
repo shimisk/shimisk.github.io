@@ -10,8 +10,8 @@ That's it. No other changes needed.
 """
 import json, re
 
-files = ['bosses','weapons','armor','food','materials']
-data  = {f: json.load(open(f'data/{f}.json')) for f in files}
+files = ['bosses','weapons','armor','food','materials','vendors']
+data  = {f: json.load(open(f'data/{f}.json', encoding='utf-8')) for f in files}
 
 # Build inlined constants block
 lines = [
@@ -22,13 +22,12 @@ lines = [
   '',
 ]
 for f in files:
-    compact = json.dumps(data[f], separators=(',',':'))
+    compact = json.dumps(data[f], separators=(',',':'), ensure_ascii=False)
     lines.append(f'const _{f.upper()}_DATA = {compact};')
 
 lines += [
   '',
   'function useGameData() {',
-  '  // In production, swap this for fetch() calls to /data/*.json',
   '  const allItems = [',
   '    ...(_WEAPONS_DATA.items   || []),',
   '    ...(_FOOD_DATA.items      || []),',
@@ -40,6 +39,7 @@ lines += [
   '    armor:    _ARMOR_DATA,',
   '    food:     _FOOD_DATA,',
   '    materials:_MATERIALS_DATA,',
+  '    vendors:  _VENDORS_DATA,',
   '    allItems,',
   '  };',
   '  return { data, loading: false, error: null };',
@@ -47,7 +47,7 @@ lines += [
 ]
 new_block = '\n'.join(lines)
 
-with open('valheim-companion.jsx') as f:
+with open('valheim-companion.jsx', encoding='utf-8') as f:
     app = f.read()
 
 # Replace the inlined block
@@ -58,10 +58,11 @@ app = re.sub(
     flags=re.DOTALL | re.MULTILINE
 )
 
-with open('valheim-companion.jsx', 'w') as f:
+with open('valheim-companion.jsx', 'w', encoding='utf-8') as f:
     f.write(app)
 
 print("✓ valheim-companion.jsx updated from JSON files")
 for fn in files:
-    items = data[fn] if isinstance(data[fn], list) else next((v for v in data[fn].values() if isinstance(v, list)), [])
+    d = data[fn]
+    items = d if isinstance(d, list) else next((v for v in d.values() if isinstance(v, list)), [])
     print(f"  {fn}.json → {len(items)} entries")

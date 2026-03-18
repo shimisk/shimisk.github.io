@@ -6,7 +6,7 @@
     "icon": "\ud83e\udd8c",
     "summon": "Place 2 Deer Trophies on the altar in the Meadows",
     "tip": "Bring a shield. Block his charge and lightning attacks.",
-    "power": "Reduces running & jumping stamina cost by 60%",
+    "power": "60% reduced stamina for running, jumping & swimming",
     "drop": "Hard Antler",
     "unlocks": [
       "Antler Pickaxe \u2014 your first pickaxe, lets you mine ore and stone",
@@ -22,7 +22,7 @@
     "icon": "\ud83c\udf3f",
     "summon": "Burn 3 Ancient Seeds on the altar in the Black Forest",
     "tip": "Use fire arrows. Stay mobile and use the stone pillars as cover.",
-    "power": "Increases wood chopping speed",
+    "power": "+60% chop & pickaxe damage \u00b7 +30% health regeneration",
     "drop": "Swamp Key",
     "unlocks": [
       "Swamp Key \u2014 unlocks Sunken Crypts to farm Iron",
@@ -38,7 +38,7 @@
     "icon": "\ud83d\udc80",
     "summon": "Place 10 Withered Bones on the altar in the Swamp",
     "tip": "Blunt weapons only. Bring Poison Resist Mead \u2014 non-negotiable.",
-    "power": "Temporarily resists all physical damage",
+    "power": "-25% pierce/slash/blunt damage \u00b7 -100% block stamina cost \u00b7 +5 stamina/block",
     "drop": "Wishbone",
     "unlocks": [
       "Wishbone \u2014 detects buried Silver deposits in the Mountains",
@@ -54,7 +54,7 @@
     "icon": "\ud83d\udc09",
     "summon": "Place 3 Dragon Eggs on the altar in the Mountains",
     "tip": "Frost Resist Mead is mandatory. Use fire arrows against her.",
-    "power": "Always grants tailwind while sailing",
+    "power": "Always tailwind when sailing \u00b7 +300 carry weight \u00b7 +10% movement speed \u00b7 -50% frost",
     "drop": "Dragon Tear",
     "unlocks": [
       "Artisan Table \u2014 required to build the Spinning Wheel and Windmill",
@@ -71,7 +71,7 @@
     "icon": "\ud83d\udd25",
     "summon": "Place 5 Fuling Totems on the altar in the Plains",
     "tip": "Keep your distance. Dodge the beam attacks. Elemental resist mead helps.",
-    "power": "Temporarily resist fire, frost and lightning damage",
+    "power": "-50% lightning \u00b7 +25 Farming skill \u00b7 +10% damage",
     "drop": "Torn Spirit",
     "unlocks": [
       "Haldor sells Chicken Eggs after this (1500 coins) \u2014 enables chicken foods",
@@ -87,7 +87,7 @@
     "icon": "\ud83d\udd77\ufe0f",
     "summon": "Use Sealbreaker (5 fragments from Infested Mines) at the Mistlands altar",
     "tip": "Full Carapace or Eitr-weave gear required. Bring lots of healing and eitr meads.",
-    "power": "Activates a magical barrier that absorbs damage",
+    "power": "+100% eitr regeneration \u00b7 -100% sneak stamina usage \u00b7 -50% poison",
     "drop": "Majestic Carapace",
     "unlocks": [
       "Unlocks the Ashlands biome for safe exploration",
@@ -103,7 +103,7 @@
     "icon": "\ud83c\udf0b",
     "summon": "Find the Fader altar deep in the Ashlands fortress",
     "tip": "Full Flametal gear mandatory. Watch for ground fissures and ranged fire attacks.",
-    "power": "Temporarily resist fire damage",
+    "power": "+100% adrenaline \u00b7 50% reduced stagger \u00b7 -50% fire",
     "drop": "Fader Relic",
     "unlocks": [
       "Currently the final boss \u2014 signals completion of the Ashlands",

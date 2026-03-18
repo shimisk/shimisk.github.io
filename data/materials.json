@@ -85,16 +85,16 @@
       "name": "Bear Hide",
       "type": "Material",
       "desc": "A thick and furry hide, coarse yet incredibly soft.",
-      "biome": "Mountain",
-      "recipe": "Kill Fenring"
+      "biome": "Black Forest",
+      "recipe": "Kill Bears in the Black Forest"
     },
     {
       "id": "BjornMeat",
       "name": "Bear Meat",
       "type": "Material",
       "desc": "This fatty meat was once meant to sustain a body through hibernation.",
-      "biome": "Unknown",
-      "recipe": null
+      "biome": "Black Forest",
+      "recipe": "Kill Bears in the Black Forest"
     },
     {
       "id": "BlackCore",
@@ -1247,6 +1247,22 @@
       "desc": "Crackles with contained lightning. Handle with care.",
       "biome": "Unknown",
       "recipe": null
+    },
+    {
+      "id": "BjornPaw",
+      "name": "Bear Paw",
+      "type": "Material",
+      "desc": "A large bear claw, razor sharp.",
+      "biome": "Black Forest",
+      "recipe": "Kill Bears in the Black Forest"
+    },
+    {
+      "id": "TrophyBjorn",
+      "name": "Bear Trophy",
+      "type": "Trophy",
+      "desc": "The proud head of a bear. 10% drop chance \u2014 you may need many kills.",
+      "biome": "Black Forest",
+      "recipe": "Kill Bears (10% drop chance)"
     }
   ]
 }

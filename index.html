@@ -26,7 +26,8 @@
 const {
   useState,
   useMemo,
-  useEffect
+  useEffect,
+  useRef
 } = React;
 
 // ─── Inlined game data ────────────────────────────────────────────────────────
@@ -41,7 +42,7 @@ const _BOSSES_DATA = [{
   "icon": "🦌",
   "summon": "Place 2 Deer Trophies on the altar in the Meadows",
   "tip": "Bring a shield. Block his charge and lightning attacks.",
-  "power": "Reduces running & jumping stamina cost by 60%",
+  "power": "60% reduced stamina for running, jumping & swimming",
   "drop": "Hard Antler",
   "unlocks": ["Antler Pickaxe — your first pickaxe, lets you mine ore and stone", "Mining copper, tin, and stone for the first time", "Entire Black Forest tier of gear and crafting"],
   "defeated": false
@@ -52,7 +53,7 @@ const _BOSSES_DATA = [{
   "icon": "🌿",
   "summon": "Burn 3 Ancient Seeds on the altar in the Black Forest",
   "tip": "Use fire arrows. Stay mobile and use the stone pillars as cover.",
-  "power": "Increases wood chopping speed",
+  "power": "+60% chop & pickaxe damage · +30% health regeneration",
   "drop": "Swamp Key",
   "unlocks": ["Swamp Key — unlocks Sunken Crypts to farm Iron", "Iron age gear, weapons, and armor", "Cauldron-tier 2 recipes (Sausages, Turnip Stew, etc.)"],
   "defeated": false
@@ -63,7 +64,7 @@ const _BOSSES_DATA = [{
   "icon": "💀",
   "summon": "Place 10 Withered Bones on the altar in the Swamp",
   "tip": "Blunt weapons only. Bring Poison Resist Mead — non-negotiable.",
-  "power": "Temporarily resists all physical damage",
+  "power": "-25% pierce/slash/blunt damage · -100% block stamina cost · +5 stamina/block",
   "drop": "Wishbone",
   "unlocks": ["Wishbone — detects buried Silver deposits in the Mountains", "Silver mining and the entire Mountain tier", "Wolf armor, Frostner, Drake helmet"],
   "defeated": false
@@ -74,7 +75,7 @@ const _BOSSES_DATA = [{
   "icon": "🐉",
   "summon": "Place 3 Dragon Eggs on the altar in the Mountains",
   "tip": "Frost Resist Mead is mandatory. Use fire arrows against her.",
-  "power": "Always grants tailwind while sailing",
+  "power": "Always tailwind when sailing · +300 carry weight · +10% movement speed · -50% frost",
   "drop": "Dragon Tear",
   "unlocks": ["Artisan Table — required to build the Spinning Wheel and Windmill", "Spinning Wheel turns Flax into Linen Thread (Padded armor)", "Windmill turns Barley into Barley Flour (Plains-tier food)", "Blast Furnace for smelting Black Metal"],
   "defeated": false
@@ -85,7 +86,7 @@ const _BOSSES_DATA = [{
   "icon": "🔥",
   "summon": "Place 5 Fuling Totems on the altar in the Plains",
   "tip": "Keep your distance. Dodge the beam attacks. Elemental resist mead helps.",
-  "power": "Temporarily resist fire, frost and lightning damage",
+  "power": "-50% lightning · +25 Farming skill · +10% damage",
   "drop": "Torn Spirit",
   "unlocks": ["Haldor sells Chicken Eggs after this (1500 coins) — enables chicken foods", "Gate to Mistlands tier of progression", "Black Forge via Black Cores (Mistlands dungeons)"],
   "defeated": false
@@ -96,7 +97,7 @@ const _BOSSES_DATA = [{
   "icon": "🕷️",
   "summon": "Use Sealbreaker (5 fragments from Infested Mines) at the Mistlands altar",
   "tip": "Full Carapace or Eitr-weave gear required. Bring lots of healing and eitr meads.",
-  "power": "Activates a magical barrier that absorbs damage",
+  "power": "+100% eitr regeneration · -100% sneak stamina usage · -50% poison",
   "drop": "Majestic Carapace",
   "unlocks": ["Unlocks the Ashlands biome for safe exploration", "Flametal ore and the Forge of Ancients", "Endgame tier weapons and armor"],
   "defeated": false
@@ -107,7 +108,7 @@ const _BOSSES_DATA = [{
   "icon": "🌋",
   "summon": "Find the Fader altar deep in the Ashlands fortress",
   "tip": "Full Flametal gear mandatory. Watch for ground fissures and ranged fire attacks.",
-  "power": "Temporarily resist fire damage",
+  "power": "+100% adrenaline · 50% reduced stagger · -50% fire",
   "drop": "Fader Relic",
   "unlocks": ["Currently the final boss — signals completion of the Ashlands", "Deep North biome teased as next major content update"],
   "defeated": false
@@ -536,9 +537,9 @@ const _WEAPONS_DATA = {
     "id": "FistFenrirClaw",
     "name": "Flesh Rippers",
     "type": "TwoHandedWeapon",
-    "desc": "If claws work for wolves, why not for a viking?",
+    "desc": "Wolverine-style claw weapons. Every second hit is a combo finisher dealing double damage. x6 backstab multiplier. No speed penalty when drawn. Only fist weapon in the game.",
     "biome": "Mountain",
-    "recipe": "6 Fenris Hair + 3 Wolf Fang + 1 Wolf Trophy → Forge"
+    "recipe": "10 Fenris Hair + 6 Fenris Claw + 10 Silver → Forge lv2"
   }, {
     "id": "KnifeBlackMetal",
     "name": "Black Metal Knife",
@@ -945,6 +946,13 @@ const _WEAPONS_DATA = {
     "desc": "The best defence is a great defence.",
     "biome": "Ashlands",
     "recipe": "25 Flametal + 5 Molten Core + 6 Ashwood → Forge of Ancients"
+  }, {
+    "id": "FistBearClaw",
+    "name": "Paws of the Bear",
+    "type": "TwoHandedWeapon",
+    "desc": "Bear claw fist weapons — highest parry bonus of any weapon in the game. Secondary attack staggers most enemies. Most durable weapon in the game (450 durability at max). Pairs perfectly with the Bear Set.",
+    "biome": "Black Forest",
+    "recipe": "5 Bear Paw + 4 Bear Hide + 1 Bear Trophy → Workbench"
   }]
 };
 const _ARMOR_DATA = {
@@ -1019,6 +1027,31 @@ const _ARMOR_DATA = {
       "recipe": "5 Troll Hide → Workbench"
     }],
     "totalMats": "15 Troll Hide, 3 Bone Fragments"
+  }, {
+    "id": "bear",
+    "name": "Bear Set",
+    "biome": "Black Forest",
+    "tier": 2,
+    "style": "berserker",
+    "icon": "🐻",
+    "color": "#8a6a3a",
+    "desc": "New in the Call to Arms update. Made from bears in the Black Forest. Between Troll and Bronze in defense — but the Berserk set bonus makes it a unique aggressive playstyle. Bears flee from torches.",
+    "bonus": "Berserk: +30% health regen · +15% stamina regen · +10% slash damage · +10% chop — but -25% physical resistance. High risk, high regen.",
+    "playstyle": "Berserker",
+    "pieces": [{
+      "name": "Headdress of the Bear",
+      "type": "Helmet",
+      "recipe": "5 Bear Hide + 1 Bear Trophy → Workbench"
+    }, {
+      "name": "Patterns of the Bear",
+      "type": "Chest",
+      "recipe": "5 Bear Hide + 2 Bear Paw + 4 Blueberries → Workbench"
+    }, {
+      "name": "Loincloth of the Bear",
+      "type": "Legs",
+      "recipe": "5 Bear Hide + 2 Bear Paw → Workbench"
+    }],
+    "totalMats": "15 Bear Hide, 4 Bear Paw, 4 Blueberries, 1 Bear Trophy (min 4 bear kills)"
   }, {
     "id": "bronze",
     "name": "Bronze Set",
@@ -1127,23 +1160,23 @@ const _ARMOR_DATA = {
     "style": "berserker",
     "icon": "🐾",
     "color": "#c4944a",
-    "desc": "Secret berserker set found in Frost Caves. High movement speed and fire damage bonus.",
-    "bonus": "+10% Movement speed. +5 Fire damage on unarmed hits. Rewards aggressive combat.",
+    "desc": "Secret berserker set from Frost Caves in the Mountains. Uses Fenris Hair dropped by Fenrings (the werewolf enemies, not Bears). Highest mobility armor in the game.",
+    "bonus": "+9% movement speed · Fire & frost resistance · +15 Unarmed skill. Pairs with Flesh Rippers for a full berserker build.",
     "playstyle": "Berserker / Fist",
     "pieces": [{
       "name": "Fenris Hood",
       "type": "Helmet",
-      "recipe": "6 Fenris Hair + 1 Wolf Trophy → Forge"
+      "recipe": "20 Fenris Hair + 2 Wolf Pelt + 1 Cultist Trophy → Workbench lv2"
     }, {
       "name": "Fenris Coat",
       "type": "Chest",
-      "recipe": "6 Fenris Hair + 1 Wolf Trophy → Forge"
+      "recipe": "20 Fenris Hair + 4 Wolf Pelt + 10 Leather Scraps → Workbench lv2"
     }, {
       "name": "Fenris Leggings",
       "type": "Legs",
-      "recipe": "6 Fenris Hair + 1 Wolf Trophy → Forge"
+      "recipe": "20 Fenris Hair + 4 Wolf Pelt + 10 Leather Scraps → Workbench lv2"
     }],
-    "totalMats": "18 Fenris Hair, 3 Wolf Trophy"
+    "totalMats": "60 Fenris Hair, 10 Wolf Pelt, 20 Leather Scraps, 1 Cultist Trophy"
   }, {
     "id": "padded",
     "name": "Padded Set",
@@ -1402,8 +1435,8 @@ const _FOOD_DATA = {
     "name": "Cooked Bear Meat",
     "type": "Consumable",
     "desc": "Tastes like victory.",
-    "biome": "Mountain",
-    "recipe": null,
+    "biome": "Black Forest",
+    "recipe": "Bear Meat → Campfire (kill Bears in Black Forest)",
     "health": 75,
     "stamina": 35,
     "duration": 1800,
@@ -2160,15 +2193,15 @@ const _MATERIALS_DATA = {
     "name": "Bear Hide",
     "type": "Material",
     "desc": "A thick and furry hide, coarse yet incredibly soft.",
-    "biome": "Mountain",
-    "recipe": "Kill Fenring"
+    "biome": "Black Forest",
+    "recipe": "Kill Bears in the Black Forest"
   }, {
     "id": "BjornMeat",
     "name": "Bear Meat",
     "type": "Material",
     "desc": "This fatty meat was once meant to sustain a body through hibernation.",
-    "biome": "Unknown",
-    "recipe": null
+    "biome": "Black Forest",
+    "recipe": "Kill Bears in the Black Forest"
   }, {
     "id": "BlackCore",
     "name": "Black Core",
@@ -3177,6 +3210,20 @@ const _MATERIALS_DATA = {
     "desc": "Crackles with contained lightning. Handle with care.",
     "biome": "Unknown",
     "recipe": null
+  }, {
+    "id": "BjornPaw",
+    "name": "Bear Paw",
+    "type": "Material",
+    "desc": "A large bear claw, razor sharp.",
+    "biome": "Black Forest",
+    "recipe": "Kill Bears in the Black Forest"
+  }, {
+    "id": "TrophyBjorn",
+    "name": "Bear Trophy",
+    "type": "Trophy",
+    "desc": "The proud head of a bear. 10% drop chance — you may need many kills.",
+    "biome": "Black Forest",
+    "recipe": "Kill Bears (10% drop chance)"
   }]
 };
 const _VENDORS_DATA = [{
@@ -9293,16 +9340,13 @@ const HILDIR_CHESTS = [{
 function VendorDetail({
   vendor,
   bosses,
+  hildirChests,
+  setHildirChests,
   onBack
 }) {
   const [selectedItem, setSelectedItem] = useState(null);
-  // Hildir chest state — tracked locally (player knows which they've returned)
-  const [returnedChests, setReturnedChests] = useState({
-    return_brass_chest: false,
-    return_silver_chest: false,
-    return_bronze_chest: false
-  });
-  const toggleChest = id => setReturnedChests(prev => ({
+  const returnedChests = hildirChests;
+  const toggleChest = id => setHildirChests(prev => ({
     ...prev,
     [id]: !prev[id]
   }));
@@ -9649,7 +9693,9 @@ function VendorDetail({
 // ─── Vendor cards grid ────────────────────────────────────────────────────────
 function VendorsPanel({
   vendors,
-  bosses
+  bosses,
+  hildirChests,
+  setHildirChests
 }) {
   const [activeVendor, setActiveVendor] = useState(null);
   if (activeVendor) {
@@ -9657,6 +9703,8 @@ function VendorsPanel({
     return /*#__PURE__*/React.createElement(VendorDetail, {
       vendor: vendor,
       bosses: bosses,
+      hildirChests: hildirChests,
+      setHildirChests: setHildirChests,
       onBack: () => setActiveVendor(null)
     });
   }
@@ -9877,12 +9925,21 @@ function TabBar({
   setTab
 }) {
   const [showLeft, setShowLeft] = useState(false);
-  const [showRight, setShowRight] = useState(true);
-  const handleScroll = e => {
-    const el = e.currentTarget;
+  const [showRight, setShowRight] = useState(false);
+  const ref = useRef(null);
+  const update = el => {
+    if (!el) return;
     setShowLeft(el.scrollLeft > 10);
     setShowRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
   };
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    update(el);
+    const ro = new ResizeObserver(() => update(el));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   const ARROW = {
     color: "#d4aa60",
     fontSize: 24,
@@ -9897,7 +9954,8 @@ function TabBar({
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "tab-bar",
-    onScroll: handleScroll
+    ref: ref,
+    onScroll: e => update(e.currentTarget)
   }, mainTabs.map(t => /*#__PURE__*/React.createElement("button", {
     key: t.id,
     className: `tab-btn ${tab === t.id ? "active" : ""}`,
@@ -9946,18 +10004,55 @@ function ValheimApp() {
     loading,
     error
   } = useGameData();
-  const [tab, setTab] = useState("tracker");
+  const [tab, setTab] = useState(() => localStorage.getItem('vhc_tab') || "tracker");
   const [bosses, setBosses] = useState(null);
+  const [hildirChests, setHildirChests] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('vhc_hildir')) || {
+        return_brass_chest: false,
+        return_silver_chest: false,
+        return_bronze_chest: false
+      };
+    } catch {
+      return {
+        return_brass_chest: false,
+        return_silver_chest: false,
+        return_bronze_chest: false
+      };
+    }
+  });
 
-  // Initialise boss state once data loads
+  // Initialise boss state — load saved defeated IDs from localStorage
   useEffect(() => {
     if (data?.bosses && !bosses) {
+      let saved = [];
+      try {
+        saved = JSON.parse(localStorage.getItem('vhc_bosses')) || [];
+      } catch {}
       setBosses(data.bosses.map(b => ({
         ...b,
-        defeated: false
+        defeated: saved.includes(b.id)
       })));
     }
   }, [data]);
+
+  // Persist bosses whenever they change
+  useEffect(() => {
+    if (bosses) {
+      const defeated = bosses.filter(b => b.defeated).map(b => b.id);
+      localStorage.setItem('vhc_bosses', JSON.stringify(defeated));
+    }
+  }, [bosses]);
+
+  // Persist Hildir chests whenever they change
+  useEffect(() => {
+    localStorage.setItem('vhc_hildir', JSON.stringify(hildirChests));
+  }, [hildirChests]);
+
+  // Persist active tab
+  useEffect(() => {
+    localStorage.setItem('vhc_tab', tab);
+  }, [tab]);
   if (!bosses) return null;
   const allItems = data.allItems;
   const armorSets = data.armor.sets;
@@ -10267,7 +10362,9 @@ function ValheimApp() {
   }), tab === "vendors" && /*#__PURE__*/React.createElement(VendorsPanel, {
     key: "vendors",
     vendors: vendorsData,
-    bosses: bosses
+    bosses: bosses,
+    hildirChests: hildirChests,
+    setHildirChests: setHildirChests
   })));
 }
 const _root = ReactDOM.createRoot(document.getElementById("root"));
