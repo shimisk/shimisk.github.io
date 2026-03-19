@@ -25,7 +25,8 @@
       "OneHandedWeapon"
     ],
     "match_keywords": [
-      "axe"
+      "axe",  
+      "jotun bane"
     ],
     "exclude": [
       "pickaxe",
@@ -77,7 +78,7 @@
   {
     "id": "atgeirs",
     "label": "Atgeirs",
-    "emoji": "🪃",
+    "emoji": "🔱",
     "desc": "Polearms with devastating AOE spin",
     "types": [
       "TwoHandedWeapon"
@@ -204,8 +205,7 @@
     "match_keywords": [
       "club",
       "flesh rippers",
-      "scythe",
-      "jotun bane"
+      "scythe"
     ]
   }
 ]

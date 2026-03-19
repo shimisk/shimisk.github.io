@@ -1,0 +1,79 @@
+/* Taming panel styles */
+.taming-intro {
+  color: #5a5a4a;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.taming-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 14px;
+}
+
+.taming-card {
+  background: linear-gradient(135deg, #1a1f1a 0%, #141814 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.taming-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.taming-card-icon {
+  font-size: 36px;
+}
+
+.taming-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #d4aa60;
+}
+
+.taming-card-biome {
+  font-size: 12px;
+  margin-top: 2px;
+  font-family: 'Crimson Text', serif;
+}
+
+.taming-card-meta {
+  background: #0e120e;
+  border: 1px solid #1e2e1e;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+.taming-time-row {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.taming-meta-label {
+  font-size: 10px;
+  color: #4a6a3a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.taming-meta-value {
+  font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .taming-grid {
+    grid-template-columns: 1fr;
+  }
+}

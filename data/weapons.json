@@ -78,7 +78,7 @@
       "type": "Ammo",
       "desc": "A bitter sting from afar.",
       "biome": "Swamp",
-      "recipe": "8 Wood + 5 Obsidian + 2 Feathers + 2 Ooze \u2192 Workbench (x20)"
+      "recipe": "8 Wood + 4 Obsidian + 2 Feathers + 2 Ooze \u2192 Workbench (x20)"
     },
     {
       "id": "ArrowSilver",
@@ -149,8 +149,8 @@
       "name": "Flint Axe",
       "type": "OneHandedWeapon",
       "desc": "Sharper than stone.",
-      "biome": "Unknown",
-      "recipe": null
+      "biome": "Meadows",
+      "recipe": "4 Wood + 6 Flint \u2192 Workbench"
     },
     {
       "id": "AxeIron",
@@ -272,14 +272,14 @@
       "biome": "Meadows",
       "recipe": "10 Wood + 8 Leather Scraps \u2192 Workbench"
     },
-    {
-      "id": "BowAshlands",
-      "name": "Ash Fang",
-      "type": "Bow",
-      "desc": "Risen again from the ashes, this bow holds unyielding strength.",
-      "biome": "Unknown",
-      "recipe": null
-    },
+   {
+  "id": "BowAshlands",
+  "name": "Ash Fang",
+  "type": "Bow",
+  "desc": "Risen again from the ashes, this bow holds unyielding strength.",
+  "biome": "Ashlands",
+  "recipe": "10 Ashwood + 16 Charred Bone + 5 Flametal + 5 Bonemaw Tooth → Black Forge (Lv 3)"
+},
     {
       "id": "BowDraugrFang",
       "name": "Draugr Fang",
@@ -328,14 +328,14 @@
       "biome": "Mistlands",
       "recipe": "10 Yggdrasil Wood + 20 Black Metal + 10 Root + 5 Linen Thread \u2192 Black Forge"
     },
-    {
-      "id": "CrossbowRipper",
-      "name": "Ripper",
-      "type": "Bow",
-      "desc": "Rips your foes apart, simple as that.",
-      "biome": "Unknown",
-      "recipe": null
-    },
+   {
+  "id": "CrossbowRipper",
+  "name": "Ripper",
+  "type": "Bow",
+  "desc": "Rips your foes apart, simple as that.",
+  "biome": "Ashlands",
+  "recipe": "10 Ashwood + 20 Flametal + 5 Bonemaw Tooth + 3 Charred Bone → Forge of Ancients"
+},
     {
       "id": "FishingBait",
       "name": "Fishing Bait",
@@ -666,20 +666,13 @@
     },
     {
       "id": "SpearWolfFang",
-      "name": "Wolffang Spear",
+      "name": "Fang Spear",
       "type": "OneHandedWeapon",
       "desc": "The fangs of the wolf are recreated in sharp, glittering metal.",
-      "biome": "Unknown",
-      "recipe": null
+      "biome": "Mountain",
+      "recipe": "10 Wood + 4 Wolf Fang + 2 Leather Scraps + 2 Silver → Forge"
     },
-    {
-      "id": "SpearWood",
-      "name": "Wooden Spear",
-      "type": "OneHandedWeapon",
-      "desc": "A primitive but practical weapon.",
-      "biome": "Unknown",
-      "recipe": null
-    },
+   
     {
       "id": "SwordBlackmetal",
       "name": "Black Metal Sword",

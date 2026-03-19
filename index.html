@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="companion/panels/armor-panel.css" />
   <link rel="stylesheet" href="companion/panels/materials-panel.css" />
   <link rel="stylesheet" href="companion/panels/vendors-panel.css" />
+  <link rel="stylesheet" href="companion/panels/taming-panel.css" />
+  <link rel="stylesheet" href="companion/panels/farming-panel.css" />
   <title>Valheim Companion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
@@ -80,6 +82,8 @@
       "companion/panels/food-panel.jsx",
       "companion/panels/materials-panel.jsx",
       "companion/panels/vendors-panel.jsx",
+      "companion/panels/taming-panel.jsx",
+      "companion/panels/farming-panel.jsx",
       "companion/panels/tab-bar.jsx",
       "companion/ui-panels.jsx",
       "valheim-companion.jsx"
@@ -142,8 +146,17 @@
       return output;
     }
 
+    function stripInlinedDataBlock(jsxSource) {
+      return jsxSource.replace(/\nconst _[A-Z_]+_DATA = [\s\S]*?\nfunction useGameData\(\)/, "\nfunction useGameData()");
+    }
+
     function injectRuntimeDataBlock(jsxSource, dataBlock) {
-      return jsxSource.replace(/\/\/ ─── Inlined game data[\s\S]*?\nfunction useGameData\(\)/, `${dataBlock}\n\nfunction useGameData()`);
+      const markerPattern = /\/\/ ─── Inlined game data[\s\S]*?\nfunction useGameData\(\)/;
+      if (markerPattern.test(jsxSource)) {
+        return jsxSource.replace(markerPattern, `${dataBlock}\n\nfunction useGameData()`);
+      }
+      // Fallback: inject directly before useGameData if marker comments were removed.
+      return jsxSource.replace(/\nfunction useGameData\(\)/, `\n${dataBlock}\n\nfunction useGameData()`);
     }
 
     function convertDefaultExportToFunction(jsxSource) {
@@ -160,6 +173,7 @@
       const joined = jsxSourceRawList.map(normalizeNewlines).join("\n\n");
       let jsxSource = joined;
       jsxSource = stripReactImportAndHookAlias(jsxSource);
+      jsxSource = stripInlinedDataBlock(jsxSource);
       jsxSource = injectRuntimeDataBlock(jsxSource, dataBlock);
       jsxSource = convertDefaultExportToFunction(jsxSource);
       jsxSource = addUmdPreludeAndMount(jsxSource);
