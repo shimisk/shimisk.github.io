@@ -1,0 +1,37 @@
+[
+  {
+    "id": "health",
+    "label": "Health",
+    "emoji": "❤️",
+    "color": "#c04a4a",
+    "desc": "More health than stamina — builds that need to survive hits"
+  },
+  {
+    "id": "stamina",
+    "label": "Stamina",
+    "emoji": "⚡",
+    "color": "#4a8acc",
+    "desc": "More stamina than health — fast combat and exploration"
+  },
+  {
+    "id": "neutral",
+    "label": "Neutral",
+    "emoji": "⚖️",
+    "color": "#8aaa4a",
+    "desc": "Balanced health and stamina — works for any build"
+  },
+  {
+    "id": "eitr",
+    "label": "Eitr",
+    "emoji": "⚡",
+    "color": "#8a2be2",
+    "desc": "More eitr than health or stamina — builds that use magic"
+  },
+  {
+    "id": "potion",
+    "label": "Potions",
+    "emoji": "🧪",
+    "color": "#9a6a9a",
+    "desc": "Meads, resistance drinks and healing potions"
+  }
+]

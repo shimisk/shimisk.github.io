@@ -1,0 +1,218 @@
+/* Materials panel styles */
+
+/* Material list view */
+.material-list-head {
+  margin-bottom: 22px;
+}
+
+.material-search {
+  margin-bottom: 14px;
+}
+
+.material-item-count {
+  font-size: 12px;
+  color: #3a4a3a;
+  font-family: 'Crimson Text', serif;
+  margin-bottom: 14px;
+}
+
+.material-item-card {
+  background: #141814;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.material-item-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.material-item-info {
+  flex: 1;
+}
+
+.material-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e8dfc8;
+}
+
+.material-item-type {
+  font-size: 11px;
+  color: #4a4a3a;
+  margin-top: 2px;
+  font-family: 'Crimson Text', serif;
+}
+
+.material-item-recipe {
+  font-family: 'Crimson Text', serif;
+  font-size: 12px;
+  color: #5a7a4a;
+  max-width: 220px;
+  text-align: right;
+  line-height: 1.3;
+}
+
+.material-item-chevron {
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.material-detail-section {
+  margin-top: 12px;
+  border-top: 1px solid #2a2a1a;
+  padding-top: 12px;
+}
+
+.material-detail-desc {
+  font-family: 'Crimson Text', serif;
+  font-size: 13px;
+  color: #8a7a60;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.material-recipe-box {
+  background: #0e120e;
+  border: 1px solid #2a3a1a;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.material-recipe-title {
+  font-size: 10px;
+  color: #4a6a3a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.material-recipe-text {
+  font-family: 'Crimson Text', serif;
+  font-size: 14px;
+  color: #8aaa6a;
+  line-height: 1.6;
+}
+
+.material-no-recipe {
+  font-family: 'Crimson Text', serif;
+  font-size: 12px;
+  color: #3a4a3a;
+  font-style: italic;
+}
+
+/* Main grid view */
+.materials-intro {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+/* Biome card */
+.biome-card {
+  background: linear-gradient(135deg, #1a1f1a 0%, #141814 100%);
+  border-radius: 10px;
+  padding: 20px 18px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.biome-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.biome-card-icon {
+  font-size: 36px;
+}
+
+.biome-card-info {
+  flex: 1;
+}
+
+.biome-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.biome-card-count {
+  font-size: 11px;
+  color: #4a4a3a;
+  font-family: 'Crimson Text', serif;
+}
+
+/* Type tags */
+.material-type-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.material-type-tag {
+  font-size: 10px;
+  color: #5a6a5a;
+  background: #0e120e;
+  border: 1px solid #1e2a1e;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+/* Preview section */
+.biome-preview-section {
+  border-top: 1px solid #1e2a1e;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.biome-preview-item {
+  font-size: 12px;
+  font-family: 'Crimson Text', serif;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.biome-preview-arrow {
+  font-size: 10px;
+}
+
+.biome-preview-name {
+  color: #9a9a8a;
+}
+
+.biome-preview-source {
+  color: #3a4a3a;
+  font-size: 11px;
+}
+
+@media (max-width: 760px) {
+  .materials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .material-item-row {
+    flex-wrap: wrap;
+  }
+
+  .material-item-recipe {
+    max-width: none;
+    width: 100%;
+    text-align: left;
+  }
+}

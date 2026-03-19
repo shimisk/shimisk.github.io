@@ -1,0 +1,574 @@
+/* Vendors Panel Detail View */
+.vendor-location-box {
+  background: #141814;
+  border: 1px solid #1e2320;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+}
+
+.vendor-location-label {
+  font-size: 10px;
+  color: #4a4a3a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.vendor-location-text {
+  font-family: "Crimson Text", serif;
+  font-size: 13px;
+  color: #8a9a7a;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.vendor-location-tip {
+  border-top: 1px solid #1e2320;
+  padding-top: 10px;
+  font-family: "Crimson Text", serif;
+  font-size: 13px;
+  color: #7a7060;
+  font-style: italic;
+}
+
+/* Hildir Chests Section */
+.vendor-chests-section {
+  margin-bottom: 24px;
+}
+
+.vendor-chests-label {
+  font-size: 10px;
+  color: #9a4a6a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.vendor-chests-container {
+  display: flex;
+  gap: 10px;
+}
+
+.vendor-chest-card {
+  flex: 1;
+  border-radius: 10px;
+  padding: 14px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  border: 2px solid;
+}
+
+.vendor-chest-card.done {
+  background: #0e160e;
+}
+
+.vendor-chest-card.not-done {
+  background: #141814;
+}
+
+.vendor-chest-icon {
+  font-size: 36px;
+  margin-bottom: 6px;
+}
+
+.vendor-chest-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.vendor-chest-count {
+  font-size: 11px;
+  font-family: "Crimson Text", serif;
+  margin-bottom: 8px;
+}
+
+.vendor-chest-toggle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+.vendor-chest-warning {
+  font-family: "Crimson Text", serif;
+  font-size: 12px;
+  color: #4a4a3a;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* Vendor Buys Section */
+.vendor-buys-section {
+  margin-bottom: 20px;
+}
+
+.vendor-buys-label {
+  font-size: 10px;
+  color: #6a5a3a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.vendor-buys-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vendor-buy-item {
+  background: #1a1810;
+  border: 1px solid #2a2818;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-family: "Crimson Text", serif;
+  font-size: 13px;
+}
+
+.vendor-buy-name {
+  color: #c4aa60;
+}
+
+.vendor-buy-price {
+  color: #6a5a3a;
+  margin-left: 8px;
+}
+
+/* Vendor Sells Section */
+.vendor-sells-label {
+  font-size: 10px;
+  color: #4a6a3a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.vendor-sells-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vendor-sell-item {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vendor-sell-item.unlocked {
+  background: #141814;
+}
+
+.vendor-sell-item.selected {
+  background: #1c1a10;
+}
+
+.vendor-sell-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vendor-sell-info {
+  flex: 1;
+}
+
+.vendor-sell-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vendor-sell-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.vendor-sell-name.unlocked {
+  color: #e8dfc8;
+}
+
+.vendor-sell-name.locked {
+  color: #4a4a4a;
+}
+
+.vendor-sell-lock-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.vendor-sell-lock-badge.chest {
+  background: #111;
+}
+
+.vendor-sell-lock-badge.locked {
+  background: #1a1010;
+  border-color: #2a1a1a;
+  color: #5a3a2a;
+}
+
+.vendor-sell-use {
+  font-family: "Crimson Text", serif;
+  font-size: 12px;
+  color: #5a6a4a;
+  margin-top: 2px;
+}
+
+.vendor-sell-price-box {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.vendor-sell-price {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Crimson Text", serif;
+}
+
+.vendor-sell-price.unlocked {
+  color: #d4aa60;
+}
+
+.vendor-sell-price.locked {
+  color: #4a4a2a;
+}
+
+.vendor-sell-price-label {
+  font-size: 10px;
+  color: #4a4a3a;
+}
+
+.vendor-sell-chevron {
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.vendor-sell-detail {
+  margin-top: 12px;
+  border-top: 1px solid #2a2a1a;
+  padding-top: 12px;
+}
+
+.vendor-sell-desc {
+  font-family: "Crimson Text", serif;
+  font-size: 13px;
+  color: #8a7a60;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.vendor-sell-lock-tip {
+  background: #120e0e;
+  border: 1px solid #2a1a1a;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.vendor-sell-lock-tip.chest {
+  border-color: #2a1a1a;
+}
+
+.vendor-sell-lock-tip-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.vendor-sell-lock-tip.chest .vendor-sell-lock-tip-label {
+  color: #6a5a2a;
+}
+
+.vendor-sell-lock-tip:not(.chest) .vendor-sell-lock-tip-label {
+  color: #6a2a2a;
+}
+
+.vendor-sell-lock-tip-text {
+  font-family: "Crimson Text", serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.vendor-sell-lock-tip.chest .vendor-sell-lock-tip-text {
+  color: #aaaa6a;
+}
+
+.vendor-sell-lock-tip:not(.chest) .vendor-sell-lock-tip-text {
+  color: #aa6a4a;
+}
+
+/* Vendors Grid Panel */
+.vendor-intro {
+  color: #5a5a4a;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.vendor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.vendor-card {
+  background: linear-gradient(135deg, #1a1f1a 0%, #141814 100%);
+  border-radius: 12px;
+  padding: 24px 22px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.vendor-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.vendor-card-icon {
+  font-size: 44px;
+}
+
+.vendor-card-info {
+  flex: 1;
+}
+
+.vendor-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vendor-card-subtitle {
+  font-family: "Crimson Text", serif;
+  font-size: 12px;
+  color: #5a5a4a;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.vendor-card-biome-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.vendor-card-biome-icon {
+  font-size: 14px;
+}
+
+.vendor-card-biome-name {
+  font-size: 12px;
+  font-family: "Crimson Text", serif;
+}
+
+.vendor-card-biome-map {
+  font-size: 11px;
+  color: #3a4a3a;
+  font-family: "Crimson Text", serif;
+  margin-left: 4px;
+}
+
+.vendor-card-counts {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.vendor-card-count {
+  flex: 1;
+  border-radius: 6px;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.vendor-card-count-available {
+  background: #0e120e;
+  border: 1px solid #1e2e1e;
+}
+
+.vendor-card-count-locked {
+  background: #120e0e;
+  border: 1px solid #2a1a1a;
+}
+
+.vendor-card-count-number {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Crimson Text", serif;
+}
+
+.vendor-card-count-available .vendor-card-count-number {
+  color: #8acc6a;
+}
+
+.vendor-card-count-locked .vendor-card-count-number {
+  color: #aa6a4a;
+}
+
+.vendor-card-count-label {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.vendor-card-count-available .vendor-card-count-label {
+  color: #4a6a3a;
+}
+
+.vendor-card-count-locked .vendor-card-count-label {
+  color: #5a3a2a;
+}
+
+.vendor-card-location {
+  font-family: "Crimson Text", serif;
+  font-size: 12px;
+  color: #4a5a4a;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Universal Vendors Buys */
+.vendor-universal-buys {
+  margin-top: 32px;
+}
+
+.vendor-universal-label {
+  font-size: 11px;
+  color: #4a4a3a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.vendor-universal-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.vendor-universal-item {
+  background: #1a1810;
+  border: 1px solid #2a2818;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: "Crimson Text", serif;
+}
+
+.vendor-universal-name {
+  font-size: 13px;
+  color: #c4aa60;
+}
+
+.vendor-universal-price {
+  font-size: 12px;
+  color: #6a5a3a;
+  margin-top: 2px;
+}
+
+.vendor-universal-note {
+  font-family: "Crimson Text", serif;
+  font-size: 12px;
+  color: #3a3a2a;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+@media (max-width: 760px) {
+  .vendor-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .vendor-card {
+    padding: 16px 14px;
+  }
+
+  .vendor-card-header {
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .vendor-card-icon {
+    font-size: 34px;
+  }
+
+  .vendor-card-title {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .vendor-card-counts {
+    gap: 8px;
+  }
+
+  .vendor-location-box {
+    padding: 12px;
+  }
+
+  .vendor-chests-container {
+    flex-wrap: wrap;
+  }
+
+  .vendor-chest-card {
+    min-width: 0;
+    flex: 1 1 calc(50% - 5px);
+  }
+
+  .vendor-buys-container {
+    gap: 6px;
+  }
+
+  .vendor-buy-item {
+    width: 100%;
+  }
+
+  .vendor-sell-item {
+    padding: 10px 12px;
+  }
+
+  .vendor-sell-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .vendor-sell-price-box {
+    text-align: left;
+    width: 100%;
+  }
+
+  .vendor-sell-chevron {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .vendor-chest-card {
+    flex-basis: 100%;
+  }
+
+  .vendor-card-biome-row {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  .vendor-card-counts {
+    flex-direction: column;
+  }
+}

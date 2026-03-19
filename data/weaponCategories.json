@@ -1,0 +1,211 @@
+[
+  {
+    "id": "swords",
+    "label": "Swords",
+    "emoji": "⚔️",
+    "desc": "Fast blades for close quarters",
+    "types": [
+      "OneHandedWeapon"
+    ],
+    "match_keywords": [
+      "sword",
+      "mistwalker",
+      "nidhogg"
+    ],
+    "exclude": [
+      "cheat"
+    ]
+  },
+  {
+    "id": "axes",
+    "label": "Axes",
+    "emoji": "🪓",
+    "desc": "Powerful chopping weapons",
+    "types": [
+      "OneHandedWeapon"
+    ],
+    "match_keywords": [
+      "axe"
+    ],
+    "exclude": [
+      "pickaxe",
+      "battleaxe"
+    ]
+  },
+  {
+    "id": "maces",
+    "label": "Maces",
+    "emoji": "🔨",
+    "desc": "Blunt force — great vs undead",
+    "types": [
+      "OneHandedWeapon"
+    ],
+    "match_keywords": [
+      "mace",
+      "frostner",
+      "porcupine",
+      "demolisher"
+    ]
+  },
+  {
+    "id": "knives",
+    "label": "Knives",
+    "emoji": "🔪",
+    "desc": "Quick stabs with high bleed chance",
+    "types": [
+      "OneHandedWeapon"
+    ],
+    "match_keywords": [
+      "knife",
+      "razor",
+      "skoll"
+    ]
+  },
+  {
+    "id": "spears",
+    "label": "Spears",
+    "emoji": "🏹",
+    "desc": "Long reach, can be thrown",
+    "types": [
+      "OneHandedWeapon"
+    ],
+    "match_keywords": [
+      "spear",
+      "harpoon"
+    ]
+  },
+  {
+    "id": "atgeirs",
+    "label": "Atgeirs",
+    "emoji": "🪃",
+    "desc": "Polearms with devastating AOE spin",
+    "types": [
+      "TwoHandedWeapon"
+    ],
+    "match_keywords": [
+      "atgeir",
+      "himminafl"
+    ]
+  },
+  {
+    "id": "sledges",
+    "label": "Sledges",
+    "emoji": "💥",
+    "desc": "Massive AOE hammers, slow but brutal",
+    "types": [
+      "TwoHandedWeapon"
+    ],
+    "match_keywords": [
+      "sledge",
+      "stagbreaker"
+    ]
+  },
+  {
+    "id": "battleaxes",
+    "label": "Battleaxes",
+    "emoji": "⚡",
+    "desc": "Two-handed axes, brutal damage",
+    "types": [
+      "TwoHandedWeapon"
+    ],
+    "match_keywords": [
+      "battleaxe"
+    ]
+  },
+  {
+    "id": "bows",
+    "label": "Bows",
+    "emoji": "🏹",
+    "desc": "Ranged — keep your distance",
+    "types": [
+      "Bow"
+    ],
+    "match_keywords": [
+      "bow",
+      "fang",
+      "spinesnap",
+      "ash fang"
+    ],
+    "exclude": [
+      "arbalest",
+      "ripper"
+    ]
+  },
+  {
+    "id": "crossbows",
+    "label": "Crossbows",
+    "emoji": "🎯",
+    "desc": "Slow but hits incredibly hard",
+    "types": [
+      "Bow"
+    ],
+    "match_keywords": [
+      "arbalest",
+      "ripper"
+    ]
+  },
+  {
+    "id": "magic",
+    "label": "Magic Staves",
+    "emoji": "🔮",
+    "desc": "Eitr-powered spells — mage builds",
+    "types": [
+      "MagicWeapon"
+    ],
+    "match_keywords": []
+  },
+  {
+    "id": "shields",
+    "label": "Shields",
+    "emoji": "🛡",
+    "desc": "Parry and block — bucklers and round",
+    "types": [
+      "Shield"
+    ],
+    "match_keywords": [],
+    "exclude": [
+      "tower"
+    ]
+  },
+  {
+    "id": "towershields",
+    "label": "Tower Shields",
+    "emoji": "🏰",
+    "desc": "Maximum block power, zero parry",
+    "types": [
+      "Shield"
+    ],
+    "match_keywords": [
+      "tower"
+    ]
+  },
+  {
+    "id": "ammo",
+    "label": "Ammo",
+    "emoji": "🪃",
+    "desc": "Arrows and bolts for ranged builds",
+    "types": [
+      "Ammo"
+    ],
+    "match_keywords": [],
+    "exclude": [
+      "bait"
+    ]
+  },
+  {
+    "id": "other",
+    "label": "Other",
+    "emoji": "⚙️",
+    "desc": "Clubs, fist weapons, throwables",
+    "types": [
+      "Throwable",
+      "OneHandedWeapon"
+    ],
+    "match_keywords": [
+      "club",
+      "flesh rippers",
+      "scythe",
+      "jotun bane"
+    ]
+  }
+]

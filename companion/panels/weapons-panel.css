@@ -1,0 +1,291 @@
+/* Weapon Category Detail View */
+.weapon-category-head-sort {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.weapon-sort-label {
+  font-size: 11px;
+  color: #4a4a3a;
+  font-family: "Crimson Text", serif;
+}
+
+.weapon-sort-btn {
+  font-family: "Crimson Text", serif;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  border: 1px solid;
+  transition: all 0.2s;
+}
+
+.weapon-sort-btn.active {
+  background: #2a2218;
+  border-color: #d4aa60;
+  color: #d4aa60;
+}
+
+.weapon-sort-btn.inactive {
+  background: #141814;
+  border-color: #2a2f2a;
+  color: #6a6a5a;
+}
+
+/* Weapon Item Card */
+.weapon-item-card {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.weapon-item-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.weapon-item-emoji {
+  font-size: 22px;
+}
+
+.weapon-item-info {
+  flex: 1;
+}
+
+.weapon-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e8dfc8;
+}
+
+.weapon-item-biome {
+  font-size: 11px;
+  color: #2a2f2a;
+  margin-top: 2px;
+}
+
+.weapon-item-biome.unlocked {
+  color: #2a2f2a;
+}
+
+.weapon-tier-bars {
+  display: flex;
+  gap: 3px;
+}
+
+.weapon-tier-bar {
+  width: 6px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+.weapon-tier-bar.filled {
+  background: #d4aa60;
+}
+
+.weapon-tier-bar.empty {
+  background: #2a2a2a;
+}
+
+.weapon-item-chevron {
+  font-size: 16px;
+}
+
+/* Weapon Item Detail */
+.weapon-detail-section {
+  margin-top: 14px;
+  border-top: 1px solid #2a2a1a;
+  padding-top: 14px;
+}
+
+.weapon-detail-desc {
+  font-family: "Crimson Text", serif;
+  font-size: 14px;
+  color: #8a7a60;
+  font-style: italic;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.weapon-recipe-box {
+  background: #0e120e;
+  border: 1px solid #2a3a1a;
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+
+.weapon-recipe-title {
+  font-size: 10px;
+  color: #4a6a3a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.weapon-recipe-text {
+  font-family: "Crimson Text", serif;
+  font-size: 14px;
+  color: #8aaa6a;
+  line-height: 1.6;
+}
+
+.weapon-no-recipe {
+  font-family: "Crimson Text", serif;
+  font-size: 12px;
+  color: #3a4a3a;
+  font-style: italic;
+}
+
+/* Weapons Grid Panel */
+.weapons-intro {
+  color: #5a5a4a;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.weapons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.weapon-category-card {
+  background: linear-gradient(135deg, #1a1f1a 0%, #141814 100%);
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 20px 18px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.weapon-category-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.weapon-category-emoji {
+  font-size: 40px;
+}
+
+.weapon-category-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #d4aa60;
+  letter-spacing: 1.5px;
+}
+
+.weapon-category-desc {
+  font-family: "Crimson Text", serif;
+  font-size: 12px;
+  color: "#5a5a4a";
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.weapon-category-count {
+  font-size: 11px;
+  color: "#4a6a5a";
+  margin-top: 2px;
+}
+
+/* Boss Monitor Section */
+.boss-current-zone {
+  margin: 0;
+  color: #5a5a4a;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.boss-current-zone-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.boss-current-zone-icon {
+  font-size: 22px;
+}
+
+.boss-current-zone-text {
+  font-family: "Crimson Text", serif;
+  font-size: 13px;
+  color: "#8a9a7a";
+  line-height: 1.5;
+}
+
+.boss-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.boss-progress-card {
+  background: linear-gradient(135deg, #1a1f1a 0%, #141814 100%);
+  border: 1px solid #1e2320;
+  border-radius: 10px;
+  padding: "18px 16px";
+}
+
+.boss-progress-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.boss-icon {
+  font-size: 36px;
+}
+
+.boss-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #e8dfc8;
+}
+
+.boss-tier {
+  font-family: "Crimson Text", serif;
+  font-size: 11px;
+  color: "#4a4a3a";
+}
+
+.boss-progress-bars {
+  display: flex;
+  gap: 2px;
+}
+
+.boss-progress-bar {
+  flex: 1;
+  height: 18px;
+  border-radius: 3px;
+  background: #2a2a2a;
+  opacity: 0.5;
+}
+
+.boss-defeated-bonus {
+  font-family: "Crimson Text", serif;
+  font-size: 11px;
+  color: "#4a6a3a";
+  text-align: center;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.boss-progress-bar.defeated-current {
+  background: linear-gradient(90deg, #8acc6a, #b8e6a0);
+  opacity: 1;
+}
+
+.boss-progress-bar.defeated {
+  background: #8acc6a;
+  opacity: 0.6;
+}

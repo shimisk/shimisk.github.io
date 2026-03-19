@@ -1,0 +1,302 @@
+/* Armor panel styles */
+
+/* Detail view - header */
+.armor-detail-head {
+  margin-bottom: 24px;
+}
+
+.armor-detail-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  align-items: center;
+}
+
+.armor-detail-biome {
+  font-size: 12px;
+}
+
+.armor-style-badge {
+  font-size: 11px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+.armor-detail-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Set bonus box */
+.armor-bonus-box {
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border: 1px solid;
+}
+
+.armor-bonus-box.has-bonus {
+  background: #0e160e;
+  border-color: #2a4a2a;
+}
+
+.armor-bonus-box.no-bonus {
+  background: #0e0e0e;
+  border-color: #1e1e1e;
+}
+
+.armor-bonus-title {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.armor-bonus-box.has-bonus .armor-bonus-title {
+  color: #4a8a4a;
+}
+
+.armor-bonus-box.no-bonus .armor-bonus-title {
+  color: #3a3a3a;
+}
+
+.armor-bonus-text {
+  font-family: 'Crimson Text', serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.armor-bonus-box.has-bonus .armor-bonus-text {
+  color: #8acc6a;
+}
+
+.armor-bonus-box.no-bonus .armor-bonus-text {
+  color: #4a4a4a;
+}
+
+/* Armor pieces section */
+.armor-pieces-label {
+  font-size: 11px;
+  color: #4a4a3a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.armor-pieces-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.armor-piece-card {
+  background: #141814;
+  border: 1px solid #1e2320;
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+
+.armor-piece-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.armor-piece-type {
+  font-size: 12px;
+  color: #4a4a3a;
+  background: #111410;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.armor-piece-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e8dfc8;
+}
+
+.armor-piece-recipe {
+  font-family: 'Crimson Text', serif;
+  font-size: 13px;
+  color: #6aaa4a;
+}
+
+/* Total materials box */
+.armor-materials-box {
+  background: #0e120e;
+  border: 1px solid #2a3a1a;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+}
+
+.armor-materials-title {
+  font-size: 10px;
+  color: #4a6a3a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.armor-materials-text {
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;
+  color: #8aaa6a;
+  line-height: 1.8;
+}
+
+/* Main grid */
+.armor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+/* Armor set card */
+.armor-set-card {
+  background: linear-gradient(135deg, #1a1f1a 0%, #141814 100%);
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 20px 18px;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.armor-set-card--locked {
+  background: #111412;
+  opacity: 0.4;
+}
+
+.armor-set-card--unlocked {
+  opacity: 1;
+}
+
+.armor-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+}
+
+.armor-badge--best {
+  color: #d4aa60;
+  background: #1e1a0e;
+  border: 1px solid #d4aa60;
+}
+
+.armor-badge--locked {
+  color: #3a3a3a;
+  background: #111;
+  border: 1px solid #1e1e1e;
+}
+
+.armor-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.armor-card-icon {
+  font-size: 38px;
+}
+
+.armor-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.armor-card-biome {
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.armor-card-playstyle {
+  margin-bottom: 10px;
+}
+
+.armor-playstyle-badge {
+  font-size: 11px;
+  background: #141414;
+  border: 1px solid #1e1e1e;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+.armor-card-desc {
+  font-family: 'Crimson Text', serif;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.armor-pieces-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.armor-piece-tag {
+  font-size: 10px;
+  background: #0e110e;
+  border: 1px solid #1e2a1e;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+/* Card bonus section */
+.armor-card-bonus {
+  border-radius: 5px;
+  padding: 6px 10px;
+  margin-top: 6px;
+  background: #0e130e;
+  border: 1px solid #1e3a1e;
+}
+
+.armor-card-bonus-title {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.armor-card-bonus-text {
+  font-family: 'Crimson Text', serif;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .armor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .armor-set-card {
+    padding: 14px 12px;
+  }
+
+  .armor-card-header {
+    align-items: flex-start;
+  }
+
+  .armor-piece-header {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .armor-detail-meta {
+    flex-wrap: wrap;
+  }
+}

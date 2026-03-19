@@ -1,34 +1,5 @@
 {
-  "categories": [
-    {
-      "id": "health",
-      "label": "Health",
-      "emoji": "\u2764\ufe0f",
-      "color": "#c04a4a",
-      "desc": "More health than stamina \u2014 builds that need to survive hits"
-    },
-    {
-      "id": "stamina",
-      "label": "Stamina",
-      "emoji": "\u26a1",
-      "color": "#4a8acc",
-      "desc": "More stamina than health \u2014 fast combat and exploration"
-    },
-    {
-      "id": "neutral",
-      "label": "Neutral",
-      "emoji": "\u2696\ufe0f",
-      "color": "#8aaa4a",
-      "desc": "Balanced health and stamina \u2014 works for any build"
-    },
-    {
-      "id": "potion",
-      "label": "Potions",
-      "emoji": "\ud83e\uddea",
-      "color": "#9a6a9a",
-      "desc": "Meads, resistance drinks and healing potions"
-    }
-  ],
+ 
   "items": [
     {
       "id": "BarleyWine",
@@ -50,8 +21,8 @@
       "desc": "A perfect balance of sweetness and acidity.",
       "biome": "Swamp",
       "recipe": "2 Bloodbag + 1 Yellow Mushroom \u2192 Cauldron",
-      "health": 55,
-      "stamina": 25,
+      "health": 50,
+      "stamina": 17,
       "duration": 1500,
       "foodCategory": "health"
     },
@@ -61,11 +32,11 @@
       "type": "Consumable",
       "desc": "It's bloody tasty.",
       "biome": "Swamp",
-      "recipe": null,
-      "health": 90,
-      "stamina": 30,
+      "recipe": "2 Bloodbags + 2 Thistle + 4 Barley Flour \u2192 Cauldron",
+      "health": 25,
+      "stamina": 75,
       "duration": 1800,
-      "foodCategory": "health"
+      "foodCategory": "stamina"
     },
     {
       "id": "Blueberries",
@@ -97,7 +68,7 @@
       "type": "Consumable",
       "desc": "An orange treat.",
       "biome": "Black Forest",
-      "recipe": null,
+      "recipe": "Forage in Black Forest (Carrot Seeds → Plant)",
       "health": 10,
       "stamina": 32,
       "duration": 900,
@@ -146,8 +117,8 @@
       "desc": "Tastes like victory.",
       "biome": "Black Forest",
       "recipe": "Bear Meat \u2192 Campfire (kill Bears in Black Forest)",
-      "health": 75,
-      "stamina": 35,
+      "health": 40,
+      "stamina": 13,
       "duration": 1800,
       "foodCategory": "health"
     },
@@ -182,8 +153,8 @@
       "desc": "It tastes like chicken.",
       "biome": "Mistlands",
       "recipe": "Chicken Meat \u2192 Campfire (hatch egg from Haldor after defeating Yagluth)",
-      "health": 23,
-      "stamina": 18,
+      "health": 60,
+      "stamina": 20,
       "duration": 900,
       "foodCategory": "health"
     },
@@ -216,10 +187,10 @@
       "name": "Cooked Hare Meat",
       "type": "Consumable",
       "desc": "Stringy but flavorful.",
-      "biome": "Mountain",
-      "recipe": null,
-      "health": 23,
-      "stamina": 18,
+      "biome": "Mistlands",
+      "recipe": "Hare Meat \u2192 Cook over Fire",
+      "health": 60,
+      "stamina": 20,
       "duration": 900,
       "foodCategory": "neutral"
     },
@@ -230,8 +201,8 @@
       "desc": "A great hunk of tender meat, food fit for Valhalla!",
       "biome": "Plains",
       "recipe": "Lox Meat \u2192 Campfire",
-      "health": 70,
-      "stamina": 30,
+      "health": 50,
+      "stamina": 16,
       "duration": 1800,
       "foodCategory": "health"
     },
@@ -277,11 +248,23 @@
       "type": "Consumable",
       "desc": "Crispy cool and creamy.",
       "biome": "Mountain",
-      "recipe": null,
+      "recipe": "3 Greydwarf Eyes + 2 Freeze Glands + 2 Honey \u2192 Cauldron",
       "health": 21,
       "stamina": 65,
       "duration": 1500,
       "foodCategory": "stamina"
+    },
+    {
+      "id": "FierySvinstew",
+      "name": "Fiery Svinstew",
+      "type": "Consumable",
+      "desc": "A spicy stew that burns twice.",
+      "biome": "Ashlands",
+      "recipe": "Asksvin Meat + Vineberry + Fiddlehead",
+      "health": 90,
+      "stamina": 30,
+      "duration": 1800,
+      "foodCategory": "health"
     },
     {
       "id": "Fish1",
@@ -464,6 +447,32 @@
       "foodCategory": "neutral"
     },
     {
+      "id": "Magecap",
+      "name": "Magecap",
+      "type": "Consumable",
+      "desc": "A glowing mushroom brimming with magical energy.",
+      "biome": "Mistlands",
+      "recipe": "Forage in Mistlands",
+      "health": 33,
+      "stamina": 12,
+      "eitr": 25,
+      "duration": 900,
+      "foodCategory": "eitr"
+    },
+    {
+      "id": "MarinatedGreens",
+      "name": "Marinated Greens",
+      "type": "Consumable",
+      "desc": "Greens soaked in potent magical essence.",
+      "biome": "Ashlands",
+      "recipe": "Fiddlehead + Sap + Vineberry",
+      "health": 32,
+      "stamina": 16,
+      "eitr": 95,
+      "duration": 1800,
+      "foodCategory": "eitr"
+    },
+    {
       "id": "MeadFrostResist",
       "name": "Frost Resistance Mead",
       "type": "Consumable",
@@ -589,7 +598,7 @@
       "recipe": "Base \u2192 2 days in Fermenter: 10 Honey + 5 Jotun Puffs + 1 Blue Mushroom",
       "health": 0,
       "stamina": 0,
-      "eitr": 125,
+      "eitr": 100,
       "duration": 10,
       "foodCategory": "potion",
       "special": "Restores 100 eitr instantly"
@@ -600,7 +609,7 @@
       "type": "Consumable",
       "desc": "Battle fuel.",
       "biome": "Plains",
-      "recipe": null,
+      "recipe": "3 Cooked Meat + 3 Cooked Lox Meat + 3 Cooked Hare Meat \u2192 Cauldron",
       "health": 80,
       "stamina": 50,
       "duration": 1500,
@@ -631,6 +640,18 @@
       "foodCategory": "neutral"
     },
     {
+      "id": "Muckshake",
+      "name": "Muckshake",
+      "type": "Consumable",
+      "desc": "A surprisingly refreshing swampy blend.",
+      "biome": "Swamp",
+      "recipe": "Ooze + Raspberries + Blueberries",
+      "health": 20,
+      "stamina": 20,
+      "duration": 1200,
+      "foodCategory": "neutral"
+    },
+    {
       "id": "Mushroom",
       "name": "Mushroom",
       "type": "Consumable",
@@ -644,15 +665,10 @@
     },
     {
       "id": "MushroomBlue",
-      "name": "Blue Mushroom",
-      "type": "Consumable",
-      "desc": "Glows with a soft blue hue.",
-      "biome": "Black Forest",
-      "recipe": null,
-      "health": 33,
-      "stamina": 12,
-      "duration": 900,
-      "foodCategory": "health"
+      "health": 20,
+      "stamina": 20,
+      "foodCategory": "neutral",
+      "recipe": "Forage in Black Forest dungeons"
     },
     {
       "id": "MushroomJotunPuffs",
@@ -721,7 +737,7 @@
       "type": "Consumable",
       "desc": "A crunchy and spicy taste.",
       "biome": "Mountain",
-      "recipe": null,
+      "recipe": "Forage in Mountain (Onion Seeds \u2192 Plant)",
       "health": 13,
       "stamina": 40,
       "duration": 900,
@@ -781,7 +797,7 @@
       "type": "Consumable",
       "desc": "This dessert keeps you going all day long.",
       "biome": "Plains",
-      "recipe": null,
+      "recipe": "1 Lox Meat + 2 Cloudberries + 4 Barley Flour \u2192 Cauldron",
       "health": 34,
       "stamina": 100,
       "duration": 1800,
@@ -798,6 +814,18 @@
       "stamina": 80,
       "duration": 2400,
       "foodCategory": "neutral"
+    },
+    {
+      "id": "Salad",
+      "name": "Salad",
+      "type": "Consumable",
+      "desc": "Crisp and refreshing.",
+      "biome": "Mistlands",
+      "recipe": "Onion + Turnip + Carrot",
+      "health": 26,
+      "stamina": 85,
+      "duration": 1800,
+      "foodCategory": "stamina"
     },
     {
       "id": "Sausages",
@@ -822,7 +850,7 @@
       "stamina": 14,
       "eitr": 85,
       "duration": 1800,
-      "foodCategory": "potion"
+      "foodCategory": "eitr"
     },
     {
       "id": "SerpentMeatCooked",
@@ -849,12 +877,63 @@
       "foodCategory": "health"
     },
     {
+      "id": "SizzlingBerryBroth",
+      "name": "Sizzling Berry Broth",
+      "type": "Consumable",
+      "desc": "A hot, magical berry broth.",
+      "biome": "Ashlands",
+      "recipe": "Vineberry + Jotun Puffs + Sap",
+      "health": 28,
+      "stamina": 14,
+      "eitr": 85,
+      "duration": 1800,
+      "foodCategory": "eitr"
+    },
+    {
+      "id": "SpicyMarmalade",
+      "name": "Spicy Marmalade",
+      "type": "Consumable",
+      "desc": "Sweet, hot, and energizing.",
+      "biome": "Ashlands",
+      "recipe": "Vineberry + Sap",
+      "health": 20,
+      "stamina": 70,
+      "duration": 1800,
+      "foodCategory": "stamina"
+    },
+    {
+      "id": "SparklingShroomshake",
+      "name": "Sparkling Shroomshake",
+      "type": "Consumable",
+      "desc": "A fizzy blend of magical mushrooms.",
+      "biome": "Ashlands",
+      "recipe": "Magecap + Jotun Puffs + Vineberry",
+      "health": 30,
+      "stamina": 15,
+      "eitr": 90,
+      "duration": 1800,
+      "foodCategory": "eitr"
+    },
+    {
+      "id": "StuffedMushroom",
+      "name": "Stuffed Mushroom",
+      "type": "Consumable",
+      "desc": "A hearty mushroom packed with magical energy.",
+      "biome": "Mistlands",
+      "recipe": "Magecap + Jotun Puffs + Mushroom",
+      "health": 25,
+      "stamina": 12,
+      "eitr": 75,
+      "duration": 1800,
+      "foodCategory": "eitr"
+    },
+    {
       "id": "Turnip",
       "name": "Turnip",
       "type": "Consumable",
       "desc": "A bulbous root vegetable.",
       "biome": "Swamp",
-      "recipe": null,
+      "recipe": "Forage in Swamp (Turnip Seeds → Plant)",
       "health": 10,
       "stamina": 12,
       "duration": 600,
@@ -878,12 +957,25 @@
       "type": "Consumable",
       "desc": "An intensely sweet and slightly sour berry found in the Ashlands.",
       "biome": "Ashlands",
-      "recipe": null,
+      "recipe": "Forage in Ashlands",
       "health": 30,
       "stamina": 30,
       "eitr": 30,
       "duration": 900,
       "foodCategory": "neutral"
+    },
+    {
+      "id": "YggdrasilPorridge",
+      "name": "Yggdrasil Porridge",
+      "type": "Consumable",
+      "desc": "A porridge infused with the power of the world tree.",
+      "biome": "Mistlands",
+      "recipe": "Sap + Barley Flour + Magecap",
+      "health": 27,
+      "stamina": 13,
+      "eitr": 80,
+      "duration": 1800,
+      "foodCategory": "eitr"
     }
   ]
 }
