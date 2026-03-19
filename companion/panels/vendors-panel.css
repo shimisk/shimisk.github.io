@@ -17,6 +17,8 @@
 
 .vendor-location-text {
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 13px;
   color: #8a9a7a;
   line-height: 1.5;
@@ -27,6 +29,8 @@
   border-top: 1px solid #1e2320;
   padding-top: 10px;
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 13px;
   color: #7a7060;
   font-style: italic;
@@ -83,6 +87,8 @@
 .vendor-chest-count {
   font-size: 11px;
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   margin-bottom: 8px;
 }
 
@@ -100,6 +106,8 @@
 
 .vendor-chest-warning {
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 12px;
   color: #4a4a3a;
   font-style: italic;
@@ -131,6 +139,8 @@
   border-radius: 6px;
   padding: 6px 14px;
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 13px;
 }
 
@@ -223,6 +233,8 @@
 
 .vendor-sell-use {
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 12px;
   color: #5a6a4a;
   margin-top: 2px;
@@ -237,6 +249,8 @@
   font-size: 16px;
   font-weight: 700;
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
 }
 
 .vendor-sell-price.unlocked {
@@ -265,6 +279,8 @@
 
 .vendor-sell-desc {
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 13px;
   color: #8a7a60;
   font-style: italic;
@@ -300,6 +316,8 @@
 
 .vendor-sell-lock-tip-text {
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 13px;
   line-height: 1.5;
 }
@@ -321,14 +339,13 @@
 
 .vendor-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 14px;
 }
 
 .vendor-card {
   background: linear-gradient(135deg, #1a1f1a 0%, #141814 100%);
-  border-radius: 12px;
-  padding: 24px 22px;
   cursor: pointer;
   transition: all 0.25s;
 }
@@ -341,7 +358,7 @@
 }
 
 .vendor-card-icon {
-  font-size: 44px;
+  font-size: 36px;
 }
 
 .vendor-card-info {
@@ -349,7 +366,7 @@
 }
 
 .vendor-card-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -357,8 +374,10 @@
 
 .vendor-card-subtitle {
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 12px;
-  color: #5a5a4a;
+  color: var(--card-secondary-color);
   font-style: italic;
   margin-top: 2px;
 }
@@ -377,12 +396,16 @@
 .vendor-card-biome-name {
   font-size: 12px;
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
 }
 
 .vendor-card-biome-map {
   font-size: 11px;
-  color: #3a4a3a;
+  color: var(--card-meta-color);
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   margin-left: 4px;
 }
 
@@ -410,9 +433,11 @@
 }
 
 .vendor-card-count-number {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
 }
 
 .vendor-card-count-available .vendor-card-count-number {
@@ -438,10 +463,13 @@
 
 .vendor-card-location {
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 12px;
-  color: #4a5a4a;
+  color: var(--card-secondary-color);
   line-height: 1.5;
   font-style: italic;
+  margin-top: auto;
 }
 
 /* Universal Vendors Buys */
@@ -469,6 +497,8 @@
   border-radius: 8px;
   padding: 10px 16px;
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
 }
 
 .vendor-universal-name {
@@ -484,6 +514,8 @@
 
 .vendor-universal-note {
   font-family: "Crimson Text", serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 12px;
   color: #3a3a2a;
   font-style: italic;
@@ -506,7 +538,7 @@
   }
 
   .vendor-card-icon {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .vendor-card-title {

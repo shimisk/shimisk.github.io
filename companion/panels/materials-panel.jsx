@@ -96,7 +96,7 @@ export function MaterialsPanel({ allItems }) {
 
           return (
             <div key={biome} onClick={() => setActiveBiome(biome)}
-              className="biome-card" style={{ border: `1px solid ${BIOME_COLORS[biome]}44` }}
+              className="biome-card panel-overview-card" style={{ border: `1px solid ${BIOME_COLORS[biome]}44` }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = BIOME_COLORS[biome]; e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = `${BIOME_COLORS[biome]}44`; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
               <div className="biome-card-header">

@@ -88,6 +88,7 @@ export default function ValheimApp() {
         *{box-sizing:border-box;margin:0;padding:0;}
         html,body,#root{max-width:100%;overflow-x:hidden;}
         div,span,p,h1,h2,h3,button{min-width:0;overflow-wrap:anywhere;}
+        [style*="Crimson Text"], .biome-btn, .search-input {font-size:var(--crimson-uniform-size,12px) !important;color:var(--crimson-uniform-color,#8a7a5a) !important;}
         ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:#1a1f1a;}::-webkit-scrollbar-thumb{background:#5a4a2a;border-radius:3px;}
         .tab-btn{background:none;border:none;color:#8a7a5a;font-family:'Cinzel',serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 14px;cursor:pointer;transition:all 0.2s;border-bottom:2px solid transparent;white-space:nowrap;flex:0 0 auto;}
         .tab-btn.active{color:#d4aa60;border-bottom:2px solid #d4aa60;}.tab-btn:hover{color:#c4944a;}
@@ -102,6 +103,7 @@ export default function ValheimApp() {
         .progress-bar-bg{background:#1a1f1a;border-radius:4px;height:6px;overflow:hidden;}
         .progress-bar-fill{height:100%;background:linear-gradient(90deg,#d4aa60,#e8c870);border-radius:4px;transition:width 0.5s ease;}
         .rune-divider{text-align:center;color:#3a3a2a;letter-spacing:8px;font-size:12px;margin:8px 0;}
+        .boss-unlock-text,.boss-unlock-text *{color:#8acc6a !important;}
         .tab-bar{display:flex;gap:8px;padding:0 2px;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none;}.tab-bar::-webkit-scrollbar{display:none;}
         @media (max-width:760px){
           .tab-btn{padding:10px 12px;font-size:11px;letter-spacing:1px;}
@@ -113,7 +115,7 @@ export default function ValheimApp() {
         }
       `}</style>
       <div style={{ borderBottom: "1px solid #1e2320" }}>
-        <div style={{ maxWidth: 980, margin: "0 auto", padding: "18px clamp(12px, 4vw, 24px) 0" }}>
+        <div style={{ width: "100%", maxWidth: "none", margin: "0 auto", padding: "18px clamp(12px, 3vw, 28px) 0" }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 4, flexWrap: "wrap" }}>
             <h1 style={{ fontSize: 26, fontWeight: 800, color: "#d4aa60", letterSpacing: 3, textShadow: "0 0 40px rgba(212,170,96,0.3)" }}>VALHEIM</h1>
             <span style={{ fontSize: 13, color: "#5a4a2a", letterSpacing: 4, fontFamily: "'Crimson Text',serif", fontStyle: "italic" }}>companion</span>
@@ -123,7 +125,7 @@ export default function ValheimApp() {
           <TabBar mainTabs={mainTabs} tab={tab} setTab={setTab} />
         </div>
       </div>
-      <div style={{ maxWidth: 980, margin: "0 auto", padding: "18px clamp(12px, 4vw, 24px) 48px" }}>
+      <div style={{ width: "100%", maxWidth: "none", margin: "0 auto", padding: "18px clamp(12px, 3vw, 28px) 48px" }}>
         {tab === "tracker" && (
           <div>
             <div style={{ marginBottom: 28, padding: "16px 20px", background: "#141814", borderRadius: 8, border: "1px solid #1e2320" }}>
@@ -134,21 +136,21 @@ export default function ValheimApp() {
               <div className="progress-bar-bg"><div className="progress-bar-fill" style={{ width: `${(defeatedCount / bosses.length) * 100}%` }} /></div>
               {defeatedCount === bosses.length && <div style={{ textAlign: "center", marginTop: 12, color: "#d4aa60", fontStyle: "italic", fontFamily: "'Crimson Text',serif", fontSize: 15 }}>✦ Odin is proud. All worlds conquered. ✦</div>}
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 14 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 14 }}>
               {bosses.map(boss => (
                 <div key={boss.id} onClick={() => toggleBoss(boss.id)}
-                  style={{ background: "linear-gradient(135deg,#1a1f1a 0%,#141814 100%)", border: `1px solid ${boss.defeated ? "#3a4a2a" : "#2a2f2a"}`, borderRadius: 8, padding: 18, cursor: "pointer", transition: "all 0.25s", position: "relative", overflow: "hidden" }}>
+                  style={{ background: "linear-gradient(135deg,#1a1f1a 0%,#141814 100%)", border: `1px solid ${boss.defeated ? "#3a4a2a" : "#2a2f2a"}`, borderRadius: 8, padding: 18, cursor: "pointer", transition: "all 0.25s", position: "relative", overflow: "hidden", minWidth: 0 }}>
                   {/* Top section — dimmed when defeated */}
                   <div style={{ opacity: boss.defeated ? 0.45 : 1, transition: "opacity 0.25s" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
-                      <span style={{ fontSize: 32 }}>{boss.icon}</span>
-                      <div>
-                        <div style={{ fontSize: 16, fontWeight: 600, color: "#e8dfc8", letterSpacing: 1 }}>{boss.name}</div>
-                        <div style={{ fontSize: 11, color: BIOME_COLORS[boss.biome] || "#8a7a5a", letterSpacing: 2, textTransform: "uppercase", fontFamily: "'Crimson Text',serif" }}>{boss.biome}</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10, flexWrap: "wrap" }}>
+                      <span style={{ fontSize: 36 }}>{boss.icon}</span>
+                      <div style={{ minWidth: 0, flex: 1 }}>
+                        <div style={{ fontSize: 16, fontWeight: 700, color: "#e8dfc8", letterSpacing: 2, overflowWrap: "anywhere" }}>{boss.name}</div>
+                        <div style={{ fontSize: 12, color: BIOME_COLORS[boss.biome] || "#8a7a5a", letterSpacing: 2, textTransform: "uppercase", fontFamily: "'Crimson Text',serif" }}>{boss.biome}</div>
                       </div>
                       {boss.defeated && <div style={{ marginLeft: "auto", fontSize: 10, color: "#d4aa60", border: "1px solid #d4aa60", padding: "2px 8px", borderRadius: 10, fontFamily: "'Crimson Text',serif", opacity: 1 }}>SLAIN</div>}
                     </div>
-                    <div style={{ fontFamily: "'Crimson Text',serif", fontSize: 14, color: "#7a7060", fontStyle: "italic", marginBottom: 10, lineHeight: 1.4 }}>💡 {boss.tip}</div>
+                    <div style={{ fontFamily: "'Crimson Text',serif", fontSize: 14, color: "#7a7060", fontStyle: "italic", marginBottom: 10, lineHeight: 1.4, overflowWrap: "anywhere" }}>💡 {boss.tip}</div>
                     <div style={{ borderTop: "1px solid #1e2320", paddingTop: 10, display: "flex", flexDirection: "column", gap: 4 }}>
                       <div style={{ fontSize: 12, color: "#5a7a5a" }}>⚡ <span style={{ color: "#8a9a8a" }}>{boss.power}</span></div>
                       <div style={{ fontSize: 12, color: "#7a6a4a" }}>🎁 <span style={{ color: "#a08a6a" }}>{boss.drop}</span></div>
@@ -156,11 +158,11 @@ export default function ValheimApp() {
                   </div>
                   {/* Unlocks — always full opacity */}
                   {boss.defeated && boss.unlocks && (
-                    <div style={{ marginTop: 10, borderTop: "1px solid #2a3a1a", paddingTop: 10, display: "flex", flexDirection: "column", gap: 4 }}>
-                      <div style={{ fontSize: 10, color: "#4a8a3a", letterSpacing: 2, textTransform: "uppercase", marginBottom: 4 }}>✦ Unlocked</div>
+                    <div className="boss-unlock-text" style={{ marginTop: 10, borderTop: "1px solid #2a3a1a", paddingTop: 10, display: "flex", flexDirection: "column", gap: 4 }}>
+                      <div style={{ fontSize: 10, color: "#8acc6a", letterSpacing: 2, textTransform: "uppercase", marginBottom: 4 }}>✦ Unlocked</div>
                       {boss.unlocks.map((u, idx) => (
                         <div key={idx} style={{ fontSize: 12, color: "#8acc6a", fontFamily: "'Crimson Text',serif", display: "flex", gap: 6, lineHeight: 1.4, flexWrap: "wrap" }}>
-                          <span style={{ color: "#4a8a3a", flexShrink: 0, marginTop: 1 }}>▸</span>{u}
+                          <span style={{ color: "#8acc6a", flexShrink: 0, marginTop: 1 }}>▸</span>{u}
                         </div>
                       ))}
                     </div>

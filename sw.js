@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v3";
 const APP_SHELL_CACHE = `valheim-shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `valheim-runtime-${CACHE_VERSION}`;
 
@@ -94,14 +94,19 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // App source, styles, and scripts are best served fast from cache.
+  // App source and styles should stay fresh when online.
   if (
     url.pathname.endsWith(".jsx") ||
     url.pathname.endsWith(".css") ||
     url.pathname.endsWith(".js") ||
-    url.pathname.endsWith(".json") ||
-    url.origin !== self.location.origin
+    url.pathname.endsWith(".json")
   ) {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  // Third-party assets can use cache first.
+  if (url.origin !== self.location.origin) {
     event.respondWith(cacheFirst(request));
     return;
   }

@@ -25,14 +25,20 @@
     #root { min-height: 100vh; }
     .boot {
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       color: #d4aa60;
       font-family: 'Cinzel', serif;
       letter-spacing: 2px;
       background: radial-gradient(ellipse at top,#1a1f1a 0%,#0d0f0e 70%);
     }
+
+    .boot-inner {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
     .boot small {
       display: block;
       margin-top: 8px;
@@ -45,9 +51,11 @@
 </head>
 <body>
   <div id="root" class="boot">
-    <div>
+    <div class="boot-inner">
+      <div>
       VALHEIM COMPANION
       <small>Loading live JSON data...</small>
+      </div>
     </div>
   </div>
 

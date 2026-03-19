@@ -36,10 +36,10 @@ function WeaponCategory({ category, onBack, allItems }) {
           <h2 className="panel-title" style={{ color: "#d4aa60" }}>{category.emoji} {category.label}</h2>
           <p className="panel-subtitle">{category.desc}</p>
         </div>
-        <div style={{ marginLeft: "auto", display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+        <div style={{ marginLeft: "auto", display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", minWidth: 0, maxWidth: "100%" }}>
           <span style={{ fontSize: 11, color: "#4a4a3a", fontFamily: "'Crimson Text',serif" }}>Sort:</span>
           {[["tier", "⬆ Weakest"], ["tier-desc", "⬇ Strongest"], ["name", "A-Z"]].map(([value, label]) => (
-            <button key={value} onClick={() => setSort(value)} style={{ background: sort === value ? "#2a2218" : "#141814", border: "1px solid", borderColor: sort === value ? "#d4aa60" : "#2a2f2a", color: sort === value ? "#d4aa60" : "#6a6a5a", fontFamily: "'Crimson Text',serif", fontSize: 12, padding: "5px 12px", borderRadius: 20, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>
+            <button key={value} onClick={() => setSort(value)} style={{ background: sort === value ? "#2a2218" : "#141814", border: "1px solid", borderColor: sort === value ? "#d4aa60" : "#2a2f2a", color: sort === value ? "#d4aa60" : "#6a6a5a", fontFamily: "'Crimson Text',serif", fontSize: 12, padding: "5px 12px", borderRadius: 20, cursor: "pointer", whiteSpace: "normal" }}>{label}</button>
           ))}
         </div>
       </div>
@@ -101,7 +101,7 @@ export function WeaponsPanel({ bosses, weaponCategories, allItems }) {
         </div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 14 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 14 }}>
         {categories.map((category) => {
           const all = getWeaponsForCategory(category, allItems);
           if (!all.length) return null;
@@ -109,19 +109,19 @@ export function WeaponsPanel({ bosses, weaponCategories, allItems }) {
           const locked = !best;
           return (
             <div key={category.id} onClick={() => setActiveCategory(category.id)}
-              style={{ background: locked ? "#111412" : "linear-gradient(135deg,#1a1f1a 0%,#141814 100%)", border: "1px solid", borderColor: locked ? "#1e2320" : "#2a2f2a", borderRadius: 10, padding: "20px 18px", cursor: "pointer", transition: "all 0.25s", opacity: locked ? 0.5 : 1 }}
+              style={{ background: locked ? "#111412" : "linear-gradient(135deg,#1a1f1a 0%,#141814 100%)", border: "1px solid", borderColor: locked ? "#1e2320" : "#2a2f2a", borderRadius: 10, padding: "20px 18px", cursor: "pointer", transition: "all 0.25s", opacity: locked ? 0.5 : 1, display: "flex", flexDirection: "column" }}
               onMouseEnter={(e) => { if (!locked) { e.currentTarget.style.borderColor = "#5a4a2a"; e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)"; } }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = locked ? "#1e2320" : "#2a2f2a"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12, flexWrap: "wrap" }}>
-                <span style={{ fontSize: 32 }}>{category.emoji}</span>
+                <span style={{ fontSize: 36 }}>{category.emoji}</span>
                 <div style={{ minWidth: 0 }}>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: "#d4aa60", letterSpacing: 1.5 }}>{category.label.toUpperCase()}</div>
-                  <div style={{ fontSize: 10, color: "#4a4a3a", fontFamily: "'Crimson Text',serif", fontStyle: "italic" }}>{all.length} weapons</div>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: "#d4aa60", letterSpacing: 2 }}>{category.label.toUpperCase()}</div>
+                  <div style={{ fontSize: 12, color: "#4a4a3a", fontFamily: "'Crimson Text',serif", fontStyle: "italic" }}>{all.length} weapons</div>
                 </div>
               </div>
               <div style={{ fontFamily: "'Crimson Text',serif", fontSize: 12, color: "#5a5a4a", fontStyle: "italic", marginBottom: 14, lineHeight: 1.4 }}>{category.desc}</div>
               {best ? (
-                <div style={{ background: "#0e120e", border: "1px solid #2a3a1a", borderRadius: 6, padding: "8px 12px" }}>
+                <div style={{ background: "#0e120e", border: "1px solid #2a3a1a", borderRadius: 6, padding: "8px 12px", marginTop: "auto" }}>
                   <div style={{ fontSize: 10, color: "#4a6a3a", letterSpacing: 2, textTransform: "uppercase", marginBottom: 4 }}>✦ Best available</div>
                   <div style={{ fontSize: 13, fontWeight: 600, color: "#c4e890" }}>{best.name}</div>
                   <div style={{ fontSize: 11, color: BIOME_COLORS[best.biome], marginTop: 2 }}>{BIOME_ICONS[best.biome]} {best.biome}</div>
@@ -129,7 +129,7 @@ export function WeaponsPanel({ bosses, weaponCategories, allItems }) {
                     {[1, 2, 3, 4, 5, 6, 7].map((tier) => <div key={tier} style={{ flex: 1, height: 3, borderRadius: 2, background: tier <= (BIOME_TIER[best.biome] || 0) ? "#6aaa3a" : "#1e2320" }} />)}
                   </div>
                 </div>
-              ) : <div style={{ background: "#0e0e0e", border: "1px solid #1e1e1e", borderRadius: 6, padding: "8px 12px", fontFamily: "'Crimson Text',serif", fontSize: 12, color: "#3a3a3a", fontStyle: "italic" }}>🔒 Not yet unlocked</div>}
+              ) : <div style={{ background: "#0e0e0e", border: "1px solid #1e1e1e", borderRadius: 6, padding: "8px 12px", fontFamily: "'Crimson Text',serif", fontSize: 12, color: "#3a3a3a", fontStyle: "italic", marginTop: "auto" }}>🔒 Not yet unlocked</div>}
             </div>
           );
         })}

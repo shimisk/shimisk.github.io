@@ -245,6 +245,7 @@ function BestComboPanel({ combo, onBack }) {
 export function FoodPanel({ bosses, foodCategories, allItems }) {
   const [activeView, setActiveView] = useState(null);
   const categories = useMemo(() => buildFoodCategories(foodCategories), [foodCategories]);
+  const yagluthDefeated = useMemo(() => bosses?.find((b) => b.id === 5)?.defeated || false, [bosses]);
 
   const currentBiome = useMemo(() => getCurrentBiome(bosses), [bosses]);
   const currentTier = BIOME_TIER[currentBiome] || 1;
@@ -299,6 +300,23 @@ export function FoodPanel({ bosses, foodCategories, allItems }) {
     combo_eitr: { emoji: "🔮🏆", label: "Best Eitr Combo", desc: "Max eitr from 3 foods — mage build", color: "#8a2be2", key: "eitr" },
   };
 
+  if (activeView === "combo_eitr" && !yagluthDefeated) {
+    return (
+      <div>
+        <div className="panel-head-row">
+          <button className="panel-back-btn" onClick={() => setActiveView(null)}>← Back</button>
+          <div>
+            <h2 className="panel-title" style={{ color: "#8a2be2" }}>🔮🏆 Best Eitr Combo</h2>
+            <p className="panel-subtitle">Max eitr from 3 foods — mage build</p>
+          </div>
+        </div>
+        <div style={{ fontFamily: "'Crimson Text',serif", fontSize: 13, color: "#8a7a60", padding: 18 }}>
+          Defeat Yagluth to unlock Eitr food recommendations.
+        </div>
+      </div>
+    );
+  }
+
   if (activeView && activeView.startsWith("combo_") && combos) {
     const cfg = comboConfig[activeView];
     const data = combos[cfg.key];
@@ -332,32 +350,39 @@ export function FoodPanel({ bosses, foodCategories, allItems }) {
           { id: "combo_eitr", emoji: "🔮", label: "Max Eitr", color: "#8a2be2", key: "eitr" },
         ].map((cfg) => {
           const combo = combos[cfg.key];
+          const isEitrLocked = cfg.id === "combo_eitr" && !yagluthDefeated;
           return (
             <div key={cfg.id} onClick={() => setActiveView(cfg.id)}
-              className="combo-card" style={{ border: `1px solid ${cfg.color}44` }}
+              className="combo-card" style={{ border: `1px solid ${cfg.color}44`, opacity: isEitrLocked ? 0.7 : 1 }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = cfg.color; e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.4)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = `${cfg.color}44`; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
               <div className="combo-header">
                 <span className="combo-header-emoji">{cfg.emoji}</span>
                 <div>
                   <div className="combo-header-title" style={{ color: cfg.color }}>{cfg.label.toUpperCase()}</div>
-                  <div className="combo-stat-badges">
-                    <div className="combo-stat-badge" style={{ color: "#e06a6a" }}>❤️ {combo.totalH}</div>
-                    <div className="combo-stat-badge" style={{ color: "#6aaaee" }}>⚡ {combo.totalS}</div>
-                    {combo.totalE > 0 && <div className="combo-stat-badge" style={{ color: "#aa6aee" }}>🔮 {combo.totalE}</div>}
-                  </div>
+                  {isEitrLocked ? (
+                    <div className="combo-stat-badge" style={{ color: "#aa88c8" }}>🔒 Defeat Yagluth to unlock</div>
+                  ) : (
+                    <div className="combo-stat-badges">
+                      <div className="combo-stat-badge" style={{ color: "#e06a6a" }}>❤️ {combo.totalH}</div>
+                      <div className="combo-stat-badge" style={{ color: "#6aaaee" }}>⚡ {combo.totalS}</div>
+                      {combo.totalE > 0 && <div className="combo-stat-badge" style={{ color: "#aa6aee" }}>🔮 {combo.totalE}</div>}
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="combo-foods-list">
-                {(combo.foods || []).map((food, i) => (
-                  <div key={i} className="combo-food-item" style={{ color: "#6a7a5a" }}><span style={{ color: cfg.color, fontSize: 10 }}>●</span>{food.name}</div>
-                ))}
-              </div>
+              {!isEitrLocked && (
+                <div className="combo-foods-list">
+                  {(combo.foods || []).map((food, i) => (
+                    <div key={i} className="combo-food-item" style={{ color: "#6a7a5a" }}><span style={{ color: cfg.color, fontSize: 10 }}>●</span>{food.name}</div>
+                  ))}
+                </div>
+              )}
             </div>
           );
         }) : (
           <div style={{ gridColumn: "1/-1", fontFamily: "'Crimson Text',serif", fontSize: 13, color: "#3a4a3a", fontStyle: "italic", padding: "12px 0" }}>
-            Not enough foods available yet to calculate combos
+            Defeat Yagluth to unlock combo recommendations!
           </div>
         )}
       </div>

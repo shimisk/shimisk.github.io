@@ -15,12 +15,16 @@
   cursor: pointer;
   transition: all 0.2s;
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
 }
 
 .food-item-count {
   font-size: 12px;
   color: #3a4a3a;
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   margin-bottom: 14px;
 }
 
@@ -60,6 +64,8 @@
   width: 28px;
   text-align: right;
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
 }
 
 .combo-card {
@@ -68,6 +74,9 @@
   padding: 18px 16px;
   cursor: pointer;
   transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .category-card {
@@ -77,12 +86,17 @@
   padding: 22px 20px;
   cursor: pointer;
   transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .food-description {
   font-family: 'Crimson Text', serif;
-  font-size: 13px;
-  color: #8a7a60;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
+  font-size: 12px;
+  color: var(--card-secondary-color);
   font-style: italic;
   line-height: 1.5;
   margin-bottom: 10px;
@@ -105,6 +119,8 @@
 
 .recipe-text {
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 13px;
   color: #8aaa6a;
   line-height: 1.5;
@@ -122,6 +138,8 @@
   font-size: 18px;
   font-weight: 800;
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   line-height: 1;
 }
 
@@ -133,6 +151,8 @@
 
 .combo-food-item {
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 12px;
   color: #6a7a5a;
   display: flex;
@@ -151,17 +171,18 @@
 .responsive-grid {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: 1fr;
 }
 
 /* Food item details */
 .food-item-name {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .food-item-biome {
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 2px;
 }
 
@@ -172,6 +193,8 @@
 
 .food-special {
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 12px;
   max-width: 160px;
   text-align: right;
@@ -181,6 +204,8 @@
 .food-unlock-msg {
   margin-top: 8px;
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 12px;
   font-style: italic;
 }
@@ -209,9 +234,9 @@
 }
 
 .combo-header-title {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   margin-bottom: 6px;
 }
 
@@ -223,13 +248,15 @@
 }
 
 .food-info-emoji {
-  font-size: 40px;
+  font-size: 36px;
 }
 
 .food-info-meta {
-  font-size: 11px;
-  color: #4a4a3a;
+  font-size: 12px;
+  color: var(--card-meta-color);
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
 }
 
 .food-info-block {
@@ -237,6 +264,7 @@
   border: 1px solid #1e2e1e;
   border-radius: 6px;
   padding: 10px 12px;
+  margin-top: auto;
 }
 
 .food-info-block-title {
@@ -265,9 +293,12 @@
   border-radius: 6px;
   padding: 10px 12px;
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 12px;
   color: #3a3a3a;
   font-style: italic;
+  margin-top: auto;
 }
 
 .combo-stats-box {
@@ -316,6 +347,8 @@
   width: 36px;
   text-align: right;
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
 }
 
 .combo-foods-grid {
@@ -329,6 +362,8 @@
 .zone-status {
   margin-left: auto;
   font-family: 'Crimson Text', serif;
+  font-size: var(--crimson-uniform-size) !important;
+  color: var(--crimson-uniform-color) !important;
   font-size: 12px;
   color: #4a4a3a;
   font-style: italic;

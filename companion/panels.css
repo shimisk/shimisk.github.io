@@ -1,4 +1,12 @@
 /* Shared panel primitives */
+:root {
+  --card-title-color: #e8dfc8;
+  --card-meta-color: #4a4a3a;
+  --card-secondary-color: #5a5a4a;
+  --crimson-uniform-size: 12px;
+  --crimson-uniform-color: #8a7a5a;
+}
+
 .panel-head-row {
   display: flex;
   align-items: center;
@@ -96,6 +104,24 @@
 .panel-grid {
   display: grid;
   gap: 14px;
+}
+
+/* Shared card shell for panel overview grids (materials/vendors). */
+.panel-overview-card {
+  border-radius: 12px;
+  padding: 24px 22px;
+  min-height: 230px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 760px) {
+  .panel-overview-card {
+    padding: 18px 16px;
+    height: auto;
+    min-height: auto;
+  }
 }
 
 .panel-grid-card {

@@ -173,7 +173,7 @@ export function VendorsPanel({ vendors, bosses, hildirChests, setHildirChests })
 
           return (
             <div key={vendor.id} onClick={() => setActiveVendor(vendor.id)}
-              className="vendor-card" style={{ border: `1px solid ${vendor.color}44` }}
+              className="vendor-card panel-overview-card" style={{ border: `1px solid ${vendor.color}44` }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = vendor.color; e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.5)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = `${vendor.color}44`; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
 
