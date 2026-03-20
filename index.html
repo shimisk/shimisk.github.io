@@ -1,211 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#0d0f0e" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Valheim" />
-  <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png" />
-  <link rel="icon" href="icon.svg" type="image/svg+xml" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="companion/panels.css" />
-  <link rel="stylesheet" href="companion/panels/food-panel.css" />
-  <link rel="stylesheet" href="companion/panels/armor-panel.css" />
-  <link rel="stylesheet" href="companion/panels/materials-panel.css" />
-  <link rel="stylesheet" href="companion/panels/vendors-panel.css" />
-  <link rel="stylesheet" href="companion/panels/taming-panel.css" />
-  <link rel="stylesheet" href="companion/panels/farming-panel.css" />
-  <title>Valheim Companion</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; background: #0d0f0e; }
-    #root { min-height: 100vh; }
-    .boot {
-      min-height: 100vh;
-      color: #d4aa60;
-      font-family: 'Cinzel', serif;
-      letter-spacing: 2px;
-      background: radial-gradient(ellipse at top,#1a1f1a 0%,#0d0f0e 70%);
-    }
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Shimisk apps storefront" />
+	<title>Shimisk Storefront</title>
+	<link rel="icon" type="image/svg+xml" href="storefront-icon.svg" />
+	<link rel="shortcut icon" href="storefront-icon.svg" />
 
-    .boot-inner {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .boot small {
-      display: block;
-      margin-top: 8px;
-      font-family: 'Crimson Text', serif;
-      color: #6a5a3a;
-      letter-spacing: 1px;
-      text-align: center;
-    }
-  </style>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Fredoka:wght@500;700&family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="storefront.css" />
 </head>
 <body>
-  <div id="root" class="boot">
-    <div class="boot-inner">
-      <div>
-      VALHEIM COMPANION
-      <small>Loading live JSON data...</small>
-      </div>
-    </div>
-  </div>
+	<main class="store">
+		<header class="store-head">
+			<h1 class="store-title">Shimisk Apps</h1>
+			<p class="store-sub">Pick an app and jump in.</p>
+			<p class="store-promise">Everything here is free forever and will never include ads.</p>
+		</header>
 
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("sw.js").catch((err) => {
-          console.warn("Service worker registration failed:", err);
-        });
-      });
-    }
-  </script>
-  <script>
-    const DATA_FILES = ["bosses", "weapons", "armor", "food", "materials", "vendors", "weaponCategories", "foodCategories"];
-    const APP_SOURCE_FILES = [
-      "constants.jsx",
-      "companion/panels/armor-panel.jsx",
-      "companion/panels/weapons-panel.jsx",
-      "companion/panels/food-panel.jsx",
-      "companion/panels/materials-panel.jsx",
-      "companion/panels/vendors-panel.jsx",
-      "companion/panels/taming-panel.jsx",
-      "companion/panels/farming-panel.jsx",
-      "companion/panels/tab-bar.jsx",
-      "companion/ui-panels.jsx",
-      "valheim-companion.jsx"
-    ];
-    const NO_STORE_CACHE = { cache: "no-store" };
+		<section class="install-guide" aria-label="How to install apps">
+			<h2 class="install-title">Install The Apps</h2>
+			<p class="install-sub">First, open each app in your browser and test it. If you like it, install it to your home screen or desktop for quick access.</p>
 
-    function toConstName(name) {
-      return name.replace(/([A-Z])/g, "_$1").toUpperCase();
-    }
+			<div class="install-grid">
+				<article class="install-card">
+					<h3>Android (Chrome/Edge)</h3>
+					<ol>
+						<li>Open Sudoku or Valheim Companion from the banners below and try it in-browser.</li>
+						<li>Tap the browser menu (<span aria-hidden="true">⋮</span>).</li>
+						<li>Tap <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>
+					</ol>
+				</article>
 
-    function buildDataBlock(dataMap) {
-      const lines = [
-        "// ─── Inlined game data ────────────────────────────────────────────────────────",
-        "// Runtime-loaded from /data/*.json at page load (no build step needed).",
-        "// Edit JSON files and refresh this page.",
-        "",
-      ];
-      for (const f of DATA_FILES) {
-        const key = `_${toConstName(f)}_DATA`;
-        const compact = JSON.stringify(dataMap[f]);
-        lines.push(`const ${key} = ${compact};`);
-      }
-      return lines.join("\n");
-    }
+				<article class="install-card">
+					<h3>iPhone/iPad (Safari)</h3>
+					<ol>
+						<li>Open the app page in Safari and test it normally in the browser.</li>
+						<li>Tap the Share button.</li>
+						<li>Choose <strong>Add to Home Screen</strong>.</li>
+					</ol>
+				</article>
 
-    async function fetchJson(path) {
-      const res = await fetch(path, NO_STORE_CACHE);
-      if (!res.ok) throw new Error(`Failed loading ${path} (${res.status})`);
-      return res.json();
-    }
+				<article class="install-card">
+					<h3>Desktop (Chrome/Edge)</h3>
+					<ol>
+						<li>Open the app page from this storefront and test it in the browser first.</li>
+						<li>Click the install icon in the address bar.</li>
+						<li>Confirm with <strong>Install</strong>.</li>
+					</ol>
+				</article>
+			</div>
+		</section>
 
-    async function fetchText(path) {
-      const res = await fetch(path, NO_STORE_CACHE);
-      if (!res.ok) throw new Error(`Failed loading ${path} (${res.status})`);
-      return res.text();
-    }
+		<section class="store-grid" aria-label="Available apps">
+			<a class="banner banner-sudoku" href="Sudoku/index.html" aria-label="Open Sudoku app">
+				<div class="banner-copy">
+					<h2 class="banner-title">Sudoku</h2>
+					<p class="banner-desc">Daily puzzle vibes with pastel cards, streaks, and a cozy mobile-first board.</p>
+					<span class="banner-cta">Open App <span aria-hidden="true">→</span></span>
+				</div>
+				<img class="banner-art" src="Sudoku/assets/images/logo.png" alt="Sudoku logo" />
+			</a>
 
-    async function loadJsonData() {
-      const entries = await Promise.all(DATA_FILES.map(async (f) => {
-        const json = await fetchJson(`data/${f}.json`);
-        return [f, json];
-      }));
-      return Object.fromEntries(entries);
-    }
-
-    async function loadAppSources() {
-      return Promise.all(APP_SOURCE_FILES.map((file) => fetchText(file)));
-    }
-
-    function normalizeNewlines(text) {
-      return text.replace(/\r\n/g, "\n");
-    }
-
-    function stripReactImportAndHookAlias(jsxSource) {
-      let output = jsxSource;
-      output = output.replace(/^import\s+[^;]+;\n?/gm, "");
-      output = output.replace(/^export\s+\{[^}]+\};\n?/gm, "");
-      output = output.replace(/^export\s+(?=(const|function|class)\b)/gm, "");
-      output = output.replace(/^const\s+\{\s*useState[^\n]*\n\n?/m, "");
-      return output;
-    }
-
-    function stripInlinedDataBlock(jsxSource) {
-      return jsxSource.replace(/\nconst _[A-Z_]+_DATA = [\s\S]*?\nfunction useGameData\(\)/, "\nfunction useGameData()");
-    }
-
-    function injectRuntimeDataBlock(jsxSource, dataBlock) {
-      const markerPattern = /\/\/ ─── Inlined game data[\s\S]*?\nfunction useGameData\(\)/;
-      if (markerPattern.test(jsxSource)) {
-        return jsxSource.replace(markerPattern, `${dataBlock}\n\nfunction useGameData()`);
-      }
-      // Fallback: inject directly before useGameData if marker comments were removed.
-      return jsxSource.replace(/\nfunction useGameData\(\)/, `\n${dataBlock}\n\nfunction useGameData()`);
-    }
-
-    function convertDefaultExportToFunction(jsxSource) {
-      return jsxSource.replace("export default function ValheimApp()", "function ValheimApp()");
-    }
-
-    function addUmdPreludeAndMount(jsxSource) {
-      const prelude = "const { useState, useMemo, useEffect, useRef } = React;\n\n";
-      const mount = "\n\nconst _root = ReactDOM.createRoot(document.getElementById('root'));\n_root.render(React.createElement(ValheimApp));\n";
-      return prelude + jsxSource + mount;
-    }
-
-    function prepareRuntimeAppSource(jsxSourceRawList, dataBlock) {
-      const joined = jsxSourceRawList.map(normalizeNewlines).join("\n\n");
-      let jsxSource = joined;
-      jsxSource = stripReactImportAndHookAlias(jsxSource);
-      jsxSource = stripInlinedDataBlock(jsxSource);
-      jsxSource = injectRuntimeDataBlock(jsxSource, dataBlock);
-      jsxSource = convertDefaultExportToFunction(jsxSource);
-      jsxSource = addUmdPreludeAndMount(jsxSource);
-      return jsxSource;
-    }
-
-    function compileJsxToJs(jsxSource) {
-      return Babel.transform(jsxSource, {
-        plugins: ["transform-react-jsx"]
-      }).code;
-    }
-
-    async function boot() {
-      const [dataMap, appSourceRawList] = await Promise.all([
-        loadJsonData(),
-        loadAppSources()
-      ]);
-
-      const dataBlock = buildDataBlock(dataMap);
-      const jsxSource = prepareRuntimeAppSource(appSourceRawList, dataBlock);
-      const compiled = compileJsxToJs(jsxSource);
-
-      // eslint-disable-next-line no-new-func
-      new Function(compiled)();
-    }
-
-    boot().catch((err) => {
-      const root = document.getElementById("root");
-      root.className = "boot";
-      root.innerHTML = `<div>LOAD FAILED<small>${String(err && err.message ? err.message : err)}</small></div>`;
-      console.error(err);
-    });
-  </script>
+			<a class="banner banner-valheim" href="Valheim_companion/index.html" aria-label="Open Valheim Companion app">
+				<div class="banner-copy">
+					<h2 class="banner-title">Valheim Companion</h2>
+					<p class="banner-desc">A forge-lit codex for armor, food, materials, and biomes at a glance.</p>
+					<span class="banner-cta">Enter Companion <span aria-hidden="true">→</span></span>
+				</div>
+				<img class="banner-art" src="Valheim_companion/icon.svg" alt="Valheim Companion icon" />
+			</a>
+		</section>
+	</main>
 </body>
 </html>

@@ -120,7 +120,6 @@ export default function ValheimApp() {
           <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 4, flexWrap: "wrap" }}>
             <h1 style={{ fontSize: 26, fontWeight: 800, color: "#d4aa60", letterSpacing: 3, textShadow: "0 0 40px rgba(212,170,96,0.3)" }}>VALHEIM</h1>
             <span style={{ fontSize: 13, color: "#5a4a2a", letterSpacing: 4, fontFamily: "'Crimson Text',serif", fontStyle: "italic" }}>companion</span>
-            <span style={{ marginLeft: "auto", fontSize: 11, color: "#3a4a3a", fontFamily: "'Crimson Text',serif" }}>{allItems.length} items</span>
           </div>
           <div className="rune-divider">᛫ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᛫</div>
           <TabBar mainTabs={mainTabs} tab={tab} setTab={setTab} />

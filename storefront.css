@@ -1,0 +1,341 @@
+:root {
+  --shell-bg-a: #fff9fc;
+  --shell-bg-b: #f5eef8;
+  --shell-text: #3f2f47;
+  --shell-muted: #7c6a8b;
+  --shell-card: rgba(255, 255, 255, 0.7);
+  --shell-border: rgba(145, 120, 165, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--shell-text);
+  background:
+    radial-gradient(80% 80% at 15% 10%, #ffe8f3 0%, transparent 70%),
+    radial-gradient(70% 70% at 90% 90%, #e9e4ff 0%, transparent 70%),
+    linear-gradient(160deg, var(--shell-bg-a), var(--shell-bg-b));
+  padding: clamp(18px, 2.5vw, 36px);
+}
+
+.store {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  border: 1px solid var(--shell-border);
+  border-radius: 24px;
+  background: var(--shell-card);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 18px 50px rgba(108, 84, 138, 0.15);
+  overflow: hidden;
+}
+
+.store-head {
+  padding: clamp(22px, 3vw, 34px);
+  border-bottom: 1px solid var(--shell-border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.store-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: 0.5px;
+}
+
+.store-sub {
+  color: var(--shell-muted);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 700;
+}
+
+.store-promise {
+  width: fit-content;
+  margin-top: 4px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(162, 132, 186, 0.28);
+  color: #5e3f73;
+  font-size: clamp(0.78rem, 1.5vw, 0.9rem);
+  font-weight: 800;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: clamp(16px, 2vw, 24px);
+}
+
+.install-guide {
+  padding: clamp(14px, 2vw, 20px) clamp(16px, 2vw, 24px) clamp(16px, 2.2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid var(--shell-border);
+}
+
+.install-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  color: #4e2d61;
+}
+
+.install-sub {
+  color: var(--shell-muted);
+  font-weight: 700;
+  font-size: clamp(0.9rem, 1.7vw, 1rem);
+}
+
+.install-grid {
+  margin-top: 6px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.install-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(162, 132, 186, 0.22);
+  border-radius: 14px;
+  padding: 14px 14px 14px 16px;
+  box-shadow: 0 8px 18px rgba(114, 92, 138, 0.11);
+}
+
+.install-card h3 {
+  font-size: 0.95rem;
+  color: #5a3a74;
+  margin-bottom: 8px;
+}
+
+.install-card ol {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #645273;
+  font-weight: 700;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.banner {
+  position: relative;
+  border-radius: 18px;
+  min-height: 220px;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: clamp(16px, 2.5vw, 28px);
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  isolation: isolate;
+}
+
+.banner:hover {
+  transform: translateY(-4px);
+}
+
+.banner:focus-visible {
+  outline: 3px solid rgba(125, 90, 165, 0.45);
+  outline-offset: 2px;
+}
+
+.banner-copy {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.banner-title {
+  font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+  line-height: 1.05;
+}
+
+.banner-desc {
+  font-size: clamp(0.92rem, 1.8vw, 1.05rem);
+  max-width: 45ch;
+  opacity: 0.95;
+}
+
+.banner-cta {
+  margin-top: 8px;
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+}
+
+.banner-art {
+  z-index: 2;
+  width: clamp(110px, 16vw, 170px);
+  max-width: 100%;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.2));
+  justify-self: end;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.95;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 180px;
+  height: 180px;
+  right: -40px;
+  bottom: -45px;
+  border-radius: 50%;
+}
+
+.banner-sudoku {
+  border-color: rgba(230, 140, 175, 0.35);
+  box-shadow: 0 14px 34px rgba(212, 128, 168, 0.22);
+  color: #5a3a5a;
+}
+
+.banner-sudoku:hover {
+  animation: sudokuFloat 2.2s ease-in-out infinite;
+  box-shadow: 0 18px 36px rgba(212, 128, 168, 0.3);
+}
+
+.banner-sudoku::before {
+  background: linear-gradient(135deg, #ffddeb, #ffe9c6 55%, #e6d9ff);
+}
+
+.banner-sudoku::after {
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.7), rgba(248, 173, 203, 0.15));
+}
+
+.banner-sudoku .banner-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+}
+
+.banner-sudoku .banner-desc {
+  color: #7d5f7d;
+  font-weight: 800;
+}
+
+.banner-sudoku .banner-cta {
+  color: #b84e86;
+}
+
+.banner-valheim {
+  border-color: rgba(86, 78, 46, 0.65);
+  box-shadow: 0 14px 40px rgba(22, 19, 13, 0.45);
+  color: #e8dfc8;
+}
+
+.banner-valheim:hover {
+  animation: valheimEmber 1.8s ease-in-out infinite;
+  box-shadow: 0 16px 44px rgba(13, 11, 7, 0.6), 0 0 0 1px rgba(212, 170, 96, 0.3) inset;
+}
+
+.banner-valheim::before {
+  background:
+    linear-gradient(145deg, rgba(255, 222, 150, 0.09), rgba(255, 222, 150, 0)),
+    radial-gradient(90% 100% at 70% 10%, #24251f, #0d0f0e 70%);
+}
+
+.banner-valheim::after {
+  background: radial-gradient(circle at 30% 35%, rgba(212, 170, 96, 0.25), rgba(212, 170, 96, 0.05));
+}
+
+.banner-valheim .banner-title {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.banner-valheim .banner-desc {
+  font-family: 'Crimson Text', serif;
+  font-size: clamp(1rem, 1.9vw, 1.15rem);
+  color: #baab86;
+  font-style: italic;
+}
+
+.banner-valheim .banner-cta {
+  color: #d4aa60;
+}
+
+@keyframes sudokuFloat {
+  0% {
+    transform: translateY(-4px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.01);
+  }
+  100% {
+    transform: translateY(-4px) scale(1);
+  }
+}
+
+@keyframes valheimEmber {
+  0% {
+    filter: saturate(1) brightness(1);
+  }
+  50% {
+    filter: saturate(1.08) brightness(1.05);
+  }
+  100% {
+    filter: saturate(1) brightness(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner,
+  .banner:hover,
+  .banner-sudoku:hover,
+  .banner-valheim:hover {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 780px) {
+  .banner {
+    grid-template-columns: 1fr;
+    min-height: 200px;
+    gap: 14px;
+  }
+
+  .banner-art {
+    justify-self: start;
+    width: clamp(92px, 24vw, 130px);
+  }
+
+  .store-grid {
+    gap: 12px;
+  }
+
+  .install-grid {
+    grid-template-columns: 1fr;
+  }
+}

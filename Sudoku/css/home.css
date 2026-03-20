@@ -1,0 +1,174 @@
+/* ============================================================
+   HOME.CSS — home screen: logo, streaks, mode cards
+   ============================================================ */
+
+/* ── Header / Logo ── */
+#screen-home {
+  overflow-y: hidden;
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 20px;
+}
+
+.logo-img {
+  width: 340px;
+  max-width: 92vw;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(220, 120, 160, 0.3));
+  animation: bouncein 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes bouncein {
+  from { transform: scale(0) rotate(-20deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0deg);   opacity: 1; }
+}
+
+/* ── Streak banner ── */
+.streak-banner {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.streak-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.streak-emoji { font-size: 1.6rem; }
+.streak-num {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.7rem;
+  color: var(--text);
+  line-height: 1;
+}
+.streak-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.streak-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--pink);
+  opacity: 0.5;
+}
+
+/* ── Mode cards ── */
+.mode-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.mode-card {
+  width: 100%;
+  border: none;
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 6px 24px var(--shadow);
+}
+.mode-card:hover  { transform: translateY(-3px); box-shadow: 0 10px 30px var(--shadow-deep); }
+.mode-card:active { transform: translateY(0) scale(0.98); }
+
+.mode-easy   { background: linear-gradient(135deg, #fde8f0, #ffd4e4); border: 2px solid rgba(255, 180, 200, 0.4); }
+.mode-medium { background: linear-gradient(135deg, #fdf3d4, #fde8a0); border: 2px solid rgba(255, 220, 120, 0.4); }
+.mode-hard   { background: linear-gradient(135deg, #ede4f8, #d8c8f4); border: 2px solid rgba(200, 170, 240, 0.4); }
+
+.mode-img  { width: 52px; height: 52px; object-fit: contain; flex-shrink: 0; }
+.mode-name { font-family: 'Fredoka One', cursive; font-size: 1.4rem; color: var(--text); line-height: 1; }
+.mode-desc { font-size: 0.8rem; color: var(--text-light); font-weight: 600; }
+
+.mode-info   { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.mode-status { font-size: 1.2rem; flex-shrink: 0; }
+
+/* Done / failed states */
+.mode-card:disabled           { cursor: not-allowed; }
+.mode-done                    { opacity: 0.65; filter: saturate(0.6); }
+.mode-done:hover              { transform: none !important; box-shadow: 0 6px 24px var(--shadow) !important; }
+.mode-failed                  { opacity: 0.6; filter: saturate(0.4) brightness(0.95); }
+.mode-failed:hover            { transform: none !important; box-shadow: 0 6px 24px var(--shadow) !important; }
+
+/* ── Footer ── */
+.home-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.daily-date { font-weight: 800; font-size: 0.85rem; color: var(--text-light); letter-spacing: 0.5px; }
+.home-note  { font-size: 0.78rem; color: var(--text-muted); }
+
+/* ── Responsive ── */
+@media (max-height: 700px) {
+  .home-header  { margin-top: 8px; }
+  .logo-img     { width: 270px; }
+  .streak-banner{ padding: 12px 16px; }
+  .mode-card    { padding: 14px 20px; }
+}
+
+@media (orientation: landscape), (max-height: 620px) {
+  #screen-home {
+    gap: 8px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+
+  .home-header {
+    margin-top: 0;
+  }
+
+  .logo-img {
+    width: min(36vh, 240px);
+    max-width: 70vw;
+  }
+
+  .streak-banner {
+    padding: 10px 14px;
+  }
+
+  .streak-emoji { font-size: 1.35rem; }
+  .streak-num   { font-size: 1.35rem; }
+  .streak-label { font-size: 0.62rem; }
+  .streak-divider { height: 28px; }
+
+  .mode-cards {
+    gap: 8px;
+  }
+
+  .mode-card {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .mode-img  { width: 42px; height: 42px; }
+  .mode-name { font-size: 1.15rem; }
+  .mode-desc { font-size: 0.72rem; }
+
+  .home-footer { gap: 2px; }
+  .daily-date  { font-size: 0.78rem; }
+  .home-note   { font-size: 0.7rem; }
+}

@@ -1,0 +1,68 @@
+/* ============================================================
+   BACKGROUND.CSS — animated blobs, floating emoji decos
+   ============================================================ */
+
+.bg-blobs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.45;
+}
+.blob1 {
+  width: 500px; height: 500px;
+  background: var(--pink);
+  top: -150px; left: -150px;
+  animation: blobmove1 12s ease-in-out infinite;
+}
+.blob2 {
+  width: 400px; height: 400px;
+  background: var(--lavender);
+  bottom: -100px; right: -100px;
+  animation: blobmove2 14s ease-in-out infinite;
+}
+.blob3 {
+  width: 300px; height: 300px;
+  background: var(--mint);
+  top: 40%; left: 55%;
+  animation: blobmove3 10s ease-in-out infinite;
+}
+
+@keyframes blobmove1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(40px, 30px) scale(1.05); }
+}
+@keyframes blobmove2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(-30px, -40px) scale(1.08); }
+}
+@keyframes blobmove3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(-20px, 25px) scale(0.95); }
+}
+
+/* ── Floating decorations ── */
+.deco-float {
+  position: fixed;
+  font-size: 1.5rem;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+  animation: floatdeco 6s ease-in-out infinite;
+}
+.deco1 { top: 8%;    left: 5%;   animation-delay: 0s;   }
+.deco2 { top: 15%;   right: 8%;  animation-delay: 1.5s; }
+.deco3 { bottom: 20%; left: 7%;  animation-delay: 3s;   }
+.deco4 { bottom: 10%; right: 6%; animation-delay: 4.5s; }
+
+@keyframes floatdeco {
+  0%, 100% { transform: translateY(0)    rotate(-5deg); }
+  50%       { transform: translateY(-12px) rotate(5deg); }
+}

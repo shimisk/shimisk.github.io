@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Storefront bubbly S icon">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe9f4"/>
+      <stop offset="0.55" stop-color="#f6e6ff"/>
+      <stop offset="1" stop-color="#e7f4ff"/>
+    </linearGradient>
+    <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7ab5"/>
+      <stop offset="0.5" stop-color="#b68cff"/>
+      <stop offset="1" stop-color="#64d6d2"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="12" y="12" width="232" height="232" rx="64" fill="url(#bgGrad)"/>
+
+  <circle cx="58" cy="62" r="12" fill="#ffffff" fill-opacity="0.82"/>
+  <circle cx="194" cy="54" r="9" fill="#ffffff" fill-opacity="0.72"/>
+  <circle cx="204" cy="198" r="11" fill="#ffffff" fill-opacity="0.74"/>
+  <circle cx="62" cy="200" r="8" fill="#ffffff" fill-opacity="0.66"/>
+
+  <path d="M174 76 C 136 50, 82 68, 84 106 C 86 142, 172 132, 172 174 C 172 206, 118 214, 84 188"
+        fill="none"
+        stroke="url(#sGrad)"
+        stroke-width="28"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <path d="M173 76 C 136 50, 82 68, 84 106" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="8" stroke-linecap="round"/>
+</svg>

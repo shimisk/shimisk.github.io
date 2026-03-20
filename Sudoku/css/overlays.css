@@ -1,0 +1,101 @@
+/* ============================================================
+   OVERLAYS.CSS — win screen, loss overlay, confetti
+   ============================================================ */
+
+/* ── Win screen ── */
+#screen-win { justify-content: center; }
+
+.win-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  animation: winappear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes winappear {
+  from { transform: scale(0.7) translateY(40px); opacity: 0; }
+  to   { transform: scale(1)   translateY(0);    opacity: 1; }
+}
+
+.win-emoji {
+  font-size: 5rem;
+  animation: winspin 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both 0.1s;
+  filter: drop-shadow(0 8px 20px rgba(240, 100, 120, 0.4));
+}
+@keyframes winspin {
+  from { transform: rotate(-30deg) scale(0); opacity: 0; }
+  to   { transform: rotate(0)      scale(1); opacity: 1; }
+}
+
+.win-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #e07898, #b878d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.win-sub { font-size: 1rem; color: var(--text-light); font-weight: 600; }
+
+.win-stats {
+  display: flex;
+  gap: 24px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px 32px;
+  box-shadow: 0 6px 24px var(--shadow);
+}
+.win-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.win-stat-val   { font-family: 'Fredoka One', cursive; font-size: 1.8rem; color: var(--text); }
+.win-stat-label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
+
+/* ── Confetti ── */
+.win-confetti { position: relative; width: 100%; height: 20px; }
+.confetti-piece {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  animation: confettifall 1.2s ease-in both;
+}
+@keyframes confettifall {
+  from { transform: translateY(-30px) rotate(0deg);    opacity: 1; }
+  to   { transform: translateY(80px)  rotate(540deg);  opacity: 0; }
+}
+
+/* ── Loss overlay ── */
+.loss-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(90, 30, 80, 0.45);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.loss-overlay.active { opacity: 1; pointer-events: all; }
+
+.loss-card {
+  background: var(--white);
+  border-radius: 28px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  max-width: 320px;
+  width: 90%;
+  box-shadow: 0 12px 48px rgba(160, 60, 100, 0.25);
+  animation: winappear 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.loss-emoji { font-size: 4rem; }
+.loss-title { font-family: 'Fredoka One', cursive; font-size: 1.8rem; color: var(--text); }
+.loss-sub   { font-size: 0.95rem; color: var(--text-light); font-weight: 600; }
+.loss-note  { font-size: 0.85rem; color: var(--text-muted); }
