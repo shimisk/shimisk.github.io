@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { THEMES } from "../themes.js";
 import { FONTS } from "../fonts.js";
 import PinSetup from "./PinSetup.js";
@@ -10,9 +10,12 @@ export default function SettingsView({
   onChangeTheme, onChangeFont, onChangeFontSize,
   onLockEnabled, onLockDisabled,
   onRequestLockDisable,
+  onExportBackup,
+  onImportBackup,
   onDeleteAll, onBack,
 }) {
   const [showPinSetup, setShowPinSetup] = useState(false);
+  const importInputRef = useRef(null);
   const currentFont = FONTS.find(f => f.id === font) || FONTS[2];
 
   const handleDeleteAll = async () => {
@@ -21,6 +24,12 @@ export default function SettingsView({
 
   const handleDisableLock = async () => {
     onRequestLockDisable();
+  };
+
+  const handleImportFile = event => {
+    const file = event.target.files?.[0];
+    if (file) onImportBackup(file);
+    event.target.value = "";
   };
 
   return h('div', { className: "panel settings-panel" },
@@ -73,6 +82,22 @@ export default function SettingsView({
           h('button', { className: "generic-btn", onClick: () => setShowPinSetup(true) }, "🔑 Change PIN"),
           h('button', { className: "generic-btn danger", onClick: handleDisableLock }, "🔓 Disable lock")
         )
+    ),
+    h('div', { className: "settings-s" },
+      h('div', { className: "settings-st" }, "Backup & Storage"),
+      h('div', { className: "settings-note settings-warning" },
+        h('strong', null, "Important:"),
+        " This diary is stored in your browser on this device. If you clear browser or website data, your entries can be deleted. Export backups regularly."
+      ),
+      h('button', { className: "generic-btn", onClick: onExportBackup }, "📦 Export diary backup"),
+      h('button', { className: "generic-btn", onClick: () => importInputRef.current?.click() }, "📥 Import diary backup"),
+      h('input', {
+        ref: importInputRef,
+        className: "backup-file-input",
+        type: "file",
+        accept: "application/json,.json",
+        onChange: handleImportFile,
+      })
     ),
     h('div', { className: "danger-zone" },
       h('div', { className: "settings-st" }, "Danger Zone"),

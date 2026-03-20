@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { THEMES } from "../themes.js";
 import { FONTS, FONT_SIZES, loadAllFonts } from "../fonts.js";
 import { applyTheme } from "../utils.js";
-import { getAllEntries, saveEntry, deleteEntry, clearAllEntries, getSetting, setSetting, loadAllSettings } from "../db.js";
+import { getAllEntries, saveEntry, deleteEntry, clearAllEntries, replaceAllEntries, getSetting, setSetting, loadAllSettings } from "../db.js";
 import HomeView     from "./HomeView.js";
 import EntryEditor  from "./EntryEditor.js";
 import EntryReader  from "./EntryReader.js";
@@ -17,6 +17,37 @@ function sortEntries(list) {
     if (byDate !== 0) return byDate;
     return (b.updatedAt || 0) - (a.updatedAt || 0);
   });
+}
+
+function normalizeImportedEntries(list) {
+  if (!Array.isArray(list)) return [];
+
+  const seenIds = new Set();
+  const normalized = [];
+
+  for (const [index, entry] of list.entries()) {
+    if (!entry || typeof entry !== "object") continue;
+    const body = typeof entry.body === "string" ? entry.body.trim() : "";
+    const date = typeof entry.date === "string" && entry.date ? entry.date : new Date().toISOString().slice(0, 10);
+    if (!body) continue;
+
+    let id = typeof entry.id === "string" && entry.id ? entry.id : `import-${date}-${index}`;
+    while (seenIds.has(id)) {
+      id = `${id}-copy`;
+    }
+    seenIds.add(id);
+
+    normalized.push({
+      id,
+      date,
+      title: typeof entry.title === "string" ? entry.title : "",
+      body,
+      sticker: typeof entry.sticker === "string" ? entry.sticker : null,
+      updatedAt: Number.isFinite(entry.updatedAt) ? entry.updatedAt : Date.now(),
+    });
+  }
+
+  return normalized;
 }
 
 export default function App() {
@@ -62,6 +93,28 @@ export default function App() {
     const timer = setTimeout(() => setFeedback(null), 2400);
     return () => clearTimeout(timer);
   }, [feedback]);
+
+  useEffect(() => {
+    if (!lockEnabled) return;
+
+    const relockIfHidden = () => {
+      if (document.visibilityState === "hidden") {
+        setUnlocked(false);
+      }
+    };
+
+    const relockOnPageHide = () => {
+      setUnlocked(false);
+    };
+
+    document.addEventListener("visibilitychange", relockIfHidden);
+    window.addEventListener("pagehide", relockOnPageHide);
+
+    return () => {
+      document.removeEventListener("visibilitychange", relockIfHidden);
+      window.removeEventListener("pagehide", relockOnPageHide);
+    };
+  }, [lockEnabled]);
 
   const currentTheme = THEMES[themeId] || THEMES.witchy;
   const currentFont  = FONTS.find(f => f.id === font) || FONTS[2];
@@ -145,6 +198,91 @@ export default function App() {
     });
   }, [openConfirm, showFeedback]);
 
+  const exportBackup = useCallback(() => {
+    try {
+      const backup = {
+        app: "my-diary",
+        version: 1,
+        exportedAt: new Date().toISOString(),
+        entries,
+        settings: {
+          theme: themeId,
+          font,
+          fontSize,
+          lockEnabled,
+        },
+      };
+
+      const blob = new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const stamp = new Date().toISOString().slice(0, 10);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `my-diary-backup-${stamp}.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      showFeedback("Diary backup exported", "success");
+    } catch (error) {
+      console.error("Export failed:", error);
+      showFeedback("Backup export failed", "error");
+    }
+  }, [entries, font, fontSize, lockEnabled, showFeedback, themeId]);
+
+  const importBackup = useCallback(async file => {
+    if (!file) return;
+
+    try {
+      const text = await file.text();
+      const parsed = JSON.parse(text);
+      if (parsed?.app !== "my-diary" || !Array.isArray(parsed.entries)) {
+        showFeedback("That backup file is not valid", "error");
+        return;
+      }
+
+      const importedEntries = normalizeImportedEntries(parsed.entries);
+      const importedSettings = parsed.settings || {};
+      const entryLabel = importedEntries.length === 1 ? "entry" : "entries";
+
+      openConfirm({
+        title: "Import backup and replace diary?",
+        message: `This will replace your current diary with ${importedEntries.length} imported ${entryLabel}. PIN protection is not restored from backups.`,
+        confirmLabel: "Import Backup",
+        onConfirm: async () => {
+          await replaceAllEntries(importedEntries);
+          setEntries(sortEntries(importedEntries));
+
+          if (typeof importedSettings.theme === "string" && THEMES[importedSettings.theme]) {
+            setThemeId(importedSettings.theme);
+            await setSetting("theme", importedSettings.theme);
+          }
+
+          if (typeof importedSettings.font === "string" && FONTS.some(item => item.id === importedSettings.font)) {
+            setFont(importedSettings.font);
+            await setSetting("font", importedSettings.font);
+          }
+
+          if (typeof importedSettings.fontSize === "string" && Object.prototype.hasOwnProperty.call(FONT_SIZES, importedSettings.fontSize)) {
+            setFontSize(importedSettings.fontSize);
+            await setSetting("fontSize", importedSettings.fontSize);
+          }
+
+          await setSetting("lockEnabled", false);
+          await setSetting("pinHash", null);
+          setLockEnabled(false);
+          setUnlocked(true);
+          setActiveEntry(null);
+          setView("home");
+          showFeedback(importedEntries.length ? "Backup imported" : "Backup imported with no entries", "success");
+        }
+      });
+    } catch (error) {
+      console.error("Import failed:", error);
+      showFeedback("Backup import failed", "error");
+    }
+  }, [openConfirm, showFeedback]);
+
   // ── Render guards ─────────────────────────────────────────────────────────
   if (!loaded) {
     return h('div', { style: { background: "#0d0a1a", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" } }, "🔮");
@@ -202,6 +340,8 @@ export default function App() {
         onLockEnabled: () => setLockEnabled(true),
         onLockDisabled: () => setLockEnabled(false),
         onRequestLockDisable: requestDisableLock,
+        onExportBackup: exportBackup,
+        onImportBackup: importBackup,
         onDeleteAll: () => openConfirm({
           title: "Delete entire diary?",
           message: "All entries will be permanently removed.",

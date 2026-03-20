@@ -97,6 +97,28 @@ export async function clearAllEntries() {
     tx.onabort = () => rej(tx.error);
   });
 }
+export async function replaceAllEntries(entries) {
+  const db = await openDB();
+  return new Promise((res, rej) => {
+    const stores = [ENTRIES];
+    if (db.objectStoreNames.contains(LEGACY_ENTRIES)) stores.push(LEGACY_ENTRIES);
+    const tx = db.transaction(stores, "readwrite");
+    const entryStore = tx.objectStore(ENTRIES);
+    entryStore.clear();
+    if (stores.includes(LEGACY_ENTRIES)) {
+      tx.objectStore(LEGACY_ENTRIES).clear();
+    }
+    for (const entry of entries) {
+      entryStore.put({
+        ...entry,
+        id: entry.id || makeEntryId(entry.date || "entry")
+      });
+    }
+    tx.oncomplete = () => res();
+    tx.onerror = () => rej(tx.error);
+    tx.onabort = () => rej(tx.error);
+  });
+}
 export async function getSetting(key) {
   const db = await openDB();
   return new Promise((res, rej) => {

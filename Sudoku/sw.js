@@ -2,7 +2,8 @@
    sw.js — service worker for offline PWA support
    ============================================================ */
 
-const CACHE = 'sudoku-sweetie-v3';
+const CACHE_VERSION = 'v4';
+const CACHE = `sudoku-sweetie-${CACHE_VERSION}`;
 
 const ASSETS = [
   './',
@@ -46,8 +47,25 @@ self.addEventListener('activate', e => {
   self.clients.claim();
 });
 
+/* Network-first for app shell, so code changes always reach the user. */
+function networkFirst(request) {
+  return fetch(request)
+    .then(response => {
+      if (response.ok) {
+        const clone = response.clone();
+        caches.open(CACHE).then(c => c.put(request, clone));
+      }
+      return response;
+    })
+    .catch(() => caches.match(request));
+}
+
 self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(cached => cached || fetch(e.request))
-  );
+  const { request } = e;
+  const url = new URL(request.url);
+
+  // Only handle same-origin requests
+  if (url.origin !== self.location.origin) return;
+
+  e.respondWith(networkFirst(request));
 });

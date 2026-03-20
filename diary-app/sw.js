@@ -1,6 +1,7 @@
-const STATIC_CACHE = "diary-static-v4";
-const RUNTIME_CACHE = "diary-runtime-v4";
-const THIRD_PARTY_CACHE = "diary-third-party-v4";
+const CACHE_VERSION = "v5";
+const STATIC_CACHE = `diary-static-${CACHE_VERSION}`;
+const RUNTIME_CACHE = `diary-runtime-${CACHE_VERSION}`;
+const THIRD_PARTY_CACHE = `diary-third-party-${CACHE_VERSION}`;
 
 const APP_SHELL = [
   "./",
@@ -94,7 +95,7 @@ self.addEventListener("fetch", event => {
 
   if (url.origin === self.location.origin) {
     if (APP_SHELL.some(path => sameAsset(url, path))) {
-      event.respondWith(cacheFirst(event.request, STATIC_CACHE));
+      event.respondWith(networkFirst(event.request, STATIC_CACHE));
       return;
     }
 
@@ -133,6 +134,23 @@ async function cacheFirst(request, cacheName) {
     cache.put(request, response.clone());
   }
   return response;
+}
+
+async function networkFirst(request, cacheName) {
+  const cache = await caches.open(cacheName);
+
+  try {
+    const response = await fetch(request);
+    if (response.ok) {
+      cache.put(request, response.clone());
+    }
+    return response;
+  } catch {
+    const cached = await cache.match(request);
+    if (cached) return cached;
+
+    return (await caches.match(request)) || new Response("Offline", { status: 503, statusText: "Offline" });
+  }
 }
 
 async function staleWhileRevalidate(request, cacheName) {
