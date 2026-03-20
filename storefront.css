@@ -71,6 +71,23 @@ body {
   font-weight: 800;
 }
 
+.open-browser-btn {
+  width: fit-content;
+  margin-top: 2px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #f4a0b5, #b8a4e8);
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  border-radius: 999px;
+  padding: 8px 12px;
+  box-shadow: 0 6px 14px rgba(172, 110, 178, 0.24);
+}
+
+.open-browser-btn:hover {
+  filter: brightness(1.05);
+}
+
 .store-grid {
   display: grid;
   grid-template-columns: 1fr;
