@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import StickerPicker from "./StickerPicker.js";
 import { todayStr, formatDateLong } from "../utils.js";
 import { isImageSticker, stickerLabel } from "../utils.js";
@@ -15,7 +15,6 @@ export default function EntryEditor({ initial, onSave, onBack }) {
   const [body,       setBody]       = useState(initial?.body    || "");
   const [sticker,    setSticker]    = useState(initial?.sticker ? [initial.sticker] : []);
   const [pickerOpen, setPickerOpen] = useState(false);
-  const dateInputRef = useRef();
 
   const handleSave = () => {
     if (!body.trim()) return;
@@ -37,11 +36,17 @@ export default function EntryEditor({ initial, onSave, onBack }) {
     h('div', { className: "editor-body" },
       h('div', { className: "editor-meta-box" },
         h('div', { className: "editor-date-row" },
-          h('button', { className: "editor-date-btn", onClick: () => dateInputRef.current?.showPicker?.() || dateInputRef.current?.click() },
+          h('label', { className: "editor-date-btn" },
             h('span', null, "📅"),
-            h('span', null, formatDateLong(date))
+            h('span', null, formatDateLong(date)),
+            h('input', {
+              type: "date",
+              value: date,
+              onChange: e => setDate(e.target.value),
+              className: "date-input-overlay",
+              "aria-label": "Choose entry date"
+            })
           ),
-          h('input', { ref: dateInputRef, type: "date", value: date, onChange: e => setDate(e.target.value), className: "date-input-hidden" })
         ),
         h('input', {
           type: "text",
