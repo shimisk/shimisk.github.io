@@ -10,10 +10,10 @@
   <meta name="apple-mobile-web-app-title" content="Sudoku" />
   <title>Sudoku 🍓</title>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo.png" />
-  <link rel="shortcut icon" href="assets/images/logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo-180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo-192.png" />
+  <link rel="shortcut icon" href="assets/images/logo-32.png" />
   <link rel="manifest" href="manifest.json" />
 
   <!-- Stylesheets -->
@@ -43,7 +43,6 @@
     rel="noopener noreferrer"
     aria-label="Open app storefront"
     title="Open storefront"
-    onclick="openStorefrontExternal(event)"
   >🛍️</a>
 
   <div class="app">
@@ -214,27 +213,6 @@
     </div>
 
   </div><!-- /app -->
-
-  <script>
-    function openStorefrontExternal(event) {
-      event.preventDefault();
-      const storeUrl = 'https://shimisk.github.io/';
-      const isAndroid = /Android/i.test(navigator.userAgent);
-      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-
-      if (isAndroid && isStandalone) {
-        const intentUrl = 'intent://shimisk.github.io/#Intent;scheme=https;package=com.android.chrome;end';
-        const fallbackTimer = setTimeout(() => {
-          window.open(storeUrl, '_blank', 'noopener,noreferrer');
-        }, 700);
-        window.location.href = intentUrl;
-        window.addEventListener('pagehide', () => clearTimeout(fallbackTimer), { once: true });
-        return;
-      }
-
-      window.open(storeUrl, '_blank', 'noopener,noreferrer');
-    }
-  </script>
 
   <!-- Entry point (ES module) -->
   <script type="module" src="js/app.js"></script>

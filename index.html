@@ -19,7 +19,7 @@
 			<h1 class="store-title">Shimisk Apps</h1>
 			<p class="store-sub">Pick an app and jump in.</p>
 			<p class="store-promise">Everything here is free forever and will never include ads.</p>
-			<a class="open-browser-btn" href="https://shimisk.github.io/" target="_blank" rel="noopener noreferrer">Open Store In Browser</a>
+			<button class="open-browser-btn" id="copy-store-link-btn" type="button">Copy Store Link</button>
 		</header>
 
 		<section class="install-guide" aria-label="How to install apps">
@@ -76,5 +76,53 @@
 			</a>
 		</section>
 	</main>
+	<div class="copy-feedback" id="copy-feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+
+	<script>
+		(function () {
+			const storeUrl = 'https://shimisk.github.io/';
+			const copyBtn = document.getElementById('copy-store-link-btn');
+			const feedback = document.getElementById('copy-feedback');
+			let feedbackTimer = null;
+			if (!copyBtn) return;
+
+			function showFeedback(message) {
+				if (!feedback) return;
+				feedback.textContent = message;
+				feedback.classList.add('show');
+				if (feedbackTimer) clearTimeout(feedbackTimer);
+				feedbackTimer = setTimeout(() => {
+					feedback.classList.remove('show');
+				}, 1800);
+			}
+
+			async function copyToClipboard(text) {
+				if (navigator.clipboard && window.isSecureContext) {
+					await navigator.clipboard.writeText(text);
+					return;
+				}
+
+				const area = document.createElement('textarea');
+				area.value = text;
+				area.setAttribute('readonly', '');
+				area.style.position = 'fixed';
+				area.style.opacity = '0';
+				document.body.appendChild(area);
+				area.select();
+				document.execCommand('copy');
+				document.body.removeChild(area);
+			}
+
+			copyBtn.addEventListener('click', async () => {
+				try {
+					await copyToClipboard(storeUrl);
+					showFeedback('Store link copied');
+				} catch (_) {
+					showFeedback('Copy failed, showing link');
+					window.prompt('Copy this link:', storeUrl);
+				}
+			});
+		})();
+	</script>
 </body>
 </html>

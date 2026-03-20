@@ -85,7 +85,6 @@
     rel="noopener noreferrer"
     aria-label="Open app storefront"
     title="Open storefront"
-    onclick="openStorefrontExternal(event)"
   >ᚠ</a>
 
   <div id="root" class="boot">
@@ -101,25 +100,6 @@
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
   <script>
-    function openStorefrontExternal(event) {
-      event.preventDefault();
-      const storeUrl = 'https://shimisk.github.io/';
-      const isAndroid = /Android/i.test(navigator.userAgent);
-      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-
-      if (isAndroid && isStandalone) {
-        const intentUrl = 'intent://shimisk.github.io/#Intent;scheme=https;package=com.android.chrome;end';
-        const fallbackTimer = setTimeout(() => {
-          window.open(storeUrl, '_blank', 'noopener,noreferrer');
-        }, 700);
-        window.location.href = intentUrl;
-        window.addEventListener('pagehide', () => clearTimeout(fallbackTimer), { once: true });
-        return;
-      }
-
-      window.open(storeUrl, '_blank', 'noopener,noreferrer');
-    }
-
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("sw.js").catch((err) => {

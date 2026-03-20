@@ -81,11 +81,39 @@ body {
   font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   border-radius: 999px;
   padding: 8px 12px;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
   box-shadow: 0 6px 14px rgba(172, 110, 178, 0.24);
 }
 
 .open-browser-btn:hover {
   filter: brightness(1.05);
+}
+
+.copy-feedback {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, 16px);
+  background: rgba(47, 33, 58, 0.92);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 22px rgba(47, 33, 58, 0.35);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 60;
+}
+
+.copy-feedback.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
 .store-grid {

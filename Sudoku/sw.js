@@ -2,7 +2,7 @@
    sw.js — service worker for offline PWA support
    ============================================================ */
 
-const CACHE = 'sudoku-sweetie-v2';
+const CACHE = 'sudoku-sweetie-v3';
 
 const ASSETS = [
   './',
@@ -22,6 +22,11 @@ const ASSETS = [
   './js/state.js',
   './manifest.json',
   './assets/images/logo.png',
+  './assets/images/logo-32.png',
+  './assets/images/logo-180.png',
+  './assets/images/logo-192.png',
+  './assets/images/logo-512.png',
+  './assets/images/logo-maskable-512.png',
   './assets/images/icon-easy.png',
   './assets/images/icon-medium.png',
   './assets/images/icon-hard.png',
