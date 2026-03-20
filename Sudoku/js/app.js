@@ -23,8 +23,34 @@ function boot() {
   showScreen('screen-home');
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
+    registerServiceWorkerWithAutoUpdate();
   }
+}
+
+function registerServiceWorkerWithAutoUpdate() {
+  let reloading = false;
+
+  const handleControllerChange = () => {
+    if (reloading) return;
+    reloading = true;
+    window.location.reload();
+  };
+
+  navigator.serviceWorker.addEventListener('controllerchange', handleControllerChange);
+
+  navigator.serviceWorker.register('./sw.js').then(registration => {
+    const requestUpdateCheck = () => {
+      registration.update().catch(() => {});
+    };
+
+    window.addEventListener('focus', requestUpdateCheck);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') requestUpdateCheck();
+    });
+
+    // Trigger an explicit check right after registration completes.
+    requestUpdateCheck();
+  }).catch(() => {});
 }
 
 function wireDailyRefresh() {
