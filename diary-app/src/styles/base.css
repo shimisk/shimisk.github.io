@@ -1,0 +1,24 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+::-webkit-scrollbar         { width: 3px; }
+::-webkit-scrollbar-track   { background: transparent; }
+::-webkit-scrollbar-thumb   { background: var(--border); border-radius: 2px; }
+
+body { background: var(--bg, #0d0a1a); color: var(--text, #e8d5f5); }
+
+.app, .app * { text-shadow: var(--textGlow, none); }
+
+@keyframes slideUp  { from { transform: translateY(30px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes sheetUp  { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes fadeIn   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes shake    { 0%,100% { transform: translateX(0); } 20%,60% { transform: translateX(-8px); } 40%,80% { transform: translateX(8px); } }
+@keyframes lockFade { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes toastIn  { from { opacity: 0; bottom: 8px; } to { opacity: 1; bottom: 18px; } }
+
+.app {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text);
+}

@@ -1,0 +1,69 @@
+.hdr {
+  padding: 18px 16px 14px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+  background-size: cover; background-position: center;
+  backdrop-filter: blur(12px);
+}
+.hdr-title {
+  font-size: 1.6em;
+  font-weight: 700;
+  font-family: var(--titleFont, inherit);
+  color: var(--accent3);
+  letter-spacing: .02em;
+  text-shadow: var(--titleGlow, 0 0 18px var(--glow));
+}
+.hdr-actions { display: flex; align-items: center; gap: 8px; }
+.store-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: rgba(12, 8, 24, 0.72);
+  color: var(--text);
+  text-decoration: none;
+  font-size: .84em;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-shadow: var(--textGlow, none);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.18);
+}
+.store-link-btn:hover { border-color: var(--accent3); color: var(--accent3); box-shadow: 0 0 12px var(--glow); }
+
+.panel {
+  position: fixed; inset: 0; z-index: 200;
+  overflow-y: auto;
+  animation: slideUp .28s cubic-bezier(.4,0,.2,1);
+  display: flex; flex-direction: column;
+  background-size: cover; background-position: center; background-attachment: fixed;
+}
+.panel-hdr {
+  padding: 16px 16px 12px;
+  display: flex; align-items: center; gap: 10px;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0;
+  background-size: cover; background-position: center;
+  backdrop-filter: blur(10px);
+  z-index: 10; flex-shrink: 0;
+}
+.panel-title { font-size: 1.1em; font-weight: 600; color: var(--accent3); flex: 1; }
+
+.cards { padding: 0 6px 90px; width: 100%; display: flex; flex-direction: column; gap: 0; }
+
+.fab {
+  position: fixed; bottom: 28px; right: 50%; transform: translateX(50%);
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--accent); border: none; cursor: pointer;
+  font-size: 1.8em; color: var(--text);
+  box-shadow: 0 4px 20px var(--glow);
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s; z-index: 100;
+}
+.fab:hover { transform: translateX(50%) scale(1.1); box-shadow: 0 6px 28px var(--glow); }
+
+.empty { text-align: center; padding: 70px 20px; color: var(--text3); }
+.empty-icon { font-size: 3em; margin-bottom: 16px; display: block; opacity: .4; }

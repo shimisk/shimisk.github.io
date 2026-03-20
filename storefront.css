@@ -311,6 +311,36 @@ body {
 .banner-valheim::after {
   background: radial-gradient(circle at 30% 35%, rgba(212, 170, 96, 0.25), rgba(212, 170, 96, 0.05));
 }
+.banner-diary {
+  border-color: rgba(155, 89, 182, 0.45);
+  box-shadow: 0 16px 38px rgba(34, 19, 52, 0.36);
+  color: #f9ecb4;
+}
+.banner-diary:hover {
+  box-shadow: 0 18px 44px rgba(34, 19, 52, 0.5), 0 0 0 1px rgba(255, 223, 112, 0.18) inset;
+}
+.banner-diary::before {
+  background:
+    radial-gradient(90% 90% at 20% 20%, rgba(255, 223, 112, 0.12), transparent 55%),
+    radial-gradient(80% 80% at 80% 20%, rgba(147, 112, 219, 0.18), transparent 50%),
+    linear-gradient(140deg, #10091d 0%, #1c1234 48%, #2a1843 100%);
+}
+.banner-diary::after {
+  background: radial-gradient(circle at 35% 35%, rgba(255, 223, 112, 0.22), rgba(255, 223, 112, 0.04));
+}
+.banner-diary .banner-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: none;
+}
+.banner-diary .banner-desc {
+  color: #e7dcb8;
+  font-weight: 700;
+}
+.banner-diary .banner-cta {
+  color: #ffd76a;
+}
 
 .banner-valheim .banner-title {
   font-family: 'Cinzel', serif;
