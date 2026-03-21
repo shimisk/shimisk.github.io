@@ -99,6 +99,13 @@ export default function SettingsView({
         onChange: handleImportFile,
       })
     ),
+    h('div', { className: "settings-s" },
+      h('div', { className: "settings-st" }, "Feedback"),
+      h('button', {
+        className: "generic-btn",
+        onClick: () => window.openFeedbackWidget?.()
+      }, "❓ Send feedback or report a bug")
+    ),
     h('div', { className: "danger-zone" },
       h('div', { className: "settings-st" }, "Danger Zone"),
       h('button', { className: "generic-btn danger", onClick: handleDeleteAll }, "🗑️ Delete entire diary")

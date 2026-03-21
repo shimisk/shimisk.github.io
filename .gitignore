@@ -1,0 +1,30 @@
+# Secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*serviceAccount*.json
+firebase-adminsdk*.json
+
+# Local app data / exports / backups
+*backup*.json
+*export*.json
+*dump*.json
+*local-data*.json
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Dependency folders
+node_modules/
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
