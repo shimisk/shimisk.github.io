@@ -37,40 +37,43 @@ export const THEMES = {
     },
   },
 
-  // cutsie: {
-  //   label: "Cutsie",
-  //   icon: "🌸",
-  //   vars: {
-  //     "--bg":       "#fff0f5",
-  //     "--surface":  "#ffffff",
-  //     "--surface2": "#fff5f9",
-  //     "--border":   "#f9a8c9",
-  //     "--accent":   "#f06292",
-  //     "--accent2":  "#e91e8c",
-  //     "--accent3":  "#880e4f",
-  //     "--text":     "#4a1535",
-  //     "--text2":    "#ad1457",
-  //     "--text3":    "#f48fb1",
-  //     "--glow":     "rgba(240,98,146,0.25)",
-  //     "--star":     "🌸",
-  //   },
-  //   assets: {
-  //     appBg:    "assets/cutsie/bg.png",
-  //     headerBg: "assets/cutsie/header.png",
-  //     cards: [
-  //       "assets/cutsie/card-1.png",
-  //       "assets/cutsie/card-2.png",
-  //       "assets/cutsie/card-3.png",
-  //       "assets/cutsie/card-4.png",
-  //       "assets/cutsie/card-5.png",
-  //     ],
-  //   },
-  //   fallback: {
-  //     appBg:    "#fff0f5",
-  //     headerBg: "#ffe4ef",
-  //     cards:    ["#ffe4ef","#e4eeff","#e4ffee","#ffffe4","#f0e4ff"],
-  //   },
-  // },
+  cutsie: {
+    label: "Cutsie",
+    icon: "🌸",
+    vars: {
+      "--bg":       "#fff0f5",
+      "--surface":  "#ffffff",
+      "--surface2": "#fff5f9",
+      "--border":   "#e7a4c1",
+      "--accent":   "#f06292",
+      "--accent2":  "#e91e8c",
+      "--accent3":  "#6f123f",
+      "--text":     "#31101f",
+      "--text2":    "#6f2949",
+      "--text3":    "#9b5878",
+      "--textGlow": "0 1px 0 rgba(255,255,255,0.45)",
+      "--titleFont": "'Dancing Script', cursive",
+      "--titleGlow": "0 1px 0 rgba(255,255,255,0.6), 0 0 12px rgba(240,98,146,0.18)",
+      "--glow":     "rgba(233,30,140,0.18)",
+      "--star":     "🌸",
+    },
+    assets: {
+      appBg:    "assets/cutsie/bg.png",
+      headerBg: "assets/cutsie/header.png",
+      cards: [
+        "assets/cutsie/card-1.png",
+        "assets/cutsie/card-2.png",
+        "assets/cutsie/card-3.png",
+        "assets/cutsie/card-4.png",
+        "assets/cutsie/card-5.png",
+      ],
+    },
+    fallback: {
+      appBg:    "#fff0f5",
+      headerBg: "#ffe4ef",
+      cards:    ["#ffe4ef","#e4eeff","#e4ffee","#ffffe4","#f0e4ff"],
+    },
+  },
 
   // goth: {
   //   label: "Goth",
@@ -108,13 +111,8 @@ export const THEMES = {
   // },
 };
 
-// ─── Sticker Categories ───────────────────────────────────────────────────
-// To add a category: add a new key with label, icon, stickers[].
-// When you have real PNG stickers, swap emoji for image paths and
-// update StickerPicker.js to render <img> instead of text.
-
 export const STICKER_CATEGORIES = {
-  mood: {
+  witchy: {
     label: "Mood",
     icon: "🌙",
     stickers: [
@@ -128,6 +126,22 @@ export const STICKER_CATEGORIES = {
       "assets/witchy/stickers/mysterious.png",
       "assets/witchy/stickers/sad.png",
       "assets/witchy/stickers/sleepy.png",
+    ],
+  },
+  cutsie: {
+    label: "Mood",
+    icon: "🌸",
+    stickers: [
+      "assets/cutsie/stickers/angry.png",
+      "assets/cutsie/stickers/anxious.png",
+      "assets/cutsie/stickers/cozy.png",
+      "assets/cutsie/stickers/exhaust.png",
+      "assets/cutsie/stickers/happy.png",
+      "assets/cutsie/stickers/in-love.png",
+      "assets/cutsie/stickers/magical.png",
+      "assets/cutsie/stickers/mysterious.png",
+      "assets/cutsie/stickers/sad.png",
+      "assets/cutsie/stickers/sleepy.png",
     ],
   },
 };

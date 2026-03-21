@@ -1,3 +1,5 @@
+import { STICKER_CATEGORIES } from "./themes.js";
+
 export function todayStr() {
   return new Date().toISOString().slice(0, 10);
 }
@@ -14,14 +16,36 @@ export function formatDateShort(d) {
   });
 }
 
+export function formatMonthYear(d) {
+  return new Date(d + "T12:00:00").toLocaleDateString("en-US", {
+    month: "long", year: "numeric",
+  });
+}
+
 export function isImageSticker(sticker) {
   return typeof sticker === "string" && /\.(png|jpe?g|webp|gif|svg)$/i.test(sticker);
 }
 
-export function stickerLabel(sticker) {
+export function stickerKey(sticker) {
   if (typeof sticker !== "string" || !sticker) return "";
-  const fileName = sticker.split("/").pop()?.replace(/\.[^.]+$/, "") || sticker;
-  return fileName
+  if (isImageSticker(sticker)) {
+    return sticker.split("/").pop()?.replace(/\.[^.]+$/, "") || "";
+  }
+  return sticker;
+}
+
+export function resolveSticker(sticker, themeId = "witchy") {
+  if (typeof sticker !== "string" || !sticker) return "";
+  if (!isImageSticker(sticker) && !/^[a-z0-9-]+$/i.test(sticker)) return sticker;
+
+  const key = stickerKey(sticker);
+  const stickers = STICKER_CATEGORIES[themeId]?.stickers || STICKER_CATEGORIES.witchy?.stickers || [];
+  const match = stickers.find(item => stickerKey(item) === key);
+  return match || sticker;
+}
+
+export function stickerLabel(sticker) {
+  return stickerKey(sticker)
     .split("-")
     .filter(Boolean)
     .map(part => part.charAt(0).toUpperCase() + part.slice(1))

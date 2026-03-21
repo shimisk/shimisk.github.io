@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StickerPicker from "./StickerPicker.js";
 import { todayStr, formatDateLong } from "../utils.js";
-import { isImageSticker, stickerLabel } from "../utils.js";
+import { isImageSticker, resolveSticker, stickerKey, stickerLabel } from "../utils.js";
 
 const h = React.createElement;
 
@@ -9,12 +9,13 @@ function makeEntryId(seed = "entry") {
   return `${seed}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
 }
 
-export default function EntryEditor({ initial, onSave, onBack }) {
+export default function EntryEditor({ initial, themeId, onSave, onBack }) {
   const [date,       setDate]       = useState(initial?.date    || todayStr());
   const [title,      setTitle]      = useState(initial?.title   || "");
   const [body,       setBody]       = useState(initial?.body    || "");
-  const [sticker,    setSticker]    = useState(initial?.sticker ? [initial.sticker] : []);
+  const [sticker,    setSticker]    = useState(initial?.sticker ? [stickerKey(initial.sticker)] : []);
   const [pickerOpen, setPickerOpen] = useState(false);
+  const selectedSticker = resolveSticker(sticker[0], themeId);
 
   const handleSave = () => {
     if (!body.trim()) return;
@@ -59,8 +60,8 @@ export default function EntryEditor({ initial, onSave, onBack }) {
       h('div', { className: "editor-sticker-box" },
         h('div', { className: "sticker-stage", onClick: () => setPickerOpen(true) },
           sticker.length > 0
-            ? (isImageSticker(sticker[0])
-              ? h('img', { className: "sticker-big-image", src: sticker[0], alt: stickerLabel(sticker[0]) })
+            ? (isImageSticker(selectedSticker)
+              ? h('img', { className: "sticker-big-image", src: selectedSticker, alt: stickerLabel(sticker[0]) })
               : h('div', { className: "sticker-big" }, sticker[0]))
             : h('div', { className: "sticker-add-ring" }, "＋")
         )
@@ -78,6 +79,6 @@ export default function EntryEditor({ initial, onSave, onBack }) {
     h('div', { className: "save-bar" },
       h('button', { className: "save-btn", onClick: handleSave, disabled: !body.trim() }, "✨ Save Entry")
     ),
-    pickerOpen && h(StickerPicker, { selected: sticker, onChange: setSticker, onClose: () => setPickerOpen(false) })
+    pickerOpen && h(StickerPicker, { selected: sticker, themeId, onChange: setSticker, onClose: () => setPickerOpen(false) })
   );
 }

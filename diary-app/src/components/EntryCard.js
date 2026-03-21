@@ -1,11 +1,12 @@
 import React from "react";
 import { THEMES } from "../themes.js";
-import { isImageSticker, stickerLabel } from "../utils.js";
+import { isImageSticker, resolveSticker, stickerLabel } from "../utils.js";
 
 const h = React.createElement;
 
 export default function EntryCard({ entry, themeId, cardIndex, onClick }) {
   const theme = THEMES[themeId] || THEMES.witchy;
+  const sticker = resolveSticker(entry.sticker, themeId);
   const totalCards = theme.assets?.cards?.length || theme.fallback?.cards?.length || 1;
   const idx   = ((cardIndex ?? 0) % totalCards + totalCards) % totalCards;
   const [y, m, d] = entry.date.split("-").map(Number);
@@ -27,10 +28,10 @@ export default function EntryCard({ entry, themeId, cardIndex, onClick }) {
         h('div', { className: "card-day-label" }, dayShort)
       ),
       h('div', { className: "card-sticker-col" },
-        entry.sticker
-          ? (isImageSticker(entry.sticker)
-            ? h('img', { className: "card-sticker-image", src: entry.sticker, alt: stickerLabel(entry.sticker) })
-            : h('div', { className: "card-sticker" }, entry.sticker))
+        sticker
+          ? (isImageSticker(sticker)
+            ? h('img', { className: "card-sticker-image", src: sticker, alt: stickerLabel(entry.sticker) })
+            : h('div', { className: "card-sticker" }, sticker))
           : h('div', { className: "card-sticker-placeholder", 'aria-hidden': true }, "")
       ),
       h('div', { className: "card-text" },

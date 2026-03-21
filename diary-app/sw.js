@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v5";
+const CACHE_VERSION = "v7";
 const STATIC_CACHE = `diary-static-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `diary-runtime-${CACHE_VERSION}`;
 const THIRD_PARTY_CACHE = `diary-third-party-${CACHE_VERSION}`;
@@ -31,6 +31,13 @@ const APP_SHELL = [
   "./assets/witchy/card-3.png",
   "./assets/witchy/card-4.png",
   "./assets/witchy/card-5.png",
+  "./assets/cutsie/bg.png",
+  "./assets/cutsie/header.png",
+  "./assets/cutsie/card-1.png",
+  "./assets/cutsie/card-2.png",
+  "./assets/cutsie/card-3.png",
+  "./assets/cutsie/card-4.png",
+  "./assets/cutsie/card-5.png",
   "./assets/icons/icon-192.png",
   "./assets/icons/icon-512.png",
   "./assets/icons/apple-touch-icon.png",
@@ -44,6 +51,16 @@ const APP_SHELL = [
   "./assets/witchy/stickers/mysterious.png",
   "./assets/witchy/stickers/sad.png",
   "./assets/witchy/stickers/sleepy.png",
+  "./assets/cutsie/stickers/angry.png",
+  "./assets/cutsie/stickers/anxious.png",
+  "./assets/cutsie/stickers/cozy.png",
+  "./assets/cutsie/stickers/exhaust.png",
+  "./assets/cutsie/stickers/happy.png",
+  "./assets/cutsie/stickers/in-love.png",
+  "./assets/cutsie/stickers/magical.png",
+  "./assets/cutsie/stickers/mysterious.png",
+  "./assets/cutsie/stickers/sad.png",
+  "./assets/cutsie/stickers/sleepy.png",
 ];
 
 const THIRD_PARTY = [

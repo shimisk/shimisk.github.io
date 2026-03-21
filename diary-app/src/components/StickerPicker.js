@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { STICKER_CATEGORIES } from "../themes.js";
-import { isImageSticker, stickerLabel } from "../utils.js";
+import { isImageSticker, resolveSticker, stickerKey, stickerLabel } from "../utils.js";
 
 const h = React.createElement;
 
-export default function StickerPicker({ selected, onChange, onClose }) {
+export default function StickerPicker({ selected, themeId, onChange, onClose }) {
   const sheetRef = useRef();
-  const stickers = Object.values(STICKER_CATEGORIES)[0]?.stickers || [];
+  const stickers = STICKER_CATEGORIES[themeId]?.stickers || STICKER_CATEGORIES.witchy?.stickers || [];
+  const selectedSticker = resolveSticker(selected[0], themeId);
 
   useEffect(() => {
     const handler = e => { if (sheetRef.current && !sheetRef.current.contains(e.target)) onClose(); };
@@ -14,8 +15,8 @@ export default function StickerPicker({ selected, onChange, onClose }) {
     return () => document.removeEventListener("mousedown", handler);
   }, [onClose]);
 
-  const pick = emoji => {
-    onChange(selected[0] === emoji ? [] : [emoji]);
+  const pick = sticker => {
+    onChange(selected[0] === sticker ? [] : [sticker]);
     onClose();
   };
 
@@ -27,8 +28,8 @@ export default function StickerPicker({ selected, onChange, onClose }) {
         h('button', { className: "picker-close", onClick: onClose }, "✕")
       ),
       selected.length > 0 && h('div', { className: "picker-preview" },
-        isImageSticker(selected[0])
-          ? h('img', { className: "picker-preview-image", src: selected[0], alt: stickerLabel(selected[0]) })
+        isImageSticker(selectedSticker)
+          ? h('img', { className: "picker-preview-image", src: selectedSticker, alt: stickerLabel(selected[0]) })
           : h('span', { style: { fontSize: "1.8em" } }, selected[0]),
         h('div', null,
           h('div', { className: "picker-preview-name" }, stickerLabel(selected[0])),
@@ -36,14 +37,16 @@ export default function StickerPicker({ selected, onChange, onClose }) {
         )
       ),
       h('div', { className: "picker-grid" },
-        stickers.map((sticker, i) =>
-          h('button', { key: i, className: `picker-emoji${selected[0] === sticker ? " selected" : ""}`, onClick: () => pick(sticker) },
+        stickers.map((sticker, i) => {
+          const key = stickerKey(sticker);
+
+          return h('button', { key: i, className: `picker-emoji${selected[0] === key ? " selected" : ""}`, onClick: () => pick(key) },
             isImageSticker(sticker)
-              ? h('img', { className: "picker-emoji-image", src: sticker, alt: stickerLabel(sticker) })
+              ? h('img', { className: "picker-emoji-image", src: sticker, alt: stickerLabel(key) })
               : sticker,
-            h('div', { className: "picker-emoji-label" }, stickerLabel(sticker))
+            h('div', { className: "picker-emoji-label" }, stickerLabel(key))
           )
-        )
+        })
       )
     )
   );

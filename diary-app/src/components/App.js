@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { THEMES } from "../themes.js";
 import { FONTS, FONT_SIZES, loadAllFonts } from "../fonts.js";
-import { applyTheme } from "../utils.js";
+import { applyTheme, stickerKey } from "../utils.js";
 import { getAllEntries, saveEntry, deleteEntry, clearAllEntries, replaceAllEntries, getSetting, setSetting, loadAllSettings } from "../db.js";
 import HomeView     from "./HomeView.js";
 import EntryEditor  from "./EntryEditor.js";
@@ -42,7 +42,7 @@ function normalizeImportedEntries(list) {
       date,
       title: typeof entry.title === "string" ? entry.title : "",
       body,
-      sticker: typeof entry.sticker === "string" ? entry.sticker : null,
+      sticker: typeof entry.sticker === "string" ? stickerKey(entry.sticker) : null,
       updatedAt: Number.isFinite(entry.updatedAt) ? entry.updatedAt : Date.now(),
     });
   }
@@ -315,11 +315,13 @@ export default function App() {
       (view === "new" || view === "edit") && h(EntryEditor, {
         key: view + (activeEntry?.id || activeEntry?.date || ""),
         initial: view === "edit" ? activeEntry : null,
+        themeId,
         onSave: handleSaveEntry,
         onBack: () => setView(view === "edit" ? "read" : "home")
       }),
       view === "read" && activeEntry && h(EntryReader, {
         entry: activeEntry,
+        themeId,
         onBack: () => setView("home"),
         onEdit: () => setView("edit"),
         onDelete: () => openConfirm({
