@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="theme-color" content="#2c1810"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Reservations"/>
+<title>Reservations</title>
+<link rel="manifest" href="manifest.json"/>
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="reservations.css"/>
+</head>
+<body>
+
+<header>
+  <h1 id="appTitle"></h1>
+  <div class="header-actions">
+    <button class="head-btn icon-btn" id="feedbackBtn" onclick="openFeedbackPanel()" aria-label="Feedback" title="Feedback">?</button>
+    <button class="head-btn icon-btn" id="storeBtn" onclick="goToStore()" aria-label="Store" title="Store">🛒</button>
+    <div class="lang-toggle">
+      <button class="lang-opt" id="langEN" onclick="setLang('en')">EN</button>
+      <button class="lang-opt" id="langIT" onclick="setLang('it')">IT</button>
+    </div>
+  </div>
+</header>
+
+<div class="view-bar">
+  <button class="view-btn active" id="btn-day"   onclick="setView('day')"></button>
+  <button class="view-btn"        id="btn-week"  onclick="setView('week')"></button>
+  <button class="view-btn"        id="btn-month" onclick="setView('month')"></button>
+  <span class="sep"></span>
+  <button class="share-btn" id="shareMainBtn" onclick="openShare()"></button>
+</div>
+
+<div class="stat-bar" id="statBar"></div>
+<main id="mainArea"></main>
+<button class="fab" onclick="openModal()">+</button>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h2 id="modalTitle"></h2>
+    <div class="form-row">
+      <label id="lName"></label>
+      <input id="fName" type="text" autocomplete="off"/>
+    </div>
+    <div class="form-row-2">
+      <div class="form-row" style="margin-bottom:0">
+        <label id="lDate"></label>
+        <label class="picker-field" onclick="openPicker(event,'fDate')">
+          <span class="picker-display" id="fDateDisplay"></span>
+          <input id="fDate" class="picker-input-overlay" type="date" onchange="refreshPickerDisplays()"/>
+        </label>
+      </div>
+      <div class="form-row" style="margin-bottom:0">
+        <label id="lTime"></label>
+        <label class="picker-field" onclick="openPicker(event,'fTime')">
+          <span class="picker-display" id="fTimeDisplay"></span>
+          <input id="fTime" class="picker-input-overlay" type="time" onchange="refreshPickerDisplays()"/>
+        </label>
+      </div>
+    </div>
+    <div class="form-row-2" style="margin-top:16px">
+      <div class="form-row" style="margin-bottom:0"><label id="lPax"></label><input id="fPax" type="number" min="1" max="50"/></div>
+      <div class="form-row" style="margin-bottom:0"><label id="lTable"></label><input id="fTable" type="text"/></div>
+    </div>
+    <div class="form-row" style="margin-top:16px"><label id="lPhone"></label><input id="fPhone" type="tel"/></div>
+    <div class="form-row"><label id="lNote"></label><input id="fNote" type="text"/></div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="btnCancel" onclick="closeModal()"></button>
+      <button class="btn-primary" id="btnSave" onclick="saveReservation()"></button>
+    </div>
+  </div>
+</div>
+
+<!-- SHARE -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-inner">
+    <h3 id="shareTitle"></h3>
+    <p style="font-size:.78rem;color:var(--muted);margin-top:2px" id="shareDesc"></p>
+    <div class="share-preview" id="shareText"></div>
+    <div class="share-options">
+      <div class="share-opt" onclick="shareWhatsapp()"><span class="s-icon">💬</span>WhatsApp</div>
+    </div>
+    <button class="share-close" id="shareCloseBtn" onclick="closeShare()"></button>
+  </div>
+</div>
+
+<div class="delete-sheet" id="deleteSheet">
+  <div class="delete-inner">
+    <h3 id="deleteTitle"></h3>
+    <p class="delete-copy" id="deletePrompt"></p>
+    <div class="delete-preview" id="deletePreview"></div>
+    <div class="delete-actions">
+      <button class="btn-cancel" id="deleteCancelBtn" onclick="closeDeletePanel()"></button>
+      <button class="btn-danger" id="deleteConfirmBtn" onclick="confirmDelete()"></button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="reservations.i18n.js"></script>
+<script src="reservations.js"></script>
+<script type="module" src="../feedback/widget.js"></script>
+</body>
+</html>

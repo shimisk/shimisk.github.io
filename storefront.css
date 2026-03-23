@@ -351,6 +351,42 @@ body {
   color: #b54d74;
 }
 
+.banner-reservations {
+  border-color: rgba(120, 74, 48, 0.36);
+  box-shadow: 0 16px 40px rgba(92, 54, 32, 0.22);
+  color: #4e2f1d;
+}
+
+.banner-reservations:hover {
+  box-shadow: 0 18px 46px rgba(92, 54, 32, 0.28), 0 0 0 1px rgba(236, 195, 160, 0.4) inset;
+}
+
+.banner-reservations::before {
+  background:
+    radial-gradient(80% 80% at 18% 18%, rgba(255, 255, 255, 0.46), transparent 58%),
+    radial-gradient(75% 75% at 82% 18%, rgba(255, 219, 168, 0.45), transparent 54%),
+    linear-gradient(145deg, #fff8f2 0%, #f2dfcf 54%, #eac6ad 100%);
+}
+
+.banner-reservations::after {
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.08));
+}
+
+.banner-reservations .banner-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.banner-reservations .banner-desc {
+  color: #7c5741;
+  font-weight: 800;
+}
+
+.banner-reservations .banner-cta {
+  color: #b86a3e;
+}
+
 .banner-valheim .banner-title {
   font-family: 'Cinzel', serif;
   letter-spacing: 1px;

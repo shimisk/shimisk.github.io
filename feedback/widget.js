@@ -18,6 +18,13 @@ const FEEDBACK_COOLDOWN_KEY = "shimisk-feedback-last-submit";
 
 const APP_NAME = document.title;
 const isDiaryApp = APP_NAME.includes('Diary');
+const isReservationApp = APP_NAME.includes('Reservation');
+const reservationContactTip = isReservationApp
+  ? 'For cross-device access, contact me here and leave your email.'
+  : '';
+const feedbackPlaceholder = isReservationApp
+  ? 'What would you like to see, or what went wrong? Leave your email if you want cross-device access.'
+  : 'What would you like to see, or what went wrong?';
 
 // ── Detect app theme ──────────────────────────────────────────
 let themeColor = '#5c6bc0';  // default
@@ -119,6 +126,13 @@ const css = `
     margin: 0 0 16px;
   }
 
+  #fw-contact-tip {
+    font-size: 12px;
+    color: #666;
+    margin: 0 0 12px;
+    line-height: 1.4;
+  }
+
   .fw-type-row {
     display: flex;
     gap: 8px;
@@ -211,11 +225,12 @@ wrapper.innerHTML = `
     <div id="fw-modal" role="dialog" aria-modal="true" aria-labelledby="fw-title">
       <h2 id="fw-title">Send Feedback</h2>
       <p id="fw-app-label">${APP_NAME}</p>
+      ${reservationContactTip ? `<p id="fw-contact-tip">${reservationContactTip}</p>` : ''}
       <div class="fw-type-row">
         <button class="fw-type-btn fw-active" data-type="suggestion">💡 Suggestion</button>
         <button class="fw-type-btn" data-type="bug">🐛 Bug</button>
       </div>
-      <textarea id="fw-message" maxlength="2000" placeholder="What would you like to see, or what went wrong?"></textarea>
+      <textarea id="fw-message" maxlength="2000" placeholder="${feedbackPlaceholder}"></textarea>
       <div class="fw-actions">
         <button id="fw-cancel">Cancel</button>
         <button id="fw-submit">Send</button>
