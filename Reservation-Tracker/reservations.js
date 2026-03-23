@@ -464,8 +464,8 @@ function shareWhatsapp(){
   const webUrl=(isMobile?'https://api.whatsapp.com/send?text=':'https://web.whatsapp.com/send?text=')+encoded;
 
   if(isMobile){
-    window.location.href=appUrl;
-    setTimeout(()=>window.open(webUrl,'_blank','noopener'),900);
+    // Open WhatsApp without replacing the current app page.
+    window.open(appUrl,'_blank','noopener');
     return;
   }
 
