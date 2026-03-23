@@ -459,17 +459,20 @@ function shareWhatsapp(){
   const text=_st||buildShareText();
   _st=text;
   const encoded=encodeURIComponent(text);
-  const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  const appUrl='whatsapp://send?text='+encoded;
-  const webUrl=(isMobile?'https://api.whatsapp.com/send?text=':'https://web.whatsapp.com/send?text=')+encoded;
-
-  if(isMobile){
-    // Open WhatsApp without replacing the current app page.
-    window.open(appUrl,'_blank','noopener');
-    return;
+  const isAndroid=/Android/i.test(navigator.userAgent);
+  const isIphone=/iPhone|iPad|iPod/i.test(navigator.userAgent);
+  
+  if(isAndroid){
+    // Android: use intent:// scheme for reliable app opening with system fallback
+    const intentUrl='intent://send?text='+encoded+'#Intent;scheme=whatsapp;package=com.whatsapp;end';
+    window.location.href=intentUrl;
+  } else if(isIphone){
+    // iPhone: use deep link
+    window.location.href='whatsapp://send?text='+encoded;
+  } else {
+    // Desktop: use web URL in new tab
+    window.open('https://web.whatsapp.com/send?text='+encoded,'_blank','noopener');
   }
-
-  window.open(webUrl,'_blank','noopener');
 }
 
 function showToast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200);}
