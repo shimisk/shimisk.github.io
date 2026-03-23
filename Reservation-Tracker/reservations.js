@@ -455,7 +455,22 @@ function openShare(){
   document.getElementById('shareSheet').classList.add('open');
 }
 function closeShare(){document.getElementById('shareSheet').classList.remove('open');}
-function shareWhatsapp(){window.open('https://wa.me/?text='+encodeURIComponent(_st),'_blank');}
+function shareWhatsapp(){
+  const text=_st||buildShareText();
+  _st=text;
+  const encoded=encodeURIComponent(text);
+  const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const appUrl='whatsapp://send?text='+encoded;
+  const webUrl=(isMobile?'https://api.whatsapp.com/send?text=':'https://web.whatsapp.com/send?text=')+encoded;
+
+  if(isMobile){
+    window.location.href=appUrl;
+    setTimeout(()=>window.open(webUrl,'_blank','noopener'),900);
+    return;
+  }
+
+  window.open(webUrl,'_blank','noopener');
+}
 
 function showToast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200);}
 
