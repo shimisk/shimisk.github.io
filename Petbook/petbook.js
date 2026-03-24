@@ -627,7 +627,7 @@ function renderMedEntry(entry) {
     <div class="entry-dot entry-dot-medicines"></div>
     <div class="entry-content">
       <div class="entry-label">${entry.name} <span class="entry-label-meta">${entry.dose || ''}</span></div>
-      <div class="entry-detail">${entry.frequency || ''} ${entry.time ? `· ${t('timeLabel')}: ${entry.time}` : ''}${!entry.time && entry.nextDue ? `· ${t('nextLabel')}: ${entry.nextDue}` : ''}</div>
+      <div class="entry-detail">${entry.frequency || ''} ${entry.time ? `· ${t('timeLabel')}: ${entry.time}` : ''}${!entry.time && entry.nextDue ? `· ${t('nextLabel')}: ${entry.nextDue}` : ''}${entry.notes ? ' · ' + entry.notes : ''}</div>
     </div>
     <div class="entry-actions">
       <button class="btn-small btn-del" data-action="delete-entry" data-entry-key="medicines" data-entry-id="${entry.id}">✕</button>
