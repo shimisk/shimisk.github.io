@@ -718,6 +718,15 @@ body::before {
   border-radius: var(--radius-sm);
 }
 
+.settings-item-language {
+  align-items: flex-start;
+}
+
+.settings-language-select {
+  min-width: 128px;
+  width: auto;
+}
+
 .settings-item-title {
   font-size: 0.9rem;
   font-weight: 500;
@@ -747,6 +756,13 @@ body::before {
 .settings-toggle-btn.off {
   background: #f8e7e7;
   color: #9d2e2e;
+}
+
+.settings-toggle-btn:disabled,
+.settings-toggle-btn.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .settings-note {

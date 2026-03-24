@@ -21,6 +21,53 @@ const {
   SECTION_ICON_CLASSES,
   ENTRY_FIELDS
 } = window.PetbookConstants;
+const i18n = window.PetbookI18n;
+const t = (key, vars) => (i18n ? i18n.t(key, vars) : key);
+
+function getLocalizedPetType(type) {
+  const typeKeyByValue = {
+    Dog: 'petTypeDog',
+    Cat: 'petTypeCat',
+    Rabbit: 'petTypeRabbit',
+    Hamster: 'petTypeHamster',
+    Bird: 'petTypeBird',
+    Fish: 'petTypeFish',
+    Turtle: 'petTypeTurtle',
+    Other: 'petTypeOther'
+  };
+
+  const key = typeKeyByValue[type];
+  return key ? t(key) : (type || '');
+}
+
+function applyStaticTranslations() {
+  document.documentElement.lang = i18n ? i18n.getLanguage() : 'en';
+  document.title = t('appTitle');
+
+  const navLabels = document.querySelectorAll('.bottom-nav .nav-label');
+  if (navLabels[0]) navLabels[0].textContent = t('navCare');
+  if (navLabels[1]) navLabels[1].textContent = t('navSchedule');
+  if (navLabels[2]) navLabels[2].textContent = t('navHealth');
+
+  const headerActions = document.querySelectorAll('.header-actions .btn-icon');
+  if (headerActions[0]) {
+    headerActions[0].setAttribute('title', t('openStore'));
+    headerActions[0].setAttribute('aria-label', t('openStore'));
+  }
+  if (headerActions[1]) {
+    headerActions[1].setAttribute('title', t('sendFeedback'));
+    headerActions[1].setAttribute('aria-label', t('sendFeedback'));
+  }
+  if (headerActions[2]) {
+    headerActions[2].setAttribute('title', t('settingsButton'));
+    headerActions[2].setAttribute('aria-label', t('settingsButton'));
+  }
+
+  const appleTitle = document.querySelector('meta[name="apple-mobile-web-app-title"]');
+  if (appleTitle) {
+    appleTitle.setAttribute('content', t('appTitle'));
+  }
+}
 
 function save() {
   state.currentTab = currentTab;
@@ -162,11 +209,41 @@ function isStandaloneDisplayMode() {
   return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
 }
 
+function getNowTimeString() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  return `${hours}:${minutes}`;
+}
+
+function enforceNotificationPermissionState() {
+  const permission = 'Notification' in window ? Notification.permission : 'denied';
+  if (permission === 'granted') {
+    return;
+  }
+
+  if (!state.notificationSettings) {
+    state.notificationSettings = { medicine: false, vets: false };
+    save();
+    return;
+  }
+
+  if (state.notificationSettings.medicine || state.notificationSettings.vets) {
+    state.notificationSettings.medicine = false;
+    state.notificationSettings.vets = false;
+    save();
+  }
+}
+
 function getNotificationConfig() {
+  enforceNotificationPermissionState();
+  const permission = 'Notification' in window ? Notification.permission : 'denied';
+  const canToggle = permission === 'granted';
   return {
-    medicine: !!state.notificationSettings?.medicine,
-    vets: !!state.notificationSettings?.vets,
-    permission: 'Notification' in window ? Notification.permission : 'denied'
+    medicine: canToggle && !!state.notificationSettings?.medicine,
+    vets: canToggle && !!state.notificationSettings?.vets,
+    permission,
+    canToggle
   };
 }
 
@@ -211,23 +288,32 @@ async function runDueNotificationChecks() {
   }
 
   const today = getTodayDateString();
+  const nowTime = getNowTimeString();
   let changed = false;
 
   for (const pet of state.pets) {
     if (settings.medicine) {
       for (let medicineIndex = 0; medicineIndex < (pet.medicines || []).length; medicineIndex++) {
         const medicine = pet.medicines[medicineIndex];
-        if (!medicine.nextDue || medicine.nextDue > today) {
+        const hasTime = !!medicine.time;
+        const isTimeDueToday = hasTime && medicine.time <= nowTime;
+        const isLegacyDateDue = !!medicine.nextDue && medicine.nextDue <= today;
+        if (!isTimeDueToday && !isLegacyDateDue) {
           continue;
         }
-        const medicineIdentity = medicine.id || `${medicine.name || 'medicine'}:${medicine.nextDue || ''}:${medicineIndex}`;
+        const medicineIdentity = medicine.id || `${medicine.name || 'medicine'}:${medicine.time || medicine.nextDue || ''}:${medicineIndex}`;
         const key = `medicine:${pet.id}:${medicineIdentity}`;
         if (hasNotifiedToday(key)) {
           continue;
         }
+        const dueDetail = medicine.time
+          ? ` ${t('atLabel')} ${medicine.time}`
+          : medicine.nextDue
+            ? ` (${medicine.nextDue})`
+            : '';
         await showReminderNotification(
-          `${pet.name}: Medicine reminder`,
-          `${medicine.name || 'Medicine'} is due${medicine.nextDue ? ` (${medicine.nextDue})` : ''}.`,
+          t('notificationMedicineTitle', { name: pet.name }),
+          t('notificationMedicineBody', { medicine: medicine.name || t('sectionMedicine'), detail: dueDetail }),
           key
         );
         markNotifiedOncePerDay(key);
@@ -241,14 +327,19 @@ async function runDueNotificationChecks() {
         if (!appointment.date || appointment.date > today) {
           continue;
         }
+        const isToday = appointment.date === today;
+        if (isToday && appointment.time && appointment.time > nowTime) {
+          continue;
+        }
         const appointmentIdentity = appointment.id || `${appointment.reason || 'appointment'}:${appointment.date || ''}:${appointmentIndex}`;
         const key = `vet:${pet.id}:${appointmentIdentity}`;
         if (hasNotifiedToday(key)) {
           continue;
         }
+        const appointmentDetail = [appointment.date, appointment.time].filter(Boolean).join(` ${t('atLabel')} `);
         await showReminderNotification(
-          `${pet.name}: Vet appointment reminder`,
-          `${appointment.reason || 'Appointment'} is due${appointment.date ? ` (${appointment.date})` : ''}.`,
+          t('notificationVetTitle', { name: pet.name }),
+          t('notificationVetBody', { reason: appointment.reason || t('sectionVetAppointments'), detail: appointmentDetail ? ` (${appointmentDetail})` : '' }),
           key
         );
         markNotifiedOncePerDay(key);
@@ -264,21 +355,21 @@ async function runDueNotificationChecks() {
 
 async function requestNotificationPermission() {
   if (!('Notification' in window)) {
-    showToast('Notifications are not supported in this browser.');
+    showToast(t('toastNotificationUnsupported'));
     return;
   }
 
   if (isIOSDevice() && !isStandaloneDisplayMode()) {
-    showToast('On iPhone/iPad, install Petbook to Home Screen to enable notifications.');
+    showToast(t('toastInstallForIOSNotifications'));
     return;
   }
 
   const permission = await Notification.requestPermission();
   if (permission === 'granted') {
-    showToast('Notifications enabled.');
+    showToast(t('toastNotificationsEnabled'));
     await runDueNotificationChecks();
   } else {
-    showToast('Notifications were not enabled.');
+    showToast(t('toastNotificationsNotEnabled'));
   }
   openModal('settings');
 }
@@ -288,16 +379,32 @@ function toggleNotificationSetting(settingKey) {
     return;
   }
 
+  if (!('Notification' in window) || Notification.permission !== 'granted') {
+    enforceNotificationPermissionState();
+    showToast(t('toastEnableNotificationsFirst'));
+    openModal('settings');
+    return;
+  }
+
   state.notificationSettings[settingKey] = !state.notificationSettings[settingKey];
   save();
 
   if (state.notificationSettings[settingKey] && 'Notification' in window && Notification.permission !== 'granted') {
-    showToast('Enable notifications permission to receive reminders.');
+    showToast(t('toastEnableNotificationsFirst'));
   } else {
-    showToast('Settings updated.');
+    showToast(t('toastSettingsUpdated'));
   }
 
   openModal('settings');
+}
+
+function changeLanguage(languageCode) {
+  if (i18n) {
+    i18n.setLanguage(languageCode, true);
+  }
+  render();
+  openModal('settings');
+  showToast(t('toastLanguageUpdated'));
 }
 
 function startNotificationChecks() {
@@ -326,6 +433,7 @@ function uid() {
 }
 
 function render() {
+  applyStaticTranslations();
   renderPetBar();
   renderContent();
   syncActiveTab();
@@ -341,7 +449,7 @@ function renderPetBar() {
   `).join('') + `
     <div class="add-pet-chip" data-action="open-modal" data-modal="addPet">
       <button class="add-pet-btn">+</button>
-      <div class="pet-chip-name pet-chip-name-muted">Add</div>
+      <div class="pet-chip-name pet-chip-name-muted">${t('addChip')}</div>
     </div>
   `;
 }
@@ -354,9 +462,9 @@ function renderContent() {
     content.innerHTML = `
       <div class="empty-state">
         <div class="big-emoji">🐾</div>
-        <h2>Welcome to Petbook</h2>
-        <p>Add your first pet to start tracking their care routine.</p>
-        <button class="btn-primary" data-action="open-modal" data-modal="addPet">+ Add a Pet</button>
+        <h2>${t('welcomeTitle')}</h2>
+        <p>${t('welcomeCopy')}</p>
+        <button class="btn-primary" data-action="open-modal" data-modal="addPet">${t('addPetCta')}</button>
       </div>
     `;
     return;
@@ -379,11 +487,11 @@ function renderPetHeader(pet, metaText, withEditButton) {
   const editAction = withEditButton
     ? `
       <div class="pet-header-actions">
-        <button class="share-btn" data-action="share-pet">📤 Share</button>
-        <button class="btn-icon btn-icon-muted" data-action="open-modal" data-modal="editPet" title="Edit pet">✏️</button>
+        <button class="share-btn" data-action="share-pet">📤 ${t('share')}</button>
+        <button class="btn-icon btn-icon-muted" data-action="open-modal" data-modal="editPet" title="${t('editPet')}">✏️</button>
       </div>
     `
-    : '<button class="share-btn" data-action="share-pet">📤 Share</button>';
+    : `<button class="share-btn" data-action="share-pet">📤 ${t('share')}</button>`;
 
   return `
     <div class="pet-header">
@@ -401,11 +509,11 @@ function renderPetHeader(pet, metaText, withEditButton) {
 
 function renderCareSections(pet) {
   return [
-    { icon: '💊', title: 'Medicine', key: 'medicines', renderFn: renderMedEntry },
-    { icon: '🍽️', title: 'Feeding', key: 'feeding', renderFn: renderFeedEntry },
-    { icon: '🦮', title: 'Walks & Routine', key: 'routine', renderFn: renderRoutineEntry },
-    { icon: '🎾', title: 'Favorite Toys & Things', key: 'favorites', renderFn: renderFavoritesEntry },
-    { icon: '⚠️', title: 'Allergies', key: 'allergies', renderFn: renderAllergyEntry }
+    { icon: '💊', title: t('sectionMedicine'), key: 'medicines', renderFn: renderMedEntry },
+    { icon: '🍽️', title: t('sectionFeeding'), key: 'feeding', renderFn: renderFeedEntry },
+    { icon: '🦮', title: t('sectionRoutine'), key: 'routine', renderFn: renderRoutineEntry },
+    { icon: '🎾', title: t('sectionFavorites'), key: 'favorites', renderFn: renderFavoritesEntry },
+    { icon: '⚠️', title: t('sectionAllergies'), key: 'allergies', renderFn: renderAllergyEntry }
   ].map((section) => renderSection(section.icon, section.title, section.key, pet, section.renderFn)).join('');
 }
 
@@ -444,11 +552,11 @@ function renderWeightSection(pet) {
   const activeRange = state.weightChartRange || 'month';
   const totalWeightEntries = (pet.weights || []).length;
   const emptyMessage = totalWeightEntries
-    ? 'No weight entries in this range yet.'
-    : 'No weight entries yet.';
+    ? t('noWeightInRange')
+    : t('noWeightYet');
 
-  const rangeButtons = Object.entries(WEIGHT_RANGE_LABELS).map(([range, label]) => `
-    <button class="weight-range-btn ${activeRange === range ? 'active' : ''}" data-action="set-weight-range" data-range="${range}">${label}</button>
+  const rangeButtons = Object.entries(WEIGHT_RANGE_LABELS).map(([range]) => `
+    <button class="weight-range-btn ${activeRange === range ? 'active' : ''}" data-action="set-weight-range" data-range="${range}">${range === 'week' ? t('rangeWeek') : range === 'month' ? t('rangeMonth') : t('rangeYear')}</button>
   `).join('');
 
   return `
@@ -456,7 +564,7 @@ function renderWeightSection(pet) {
       <div class="section-header" data-action="toggle-section">
         <div class="section-title">
           <div class="section-icon section-icon-weight">⚖️</div>
-          Weight Log
+          ${t('sectionWeightLog')}
         </div>
         <span class="section-toggle">▾</span>
       </div>
@@ -464,14 +572,15 @@ function renderWeightSection(pet) {
         <div class="weight-range-switcher">${rangeButtons}</div>
         ${renderWeightChart(chartWeights)}
         ${renderWeightEntries(listWeights, emptyMessage)}
-        <button class="add-entry-btn" data-action="open-modal" data-modal="addWeight">+ Add weight</button>
+        <button class="add-entry-btn" data-action="open-modal" data-modal="addWeight">${t('addWeight')}</button>
       </div>
     </div>
   `;
 }
 
 function renderCare(content, pet) {
-  const metaText = `${pet.breed || pet.type || ''} ${pet.age ? '· ' + pet.age : ''}`;
+  const localizedType = getLocalizedPetType(pet.type);
+  const metaText = `${pet.breed || localizedType || ''} ${pet.age ? '· ' + pet.age : ''}`;
   content.innerHTML = `
     ${renderPetHeader(pet, metaText, true)}
     ${renderCareSections(pet)}
@@ -480,14 +589,14 @@ function renderCare(content, pet) {
 
 function renderSchedule(content, pet) {
   content.innerHTML = `
-    ${renderPetHeader(pet, 'Upcoming appointments', false)}
-    ${renderSection('🏥', 'Vet Appointments', 'vets', pet, renderVetEntry)}
+    ${renderPetHeader(pet, t('upcomingAppointments'), false)}
+    ${renderSection('🏥', t('sectionVetAppointments'), 'vets', pet, renderVetEntry)}
   `;
 }
 
 function renderHealth(content, pet) {
   content.innerHTML = `
-    ${renderPetHeader(pet, 'Health & weight log', false)}
+    ${renderPetHeader(pet, t('healthWeightMeta'), false)}
     ${renderWeightSection(pet)}
   `;
 }
@@ -506,8 +615,8 @@ function renderSection(icon, title, key, pet, renderFn) {
         <span class="section-toggle">▾</span>
       </div>
       <div class="section-body">
-        ${items.length ? items.map((item) => renderFn(item)).join('') : '<div class="empty-note">Nothing added yet.</div>'}
-        <button class="add-entry-btn" data-action="open-modal" data-modal="${modalKey}">+ Add entry</button>
+        ${items.length ? items.map((item) => renderFn(item)).join('') : `<div class="empty-note">${t('nothingAddedYet')}</div>`}
+        <button class="add-entry-btn" data-action="open-modal" data-modal="${modalKey}">${t('addEntry')}</button>
       </div>
     </div>
   `;
@@ -518,7 +627,7 @@ function renderMedEntry(entry) {
     <div class="entry-dot entry-dot-medicines"></div>
     <div class="entry-content">
       <div class="entry-label">${entry.name} <span class="entry-label-meta">${entry.dose || ''}</span></div>
-      <div class="entry-detail">${entry.frequency || ''} ${entry.nextDue ? '· Next: ' + entry.nextDue : ''}</div>
+      <div class="entry-detail">${entry.frequency || ''} ${entry.time ? `· ${t('timeLabel')}: ${entry.time}` : ''}${!entry.time && entry.nextDue ? `· ${t('nextLabel')}: ${entry.nextDue}` : ''}</div>
     </div>
     <div class="entry-actions">
       <button class="btn-small btn-del" data-action="delete-entry" data-entry-key="medicines" data-entry-id="${entry.id}">✕</button>
@@ -544,7 +653,7 @@ function renderRoutineEntry(entry) {
     <div class="entry-dot entry-dot-routine"></div>
     <div class="entry-content">
       <div class="entry-label">${entry.name}</div>
-      <div class="entry-detail">${entry.time || ''} ${entry.duration ? '· ' + entry.duration + ' min' : ''} ${entry.notes ? '· ' + entry.notes : ''}</div>
+      <div class="entry-detail">${entry.time || ''} ${entry.duration ? '· ' + entry.duration + ' ' + t('unitMinutes') : ''} ${entry.notes ? '· ' + entry.notes : ''}</div>
     </div>
     <div class="entry-actions">
       <button class="btn-small btn-del" data-action="delete-entry" data-entry-key="routine" data-entry-id="${entry.id}">✕</button>
@@ -557,7 +666,7 @@ function renderVetEntry(entry) {
     <div class="entry-dot entry-dot-vets"></div>
     <div class="entry-content">
       <div class="entry-label">${entry.reason}</div>
-      <div class="entry-detail">${entry.date || ''} ${entry.vet ? '· ' + entry.vet : ''} ${entry.notes ? '· ' + entry.notes : ''}</div>
+      <div class="entry-detail">${entry.date || ''}${entry.time ? ' · ' + entry.time : ''} ${entry.vet ? '· ' + entry.vet : ''} ${entry.notes ? '· ' + entry.notes : ''}</div>
     </div>
     <div class="entry-actions">
       <button class="btn-small btn-del" data-action="delete-entry" data-entry-key="vets" data-entry-id="${entry.id}">✕</button>
@@ -739,8 +848,21 @@ function handleActionClick(event) {
   }
 }
 
+function handleActionChange(event) {
+  const changeTarget = event.target.closest('[data-change-action]');
+  if (!changeTarget) {
+    return;
+  }
+
+  const { changeAction } = changeTarget.dataset;
+  if (changeAction === 'change-language') {
+    changeLanguage(changeTarget.value);
+  }
+}
+
 function initEventHandlers() {
   document.addEventListener('click', handleActionClick);
+  document.addEventListener('change', handleActionChange);
   document.getElementById('modalOverlay').addEventListener('click', closeModalOutside);
   window.PetbookPickers.applyIOSPickers();
 }
@@ -811,11 +933,11 @@ function confirmDeletePet() {
   const content = document.getElementById('modalContent');
   content.innerHTML = `
     <div class="modal-handle"></div>
-    <div class="modal-title">Remove ${pet.name}? 🗑️</div>
-    <p class="modal-copy">This will delete all of ${pet.name}'s data permanently. This cannot be undone.</p>
+    <div class="modal-title">${t('removePetConfirmTitle', { name: pet.name })}</div>
+    <p class="modal-copy">${t('removePetConfirmCopy', { name: pet.name })}</p>
     <div class="modal-actions">
-      <button class="btn-secondary" data-action="close-modal">Cancel</button>
-      <button class="btn-primary btn-primary-danger" data-action="delete-pet">Yes, remove</button>
+      <button class="btn-secondary" data-action="close-modal">${t('cancel')}</button>
+      <button class="btn-primary btn-primary-danger" data-action="delete-pet">${t('yesRemove')}</button>
     </div>
   `;
   overlay.classList.add('open');
@@ -833,7 +955,7 @@ function deletePet() {
   save();
   closeModal();
   render();
-  showToast('👋 ' + name + ' removed.');
+  showToast(t('toastPetRemoved', { name }));
 }
 
 function updatePet() {
@@ -844,7 +966,7 @@ function updatePet() {
 
   const name = document.getElementById('f_name').value.trim();
   if (!name) {
-    showToast('Please enter a name');
+    showToast(t('toastEnterName'));
     return;
   }
 
@@ -859,7 +981,7 @@ function updatePet() {
   save();
   closeModal();
   render();
-  showToast('✓ ' + name + ' updated!');
+  showToast(t('toastPetUpdated', { name }));
 }
 
 function selectEmoji(button, emoji) {
@@ -871,7 +993,7 @@ function selectEmoji(button, emoji) {
 function savePet() {
   const name = document.getElementById('f_name').value.trim();
   if (!name) {
-    showToast('Please enter a name');
+    showToast(t('toastEnterName'));
     return;
   }
 
@@ -897,7 +1019,7 @@ function savePet() {
   save();
   closeModal();
   render();
-  showToast('🐾 ' + name + ' added!');
+  showToast(t('toastPetAdded', { name }));
 }
 
 function saveEntry(key, fields) {
@@ -922,7 +1044,7 @@ function saveEntry(key, fields) {
   save();
   closeModal();
   renderContent();
-  showToast('Saved!');
+  showToast(t('toastSaved'));
 }
 
 function saveWeight() {
@@ -934,7 +1056,7 @@ function saveWeight() {
   const value = parseFloat(document.getElementById('f_weight').value);
   const date = document.getElementById('f_date').value;
   if (!value || !date) {
-    showToast('Please fill all fields');
+    showToast(t('toastFillAllFields'));
     return;
   }
 
@@ -947,7 +1069,7 @@ function saveWeight() {
   save();
   closeModal();
   renderContent();
-  showToast('Weight logged!');
+  showToast(t('toastWeightLogged'));
 }
 
 function shareWhatsApp() {
@@ -956,9 +1078,11 @@ function shareWhatsApp() {
     return;
   }
 
+  const localizedType = getLocalizedPetType(pet.type);
+
   let msg = `🐾 *${pet.name}*`;
-  if (pet.breed || pet.type) {
-    msg += ` (${[pet.type, pet.breed].filter(Boolean).join(' · ')})`;
+  if (pet.breed || localizedType) {
+    msg += ` (${[localizedType, pet.breed].filter(Boolean).join(' · ')})`;
   }
 
   if (pet.age) {
@@ -968,15 +1092,15 @@ function shareWhatsApp() {
   msg += '\n\n';
 
   if (pet.medicines?.length) {
-    msg += `*💊 Medicine*\n`;
+    msg += `${t('shareMedicineHeader')}\n`;
     pet.medicines.forEach((entry) => {
-      msg += `• ${entry.name}${entry.dose ? ' — ' + entry.dose : ''}${entry.frequency ? ' · ' + entry.frequency : ''}${entry.nextDue ? ' · Next: ' + entry.nextDue : ''}\n`;
+      msg += `• ${entry.name}${entry.dose ? ' — ' + entry.dose : ''}${entry.frequency ? ' · ' + entry.frequency : ''}${entry.time ? ` · ${t('timeLabel')}: ${entry.time}` : ''}${!entry.time && entry.nextDue ? ` · ${t('nextLabel')}: ${entry.nextDue}` : ''}\n`;
     });
     msg += '\n';
   }
 
   if (pet.feeding?.length) {
-    msg += `*🍽️ Feeding*\n`;
+    msg += `${t('shareFeedingHeader')}\n`;
     pet.feeding.forEach((entry) => {
       msg += `• ${entry.time || ''}${entry.food ? ' — ' + entry.food : ''}${entry.amount ? ' · ' + entry.amount : ''}\n`;
     });
@@ -984,23 +1108,23 @@ function shareWhatsApp() {
   }
 
   if (pet.routine?.length) {
-    msg += `*🦮 Routine*\n`;
+    msg += `${t('shareRoutineHeader')}\n`;
     pet.routine.forEach((entry) => {
-      msg += `• ${entry.name}${entry.time ? ' at ' + entry.time : ''}${entry.duration ? ' · ' + entry.duration + ' min' : ''}\n`;
+      msg += `• ${entry.name}${entry.time ? ' ' + t('atLabel') + ' ' + entry.time : ''}${entry.duration ? ' · ' + entry.duration + ' ' + t('unitMinutes') : ''}\n`;
     });
     msg += '\n';
   }
 
   if (pet.vets?.length) {
-    msg += `*🏥 Vet Appointments*\n`;
+    msg += `${t('shareVetsHeader')}\n`;
     pet.vets.forEach((entry) => {
-      msg += `• ${entry.reason}${entry.date ? ' — ' + entry.date : ''}${entry.vet ? ' · ' + entry.vet : ''}\n`;
+      msg += `• ${entry.reason}${entry.date ? ' — ' + entry.date : ''}${entry.time ? ' ' + t('atLabel') + ' ' + entry.time : ''}${entry.vet ? ' · ' + entry.vet : ''}\n`;
     });
     msg += '\n';
   }
 
   if (pet.favorites?.length) {
-    msg += `*🎾 Favorite Toys & Things*\n`;
+    msg += `${t('shareFavoritesHeader')}\n`;
     pet.favorites.forEach((entry) => {
       msg += `• ${entry.item}${entry.notes ? ' — ' + entry.notes : ''}\n`;
     });
@@ -1008,14 +1132,14 @@ function shareWhatsApp() {
   }
 
   if (pet.allergies?.length) {
-    msg += `*⚠️ Allergies*\n`;
+    msg += `${t('shareAllergiesHeader')}\n`;
     pet.allergies.forEach((entry) => {
-      msg += `• ${entry.allergen}${entry.reaction ? ' (causes ' + entry.reaction + ')' : ''}${entry.notes ? ' · ' + entry.notes : ''}\n`;
+      msg += `• ${entry.allergen}${entry.reaction ? ' (' + t('causesLabel') + ' ' + entry.reaction + ')' : ''}${entry.notes ? ' · ' + entry.notes : ''}\n`;
     });
     msg += '\n';
   }
 
-  msg += `_Shared from Petbook 🐾_`;
+  msg += t('sharedFrom');
 
   if (navigator.share) {
     navigator.share({ title: '🐾 ' + pet.name + ' — Petbook', text: msg });
@@ -1037,7 +1161,11 @@ if ('serviceWorker' in navigator) {
 }
 
 async function bootstrapApp() {
+  if (i18n) {
+    i18n.setLanguage(i18n.getLanguage(), false);
+  }
   state = await loadState();
+  enforceNotificationPermissionState();
   currentTab = state.currentTab || 'care';
   initEventHandlers();
   render();
