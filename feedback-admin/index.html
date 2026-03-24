@@ -304,8 +304,17 @@
         window.location.reload();
       });
 
-      navigator.serviceWorker.register("sw.js").then((registration) => {
-        registration.update().catch(() => {});
+      navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then((registration) => {
+        const requestUpdateCheck = () => {
+          registration.update().catch(() => {});
+        };
+
+        requestUpdateCheck();
+
+        window.addEventListener("focus", requestUpdateCheck);
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible") requestUpdateCheck();
+        });
       }).catch(() => {});
     }
   </script>

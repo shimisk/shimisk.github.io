@@ -112,7 +112,7 @@
       navigator.serviceWorker.addEventListener("controllerchange", onControllerChange);
 
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register("sw.js").then((registration) => {
+        navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then((registration) => {
           const requestUpdateCheck = () => {
             registration.update().catch(() => {});
           };

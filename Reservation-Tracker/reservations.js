@@ -482,7 +482,27 @@ function showToast(msg){const el=document.getElementById('toast');el.textContent
 
 function registerServiceWorker(){
   if(!('serviceWorker' in navigator)) return;
-  navigator.serviceWorker.register('./sw.js').catch(err=>console.error('SW registration failed',err));
+  let reloadedForUpdate = false;
+
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (reloadedForUpdate) return;
+    reloadedForUpdate = true;
+    window.location.reload();
+  });
+
+  navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
+    .then((registration) => {
+      const requestUpdateCheck = () => {
+        registration.update().catch(() => {});
+      };
+
+      requestUpdateCheck();
+      window.addEventListener('focus', requestUpdateCheck);
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') requestUpdateCheck();
+      });
+    })
+    .catch(err=>console.error('SW registration failed',err));
 }
 
 document.getElementById('modalOverlay').addEventListener('click',function(e){if(e.target===this)closeModal();});

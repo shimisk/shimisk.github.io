@@ -38,7 +38,7 @@ function registerServiceWorkerWithAutoUpdate() {
 
   navigator.serviceWorker.addEventListener('controllerchange', handleControllerChange);
 
-  navigator.serviceWorker.register('./sw.js').then(registration => {
+  navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' }).then(registration => {
     const requestUpdateCheck = () => {
       registration.update().catch(() => {});
     };
