@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#c8956c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Petbook">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<title>Petbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="petbook.css">
+<style>
+  #fw-btn {
+    display: none !important;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo"><span>🐾</span> Petbook</div>
+  <div class="header-actions">
+    <a class="btn-icon" href="https://shimisk.github.io/" title="Open Store" aria-label="Open Store">🏠</a>
+    <button
+      class="btn-icon"
+      type="button"
+      title="Send Feedback"
+      aria-label="Send Feedback"
+      onclick="if (window.openFeedbackWidget) window.openFeedbackWidget();"
+    >?</button>
+    <button class="btn-icon" data-action="open-modal" data-modal="settings" title="Settings">⚙️</button>
+  </div>
+</div>
+
+<div class="pet-bar" id="petBar"></div>
+
+<div class="content" id="mainContent"></div>
+
+<div class="bottom-nav">
+  <button class="nav-item active" data-action="set-tab" data-tab="care">
+    <span class="nav-icon">☀️</span>
+    <span class="nav-label">Care</span>
+  </button>
+  <button class="nav-item" data-action="set-tab" data-tab="schedule">
+    <span class="nav-icon">📅</span>
+    <span class="nav-label">Schedule</span>
+  </button>
+  <button class="nav-item" data-action="set-tab" data-tab="health">
+    <span class="nav-icon">❤️</span>
+    <span class="nav-label">Health</span>
+  </button>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="petbook.constants.js"></script>
+<script src="../shared/ios-picker-layer.js"></script>
+<script src="petbook.pickers.js"></script>
+<script src="petbook.modals.js"></script>
+<script src="petbook.js"></script>
+<script type="module" src="../feedback/widget.js"></script>
+</body>
+</html>

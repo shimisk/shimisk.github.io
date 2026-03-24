@@ -17,6 +17,12 @@ export default function EntryEditor({ initial, themeId, onSave, onBack }) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const selectedSticker = resolveSticker(sticker[0], themeId);
 
+  const handleDatePickerClick = (event) => {
+    const pickerLayer = window.IOSPickerLayer;
+    if (!pickerLayer) return;
+    pickerLayer.openPicker(event, event.currentTarget.querySelector('.date-input-overlay'));
+  };
+
   const handleSave = () => {
     if (!body.trim()) return;
     onSave({
@@ -37,7 +43,7 @@ export default function EntryEditor({ initial, themeId, onSave, onBack }) {
     h('div', { className: "editor-body" },
       h('div', { className: "editor-meta-box" },
         h('div', { className: "editor-date-row" },
-          h('label', { className: "editor-date-btn" },
+          h('label', { className: "editor-date-btn", onClick: handleDatePickerClick },
             h('span', null, "📅"),
             h('span', null, formatDateLong(date)),
             h('input', {

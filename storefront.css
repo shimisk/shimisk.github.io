@@ -82,7 +82,6 @@ body {
 
 .open-browser-btn {
   width: fit-content;
-  margin-top: 2px;
   text-decoration: none;
   background: linear-gradient(135deg, #f4a0b5, #b8a4e8);
   color: #fff;
@@ -98,6 +97,19 @@ body {
 
 .open-browser-btn:hover {
   filter: brightness(1.05);
+}
+
+.store-actions {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.kofi-wrap {
+  display: inline-flex;
+  align-items: center;
 }
 
 .copy-feedback {
@@ -349,6 +361,42 @@ body {
 }
 .banner-diary .banner-cta {
   color: #b54d74;
+}
+
+.banner-petbook {
+  border-color: rgba(178, 99, 32, 0.34);
+  box-shadow: 0 16px 40px rgba(168, 93, 39, 0.22);
+  color: #5d2f16;
+}
+
+.banner-petbook:hover {
+  box-shadow: 0 20px 48px rgba(168, 93, 39, 0.3), 0 0 0 1px rgba(255, 221, 170, 0.42) inset;
+}
+
+.banner-petbook::before {
+  background:
+    radial-gradient(82% 82% at 18% 20%, rgba(255, 255, 255, 0.45), transparent 58%),
+    radial-gradient(76% 76% at 84% 16%, rgba(255, 208, 125, 0.44), transparent 54%),
+    linear-gradient(145deg, #fff9ea 0%, #ffe8c1 52%, #ffd4a1 100%);
+}
+
+.banner-petbook::after {
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.08));
+}
+
+.banner-petbook .banner-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+}
+
+.banner-petbook .banner-desc {
+  color: #875534;
+  font-weight: 800;
+}
+
+.banner-petbook .banner-cta {
+  color: #be6832;
 }
 
 .banner-reservations {

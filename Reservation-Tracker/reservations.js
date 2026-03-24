@@ -1,5 +1,6 @@
 // ─── LANGUAGE STATE ───────────────────────────────────────────────────────────
 const LANG_KEY='res_lang_v1';
+const pickerLayer=window.IOSPickerLayer;
 function detectLang(){
   const s=localStorage.getItem(LANG_KEY);
   if(s==='it'||s==='en') return s;
@@ -7,12 +8,11 @@ function detectLang(){
 }
 let lang=detectLang();
 const s=()=>STRINGS[lang]; // shortcut
-const isIOS=()=>/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 
 function setLang(l){lang=l;localStorage.setItem(LANG_KEY,l);applyLang();render();}
 
 function applyLang(){
-  document.body.classList.toggle('ios-pickers',isIOS());
+  if(pickerLayer) pickerLayer.applyBodyClass({className:'ios-pickers'});
   document.documentElement.lang=lang;
   document.title=s().appTitle;
   setText('appTitle',s().appTitle);
@@ -140,14 +140,17 @@ async function persistReservations(list){
 function openPicker(e,id){
   const input=document.getElementById(id);
   if(!input||e.target===input)return;
+  if(pickerLayer){pickerLayer.openPicker(e,input);return;}
   e.preventDefault();
-  if(typeof input.showPicker==='function'){
-    try{input.showPicker();return;}catch(_err){}
-  }
   input.focus();
   input.click();
 }
 function refreshPickerDisplays(){
+  if(pickerLayer){
+    pickerLayer.syncDisplayByIds('fDate','fDateDisplay',{emptyText:''});
+    pickerLayer.syncDisplayByIds('fTime','fTimeDisplay',{emptyText:''});
+    return;
+  }
   const date=document.getElementById('fDate')?.value||'';
   const time=document.getElementById('fTime')?.value||'';
   setText('fDateDisplay',date);
@@ -318,7 +321,7 @@ function openModal(defaultDate){
   document.getElementById('fNote').value='';
   refreshPickerDisplays();
   document.getElementById('modalOverlay').classList.add('open');
-  if(!isIOS())setTimeout(()=>document.getElementById('fName').focus(),300);
+  if(!(pickerLayer&&pickerLayer.isIOS&&pickerLayer.isIOS()))setTimeout(()=>document.getElementById('fName').focus(),300);
 }
 function closeModal(){document.getElementById('modalOverlay').classList.remove('open');}
 
