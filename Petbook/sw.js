@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v4';
+const CACHE_VERSION = 'v5';
 const CACHE = `petbook-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -7,6 +7,7 @@ const APP_SHELL = [
   './manifest.json',
   './petbook.css',
   './petbook.constants.js',
+  './petbook.i18n.js',
   './petbook.pickers.js',
   './petbook.modals.js',
   './petbook.js',
@@ -41,8 +42,20 @@ function fetchWithTimeout(request, timeoutMs) {
   });
 }
 
+function updateCacheInBackground(request) {
+  fetch(request)
+    .then((response) => {
+      if (!response || !response.ok) {
+        return;
+      }
+      const clone = response.clone();
+      return caches.open(CACHE).then((cache) => cache.put(request, clone));
+    })
+    .catch(() => {});
+}
+
 function networkFirst(request, preloadResponsePromise) {
-  const timeoutMs = request.mode === 'navigate' ? 2500 : 1500;
+  const timeoutMs = request.mode === 'navigate' ? 6000 : 2500;
   const networkRequest = Promise.resolve(preloadResponsePromise)
     .then((preloaded) => preloaded || fetchWithTimeout(request, timeoutMs));
 
@@ -55,6 +68,7 @@ function networkFirst(request, preloadResponsePromise) {
       return response;
     })
     .catch(async () => {
+      updateCacheInBackground(request);
       const cached = await caches.match(request);
       if (cached) return cached;
       if (request.mode === 'navigate') {

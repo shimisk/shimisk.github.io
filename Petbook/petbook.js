@@ -1160,6 +1160,16 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
     .then((registration) => {
       registration.update().catch(() => {});
+
+      // If a new worker takes control, reload once so users see latest code immediately.
+      let reloadedForUpdate = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (reloadedForUpdate) {
+          return;
+        }
+        reloadedForUpdate = true;
+        window.location.reload();
+      });
     })
     .catch(() => {});
 }
