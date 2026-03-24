@@ -1094,7 +1094,7 @@ function shareWhatsApp() {
   if (pet.medicines?.length) {
     msg += `${t('shareMedicineHeader')}\n`;
     pet.medicines.forEach((entry) => {
-      msg += `• ${entry.name}${entry.dose ? ' — ' + entry.dose : ''}${entry.frequency ? ' · ' + entry.frequency : ''}${entry.time ? ` · ${t('timeLabel')}: ${entry.time}` : ''}${!entry.time && entry.nextDue ? ` · ${t('nextLabel')}: ${entry.nextDue}` : ''}\n`;
+      msg += `• ${entry.name}${entry.dose ? ' — ' + entry.dose : ''}${entry.frequency ? ' · ' + entry.frequency : ''}${entry.time ? ` · ${t('timeLabel')}: ${entry.time}` : ''}${!entry.time && entry.nextDue ? ` · ${t('nextLabel')}: ${entry.nextDue}` : ''}${entry.notes ? ' · ' + entry.notes : ''}\n`;
     });
     msg += '\n';
   }
@@ -1102,7 +1102,7 @@ function shareWhatsApp() {
   if (pet.feeding?.length) {
     msg += `${t('shareFeedingHeader')}\n`;
     pet.feeding.forEach((entry) => {
-      msg += `• ${entry.time || ''}${entry.food ? ' — ' + entry.food : ''}${entry.amount ? ' · ' + entry.amount : ''}\n`;
+      msg += `• ${entry.time || ''}${entry.food ? ' — ' + entry.food : ''}${entry.amount ? ' · ' + entry.amount : ''}${entry.notes ? ' · ' + entry.notes : ''}\n`;
     });
     msg += '\n';
   }
@@ -1110,7 +1110,7 @@ function shareWhatsApp() {
   if (pet.routine?.length) {
     msg += `${t('shareRoutineHeader')}\n`;
     pet.routine.forEach((entry) => {
-      msg += `• ${entry.name}${entry.time ? ' ' + t('atLabel') + ' ' + entry.time : ''}${entry.duration ? ' · ' + entry.duration + ' ' + t('unitMinutes') : ''}\n`;
+      msg += `• ${entry.name}${entry.time ? ' ' + t('atLabel') + ' ' + entry.time : ''}${entry.duration ? ' · ' + entry.duration + ' ' + t('unitMinutes') : ''}${entry.notes ? ' · ' + entry.notes : ''}\n`;
     });
     msg += '\n';
   }
@@ -1118,7 +1118,7 @@ function shareWhatsApp() {
   if (pet.vets?.length) {
     msg += `${t('shareVetsHeader')}\n`;
     pet.vets.forEach((entry) => {
-      msg += `• ${entry.reason}${entry.date ? ' — ' + entry.date : ''}${entry.time ? ' ' + t('atLabel') + ' ' + entry.time : ''}${entry.vet ? ' · ' + entry.vet : ''}\n`;
+      msg += `• ${entry.reason}${entry.date ? ' — ' + entry.date : ''}${entry.time ? ' ' + t('atLabel') + ' ' + entry.time : ''}${entry.vet ? ' · ' + entry.vet : ''}${entry.notes ? ' · ' + entry.notes : ''}\n`;
     });
     msg += '\n';
   }
