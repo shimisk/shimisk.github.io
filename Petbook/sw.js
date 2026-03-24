@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const CACHE = `petbook-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -24,13 +24,29 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))))
+    Promise.all([
+      caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key)))),
+      self.registration.navigationPreload ? self.registration.navigationPreload.enable().catch(() => {}) : Promise.resolve()
+    ])
   );
   self.clients.claim();
 });
 
-function networkFirst(request) {
-  return fetch(request)
+function fetchWithTimeout(request, timeoutMs) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
+  return fetch(request, { signal: controller.signal }).finally(() => {
+    clearTimeout(timeout);
+  });
+}
+
+function networkFirst(request, preloadResponsePromise) {
+  const timeoutMs = request.mode === 'navigate' ? 2500 : 1500;
+  const networkRequest = Promise.resolve(preloadResponsePromise)
+    .then((preloaded) => preloaded || fetchWithTimeout(request, timeoutMs));
+
+  return networkRequest
     .then((response) => {
       if (response && response.ok) {
         const clone = response.clone();
@@ -54,7 +70,7 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
 
-  event.respondWith(networkFirst(event.request));
+  event.respondWith(networkFirst(event.request, event.preloadResponse));
 });
 
 self.addEventListener('notificationclick', (event) => {
