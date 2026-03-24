@@ -38,7 +38,7 @@ export const THEMES = {
   },
 
   cutsie: {
-    label: "Cutsie",
+    label: "Floral",
     icon: "🌸",
     vars: {
       "--bg":       "#fff0f5",

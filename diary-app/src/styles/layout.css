@@ -14,7 +14,7 @@
   letter-spacing: .02em;
   text-shadow: var(--titleGlow, 0 0 18px var(--glow));
 }
-.hdr-actions { display: flex; align-items: center; gap: 8px; }
+.hdr-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
 .store-link-btn {
   display: inline-flex;
   align-items: center;
