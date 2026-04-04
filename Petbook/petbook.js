@@ -24,6 +24,26 @@ const {
 const i18n = window.PetbookI18n;
 const t = (key, vars) => (i18n ? i18n.t(key, vars) : key);
 
+function getPetAge(pet) {
+  if (!pet.birthday) return '';
+  const today = new Date();
+  const [byear, bmonth, bday] = pet.birthday.split('-').map(Number);
+  let years = today.getFullYear() - byear;
+  let months = (today.getMonth() + 1) - bmonth;
+  if (today.getDate() < bday) months--;
+  if (months < 0) { years--; months += 12; }
+  if (years >= 1) return `${years} ${years === 1 ? 'year' : 'years'} old`;
+  if (months >= 1) return `${months} ${months === 1 ? 'month' : 'months'} old`;
+  return 'newborn';
+}
+
+function isBirthday(pet) {
+  if (!pet.birthday) return false;
+  const today = new Date();
+  const [, bmonth, bday] = pet.birthday.split('-').map(Number);
+  return (today.getMonth() + 1) === bmonth && today.getDate() === bday;
+}
+
 function getLocalizedPetType(type) {
   const typeKeyByValue = {
     Dog: 'petTypeDog',
@@ -95,6 +115,17 @@ function normalizeState(rawState) {
   if (!Array.isArray(normalized.pets)) {
     normalized.pets = [];
   }
+
+  normalized.pets = normalized.pets.map((pet) => {
+    if (!pet.birthday && pet.age) {
+      const years = parseInt(pet.age, 10);
+      if (!isNaN(years) && years >= 0) {
+        const year = new Date().getFullYear() - years;
+        return { ...pet, birthday: `${year}-01-01` };
+      }
+    }
+    return pet;
+  });
 
   return normalized;
 }
@@ -498,7 +529,7 @@ function renderPetHeader(pet, metaText, withEditButton) {
       <div class="pet-info">
         <div class="pet-big-avatar">${pet.emoji || '🐾'}</div>
         <div>
-          <div class="pet-name">${pet.name}</div>
+          <div class="pet-name">${pet.name}${isBirthday(pet) ? ' 🎂' : ''}</div>
           <div class="pet-meta">${metaText}</div>
         </div>
       </div>
@@ -580,7 +611,8 @@ function renderWeightSection(pet) {
 
 function renderCare(content, pet) {
   const localizedType = getLocalizedPetType(pet.type);
-  const metaText = `${pet.breed || localizedType || ''} ${pet.age ? '· ' + pet.age : ''}`;
+  const ageText = getPetAge(pet);
+  const metaText = `${pet.breed || localizedType || ''} ${ageText ? '· ' + ageText : ''}`;
   content.innerHTML = `
     ${renderPetHeader(pet, metaText, true)}
     ${renderCareSections(pet)}
@@ -973,7 +1005,7 @@ function updatePet() {
   const selectedEmoji = document.querySelector('.emoji-opt.selected');
   pet.name = name;
   pet.breed = document.getElementById('f_breed').value.trim();
-  pet.age = document.getElementById('f_age').value.trim();
+  pet.birthday = (document.getElementById('f_birthday') || {}).value || '';
   if (selectedEmoji) {
     pet.emoji = selectedEmoji.textContent;
   }
@@ -1003,7 +1035,7 @@ function savePet() {
     name,
     type: document.getElementById('f_type').value,
     breed: document.getElementById('f_breed').value.trim(),
-    age: document.getElementById('f_age').value.trim(),
+    birthday: (document.getElementById('f_birthday') || {}).value || '',
     emoji: selectedEmoji ? selectedEmoji.textContent : '🐾',
     medicines: [],
     feeding: [],
@@ -1157,19 +1189,66 @@ function showToast(message) {
 }
 
 if ('serviceWorker' in navigator) {
+  let reloading = false;
+  let updateBannerEl = null;
+
+  const showUpdateBanner = (onReload) => {
+    if (updateBannerEl) return;
+    updateBannerEl = document.createElement('div');
+    updateBannerEl.className = 'update-banner';
+
+    const text = document.createElement('span');
+    text.textContent = t('updateAvailable') || 'Update available';
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'update-banner-btn';
+    btn.textContent = t('reload') || 'Reload';
+    btn.addEventListener('click', () => {
+      btn.disabled = true;
+      btn.textContent = t('updating') || 'Updating…';
+      onReload();
+    });
+
+    updateBannerEl.appendChild(text);
+    updateBannerEl.appendChild(btn);
+    document.body.appendChild(updateBannerEl);
+  };
+
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (reloading) return;
+    reloading = true;
+    window.location.reload();
+  });
+
   navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
     .then((registration) => {
-      registration.update().catch(() => {});
+      const promptForUpdate = () => {
+        if (!registration.waiting) return;
+        showUpdateBanner(() => {
+          registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+        });
+      };
 
-      // If a new worker takes control, reload once so users see latest code immediately.
-      let reloadedForUpdate = false;
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (reloadedForUpdate) {
-          return;
-        }
-        reloadedForUpdate = true;
-        window.location.reload();
+      if (registration.waiting) promptForUpdate();
+
+      registration.addEventListener('updatefound', () => {
+        const installing = registration.installing;
+        if (!installing) return;
+        installing.addEventListener('statechange', () => {
+          if (installing.state === 'installed' && navigator.serviceWorker.controller) {
+            promptForUpdate();
+          }
+        });
       });
+
+      const checkForUpdate = () => registration.update().catch(() => {});
+      window.addEventListener('focus', checkForUpdate);
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') checkForUpdate();
+      });
+      setInterval(checkForUpdate, 30 * 60 * 1000);
+      checkForUpdate();
     })
     .catch(() => {});
 }

@@ -1,65 +1,10 @@
 import { BIOME_COLORS, BIOME_ICONS } from "../../constants.jsx";
 
-const FARMING_CROPS = [
-  {
-    id: "carrot",
-    name: "Carrot",
-    icon: "🥕",
-    biome: "Black Forest",
-    plantBiome: "Meadows, Black Forest, Plains",
-    growTime: "~50 minutes",
-  },
-  {
-    id: "turnip",
-    name: "Turnip",
-    icon: "🌱",
-    biome: "Swamp",
-    plantBiome: "Meadows, Black Forest, Plains",
-    growTime: "~50 minutes",
-  },
-  {
-    id: "onion",
-    name: "Onion",
-    icon: "🧅",
-    biome: "Mountain",
-    plantBiome: "Meadows, Black Forest, Plains",
-    growTime: "~50 minutes",
-  },
-  {
-    id: "barley",
-    name: "Barley",
-    icon: "🌾",
-    biome: "Plains",
-    plantBiome: "Plains",
-    growTime: "~50 minutes",
-  },
-  {
-    id: "flax",
-    name: "Flax",
-    icon: "🌿",
-    biome: "Plains",
-    plantBiome: "Plains",
-    growTime: "~50 minutes",
-  },
-  {
-    id: "jotun-puffs",
-    name: "Jotun Puffs",
-    icon: "🍄",
-    biome: "Mistlands",
-    plantBiome: "Mistlands",
-    growTime: "~60 minutes",
-  },
-  {
-    id: "magecap",
-    name: "Magecap",
-    icon: "🍄",
-    biome: "Mistlands",
-    plantBiome: "Mistlands",
-    growTime: "~60 minutes",
-  },
-];
-
 export function FarmingPanel() {
+  const farmingCrops = typeof _FARMING_DATA !== "undefined" && Array.isArray(_FARMING_DATA.items)
+    ? _FARMING_DATA.items
+    : [];
+
   return (
     <div>
       <p className="panel-subtitle farming-intro">
@@ -67,7 +12,7 @@ export function FarmingPanel() {
       </p>
 
       <div className="farming-grid">
-        {FARMING_CROPS.map((crop) => (
+        {farmingCrops.map((crop) => (
           <div key={crop.id} className="farming-card panel-overview-card" style={{ border: `1px solid ${(BIOME_COLORS[crop.biome] || "#8a7a5a")}44` }}>
             <div className="farming-card-header">
               <span className="farming-card-icon">{crop.icon}</span>

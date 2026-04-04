@@ -20,6 +20,7 @@ function useGameData() {
     weaponCategories: typeof _WEAPON_CATEGORIES_DATA !== "undefined" ? _WEAPON_CATEGORIES_DATA : (_WEAPONS_DATA.categories || []),
     armor:    _ARMOR_DATA,
     food:     _FOOD_DATA,
+    farming:  typeof _FARMING_DATA !== "undefined" ? _FARMING_DATA : { items: [] },
     foodCategories: typeof _FOOD_CATEGORIES_DATA !== "undefined" ? _FOOD_CATEGORIES_DATA : (_FOOD_DATA.categories || []),
     materials:_MATERIALS_DATA,
     vendors:  _VENDORS_DATA,

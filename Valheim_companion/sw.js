@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v4";
+const CACHE_VERSION = "v5";
 const APP_SHELL_CACHE = `valheim-shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `valheim-runtime-${CACHE_VERSION}`;
 
@@ -31,6 +31,7 @@ const PRECACHE_URLS = [
   "data/weapons.json",
   "data/armor.json",
   "data/food.json",
+  "data/farming.json",
   "data/materials.json",
   "data/vendors.json",
   "data/weaponCategories.json",
@@ -41,8 +42,13 @@ self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open(APP_SHELL_CACHE);
     await cache.addAll(PRECACHE_URLS);
-    await self.skipWaiting();
   })());
+});
+
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
 });
 
 self.addEventListener("activate", (event) => {

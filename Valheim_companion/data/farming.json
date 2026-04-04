@@ -1,0 +1,67 @@
+{
+  "items": [
+    {
+      "id": "carrot",
+      "name": "Carrot",
+      "icon": "🥕",
+      "biome": "Black Forest",
+      "plantBiome": "Meadows, Black Forest, Plains",
+      "growTime": "~70 minutes"
+    },
+    {
+      "id": "turnip",
+      "name": "Turnip",
+      "icon": "🌱",
+      "biome": "Swamp",
+      "plantBiome": "Meadows, Black Forest, Swamp, Plains,Mistlands",
+      "growTime": "~70 minutes"
+    },
+    {
+      "id": "onion",
+      "name": "Onion",
+      "icon": "🧅",
+      "biome": "Mountain",
+      "plantBiome": "Meadows, Black Forest, Plains",
+      "growTime": "~70 minutes"
+    },
+    {
+      "id": "barley",
+      "name": "Barley",
+      "icon": "🌾",
+      "biome": "Plains",
+      "plantBiome": "Plains",
+      "growTime": "~70 minutes"
+    },
+    {
+      "id": "flax",
+      "name": "Flax",
+      "icon": "🌿",
+      "biome": "Plains",
+      "plantBiome": "Plains",
+      "growTime": "~70 minutes"
+    },
+    {
+      "id": "jotun-puffs",
+      "name": "Jotun Puffs",
+      "icon": "🍄",
+      "biome": "Mistlands",
+      "plantBiome": "Mistlands",
+      "growTime": "~70 minutes"
+    },
+    {
+      "id": "magecap",
+      "name": "Magecap",
+      "icon": "🍄",
+      "biome": "Mistlands",
+      "plantBiome": "Mistlands",
+      "growTime": "~70 minutes"
+    },  {
+      "id": "vineberry",
+      "name": "Vineberry",
+      "icon": "🍇",
+      "biome": "Ashlands",
+      "plantBiome": "All",
+      "growTime": "~3 minutes"
+    }
+  ]
+}

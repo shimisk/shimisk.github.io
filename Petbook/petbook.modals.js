@@ -99,10 +99,7 @@
           <label class="form-label">${t('breedOptional')}</label>
           <input class="form-input" id="f_breed" placeholder="e.g. Golden Retriever" />
         </div>
-        <div class="form-group">
-          <label class="form-label">${t('ageOptional')}</label>
-          <input class="form-input" id="f_age" placeholder="e.g. 3 years" />
-        </div>
+        ${renderPickerField(t('birthdayOptional'), 'f_birthday', 'date')}
         <div class="form-group">
           <label class="form-label">${t('pickEmoji')}</label>
           <div class="emoji-picker">
@@ -306,10 +303,7 @@
           <label class="form-label">${t('breedOptional')}</label>
           <input class="form-input" id="f_breed" value="${pet.breed || ''}" />
         </div>
-        <div class="form-group">
-          <label class="form-label">${t('ageOptional')}</label>
-          <input class="form-input" id="f_age" value="${pet.age || ''}" />
-        </div>
+        ${renderPickerField(t('birthdayOptional'), 'f_birthday', 'date', pet.birthday || '')}
         <div class="form-group">
           <label class="form-label">${t('pickEmoji')}</label>
           <div class="emoji-picker">${emojiButtons}</div>

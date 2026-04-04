@@ -1,0 +1,77 @@
+/* BlogSwipe Responsive Styles - Mobile First */
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #faf9f6;
+  color: #222;
+}
+
+header {
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+main {
+  padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-content {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Swipe/scroll area */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Responsive for tablets and up */
+@media (min-width: 600px) {
+  main {
+    padding: 2rem;
+  }
+  .card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .card-title {
+    font-size: 1.3rem;
+  }
+  .card-content {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsive for desktop */
+@media (min-width: 900px) {
+  main {
+    max-width: 800px;
+  }
+}
