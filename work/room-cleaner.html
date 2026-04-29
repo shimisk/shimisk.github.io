@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#1a1a14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>GRAX — Rooms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="manifest" href="manifest.json" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="room-cleaner.css">
+</head>
+
+<body>
+
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <header>
+    <div>
+      <div class="logo-name">GRAX <i>Rooms</i></div>
+      <div class="logo-eyebrow">Earth Field</div>
+    </div>
+  </header>
+
+  <!-- YESTERDAY -->
+  <div class="section">
+    <div class="today-top">
+      <div class="sec-title"><span class="italic">Yesterday</span></div>
+      <button class="edit-btn" onclick="openSheet('yesterday')">Edit</button>
+    </div>
+    <div class="rooms-grid" id="yGrid">
+      <span class="empty-state">No rooms logged for yesterday.</span>
+    </div>
+  </div>
+
+  <!-- TODAY -->
+  <div class="today-section">
+    <div class="today-top">
+      <div>
+
+        <div class="sec-title" style="margin-bottom:0"><span class="italic">Today</span></div>
+      </div>
+      <button class="edit-btn" onclick="openSheet('today')">Edit</button>
+    </div>
+
+    <div class="rooms-grid" id="tGrid">
+      <span class="empty-state">Tap Edit to assign rooms for today.</span>
+    </div>
+  </div>
+
+  <!-- ASSIGNMENT -->
+  <div class="section">
+    <div class="sec-title"><span class="italic">To Do</span></div>
+    <div class="todo-stats" id="todoStats"></div>
+    <div class="rooms-grid" id="assGrid">
+    </div>
+  </div>
+
+  <!-- SHEET -->
+  <div class="overlay" id="overlay" onclick="overlayClick(event)">
+    <div class="sheet">
+      <div class="sheet-grip"></div>
+      <div class="sheet-head">
+        <div>
+          <div class="sheet-eyebrow">Room Assignment</div>
+          <div class="sheet-title" id="sheetTitle">Today's Rooms</div>
+        </div>
+        <div class="sheet-actions">
+          <button class="btn-clear" onclick="clearSel()">Clear</button>
+          <button class="btn-confirm" onclick="confirm()">Confirm</button>
+        </div>
+      </div>
+      <div class="sheet-body">
+        <div class="sel-count"><strong id="selCount">0</strong> of 32 rooms selected</div>
+        <div class="room-grid-sel" id="gridSel"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-overlay" id="noteOverlay" onclick="noteOverlayClick(event)">
+    <div class="note-sheet">
+      <div class="note-sheet-head">
+        <div>
+          <div class="sheet-eyebrow">Room note</div>
+          <div class="sheet-title"><span id="noteRoomLabel"></span></div>
+        </div>
+        <button class="btn-clear" onclick="closeNote()">Close</button>
+      </div>
+      <div class="note-sheet-body">
+        <textarea id="noteInput" class="note-textarea" placeholder="Type a note..." rows="6"></textarea>
+        <div class="note-actions">
+          <button class="btn-clear" onclick="clearNote()">Clear</button>
+          <button class="btn-confirm" onclick="saveNote()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="room-cleaner.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js", { updateViaCache: "none" })
+          .then(registration => {
+            console.log("SW registered:", registration.scope);
+
+            const activateWaitingWorker = () => {
+              if (registration.waiting) {
+                registration.waiting.postMessage({ type: "SKIP_WAITING" });
+              }
+            };
+
+            registration.addEventListener("updatefound", () => {
+              const newWorker = registration.installing;
+              if (!newWorker) return;
+
+              newWorker.addEventListener("statechange", () => {
+                if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+                  activateWaitingWorker();
+                }
+              });
+            });
+
+            if (navigator.onLine) {
+              registration.update().catch(() => { });
+            }
+
+            document.addEventListener("visibilitychange", () => {
+              if (document.visibilityState === "visible") {
+                registration.update().catch(() => { });
+              }
+            });
+
+            window.addEventListener("focus", () => {
+              registration.update().catch(() => { });
+            });
+
+            setInterval(() => {
+              registration.update().catch(() => { });
+            }, 30 * 60 * 1000);
+          })
+          .catch(e => console.warn("SW failed:", e));
+      });
+
+      let reloadedForUpdate = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (reloadedForUpdate) return;
+        reloadedForUpdate = true;
+        window.location.reload();
+      });
+    }
+  </script>
+
+</body>
+
+</html>
